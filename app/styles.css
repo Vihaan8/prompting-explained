@@ -38,8 +38,15 @@
 [data-testid="stAppDeployButton"], .stDeployButton { display: none !important; }
 header[data-testid="stHeader"] { background: transparent; }
 
-/* Sidebar */
-[data-testid="stSidebar"] { background: var(--surface); border-right: 1px solid var(--border); }
+/* No sidebar: tasks live on the page */
+[data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"], [data-testid="stExpandSidebarButton"] { display: none !important; }
+
+/* Steps and choice buttons */
+.pe-step { font-size: 15px; font-weight: 500; color: var(--ink); margin: 1.2rem 0 0.4rem 0; }
+.stButton button[data-testid="stBaseButton-secondary"] { background: var(--surface); border: 1px solid var(--border); color: var(--ink); text-align: left; justify-content: flex-start; }
+.stButton button[data-testid="stBaseButton-secondary"]:hover { border-color: var(--accent); color: var(--accent-ink); background: var(--surface); }
+.stButton button p { white-space: normal; text-align: left; line-height: 1.45; }
+[data-testid="stSegmentedControl"] button[aria-checked="true"], [data-testid="stButtonGroup"] button[kind="segmented_controlActive"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 
 /* Buttons: primary = lavender */
 .stButton button[kind="primary"], .stButton button[data-testid="stBaseButton-primary"] {

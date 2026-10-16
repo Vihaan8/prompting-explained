@@ -28,7 +28,7 @@ from core.types import OVERALL, AnalysisResult, Challenge  # noqa: E402
 DEMO_DIR = ROOT / "demo_examples"
 SESSION_CAP = 10  # analyses per session on the server's key
 
-st.set_page_config(page_title="prompting-explained", layout="centered", initial_sidebar_state="expanded")
+st.set_page_config(page_title="prompting-explained", layout="centered", initial_sidebar_state="collapsed")
 st.markdown(f"<style>{(ROOT / 'app' / 'styles.css').read_text()}</style>", unsafe_allow_html=True)
 
 
@@ -72,25 +72,44 @@ by_id = {c.id: c for c in challenges}
 config = load_config()
 key_on_server = server_key()
 
-with st.sidebar:
-    ch_id = st.radio("Task", [c.id for c in challenges], format_func=lambda i: by_id[i].title, key="challenge")
-    demo = st.toggle("Demo mode", value=not key_on_server, key="demo", help="Shows saved examples. No API key needed.")
-    with st.expander("About"):
-        st.markdown(
-            "This tool removes one part of your prompt at a time, reruns it, and checks whether the "
-            "answer got worse. Results are estimates for one AI model on these tasks, not general rules."
-        )
-
-ch = by_id[ch_id]
-if ss.result is not None and ss.result.challenge_id != ch.id:
-    ss.result = None
+ss.setdefault("task", challenges[0].id)
+ss.setdefault("mode", "custom" if key_on_server else "example")
 
 st.title("prompting-explained")
 md('<p class="pe-subtitle">See which parts of your prompt changed the answer.</p>')
+
+md('<p class="pe-step">1. Pick a task</p>')
+cols = st.columns(len(challenges))
+for col, c in zip(cols, challenges):
+    with col:
+        selected = ss.task == c.id
+        if st.button(c.title, key=f"task_{c.id}", type="primary" if selected else "secondary", use_container_width=True):
+            if not selected:
+                ss.task, ss.result, ss.error = c.id, None, None
+                st.rerun()
+
+ch = by_id[ss.task]
 md(f'<div class="pe-card">{esc(ch.scenario.strip())}</div>')
 if ch.fixed_context:
     with st.expander("Attached automatically"):
         md(f'<div class="pe-doc">{text_html(ch.fixed_context.strip())}</div>')
+
+md('<p class="pe-step">2. Write a prompt, or learn from an example</p>')
+MODES = {"custom": "Write your own", "example": "Learn from an example"}
+
+
+def keep_mode() -> None:
+    """Clicking the selected option again would clear it; keep the last choice instead."""
+    if ss.mode is None:
+        ss.mode = ss.get("last_mode", "custom")
+    ss.last_mode = ss.mode
+    ss.result, ss.error = None, None
+
+
+mode = st.segmented_control(
+    "How do you want to start?", list(MODES), format_func=MODES.get, key="mode",
+    label_visibility="collapsed", on_change=keep_mode,
+) or ss.get("last_mode", "custom")
 
 
 def run_live(prompt: str) -> None:
@@ -135,20 +154,22 @@ def run_live(prompt: str) -> None:
     st.rerun()
 
 
-if demo:
+if mode == "example":
     files = demo_files(ch)
     examples = {p: AnalysisResult.model_validate_json(p.read_text()) for p in files}
-    pick = st.selectbox("Example prompt", files, format_func=lambda p: examples[p].user_prompt)
-    if st.button("Analyze", type="primary"):
-        ss.result, ss.error = examples[pick], None
-        st.rerun()
+    md('<p class="pe-muted">These prompts were analyzed ahead of time, so they open instantly.</p>')
+    for path, ex in examples.items():
+        shown = ss.result is not None and ss.result.user_prompt == ex.user_prompt
+        if st.button(ex.user_prompt, key=f"ex_{path.stem}", type="primary" if shown else "secondary", use_container_width=True):
+            ss.result, ss.error = ex, None
+            st.rerun()
 else:
     prompt = st.text_area("Your prompt", height=120, key=f"prompt_{ch.id}", placeholder="Write the prompt you'd give the AI.")
     capped = ss.analyses_run >= SESSION_CAP
     if not key_on_server:
-        st.info("No API key is set up. Turn on demo mode to see examples.")
+        st.info("Live analysis isn't set up here (no API key). Try \"Learn from an example\" instead.")
     elif capped:
-        st.info(f"You've used the {SESSION_CAP} analyses for this session. Demo mode still works.")
+        st.info(f"You've used the {SESSION_CAP} analyses for this session. The examples still work.")
     elif st.button("Analyze", type="primary"):
         ss.error = None
         if prompt.strip():
@@ -233,3 +254,10 @@ if res is not None:
     if st.button("Try again"):
         ss.result, ss.error = None, None
         st.rerun()
+
+st.write("")
+with st.expander("About this tool"):
+    st.markdown(
+        "This tool removes one part of your prompt at a time, reruns it, and checks whether the answer "
+        "changed. Results are estimates for one AI model on these tasks, not general rules."
+    )
