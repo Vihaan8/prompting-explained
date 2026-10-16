@@ -4,7 +4,7 @@ A small web app that shows which parts of your prompt actually changed an AI's a
 
 You pick a task (explain inflation to a 10-year-old, push back on a late fee, turn a messy job posting into JSON), write a prompt, and the app takes it apart. It runs your prompt a few times, then runs it again with one piece removed at a time, and tells you which pieces made a difference and which ones the AI would have handled anyway. "Please" and "thanks" almost never matter. "Use 3 bullet points" almost always does. Sometimes the attached email does all the work and nothing you wrote matters much, which is useful to know too.
 
-![The task menu and prompt on the left, the highlighted prompt and what each part did on the right](docs/screenshot.jpg)
+![The task menu and prompt on the left, the highlighted prompt and what each part did on the right](docs/screenshot.png)
 
 I built this for an explainable AI course. The question I wanted to answer:
 
