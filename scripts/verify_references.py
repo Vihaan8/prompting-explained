@@ -63,6 +63,7 @@ async def main(runs: int) -> int:
         )
         segments[ch.id] = {"method": method, "segments": [s.model_dump() for s in segs]}
 
+    await llm.aclose()
     RESULTS.mkdir(exist_ok=True)
     meta = {"model": config.model, "calls": budget.calls, "input_tokens": budget.input_tokens, "output_tokens": budget.output_tokens}
     (RESULTS / "reference_check.json").write_text(json.dumps({"meta": meta, "challenges": report}, indent=2))

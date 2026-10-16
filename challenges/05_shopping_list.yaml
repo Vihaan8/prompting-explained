@@ -1,0 +1,65 @@
+id: shopping_list
+title: "Recipe to shopping list"
+level: 2
+category: Extract
+subtitle: "Telling the AI what it can't know"
+scenario: >
+  You want to cook this tonight. You already have salt, olive oil and oregano at home.
+  Get the AI to make a shopping list of only what you still need to buy.
+fixed_context: |
+  Weeknight lemon chicken (serves 4)
+
+  Ingredients
+  4 chicken thighs
+  2 lemons
+  3 cloves garlic
+  1 tbsp olive oil
+  1 tsp dried oregano
+  1 lb baby potatoes
+  salt
+
+  Steps
+  1. Preheat the oven to 425°F.
+  2. Toss the potatoes with the olive oil and salt.
+  3. Rub the chicken with garlic, oregano and lemon zest.
+  4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.
+requirements:
+  - id: on_task
+    label: "Is a shopping list for this recipe"
+    short: "actually doing the task"
+    scorer: lines_naming
+    params:
+      groups: [["chicken"], ["lemon"], ["garlic"], ["potato"]]
+      at_least: 3
+    gate: true
+  - id: needed_items
+    label: "Lists the chicken, lemons, garlic, and potatoes"
+    short: "listing what you need"
+    scorer: keyword_groups_present
+    params:
+      groups:
+        - ["chicken"]
+        - ["lemon"]
+        - ["garlic"]
+        - ["potato"]
+  - id: skips_pantry
+    label: "Leaves out what you already have"
+    short: "leaving out what you have"
+    scorer: keywords_absent
+    params: { keywords: ["salt", "olive oil", "oregano"] }
+  - id: one_per_line
+    label: "One item per line, 4 lines in all"
+    short: "one item per line"
+    scorer: lines_naming
+    params:
+      groups: [["chicken"], ["lemon"], ["garlic"], ["potato"], ["salt"], ["olive oil"], ["oregano"]]
+      target: 4
+  - id: no_steps
+    label: "No cooking steps"
+    short: "leaving out the steps"
+    scorer: keywords_absent
+    params: { keywords: ["preheat", "425", "roast", "minutes"] }
+reference_prompt: >
+  From this recipe, make a shopping list of only the ingredients I still need to buy.
+  I already have salt, olive oil and oregano, so leave those out completely. Put each
+  item on its own line, with no headings, no notes, and no cooking steps.

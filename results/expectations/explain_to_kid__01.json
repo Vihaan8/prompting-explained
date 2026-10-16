@@ -89,6 +89,36 @@
   "length": 0.05,
   "reading_level": 0.3762399254219061
  },
+ "pooled_std": {
+  "overall": 0.11782773954901055,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.15811388300841892,
+  "reading_level": 0.22991056719526304
+ },
+ "part_noise": [
+  {
+   "overall": 0.0724074074074074,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.3589723068648312
+  },
+  {
+   "overall": 0.0724074074074074,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.2172222222222222
+  },
+  {
+   "overall": 0.3582570261381765,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.4999999999999999,
+   "reading_level": 0.5937525394955853
+  }
+ ],
  "ablations": [
   {
    "segment_id": 0,
@@ -235,7 +265,7 @@
    "reading_level": true
   },
   {
-   "overall": false,
+   "overall": true,
    "on_task": true,
    "bullets": true,
    "length": false,

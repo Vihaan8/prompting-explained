@@ -133,6 +133,9 @@ class AnalysisResult(BaseModel):
     baseline_mean: dict[str, float]
     baseline_std: dict[str, float]
     noise: dict[str, float]
+    pooled_std: dict[str, float] = Field(default_factory=dict)  # spread over all repeated runs (eval reporting)
+    # part_noise[segment_id][target]: the floor that part's effect is compared with (see diff_noise)
+    part_noise: list[dict[str, float]] = Field(default_factory=list)
 
     ablations: list[Ablation]
     # attribution[segment_id][target] = baseline_mean[target] - ablated_mean[target]

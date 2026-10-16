@@ -1,9 +1,9 @@
 {
   "meta": {
     "model": "claude-haiku-5-5",
-    "calls": 18,
-    "input_tokens": 7112,
-    "output_tokens": 2155
+    "calls": 48,
+    "input_tokens": 17360,
+    "output_tokens": 4584
   },
   "challenges": {
     "explain_to_kid": {
@@ -17,11 +17,11 @@
       },
       "all_passed": true,
       "answers": [
-        "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar you have buys a little less candy than before.",
-        "- Inflation means prices go up over time, so things cost more.\n- Your mom's candy bar that cost 25 cents long ago might cost a dollar now.\n- Because each dollar buys less candy, your money doesn't stretch as far.",
+        "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar buys less candy than it used to.",
+        "- Inflation means prices go up over time.\n- Your candy that cost $1 last year might cost $1.25 now.\n- Your money buys a little less candy than it used to.",
         "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar buys a little less candy than before.",
-        "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar you have can buy less candy than before.",
-        "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar you have buys a little less candy than before."
+        "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar you have buys less candy than before.",
+        "- Inflation means prices go up over time, so things cost more.\n- Your candy that cost 25 cents last year might cost 50 cents now.\n- With the same money, you can buy less candy than before."
       ],
       "scores": [
         {
@@ -72,11 +72,11 @@
       },
       "all_passed": true,
       "answers": [
-        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nI received your email regarding the $75 late fee on Unit 3B. I paid this month's rent on the 3rd, which falls within the grace period under Section 4.2 of my lease. That section states that rent is due on the 1st, that a grace period applies through the 5th, and that no late fees may be charged during the grace period.\n\nBecause the payment was received within the grace period, the $75 fee is not permitted under the lease. Please remove it from my account and confirm in writing once this has been done.\n\nThank you,\n[Your Name]\nUnit 3B",
-        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nI'm writing to dispute the $75 late fee on my account for this month. My rent was received on the 3rd, which falls within the grace period under Section 4.2 of my lease. That section states that rent is due on the 1st, a grace period applies through the 5th, and no late fees may be charged during the grace period.\n\nBecause the payment was made within that period, the fee is not permitted under the lease. Please remove the $75 charge from my account and confirm in writing once this has been done.\n\nThank you,\n[Your Name]\nUnit 3B",
-        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nI'm writing to dispute the $75 late fee on my account for this month's rent. My payment was received on the 3rd, which falls within the grace period set out in Section 4.2 of my lease. That section states that rent is due on the 1st, a grace period applies through the 5th, and no late fees may be charged during the grace period.\n\nBecause the payment was made within the grace period, the fee is not permitted under the lease. Please remove the $75 charge from my account and confirm in writing once this is done.\n\nThank you,\n[Your Name]\nUnit 3B",
-        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nThank you for your email. I'm disputing the $75 late fee on my account for this month. My rent payment was received on the 3rd, which falls within the grace period under Section 4.2 of my lease. That section states that rent is due on the 1st, a grace period applies through the 5th, and no late fees may be charged during the grace period.\n\nBecause the payment was made within that period, the fee was not authorized under the lease. Please remove the $75 charge from my account and confirm in writing once this has been done.\n\nRegards,\n[Your Name]\nUnit 3B",
-        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nThank you for your email. I paid this month's rent on the 3rd, which falls within the grace period under Section 4.2 of the lease. That section states that rent is due on the 1st, that a grace period applies through the 5th, and that no late fees may be charged during the grace period.\n\nBecause the payment was received within that window, the $75 late fee is not permitted under the lease. Please remove it from my account.\n\nI'd appreciate written confirmation once this has been corrected.\n\nBest regards,\n[Your Name]\nUnit 3B"
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nThank you for your email. I'm disputing the $75 late fee on my account. My rent payment was received on the 3rd of the month.\n\nUnder Section 4.2 of our lease, rent is due on the 1st, and a grace period applies through the 5th. The lease states that no late fees may be charged during the grace period. Because payment arrived on the 3rd, the fee is not permitted under the lease.\n\nPlease remove the $75 charge from my account and confirm in writing once this has been done.\n\nRegards,\n[Your name]\nUnit 3B",
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nThank you for your email. I paid this month's rent on the 3rd, which falls within the grace period described in Section 4.2 of our lease. That section states that rent is due on the 1st, that a grace period applies through the 5th, and that no late fees may be charged during the grace period.\n\nBecause the payment was received within that window, the $75 late fee was not permitted under the lease. Please remove it from my account and confirm in writing once this has been done.\n\nRegards,\n[Your name]\nUnit 3B",
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nThank you for your email. I paid this month's rent on the 3rd, which falls within the grace period under Section 4.2 of our lease. That section states that rent is due on the 1st, that a grace period applies through the 5th, and that no late fees may be charged during the grace period.\n\nBecause the payment was received within that window, the $75 late fee is not permitted under the lease. Please remove it from my account and confirm in writing once this has been done.\n\nRegards,\n[Your name]\nUnit 3B",
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nI'm writing to dispute the $75 late fee added to my account for this month. My rent was received on the 3rd, which falls within the grace period under Section 4.2 of my lease. That section states that rent is due on the 1st, a grace period applies through the 5th, and no late fees may be charged during the grace period.\n\nBecause the payment was made within that period, the fee is not permitted under the lease. Please remove the $75 charge from my account and confirm in writing once this is done.\n\nThank you,\n[Your Name]\nUnit 3B",
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nThank you for your email. I paid this month's rent on the 3rd, which falls within the grace period under Section 4.2 of our lease. That section states that rent is due on the 1st, a grace period applies through the 5th, and no late fees may be charged during the grace period.\n\nBecause the payment was received within the grace period, the $75 late fee is not permitted under the lease. Please remove it from my account.\n\nPlease confirm in writing once the fee has been reversed.\n\nBest regards,\n[Your Name]\nUnit 3B"
       ],
       "scores": [
         {
@@ -167,6 +167,287 @@
           "fields": 1.0,
           "accuracy": 1.0,
           "no_invented_salary": 1.0,
+          "overall": 1.0
+        }
+      ]
+    },
+    "meeting_summary": {
+      "reference_prompt": "Summarize these meeting notes for my boss in under 60 words. Lead with the decision: which vendor we chose, the approved budget, who owns the rollout, and the go-live deadline. Leave out side topics like the coffee machine, Q3 numbers and timesheets. No headings, just two or three short sentences.\n",
+      "runs": 5,
+      "passes": {
+        "on_task": 5,
+        "length": 5,
+        "key_facts": 5,
+        "no_noise": 5
+      },
+      "all_passed": true,
+      "answers": [
+        "We chose Vendor B for the scheduling software, with a year-one budget of $18,500 approved. Priya owns the rollout, and go-live is set for November 22.",
+        "We chose Vendor B for the scheduling software, at an approved year-one budget of $18,500 because it includes the hospital integrations we need. Priya owns the rollout, with go-live set for November 22.",
+        "We chose Vendor B for the scheduling software, with an approved year-one budget of $18,500. Priya owns the rollout, and go-live is set for November 22.",
+        "We chose Vendor B for the scheduling software, with year-one budget approved at $18,500. Priya owns the rollout, and go-live is set for November 22.",
+        "We chose Vendor B for scheduling software, approved at $18,500 for year one, because it offers the hospital integrations we need. Priya owns the rollout, with go-live set for November 22."
+      ],
+      "scores": [
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "key_facts": 1.0,
+          "no_noise": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "key_facts": 1.0,
+          "no_noise": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "key_facts": 1.0,
+          "no_noise": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "key_facts": 1.0,
+          "no_noise": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "key_facts": 1.0,
+          "no_noise": 1.0,
+          "overall": 1.0
+        }
+      ]
+    },
+    "shopping_list": {
+      "reference_prompt": "From this recipe, make a shopping list of only the ingredients I still need to buy. I already have salt, olive oil and oregano, so leave those out completely. Put each item on its own line, with no headings, no notes, and no cooking steps.\n",
+      "runs": 5,
+      "passes": {
+        "on_task": 5,
+        "needed_items": 5,
+        "skips_pantry": 5,
+        "one_per_line": 5,
+        "no_steps": 5
+      },
+      "all_passed": true,
+      "answers": [
+        "4 chicken thighs\n2 lemons\n3 cloves garlic\n1 lb baby potatoes",
+        "4 chicken thighs\n2 lemons\n3 cloves garlic\n1 lb baby potatoes",
+        "4 chicken thighs\n2 lemons\n3 cloves garlic\n1 lb baby potatoes",
+        "4 chicken thighs\n2 lemons\n3 cloves garlic\n1 lb baby potatoes",
+        "4 chicken thighs\n2 lemons\n3 cloves garlic\n1 lb baby potatoes"
+      ],
+      "scores": [
+        {
+          "on_task": 1.0,
+          "needed_items": 1.0,
+          "skips_pantry": 1.0,
+          "one_per_line": 1.0,
+          "no_steps": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "needed_items": 1.0,
+          "skips_pantry": 1.0,
+          "one_per_line": 1.0,
+          "no_steps": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "needed_items": 1.0,
+          "skips_pantry": 1.0,
+          "one_per_line": 1.0,
+          "no_steps": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "needed_items": 1.0,
+          "skips_pantry": 1.0,
+          "one_per_line": 1.0,
+          "no_steps": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "needed_items": 1.0,
+          "skips_pantry": 1.0,
+          "one_per_line": 1.0,
+          "no_steps": 1.0,
+          "overall": 1.0
+        }
+      ]
+    },
+    "subject_line": {
+      "reference_prompt": "Write one subject line for this email, under 8 words. Include the invoice number 4471. Keep it plain and professional, with no exclamation marks. Reply with only the subject line and nothing else.\n",
+      "runs": 5,
+      "passes": {
+        "on_task": 5,
+        "one_short_line": 5,
+        "has_number": 5,
+        "not_salesy": 5
+      },
+      "all_passed": true,
+      "answers": [
+        "Invoice #4471 for October Design Work",
+        "Invoice #4471 for October Design Work",
+        "Invoice 4471 for October Design Work",
+        "Invoice #4471 for October Design Work",
+        "Invoice #4471 for October Design Work"
+      ],
+      "scores": [
+        {
+          "on_task": 1.0,
+          "one_short_line": 1.0,
+          "has_number": 1.0,
+          "not_salesy": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "one_short_line": 1.0,
+          "has_number": 1.0,
+          "not_salesy": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "one_short_line": 1.0,
+          "has_number": 1.0,
+          "not_salesy": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "one_short_line": 1.0,
+          "has_number": 1.0,
+          "not_salesy": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "one_short_line": 1.0,
+          "has_number": 1.0,
+          "not_salesy": 1.0,
+          "overall": 1.0
+        }
+      ]
+    },
+    "privacy_bug_report": {
+      "reference_prompt": "Write a short public bug report from this support ticket, under 100 words. Include what crashes and when (PDF exports over 50 pages), the app version, and the operating system. Remove all personal information: no customer name, email, phone number, or address.\n",
+      "runs": 5,
+      "passes": {
+        "on_task": 5,
+        "keeps_details": 5,
+        "no_personal_info": 5,
+        "length": 5
+      },
+      "all_passed": true,
+      "answers": [
+        "**Bug Report: App crashes on PDF export for reports over 50 pages**\n\n**Summary:** The app crashes when exporting a PDF report longer than 50 pages. Shorter reports export successfully.\n\n**Version:** 3.2.1\n**Operating System:** Windows 11\n\n**Steps to reproduce:** Generate a report longer than 50 pages and export it to PDF.\n\n**Expected:** The PDF exports successfully.\n**Actual:** The app crashes.\n\n**Notes:** The issue began after the most recent update.",
+        "**Bug: App crashes when exporting PDF reports longer than 50 pages**\n\n**Description:** The app crashes consistently when exporting a PDF report longer than 50 pages. Reports under 50 pages export without issue.\n\n**Version:** 3.2.1\n**Operating System:** Windows 11\n\n**Notes:** The issue began after the most recent update.\n\n**Steps to reproduce:** Create or open a report exceeding 50 pages, then export it as PDF.",
+        "**Bug: App crashes when exporting PDF reports longer than 50 pages**\n\n**Description:** The application crashes consistently when exporting a PDF report exceeding 50 pages. Shorter reports export without issue. The problem began after a recent update.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:** Generate a report longer than 50 pages and export it to PDF.\n\n**Expected:** The report exports successfully.\n**Actual:** The application crashes.",
+        "**Bug: App crashes when exporting PDF reports over 50 pages**\n\n**Description:** The app crashes whenever a user attempts to export a PDF report longer than 50 pages. Shorter reports export successfully. The issue began after a recent update.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Select Export to PDF.\n3. The app crashes.",
+        "**Bug: App crashes when exporting PDF reports over 50 pages**\n\n**Description:** The app crashes whenever a user attempts to export a PDF report longer than 50 pages. Shorter reports export successfully. The issue began after a recent update.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as PDF.\n3. The app crashes.\n\n**Expected:** The report exports successfully.\n**Actual:** The app crashes."
+      ],
+      "scores": [
+        {
+          "on_task": 1.0,
+          "keeps_details": 1.0,
+          "no_personal_info": 1.0,
+          "length": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "keeps_details": 1.0,
+          "no_personal_info": 1.0,
+          "length": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "keeps_details": 1.0,
+          "no_personal_info": 1.0,
+          "length": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "keeps_details": 1.0,
+          "no_personal_info": 1.0,
+          "length": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "keeps_details": 1.0,
+          "no_personal_info": 1.0,
+          "length": 1.0,
+          "overall": 1.0
+        }
+      ]
+    },
+    "faq_only": {
+      "reference_prompt": "My friend wants to know if Northside has a swimming pool. Answer using only the FAQ below. If the FAQ doesn't mention a pool, say that plainly and don't guess either way. Keep it to one or two sentences.\n",
+      "runs": 5,
+      "passes": {
+        "on_task": 5,
+        "admits_gap": 5,
+        "no_guessing": 5,
+        "length": 5
+      },
+      "all_passed": true,
+      "answers": [
+        "The FAQ doesn't mention a swimming pool, so I can't confirm whether Northside has one. It does list an aqua aerobics class on Tuesdays and Thursdays at 6pm, but that doesn't tell us whether the facility has a pool.",
+        "The FAQ doesn't mention a swimming pool. It does list aqua aerobics classes on Tuesdays and Thursdays at 6pm, but it doesn't say whether those take place in a pool, so you may want to check directly with Northside.",
+        "The FAQ doesn't mention a swimming pool. It does list aqua aerobics classes on Tuesdays and Thursdays at 6pm, but it doesn't say whether those take place in a pool, so you may want to ask the gym directly.",
+        "The FAQ doesn't mention a swimming pool. It does list aqua aerobics on Tuesdays and Thursdays at 6pm, but it doesn't say whether that takes place in a pool, so you may want to ask the gym directly.",
+        "The FAQ doesn't mention a swimming pool. It lists free weights, cardio machines, a sauna, lockers, and classes including aqua aerobics on Tuesdays and Thursdays at 6pm, but it doesn't say whether there's a pool itself."
+      ],
+      "scores": [
+        {
+          "on_task": 1.0,
+          "admits_gap": 1.0,
+          "no_guessing": 1.0,
+          "length": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "admits_gap": 1.0,
+          "no_guessing": 1.0,
+          "length": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "admits_gap": 1.0,
+          "no_guessing": 1.0,
+          "length": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "admits_gap": 1.0,
+          "no_guessing": 1.0,
+          "length": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "admits_gap": 1.0,
+          "no_guessing": 1.0,
+          "length": 1.0,
           "overall": 1.0
         }
       ]

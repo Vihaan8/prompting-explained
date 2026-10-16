@@ -82,6 +82,15 @@ header[data-testid="stHeader"] { background: transparent; height: 0; }
 .pe-badge.good { color: var(--helped-ink); background: var(--helped); }
 .pe-badge.bad { color: var(--hurt-ink); background: var(--hurt); }
 .pe-badge.neutral { color: #4A4741; background: var(--noise); }
+.pe-badge.followed { color: #2B4F6E; background: var(--info); }
+.pe-summary { margin: 8px 0 0 !important; font-size: 15px !important; }
+.pe-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; color: var(--muted); font-size: 13.5px !important; margin: 8px 0 14px !important; }
+.pe-legend .it { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.pe-legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+.pe-legend .sw.good { background: var(--helped); }
+.pe-legend .sw.followed { background: var(--info); }
+.pe-legend .sw.bad { background: var(--hurt); }
+.pe-legend .sw.neutral { background: var(--noise); border-bottom: 2px dotted var(--muted); box-sizing: border-box; }
 .pe-card-head { margin: 0 !important; font-weight: 600; font-size: 16px !important; }
 .pe-card-why { margin: 0 !important; font-size: 15px !important; color: var(--muted); }
 .pe-answer { white-space: pre-wrap; font-size: 15px; line-height: 1.6; }

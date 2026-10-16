@@ -75,6 +75,22 @@
   "cites_facts": 0.05,
   "no_apology": 0.05
  },
+ "pooled_std": {
+  "overall": 0.27342264926358145,
+  "on_task": 0.408248290463863,
+  "length": 0.0785674201318386,
+  "cites_facts": 0.0,
+  "no_apology": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.6676946806414795,
+   "on_task": 1.0,
+   "length": 0.11111111111111109,
+   "cites_facts": 0.05,
+   "no_apology": 0.05
+  }
+ ],
  "ablations": [
   {
    "segment_id": 0,
@@ -123,8 +139,8 @@
  ],
  "within_noise": [
   {
-   "overall": false,
-   "on_task": false,
+   "overall": true,
+   "on_task": true,
    "length": false,
    "cites_facts": true,
    "no_apology": true

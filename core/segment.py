@@ -78,6 +78,7 @@ def _flex_pattern(text: str) -> re.Pattern | None:
 
 
 _EDGE = string.whitespace + string.punctuation
+_OPENERS = "([{\"'\u201c\u2018"
 
 
 def _is_gap(text: str) -> bool:
@@ -105,7 +106,10 @@ def align_parts(original: str, parts: Sequence[str]) -> list[tuple[int, int, int
         m = pat.match(original, cursor)
         if m is None:
             return None
-        starts.append((m.start(), idx))
+        start = m.start()
+        while start > 0 and original[start - 1] in _OPENERS:
+            start -= 1  # an opening bracket or quote belongs to the part it opens
+        starts.append((start, idx))
         cursor = m.end()
     if not starts or not _is_gap(original[cursor:]) or not _is_gap(original[: starts[0][0]]):
         return None

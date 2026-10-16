@@ -96,6 +96,43 @@
   "accuracy": 0.05,
   "no_invented_salary": 0.05
  },
+ "pooled_std": {
+  "overall": 0.06856034446626805,
+  "json_only": 0.14433756729740643,
+  "fields": 0.057735026918962595,
+  "accuracy": 0.07216878364870322,
+  "no_invented_salary": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.23749999999999993,
+   "json_only": 0.5,
+   "fields": 0.20000000000000007,
+   "accuracy": 0.25,
+   "no_invented_salary": 0.05
+  },
+  {
+   "overall": 0.05,
+   "json_only": 0.05,
+   "fields": 0.05,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  },
+  {
+   "overall": 0.05,
+   "json_only": 0.05,
+   "fields": 0.05,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  },
+  {
+   "overall": 0.05,
+   "json_only": 0.05,
+   "fields": 0.05,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  }
+ ],
  "ablations": [
   {
    "segment_id": 0,
@@ -270,8 +307,8 @@
  ],
  "within_noise": [
   {
-   "overall": false,
-   "json_only": false,
+   "overall": true,
+   "json_only": true,
    "fields": false,
    "accuracy": false,
    "no_invented_salary": true

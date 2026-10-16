@@ -205,3 +205,28 @@ def test_gate_multiplies_mean_of_regular_requirements():
     sc = score_answer(KID, kid_answer("Use 3 bullet points.")).scores
     regular = [sc[r] for r in ("bullets", "length", "reading_level")]
     assert sc[OVERALL] == pytest.approx(sum(regular) / 3)
+
+
+def test_pooled_std_uses_every_group():
+    from core.attribution import pooled_std
+    from core.types import RunResult
+
+    def runs(*xs):
+        return [RunResult(answer="", scores={OVERALL: x}) for x in xs]
+
+    # Baseline runs agree; one shortened prompt's two runs disagree a lot.
+    sd = pooled_std([runs(1.0, 1.0, 1.0), runs(0.0, 1.0), runs(0.5, 0.5)], [OVERALL])[OVERALL]
+    assert sd == pytest.approx((0.5 / 4) ** 0.5)  # (2*0 + 1*0.5 + 1*0) / (2+1+1)
+
+
+def test_part_noise_is_per_part():
+    from core.attribution import diff_noise
+    from core.types import RunResult
+
+    def runs(*xs):
+        return [RunResult(answer="", scores={OVERALL: x}) for x in xs]
+
+    steady = diff_noise(runs(1.0, 1.0, 1.0), runs(0.0, 0.0), [OVERALL], 2.0, 0.05)[OVERALL]
+    erratic = diff_noise(runs(1.0, 1.0, 1.0), runs(0.0, 1.0), [OVERALL], 2.0, 0.05)[OVERALL]
+    assert steady == 0.05  # both sides agree: only the minimum
+    assert erratic == pytest.approx(2 * (0.5 / 2) ** 0.5)  # 2 * sqrt(var 0.5 / n 2)

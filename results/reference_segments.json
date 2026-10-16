@@ -1,9 +1,9 @@
 {
   "meta": {
     "model": "claude-haiku-5-5",
-    "calls": 18,
-    "input_tokens": 7112,
-    "output_tokens": 2155
+    "calls": 48,
+    "input_tokens": 17360,
+    "output_tokens": 4584
   },
   "challenges": {
     "explain_to_kid": {
@@ -144,6 +144,157 @@
           "role": "format",
           "start": 325,
           "end": 397
+        }
+      ]
+    },
+    "meeting_summary": {
+      "method": "llm",
+      "segments": [
+        {
+          "id": 0,
+          "text": "Summarize these meeting notes for my boss in under 60 words. ",
+          "role": "task",
+          "start": 0,
+          "end": 61
+        },
+        {
+          "id": 1,
+          "text": "Lead with the decision: which vendor we chose, the approved budget, who owns the rollout, and the go-live deadline. ",
+          "role": "constraint",
+          "start": 61,
+          "end": 177
+        },
+        {
+          "id": 2,
+          "text": "Leave out side topics like the coffee machine, Q3 numbers and timesheets. ",
+          "role": "constraint",
+          "start": 177,
+          "end": 251
+        },
+        {
+          "id": 3,
+          "text": "No headings, just two or three short sentences.\n",
+          "role": "format",
+          "start": 251,
+          "end": 299
+        }
+      ]
+    },
+    "shopping_list": {
+      "method": "llm",
+      "segments": [
+        {
+          "id": 0,
+          "text": "From this recipe, make a shopping list of only the ingredients I still need to buy. ",
+          "role": "task",
+          "start": 0,
+          "end": 84
+        },
+        {
+          "id": 1,
+          "text": "I already have salt, olive oil and oregano, so leave those out completely. ",
+          "role": "constraint",
+          "start": 84,
+          "end": 159
+        },
+        {
+          "id": 2,
+          "text": "Put each item on its own line, with no headings, no notes, and no cooking steps.\n",
+          "role": "format",
+          "start": 159,
+          "end": 240
+        }
+      ]
+    },
+    "subject_line": {
+      "method": "llm",
+      "segments": [
+        {
+          "id": 0,
+          "text": "Write one subject line for this email, under 8 words. ",
+          "role": "task",
+          "start": 0,
+          "end": 54
+        },
+        {
+          "id": 1,
+          "text": "Include the invoice number 4471. ",
+          "role": "constraint",
+          "start": 54,
+          "end": 87
+        },
+        {
+          "id": 2,
+          "text": "Keep it plain and professional, with no exclamation marks. ",
+          "role": "tone",
+          "start": 87,
+          "end": 146
+        },
+        {
+          "id": 3,
+          "text": "Reply with only the subject line and nothing else.\n",
+          "role": "format",
+          "start": 146,
+          "end": 197
+        }
+      ]
+    },
+    "privacy_bug_report": {
+      "method": "llm",
+      "segments": [
+        {
+          "id": 0,
+          "text": "Write a short public bug report from this support ticket, under 100 words. ",
+          "role": "task",
+          "start": 0,
+          "end": 75
+        },
+        {
+          "id": 1,
+          "text": "Include what crashes and when (PDF exports over 50 pages), the app version, and the operating system. ",
+          "role": "constraint",
+          "start": 75,
+          "end": 177
+        },
+        {
+          "id": 2,
+          "text": "Remove all personal information: no customer name, email, phone number, or address.\n",
+          "role": "constraint",
+          "start": 177,
+          "end": 261
+        }
+      ]
+    },
+    "faq_only": {
+      "method": "llm",
+      "segments": [
+        {
+          "id": 0,
+          "text": "My friend wants to know if Northside has a swimming pool. ",
+          "role": "task",
+          "start": 0,
+          "end": 58
+        },
+        {
+          "id": 1,
+          "text": "Answer using only the FAQ below. ",
+          "role": "constraint",
+          "start": 58,
+          "end": 91
+        },
+        {
+          "id": 2,
+          "text": "If the FAQ doesn't mention a pool, say that plainly and don't guess either way. ",
+          "role": "constraint",
+          "start": 91,
+          "end": 171
+        },
+        {
+          "id": 3,
+          "text": "Keep it to one or two sentences.\n",
+          "role": "format",
+          "start": 171,
+          "end": 204
         }
       ]
     }

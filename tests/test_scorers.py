@@ -33,7 +33,9 @@ def test_starts_line_with(text, expected):
 
 def test_all_challenges_load_and_reference_registered_scorers():
     chs = load_all()
-    assert [c.id for c in chs] == ["explain_to_kid", "landlord_reply", "job_extraction"]
+    assert [c.id for c in chs][:3] == ["explain_to_kid", "landlord_reply", "job_extraction"]
+    assert len(chs) == len({c.id for c in chs}) >= 8
+    assert all(c.category and c.subtitle for c in chs)
 
 
 # word_count_max
@@ -173,6 +175,7 @@ def test_registry_complete():
     assert set(S.SCORERS) == {
         "word_count_max", "bullet_count", "reading_grade_max", "keywords_present", "keywords_absent",
         "json_only", "json_keys_present", "json_field_accuracy", "json_field_null", "on_topic", "starts_line_with",
+        "keyword_groups_present", "lines_naming",
     }
 
 
@@ -190,3 +193,28 @@ def test_registry_complete():
 )
 def test_keywords_absent_ignores_negated_mentions(text, score):
     assert S.keywords_absent(text, ["sorry", "apologize", "apologise"]) == pytest.approx(score)
+
+
+def test_keyword_groups_present():
+    groups = [["Nov 22", "November 22"], ["$18,500", "18,500", "18.5k"], ["Vendor B"]]
+    assert S.keyword_groups_present("Go with vendor b by November 22 for $18,500.", groups) == 1.0
+    assert S.keyword_groups_present("Go with Vendor B.", groups) == pytest.approx(1 / 3)
+    assert S.keyword_groups_present("", groups) == 0.0
+
+
+def test_keywords_absent_strict():
+    assert S.keywords_absent("Reported by Marcus.", ["Marcus", "Elm St", "27701"], strict=True) == 0.0
+    assert S.keywords_absent("Reported by Marcus.", ["Marcus", "Elm St", "27701"]) == pytest.approx(2 / 3)
+    assert S.keywords_absent("No personal details.", ["Marcus"], strict=True) == 1.0
+
+
+def test_lines_naming():
+    need = [["chicken"], ["lemon"], ["garlic"], ["potato"]]
+    plain = "4 chicken thighs\n2 lemons\n3 cloves garlic\n1 lb baby potatoes"
+    assert S.lines_naming(plain, need, at_least=3) == 1.0
+    assert S.lines_naming("- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic", need, at_least=3) == 1.0
+    tips = "You're welcome! A couple of tips:\n- Arrange the potatoes around the chicken in a single layer so it roasts evenly.\n- Thighs are forgiving."
+    assert S.lines_naming(tips, need, at_least=3) == 0.0
+    every = need + [["salt"], ["olive oil"], ["oregano"]]
+    assert S.lines_naming(plain, every, target=4) == 1.0
+    assert S.lines_naming(plain + "\nsalt\nolive oil\noregano", every, target=4) == pytest.approx(0.25)

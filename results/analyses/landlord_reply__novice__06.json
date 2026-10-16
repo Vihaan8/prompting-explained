@@ -82,6 +82,29 @@
   "cites_facts": 0.05,
   "no_apology": 0.05
  },
+ "pooled_std": {
+  "overall": 0.023405971592156582,
+  "on_task": 0.0,
+  "length": 0.07021791477646962,
+  "cites_facts": 0.0,
+  "no_apology": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.11097213530798983,
+   "cites_facts": 0.05,
+   "no_apology": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.12171612389003687,
+   "cites_facts": 0.05,
+   "no_apology": 0.05
+  }
+ ],
  "ablations": [
   {
    "segment_id": 0,
@@ -181,7 +204,7 @@
   {
    "overall": true,
    "on_task": true,
-   "length": true,
+   "length": false,
    "cites_facts": true,
    "no_apology": true
   }

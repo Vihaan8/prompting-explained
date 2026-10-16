@@ -1,6 +1,6 @@
 # Evaluation summary
 
-Model: claude-haiku-5-5. Settings: 3 baseline runs, 2 runs per removed part, noise floor = max(2 × std, 0.05).
+Model: claude-haiku-5-5. Settings: 3 baseline runs, 2 runs per removed part, each part's noise floor = max(2 × standard error of its with/without difference, 0.05).
 Attempts: 90 synthetic prompts (3 challenges × 3 personas × 10). Analyses completed: 90.
 Parts per prompt: median 3, range 1–6. Segmentation: 89 by the model, 1 by the regex fallback.
 Failed calls or analyses logged: 0.
@@ -19,23 +19,23 @@ Baseline std is the run-to-run spread of a score over 3 runs of the same prompt.
 
 | Challenge | Target | Mean std | Max std | Runs with zero std | Mean floor | Parts above floor |
 |---|---|---|---|---|---|---|
-| explain_to_kid | bullets | 0.075 | 0.577 | 77% | 0.189 | 43/103 (42%) |
-| explain_to_kid | length | 0.041 | 0.311 | 70% | 0.118 | 38/103 (37%) |
+| explain_to_kid | bullets | 0.075 | 0.577 | 77% | 0.210 | 37/103 (36%) |
+| explain_to_kid | length | 0.041 | 0.311 | 70% | 0.119 | 30/103 (29%) |
 | explain_to_kid | on_task | 0.000 | 0.000 | 100% | 0.050 | 24/103 (23%) |
-| explain_to_kid | overall | 0.063 | 0.231 | 13% | 0.134 | 68/103 (66%) |
-| explain_to_kid | reading_level | 0.106 | 0.314 | 20% | 0.225 | 42/103 (41%) |
-| job_extraction | accuracy | 0.005 | 0.144 | 97% | 0.058 | 28/84 (33%) |
-| job_extraction | fields | 0.000 | 0.000 | 100% | 0.050 | 29/84 (35%) |
-| job_extraction | json_only | 0.000 | 0.000 | 100% | 0.050 | 30/84 (36%) |
-| job_extraction | no_invented_salary | 0.019 | 0.577 | 97% | 0.087 | 14/84 (17%) |
-| job_extraction | overall | 0.006 | 0.144 | 93% | 0.059 | 46/84 (55%) |
+| explain_to_kid | overall | 0.063 | 0.231 | 13% | 0.118 | 70/103 (68%) |
+| explain_to_kid | reading_level | 0.106 | 0.314 | 20% | 0.208 | 44/103 (43%) |
+| job_extraction | accuracy | 0.005 | 0.144 | 97% | 0.059 | 26/84 (31%) |
+| job_extraction | fields | 0.000 | 0.000 | 100% | 0.054 | 27/84 (32%) |
+| job_extraction | json_only | 0.000 | 0.000 | 100% | 0.070 | 24/84 (29%) |
+| job_extraction | no_invented_salary | 0.019 | 0.577 | 97% | 0.092 | 13/84 (15%) |
+| job_extraction | overall | 0.006 | 0.144 | 93% | 0.063 | 39/84 (46%) |
 | landlord_reply | cites_facts | 0.000 | 0.000 | 100% | 0.050 | 0/97 (0%) |
 | landlord_reply | length | 0.082 | 0.410 | 30% | 0.180 | 35/97 (36%) |
 | landlord_reply | no_apology | 0.000 | 0.000 | 100% | 0.050 | 0/97 (0%) |
-| landlord_reply | on_task | 0.000 | 0.000 | 100% | 0.050 | 8/97 (8%) |
-| landlord_reply | overall | 0.027 | 0.137 | 30% | 0.074 | 36/97 (37%) |
+| landlord_reply | on_task | 0.000 | 0.000 | 100% | 0.095 | 4/97 (4%) |
+| landlord_reply | overall | 0.027 | 0.137 | 30% | 0.110 | 34/97 (35%) |
 
-Overall score: 150 of 284 parts (53%) had an effect above the noise floor.
+Overall score: 143 of 284 parts (50%) had an effect above the noise floor.
 
 ## B. Faithfulness (deletion test)
 
@@ -66,35 +66,35 @@ All 284 parts from the 90 analyses, grouped by the role the segmenter gave them.
 | Role | Parts | Mean effect | Mean signed effect | Above noise floor |
 |---|---|---|---|---|
 | format | 32 | 0.270 | +0.266 | 88% |
-| task | 97 | 0.263 | +0.230 | 56% |
+| task | 97 | 0.263 | +0.230 | 54% |
 | audience | 22 | 0.198 | +0.132 | 55% |
-| context | 39 | 0.134 | +0.035 | 46% |
-| constraint | 70 | 0.093 | +0.073 | 46% |
-| other | 3 | 0.086 | -0.017 | 0% |
+| context | 39 | 0.134 | +0.035 | 49% |
+| constraint | 70 | 0.093 | +0.073 | 36% |
+| other | 3 | 0.086 | -0.017 | 33% |
 | politeness_filler | 12 | 0.073 | +0.037 | 25% |
 | tone | 9 | 0.059 | -0.020 | 33% |
 
 ## E. Per-part check (did the answers do what each part asked?)
 
-An AI rated every answer against every part of its prompt (yes / partly / no / n/a). 90 analyses, 838 judged answers, 0 judgements unusable. A part is shown as mattered if the task score dropped without it, or if answers did it with the part but mostly stopped without it (mean rating gap ≥ 0.5).
+An AI rated every answer against every part of its prompt (yes / partly / no / n/a). 90 analyses, 838 judged answers, 0 judgements unusable. A part mattered if the task score dropped without it. It counts as "AI followed it" if answers did it with the part and mostly stopped without it (mean rating gap ≥ 0.5) while the score didn't move.
 
-| Role | Parts | Mattered | Hurt | AI did it anyway | Ignored | Not clear | Nothing to act on |
-|---|---|---|---|---|---|---|---|
-| task | 97 | 53% | 9% | 38% | 0% | 0% | 0% |
-| constraint | 70 | 41% | 9% | 50% | 0% | 0% | 0% |
-| context | 39 | 21% | 31% | 38% | 0% | 0% | 10% |
-| format | 32 | 88% | 3% | 9% | 0% | 0% | 0% |
-| audience | 22 | 45% | 14% | 36% | 0% | 5% | 0% |
-| politeness_filler | 12 | 17% | 8% | 0% | 0% | 25% | 50% |
-| tone | 9 | 11% | 22% | 67% | 0% | 0% | 0% |
-| other | 3 | 0% | 0% | 100% | 0% | 0% | 0% |
+| Role | Parts | Mattered | AI followed it | Hurt | AI did it anyway | Ignored | Not clear | Nothing to act on |
+|---|---|---|---|---|---|---|---|---|
+| task | 97 | 44% | 5% | 9% | 37% | 0% | 4% | 0% |
+| constraint | 70 | 30% | 6% | 6% | 57% | 0% | 1% | 0% |
+| context | 39 | 15% | 3% | 33% | 33% | 0% | 5% | 10% |
+| format | 32 | 88% | 0% | 0% | 9% | 0% | 3% | 0% |
+| audience | 22 | 45% | 5% | 9% | 36% | 0% | 5% | 0% |
+| politeness_filler | 12 | 17% | 0% | 8% | 0% | 0% | 17% | 58% |
+| tone | 9 | 11% | 0% | 22% | 67% | 0% | 0% | 0% |
+| other | 3 | 33% | 0% | 0% | 33% | 0% | 33% | 0% |
 
-All parts: mattered 129, hurt 34, anyway 107, ignored 0, unclear 4, quiet 10 (of 284).
-- explain_to_kid: mattered 65, hurt 8, anyway 25, ignored 0, unclear 3, quiet 2
-- job_extraction: mattered 42, hurt 10, anyway 25, ignored 0, unclear 0, quiet 7
-- landlord_reply: mattered 22, hurt 16, anyway 57, ignored 0, unclear 1, quiet 1
+All parts: mattered 112, followed 11, hurt 31, anyway 107, ignored 0, unclear 12, quiet 11 (of 284).
+- explain_to_kid: mattered 64, followed 1, hurt 6, anyway 24, ignored 0, unclear 6, quiet 2
+- job_extraction: mattered 31, followed 8, hurt 8, anyway 29, ignored 0, unclear 1, quiet 7
+- landlord_reply: mattered 17, followed 2, hurt 17, anyway 54, ignored 0, unclear 5, quiet 2
 
-Stability: in the 30 attempts analyzed twice, 64/88 parts (73%) got the same verdict both times.
+Stability: in the 30 attempts analyzed twice, 62/88 parts (70%) got the same verdict both times.
 
 ## Cost
 

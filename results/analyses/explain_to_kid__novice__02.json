@@ -75,6 +75,22 @@
   "length": 0.05,
   "reading_level": 0.22165608193665592
  },
+ "pooled_std": {
+  "overall": 0.030163572173852567,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.0,
+  "reading_level": 0.09049071652155773
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.12797319857364606
+  }
+ ],
  "ablations": [
   {
    "segment_id": 0,

@@ -1,0 +1,42 @@
+id: subject_line
+title: "Write an email subject line"
+level: 1
+category: Write
+subtitle: "Getting exactly one answer"
+scenario: >
+  You're about to send this email to a client. Get the AI to write its subject line:
+  short, clear, and not salesy.
+fixed_context: |
+  Hi Sam,
+
+  Attached is invoice #4471 for the October design work ($2,350). Payment is due by
+  November 15. Let me know if you have any questions.
+
+  Thanks,
+  Alex
+requirements:
+  - id: on_task
+    label: "Is about the invoice"
+    short: "actually doing the task"
+    scorer: on_topic
+    params: { any_of: ["invoice"] }
+    gate: true
+  - id: one_short_line
+    label: "One subject line, 9 words or fewer"
+    short: "giving one short line"
+    scorer: word_count_max
+    params: { max: 9 }
+  - id: has_number
+    label: "Includes the invoice number"
+    short: "including the invoice number"
+    scorer: keywords_present
+    params: { keywords: ["4471"] }
+  - id: not_salesy
+    label: "No exclamation marks or pushy words"
+    short: "not sounding pushy"
+    scorer: keywords_absent
+    params: { keywords: ["!", "urgent", "action required", "don't miss"] }
+reference_prompt: >
+  Write one subject line for this email, under 8 words. Include the invoice number 4471.
+  Keep it plain and professional, with no exclamation marks. Reply with only the subject
+  line and nothing else.

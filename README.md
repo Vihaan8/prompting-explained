@@ -2,7 +2,7 @@
 
 A small web app that shows which parts of your prompt actually changed an AI's answer.
 
-You pick a task (explain inflation to a 10-year-old, push back on a late fee, turn a messy job posting into JSON), write a prompt, and the app takes it apart. It runs your prompt a few times, then runs it again with one piece removed at a time, and tells you which pieces made a difference and which ones the AI would have handled anyway. "Please" and "thanks" almost never matter. "Use 3 bullet points" almost always does. Sometimes the attached email does all the work and nothing you wrote matters much, which is useful to know too.
+You pick one of eight tasks, from explaining inflation to a 10-year-old to posting a bug report without leaking a customer's details. You write a prompt, and the app takes it apart. It runs your prompt a few times, then runs it again with one piece removed at a time, and tells you which pieces made a difference and which ones the AI would have handled anyway. "Please" and "thanks" almost never matter. "Use 3 bullet points" almost always does. Sometimes the attached email does all the work and nothing you wrote matters much, which is useful to know too.
 
 ![The task menu and prompt on the left, the highlighted prompt and what each part did on the right](docs/screenshot.png)
 
@@ -10,19 +10,34 @@ I built this for an explainable AI course. The question I wanted to answer:
 
 > Can perturbation-based attributions over prompt segments give everyday users faithful and stable explanations of how their wording shapes an LLM's output?
 
-Short version of the answer, for one model (Claude Haiku 5.5) on three tasks: mostly yes for the big effects, and no for small ones. The top-ranked parts really are the ones that matter (removing them hurts about 75% more than removing random parts). Rerunning the same analysis gives the same top part 83% of the time. Small effects get lost in the model's run-to-run randomness, so the app says so instead of guessing.
+Short version of the answer, for one model (Claude Haiku 5.5): mostly yes for the big effects, and no for small ones. The top-ranked parts really are the ones that matter (removing them hurts about 75% more than removing random parts). Rerunning the same analysis gives the same top part 83% of the time. Small effects get lost in the model's run-to-run randomness, so the app says so instead of guessing.
 
 ## How it works
 
 1. **Split the prompt into parts.** One model call splits the prompt into short phrases and labels each one (task, audience, format, constraint, politeness, and so on). The code then maps every part back onto the exact characters of the prompt, so removing a part removes exactly that text.
-2. **Run the full prompt 3 times.** Each answer is scored by code against the task's checks. For the kid task those are: actually explains prices, 3 bullet points, 60 words or fewer, reading grade 5 or below. The spread across the 3 runs sets a noise floor. Changes smaller than that aren't reported as real.
-3. **Remove one part at a time and run each version twice.** The drop in score is that part's effect. This is occlusion, or leave-one-out.
-4. **Check each part directly.** A second model call reads every answer and rates whether it does what each part of the prompt asked: yes, partly, no, or nothing to act on. If answers do something with the part and stop doing it without the part, that part mattered. If they do it either way, the AI did it anyway.
+2. **Run the full prompt 3 times.** Each answer is scored by code against the task's checks. For the kid task those are: actually explains prices, 3 bullet points, 60 words or fewer, reading grade 5 or below. If an answer doesn't do the task at all, for example it asks "what should I explain?", it scores 0 whatever the other checks say.
+3. **Remove one part at a time and run each version twice.** The drop in score is that part's effect. This is occlusion, or leave-one-out. Each effect is compared with its own noise floor: two standard errors of the difference between the runs with the part and the runs without it, and never less than 0.05. Smaller effects aren't reported as real.
+4. **Check each part directly.** A second model call reads every answer and rates whether it does what each part of the prompt asked: yes, partly, no, or nothing to act on. If answers do it with the part and stop without it, but the score doesn't move, the AI "followed it". If they do it either way, the AI did it anyway. If they don't do it even with the part, it was ignored.
 5. **Explain it in plain words.** Parts that mattered get one sentence written by the model comparing the two answers. Everything else is fixed text picked by the numbers, so the app never invents a number.
 
-The colours are simple. Green means the part changed the answer. Red means the answer did better without it. Grey means no real difference. "How this was measured" at the bottom has the actual scores for anyone who wants to check.
+The colours are simple. Green means the part made the answer better at the task. Blue means the AI followed it but the task score didn't change. Red means the answer did better without it. Grey means no real difference. The "How it works" tab shows the actual numbers for anyone who wants to check.
 
 Any document that comes with a task (the landlord's email, the job posting) is attached after your prompt and never removed.
+
+## The tasks
+
+| # | Task | Category | What the hidden checks look at |
+|---|---|---|---|
+| 1 | Explain it to a 10-year-old | Explain | 3 bullets, 60 words or fewer, reading grade 5 or below |
+| 2 | Push back on a late fee | Write | A real reply, 120 words or fewer, cites the fee and lease, no apology |
+| 3 | Job posting to JSON | Extract | Pure JSON, the right keys and values, no invented salary |
+| 4 | Summarize a meeting for your boss | Write | 60 words or fewer, the decision/budget/deadline, no side topics |
+| 5 | Recipe to shopping list | Extract | Only what you still need to buy, one per line, no cooking steps |
+| 6 | Write an email subject line | Write | One line, 9 words or fewer, the invoice number, nothing pushy |
+| 7 | Post a bug report without personal info | Responsible AI | Keeps the technical details, drops the name, email, phone, and address |
+| 8 | Answer from the FAQ only | Responsible AI | Says the FAQ doesn't cover it, no speculating, short |
+
+Each task's reference prompt passes every check on 5 out of 5 runs. Tasks 4 to 8 were designed after I noticed that on task 2 the attached document does most of the work. Weak prompts fail their checks often enough that the wording has something to show. For task 8 I added aqua aerobics classes to the FAQ as bait. Without them, the AI never guessed about the pool. With them, a weak prompt sometimes got "Yes, there's a pool."
 
 ## The XAI ideas behind it
 
@@ -39,7 +54,7 @@ Any document that comes with a task (the landlord's email, the job posting) is a
 
 ## Results
 
-Everything below comes from `results/summary.md`, produced by `scripts/run_eval.py`. The model was `claude-haiku-5-5`, with thinking off and effort low. Each analysis used 3 baseline runs and 2 runs per removed part. The prompts are 90 synthetic ones: 3 tasks × novice, average, and expert users, 10 each, written by an LLM. Expert prompts scored higher than novice ones on all three tasks (kid task 0.94 vs 0.36, landlord 1.00 vs 0.79, JSON 0.84 vs 0.06), so the synthetic users behave the way you'd hope.
+Everything below comes from `results/summary.md`, produced by `scripts/run_eval.py`. The model was `claude-haiku-5-5`, with thinking off and effort low. Each analysis used 3 baseline runs and 2 runs per removed part. The prompts are 90 synthetic ones: tasks 1 to 3 × novice, average, and expert users, 10 each, written by an LLM. (The 90-prompt eval predates tasks 4 to 8; the messy-prompt testing below covers all eight.) Expert prompts scored higher than novice ones on all three tasks (kid task 0.94 vs 0.36, landlord 1.00 vs 0.79, JSON 0.84 vs 0.06), so the synthetic users behave the way you'd hope.
 
 **Faithfulness.** For the 30 prompts with at least 4 parts, I removed the 2 top-ranked parts together and compared that with removing 2 random parts, using new model calls each time. The top-2 removal dropped the score by 0.48 on average, against 0.27 for random parts. Top-2 hurt more in 24 of 30 prompts (one-sided Wilcoxon p = 0.0002). With 3 parts removed there was no difference (0.49 vs 0.51). Half of these prompts only have 4 parts, so 3 random parts out of 4 always overlap heavily with the top 3. That is a weak test, not evidence against the method.
 
@@ -48,7 +63,7 @@ Everything below comes from `results/summary.md`, produced by `scripts/run_eval.
 **Stability.** I reanalyzed 30 prompts from scratch, keeping the same parts.
 - The ranking of parts correlated well between the two runs: median Spearman 1.00, mean 0.85, over the 17 prompts with enough parts to rank.
 - The top part was the same 83% of the time.
-- The full verdict (mattered / didn't / ignored) matched for 73% of parts.
+- The full verdict (mattered / followed / did it anyway / ignored) matched for 70% of parts.
 - Splitting the same prompt 3 times gave identical parts 83% of the time.
 
 **What kinds of parts matter.** Grouped by the role the splitter assigned:
@@ -59,9 +74,14 @@ Everything below comes from `results/summary.md`, produced by `scripts/run_eval.
 
 ![Mean effect of each kind of prompt part](results/roles.png)
 
-**Does it match human intuition?** Before running anything, I wrote down what I expected for 71 parts across 24 prompts (`results/expectations.yaml`). The tool agreed with me on 59 of them (83%, Cohen's kappa 0.71). When we disagreed, I was usually the one who was wrong: the AI fills in more than I expected. It writes an email even without "write a reply", and keeps replies short without being told. Two disagreements were real mistakes by the tool:
-- The judge model missed that an answer was wrapped in a code block.
-- An instruction to add a summary sentence after the JSON showed as green. It did change the answer, but for the worse, and the checks couldn't tell. `results/expectations_report.md` lists every disagreement.
+**Does it match human intuition?** Before running anything, I wrote down what I expected for 71 parts across 24 fairly clean prompts (`results/expectations.yaml`). Under the current rules the tool agrees with me on 54 of them (76%, Cohen's kappa 0.60). When we disagreed, I was usually the one who was wrong: the AI fills in more than I expected. It writes an email even without "write a reply", and keeps replies short without being told. The per-part judge also missed one code block, which was a real tool mistake. `results/expectations_report.md` lists every disagreement.
+
+**Messy prompts.** I also wrote 32 badly written prompts, 4 per task across all eight tasks. They had typos, text-speak, all caps, run-ons, vague asks, counterproductive instructions, leading questions, and one "ignore the email and write a poem". Raw agreement with my written-in-advance expectations dropped to 52% (44 of 85 parts). Reading every disagreement against the actual answers, about 35 of the 41 were my mistakes. A few examples:
+- "for github issues" quietly kept the customer's name out of the report.
+- "dont guess" made the AI speculate more, not less.
+- "make up a salary" was refused.
+
+About 6 were real weaknesses, and they changed the design (next section). The full write-up is in `results/messy_prompt_testing.md`. Prompt splitting held up on typos, emoji, Spanish and code blocks: every split reproduced the prompt exactly.
 
 ## Things that went wrong along the way
 
@@ -71,6 +91,9 @@ These shaped the design, so they're worth writing down.
 - **One run per removed part made things up.** With a single run, "Thanks so much!" looked like it helped reading level. With two runs it fell back within noise.
 - **Vague prompts are noisy.** Short prompts get very different answers from run to run, which hides real effects. Instead of saying "didn't matter" in that case, the app now says it can't tell.
 - **The score alone was too narrow.** Code checks can see length and keywords. They can't see whether the reply still says "I paid on time". The per-part check fills that gap.
+- **One noise floor for the whole prompt was too blunt.** It came from the full prompt's 3 runs. When those happened to agree, the floor fell to 0.05 even if the shortened prompts varied a lot, so "im so sorry to bother u" showed as hurting the reply. Pooling the spread over every run made it worse: one erratic part raised the bar for all the others. Each part now gets its own floor from the standard error of its own with/without difference.
+- **Green meant two different things.** "ignore the email and just write a poem" showed green because the AI did write a poem. Following an instruction isn't the same as helping the task, so that now shows blue ("AI followed it"), and the summary line says the prompt didn't do the task.
+- **A "did it do the task" check that was too loose.** With "Shopping list please." removed, the AI gave cooking tips. They mentioned chicken, so they counted as a shopping list. And a perfect list written as plain lines scored 0 because it had no bullet markers. Both are fixed: a list is now 3 or more short lines that name an ingredient, bulleted or not.
 - **The model never invented a salary.** The JSON task was meant to show hallucination. Even with a $2,000 sign-on bonus in the posting as bait, Haiku 5.5 put `null` for salary every time. That's a good result for the model and a null result for the demo, and I've reported it as one.
 
 ## Running it
@@ -101,6 +124,7 @@ To deploy on Streamlit Community Cloud, point it at `app/streamlit_app.py` and a
 .venv/bin/python scripts/generate_attempts.py      # 90 synthetic prompts
 .venv/bin/python scripts/run_eval.py               # analyses, deletion test, reruns, per-part check, report
 .venv/bin/python scripts/validate_expectations.py  # compare against hand-written expectations
+.venv/bin/python scripts/validate_expectations.py --spec results/expectations_messy.yaml  # the messy prompts
 .venv/bin/python scripts/run_eval.py --stage report  # redraw plots from saved results, no API calls
 ```
 
@@ -108,11 +132,13 @@ All settings live in `config.yaml`. The full evaluation cost about $0.50 in API 
 
 ## Limitations
 
-- Results are for one model and version, on three tasks. Other models will behave differently.
+- Results are for one model and version, on eight tasks. Other models will behave differently.
 - Removing one part at a time misses parts that only matter together, or parts that back each other up.
 - A prompt with a piece cut out can read strangely, and that alone can change the answer.
 - The splitting, the per-part check, and the "why" sentences all come from a model, and models make mistakes (see the code block miss above).
-- The noise floor comes from only 3 runs, so it is itself noisy.
+- Each noise floor comes from only 3 runs with the part and 2 without, so it is itself noisy.
+- Removal is the only comparison. "Give me 5 subject line options" shows green because deleting it leaves no instruction at all; occlusion can't tell you a different instruction would have been better.
+- The headline verdict uses the overall score, so a part that fixed one check can look like it did nothing when the same answer failed another check. The How it works tab has the per-check numbers.
 - The 90 eval prompts were written by an LLM pretending to be users. Real users are messier.
 - People may trust a coloured heatmap more than they should. The grey and "can't tell" verdicts help, but they don't remove that risk.
 

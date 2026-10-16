@@ -1,0 +1,296 @@
+{
+ "challenge_id": "faq_only",
+ "user_prompt": "Using only the FAQ, tell me if there's a pool. If it isn't mentioned, say so and don't guess.",
+ "final_prompt": "Using only the FAQ, tell me if there's a pool. If it isn't mentioned, say so and don't guess.\n\n<document>\nNorthside Fitness FAQ\n\nHours: Mon-Fri 5am-11pm, Sat-Sun 7am-9pm.\nMembership: $39/month, or $29/month on a 12-month contract. Students get 20% off with ID.\nGuests: members can bring one guest per visit for $10.\nAmenities: free weights, cardio machines, sauna, lockers.\nClasses: yoga, spin, and aqua aerobics (Tue/Thu 6pm). Towels provided for all classes.\nParking: free lot behind the building.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Using only the FAQ, tell me if there's a pool. ",
+   "role": "task",
+   "start": 0,
+   "end": 47
+  },
+  {
+   "id": 1,
+   "text": "If it isn't mentioned, say so and don't guess.",
+   "role": "constraint",
+   "start": 47,
+   "end": 93
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "admits_gap",
+  "no_guessing",
+  "length"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "The FAQ doesn't mention a pool. The amenities it lists are free weights, cardio machines, sauna, and lockers. It does mention aqua aerobics classes on Tuesdays and Thursdays at 6pm, but it doesn't say where those classes are held or whether there's a pool on the premises.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "No, the FAQ doesn't mention a pool. The listed amenities are free weights, cardio machines, sauna, and lockers. There is an \"aqua aerobics\" class on Tuesdays and Thursdays at 6pm, but the FAQ doesn't say where it takes place or whether there's a pool on site, so I can't confirm one from this document.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 0.92,
+    "overall": 0.9733333333333333
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "No, the FAQ doesn't mention a pool. The listed amenities are free weights, cardio machines, sauna, and lockers. There is an \"aqua aerobics\" class on Tuesdays and Thursdays at 6pm, but the document doesn't say where it takes place or whether a pool is on site, so I can't confirm one from this FAQ.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 0.92,
+    "overall": 0.9733333333333333
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.9822222222222221,
+  "on_task": 1.0,
+  "admits_gap": 1.0,
+  "no_guessing": 1.0,
+  "length": 0.9466666666666667
+ },
+ "baseline_std": {
+  "overall": 0.015396007178390056,
+  "on_task": 0.0,
+  "admits_gap": 0.0,
+  "no_guessing": 0.0,
+  "length": 0.046188021535170036
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "admits_gap": 0.05,
+  "no_guessing": 0.05,
+  "length": 0.09237604307034007
+ },
+ "pooled_std": {
+  "overall": 0.15359277567887344,
+  "on_task": 0.0,
+  "admits_gap": 0.3535533905932738,
+  "no_guessing": 0.3535533905932738,
+  "length": 0.11098047876390996
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "admits_gap": 1.0,
+   "no_guessing": 0.05,
+   "length": 0.05333333333333331
+  },
+  {
+   "overall": 0.4336978523816942,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 1.0,
+   "length": 0.30470386352070505
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "If it isn't mentioned, say so and don't guess.",
+   "runs": [
+    {
+     "answer": "I can answer questions about the gym's hours, membership pricing, guest policy, amenities, classes, and parking. Is there something specific you'd like to know?",
+     "scores": {
+      "on_task": 0.0,
+      "admits_gap": 0.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I can answer from the FAQ, but I'll flag anything it doesn't cover. Which would you like to know about?",
+     "scores": {
+      "on_task": 0.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "admits_gap": 0.5,
+    "no_guessing": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Using only the FAQ, tell me if there's a pool.",
+   "runs": [
+    {
+     "answer": "No, the FAQ doesn't mention a pool. It lists free weights, cardio machines, a sauna, and lockers as amenities, and it mentions aqua aerobics classes on Tuesdays and Thursdays at 6pm. Aqua aerobics typically takes place in water, but the FAQ doesn't state where those classes are held or confirm that the facility has a pool, so you may want to ask the gym directly.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 0.0,
+      "length": 0.7,
+      "overall": 0.5666666666666667
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "No, the FAQ doesn't mention a pool. It does list \"aqua aerobics\" among the classes (Tue/Thu at 6pm), which is held in water, but the document doesn't say where it takes place or confirm that a pool exists. The listed amenities are free weights, cardio machines, sauna, and lockers.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.7833333333333333,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 0.5,
+    "length": 0.85
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.9822222222222221,
+   "on_task": 1.0,
+   "admits_gap": 0.5,
+   "no_guessing": 0.0,
+   "length": -0.053333333333333344
+  },
+  {
+   "overall": 0.19888888888888878,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": 0.5,
+   "length": 0.09666666666666668
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  }
+ ],
+ "explanations": {
+  "0": "Without this part, the answer drops the specific FAQ details about the amenities and aqua aerobics classes and instead gives a generic list of topics it can cover."
+ },
+ "judge_baseline": [
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    0.5
+   ],
+   [
+    0.0,
+    0.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  0.0,
+  0.75
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7,
+  "explain": 1
+ },
+ "calls": 16,
+ "input_tokens": 8740,
+ "output_tokens": 1066,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T10:12:06.158542+00:00"
+}

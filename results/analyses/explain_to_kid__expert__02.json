@@ -103,6 +103,50 @@
   "length": 0.05,
   "reading_level": 0.14274303941410485
  },
+ "pooled_std": {
+  "overall": 0.0510294269816266,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.042491829279939886,
+  "reading_level": 0.11759150978635653
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.13612092974452808
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.0824127322306788
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.0824127322306788
+  },
+  {
+   "overall": 0.14031304720802015,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.15000000000000002,
+   "reading_level": 0.27541227003430185
+  },
+  {
+   "overall": 0.12115548248874486,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.050000000000000044,
+   "reading_level": 0.3149727899894292
+  }
+ ],
  "ablations": [
   {
    "segment_id": 0,
@@ -340,11 +384,11 @@
    "reading_level": false
   },
   {
-   "overall": false,
+   "overall": true,
    "on_task": true,
    "bullets": true,
-   "length": false,
-   "reading_level": false
+   "length": true,
+   "reading_level": true
   },
   {
    "overall": false,

@@ -2,6 +2,7 @@
 
     python scripts/validate_expectations.py            # run analyses, then compare
     python scripts/validate_expectations.py --report   # compare saved analyses only
+    python scripts/validate_expectations.py --spec results/expectations_messy.yaml   # another set
 
 results/expectations.yaml lists prompts as parts, each with the color a person would
 expect (green / grey / red), written before running. The tool is run with exactly
@@ -33,8 +34,16 @@ from core.types import OVERALL, AnalysisResult, Segment  # noqa: E402
 SPEC = ROOT / "results" / "expectations.yaml"
 OUT = ROOT / "results" / "expectations"
 REPORT = ROOT / "results" / "expectations_report.md"
-COLORS = ("green", "grey", "red")
-KIND_COLOR = {"mattered": "green", "hurt": "red"}  # everything else is grey
+
+
+def use_spec(spec: Path) -> None:
+    """Point the script at another expectations file; outputs are named after it."""
+    global SPEC, OUT, REPORT
+    SPEC = spec
+    OUT = ROOT / "results" / spec.stem
+    REPORT = ROOT / "results" / f"{spec.stem}_report.md"
+COLORS = ("green", "grey", "red", "blue")
+KIND_COLOR = {"mattered": "green", "hurt": "red", "followed": "blue"}  # everything else is grey
 
 
 def cases() -> list[dict]:
@@ -94,7 +103,7 @@ def report() -> None:
             rows.append({
                 "id": c["id"], "task": c["task"], "part": text, "expected": want, "got": KIND_COLOR.get(k, "grey"),
                 "kind": k, "score_with": res.baseline_mean[OVERALL], "score_without": res.ablations[i].mean[OVERALL],
-                "noise": res.noise[OVERALL], "did_with": res.follow_with[i] if res.follow_with else None,
+                "noise": F.part_floor(res, i, OVERALL), "did_with": res.follow_with[i] if res.follow_with else None,
                 "did_without": res.follow_without[i] if res.follow_without else None,
             })
     pairs = [(r["expected"], r["got"]) for r in rows]
@@ -102,10 +111,10 @@ def report() -> None:
     out = lines.append
     out("# Expected vs. measured colors\n")
     out(f"{len(rows)} parts in {len({r['id'] for r in rows})} prompts. Expectations were written by hand before the runs "
-        "(results/expectations.yaml). The tool was run with exactly those parts.\n")
+        f"({SPEC.relative_to(ROOT)}). The tool was run with exactly those parts.\n")
     out(f"Agreement: {agree}/{len(rows)} ({100 * agree / len(rows):.0f}%). Cohen's kappa: {kappa(pairs):.2f}.\n")
-    out("| Expected \\ Measured | green | grey | red |\n|---|---|---|---|")
-    for want in COLORS:
+    out("| Expected \\ Measured | green | grey | red | blue (AI followed it) |\n|---|---|---|---|---|")
+    for want in COLORS[:3]:
         out(f"| {want} | " + " | ".join(str(sum(1 for a, b in pairs if a == want and b == got)) for got in COLORS) + " |")
     out("")
     for task in dict.fromkeys(r["task"] for r in rows):
@@ -130,7 +139,10 @@ def report() -> None:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--report", action="store_true", help="only compare saved analyses")
+    ap.add_argument("--spec", type=Path, default=None, help="expectations YAML (default results/expectations.yaml)")
     args = ap.parse_args()
+    if args.spec:
+        use_spec(args.spec.resolve())
     if not args.report:
         asyncio.run(run(load_config()))
     report()

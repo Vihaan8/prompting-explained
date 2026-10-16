@@ -1,0 +1,376 @@
+{
+ "challenge_id": "explain_to_kid",
+ "user_prompt": "EXPLAIN INFLATION LIKE IM 10 USE 3 BULLETS NOT TOO LONG",
+ "final_prompt": "EXPLAIN INFLATION LIKE IM 10 USE 3 BULLETS NOT TOO LONG",
+ "segments": [
+  {
+   "id": 0,
+   "text": "EXPLAIN INFLATION LIKE IM 10 ",
+   "role": "other",
+   "start": 0,
+   "end": 29
+  },
+  {
+   "id": 1,
+   "text": "USE 3 BULLETS ",
+   "role": "other",
+   "start": 29,
+   "end": 43
+  },
+  {
+   "id": 2,
+   "text": "NOT TOO LONG",
+   "role": "other",
+   "start": 43,
+   "end": 55
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "bullets",
+  "length",
+  "reading_level"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "- Inflation means prices slowly go up over time, so the same toy or candy costs a little more each year.\n\n- That means your money buys less stuff than it used to, even though you still have the same amount.\n\n- Grown-ups and banks try to keep it from going up too fast, because if it goes up too quickly, things get hard to afford.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.95,
+    "reading_level": 0.5580952380952375,
+    "overall": 0.8360317460317459
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means things slowly cost more money over time. A candy bar that cost $1 last year might cost $1.05 this year.\n\n- That means your money buys a little less than it used to. Your $10 might get you fewer toys than it did before.\n\n- Grown-ups and banks try to keep inflation small, because if prices rise too fast, people can't afford as much.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.9333333333333333,
+    "reading_level": 1.0,
+    "overall": 0.9777777777777779
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices slowly go up over time, so the same money buys a little less stuff than it used to.\n\n- Think of it like a candy bar that cost 50 cents last year but costs 60 cents now. Your 50 cents buys less candy than it did before.\n\n- Governments and banks try to keep inflation small and steady, because if it goes up too fast, people's money loses its value quickly.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.8,
+    "reading_level": 0.665666666666666,
+    "overall": 0.8218888888888887
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.8785661375661374,
+  "on_task": 1.0,
+  "bullets": 1.0,
+  "length": 0.8944444444444445,
+  "reading_level": 0.7412539682539677
+ },
+ "baseline_std": {
+  "overall": 0.08621030835783967,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.08221471437193742,
+  "reading_level": 0.23044529669633854
+ },
+ "noise": {
+  "overall": 0.17242061671567935,
+  "on_task": 0.05,
+  "bullets": 0.05,
+  "length": 0.16442942874387484,
+  "reading_level": 0.4608905933926771
+ },
+ "pooled_std": {
+  "overall": 0.08792830831539197,
+  "on_task": 0.0,
+  "bullets": 0.31622776601683794,
+  "length": 0.10571625194796647,
+  "reading_level": 0.14721761897091293
+ },
+ "part_noise": [
+  {
+   "overall": 0.09954708947463875,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.09493337494797252,
+   "reading_level": 0.2660953081622285
+  },
+  {
+   "overall": 0.23874840486551735,
+   "on_task": 0.05,
+   "bullets": 1.0,
+   "length": 0.29881453019689336,
+   "reading_level": 0.2740745287376162
+  },
+  {
+   "overall": 0.10199730478481067,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.11600340565456162,
+   "reading_level": 0.2660953081622285
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "USE 3 BULLETS NOT TOO LONG",
+   "runs": [
+    {
+     "answer": "I'd be glad to help, but I'm not sure what you'd like me to cover. Could you share the topic or question? Once I know, I'll keep it to three concise bullet points.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I'd be glad to help, but I'm not sure what you'd like me to cover. Could you share the topic or question? Once I know, I'll give you three concise bullet points.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "bullets": 0.0,
+    "length": 1.0,
+    "reading_level": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "EXPLAIN INFLATION LIKE IM 10 NOT TOO LONG",
+   "runs": [
+    {
+     "answer": "Inflation is when stuff gets more expensive over time.\n\nImagine a candy bar cost $1 when your parents were kids. Now it costs $2. The candy bar didn't get better. Money just got a little less powerful, so you need more of it to buy the same thing.\n\nIt happens because:\n- **Lots of people want to buy things**, and sometimes there aren't quite enough things to go around, so sellers raise prices.\n- **Making things costs more** (like wages, ingredients, or gas), so companies pass that cost on to you.\n- **There's more money floating around**, so each dollar is worth a bit less.\n\nA little inflation is normal and expected. A lot of it fast is a problem, because your savings buy less and less.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.0,
+      "reading_level": 0.9343483870967738,
+      "overall": 0.6447827956989246
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation is when stuff gets more expensive over time.\n\nImagine a candy bar costs $1 today. Next year, it might cost $1.05. The candy bar is the same, but the money you have buys a little less of it. That's inflation.\n\nIt happens because prices of lots of things go up a bit each year, like food, toys, and gas. When that happens, your dollar can buy less than it used to.\n\nA little bit of inflation is normal and expected. But if it goes up too fast, things get expensive quickly, and people have to work harder to buy the same stuff.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 0.2833333333333333,
+      "reading_level": 1.0,
+      "overall": 0.42777777777777776
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.5362802867383512,
+    "on_task": 1.0,
+    "bullets": 0.5,
+    "length": 0.14166666666666666,
+    "reading_level": 0.9671741935483869
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "EXPLAIN INFLATION LIKE IM 10 USE 3 BULLETS",
+   "runs": [
+    {
+     "answer": "- Inflation means things slowly cost more money over time. A toy that cost $5 last year might cost $6 this year.\n\n- That means your money buys less stuff than it used to. Your $10 allowance gets you fewer candy bars than it did before.\n\n- It happens when lots of people want to buy things, or when making things gets more expensive, so stores raise their prices.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9,
+      "reading_level": 1.0,
+      "overall": 0.9666666666666667
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means things slowly cost more money over time. A candy bar that cost $1 last year might cost $1.05 this year.\n\n- This happens because money loses some of its buying power. Your dollar can buy a little less than it could before.\n\n- Grown-ups watch inflation closely, because if prices rise too fast, it's harder for families to afford things they need.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9666666666666667,
+      "reading_level": 1.0,
+      "overall": 0.9888888888888889
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9777777777777779,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.9333333333333333,
+    "reading_level": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.8785661375661374,
+   "on_task": 1.0,
+   "bullets": 1.0,
+   "length": -0.10555555555555551,
+   "reading_level": -0.2587460317460323
+  },
+  {
+   "overall": 0.3422858508277863,
+   "on_task": 0.0,
+   "bullets": 0.5,
+   "length": 0.7527777777777778,
+   "reading_level": -0.22592022529441913
+  },
+  {
+   "overall": -0.09921164021164042,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": -0.03888888888888886,
+   "reading_level": -0.2587460317460323
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "bullets": false,
+   "length": false,
+   "reading_level": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    0.5,
+    1.0
+   ],
+   [
+    0.0,
+    0.5,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.5,
+    1.0
+   ],
+   [
+    1.0,
+    0.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  0.0,
+  0.25,
+  1.0
+ ],
+ "call_counts": {
+  "baseline": 3,
+  "ablation": 6,
+  "judge": 9
+ },
+ "calls": 18,
+ "input_tokens": 6513,
+ "output_tokens": 1586,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T09:59:16.781026+00:00"
+}

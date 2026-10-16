@@ -96,6 +96,43 @@
   "accuracy": 0.05,
   "no_invented_salary": 0.05
  },
+ "pooled_std": {
+  "overall": 0.07499999999999998,
+  "json_only": 0.28867513459481287,
+  "fields": 0.08164965809277261,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.17499999999999993,
+   "json_only": 0.5,
+   "fields": 0.20000000000000007,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  },
+  {
+   "overall": 0.07499999999999996,
+   "json_only": 0.5,
+   "fields": 0.19999999999999996,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  },
+  {
+   "overall": 0.125,
+   "json_only": 0.5,
+   "fields": 0.05,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  },
+  {
+   "overall": 0.125,
+   "json_only": 0.5,
+   "fields": 0.05,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  }
+ ],
  "ablations": [
   {
    "segment_id": 0,
@@ -271,28 +308,28 @@
  "within_noise": [
   {
    "overall": true,
-   "json_only": false,
-   "fields": false,
-   "accuracy": true,
-   "no_invented_salary": true
-  },
-  {
-   "overall": false,
-   "json_only": false,
-   "fields": false,
-   "accuracy": true,
-   "no_invented_salary": true
-  },
-  {
-   "overall": false,
-   "json_only": false,
+   "json_only": true,
    "fields": true,
    "accuracy": true,
    "no_invented_salary": true
   },
   {
    "overall": false,
-   "json_only": false,
+   "json_only": true,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  },
+  {
+   "overall": true,
+   "json_only": true,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  },
+  {
+   "overall": true,
+   "json_only": true,
    "fields": true,
    "accuracy": true,
    "no_invented_salary": true

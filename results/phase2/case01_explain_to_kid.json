@@ -1,308 +1,376 @@
 {
-  "challenge_id": "explain_to_kid",
-  "user_prompt": "Explain inflation to a 10-year-old. Keep it under 60 words. Use 3 bullet points.",
-  "final_prompt": "Explain inflation to a 10-year-old. Keep it under 60 words. Use 3 bullet points.",
-  "segments": [
-    {
-      "id": 0,
-      "text": "Explain inflation ",
-      "role": "task",
-      "start": 0,
-      "end": 18
-    },
-    {
-      "id": 1,
-      "text": "to a 10-year-old. ",
-      "role": "audience",
-      "start": 18,
-      "end": 36
-    },
-    {
-      "id": 2,
-      "text": "Keep it under 60 words. ",
-      "role": "constraint",
-      "start": 36,
-      "end": 60
-    },
-    {
-      "id": 3,
-      "text": "Use 3 bullet points.",
-      "role": "format",
-      "start": 60,
-      "end": 80
-    }
-  ],
-  "segmentation_method": "llm",
-  "targets": [
-    "overall",
-    "bullets",
-    "length",
-    "reading_level"
-  ],
-  "baseline_runs": [
-    {
-      "answer": "- Inflation means prices go up over time.\n- Something that cost $1 last year might cost $1.10 this year.\n- That means your money buys a little less stuff than before.",
-      "scores": {
-        "bullets": 1.0,
-        "length": 1.0,
-        "reading_level": 1.0,
-        "overall": 1.0
-      },
-      "stop_reason": "end_turn"
-    },
-    {
-      "answer": "- Inflation means prices slowly go up over time.\n- So a candy bar that cost 50 cents might cost 60 cents later.\n- That means your money buys a little less than it used to.",
-      "scores": {
-        "bullets": 1.0,
-        "length": 1.0,
-        "reading_level": 1.0,
-        "overall": 1.0
-      },
-      "stop_reason": "end_turn"
-    },
-    {
-      "answer": "- Inflation means prices slowly go up over time.\n- So a candy bar that cost 50 cents might cost 75 cents years later.\n- That means your money buys a little less than it used to.",
-      "scores": {
-        "bullets": 1.0,
-        "length": 1.0,
-        "reading_level": 1.0,
-        "overall": 1.0
-      },
-      "stop_reason": "end_turn"
-    }
-  ],
-  "baseline_mean": {
-    "overall": 1.0,
+ "challenge_id": "explain_to_kid",
+ "user_prompt": "Explain inflation to a 10-year-old. Keep it under 60 words. Use 3 bullet points.",
+ "final_prompt": "Explain inflation to a 10-year-old. Keep it under 60 words. Use 3 bullet points.",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Explain inflation ",
+   "role": "task",
+   "start": 0,
+   "end": 18
+  },
+  {
+   "id": 1,
+   "text": "to a 10-year-old. ",
+   "role": "audience",
+   "start": 18,
+   "end": 36
+  },
+  {
+   "id": 2,
+   "text": "Keep it under 60 words. ",
+   "role": "constraint",
+   "start": 36,
+   "end": 60
+  },
+  {
+   "id": 3,
+   "text": "Use 3 bullet points.",
+   "role": "format",
+   "start": 60,
+   "end": 80
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "bullets",
+  "length",
+  "reading_level"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "- Inflation means prices go up over time.\n- Something that cost $1 last year might cost $1.10 this year.\n- That means your money buys a little less stuff than before.",
+   "scores": {
+    "on_task": 1.0,
     "bullets": 1.0,
     "length": 1.0,
-    "reading_level": 1.0
+    "reading_level": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
   },
-  "baseline_std": {
+  {
+   "answer": "- Inflation means prices slowly go up over time.\n- So a candy bar that cost 50 cents might cost 60 cents later.\n- That means your money buys a little less than it used to.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices slowly go up over time.\n- So a candy bar that cost 50 cents might cost 75 cents years later.\n- That means your money buys a little less than it used to.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "bullets": 1.0,
+  "length": 1.0,
+  "reading_level": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.0,
+  "reading_level": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "bullets": 0.05,
+  "length": 0.05,
+  "reading_level": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.034851904504767835,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.07698003589195011,
+  "reading_level": 0.1689858452260605
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.05
+  },
+  {
+   "overall": 0.08773794549266278,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.2666666666666667,
+   "reading_level": 0.5298805031446548
+  },
+  {
+   "overall": 0.08293320138545246,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.2487996041563577
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "to a 10-year-old. Keep it under 60 words. Use 3 bullet points.",
+   "runs": [
+    {
+     "answer": "I'm not sure what you'd like me to explain or describe. Could you tell me the topic? Once I know, I'll write it for a 10-year-old in under 60 words with 3 bullet points.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Your message seems to have gotten cut off before the topic came through! What would you like me to explain to a 10-year-old? Once you tell me, I'll keep it under 60 words with 3 bullet points.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
     "overall": 0.0,
+    "on_task": 0.0,
     "bullets": 0.0,
-    "length": 0.0,
+    "length": 1.0,
+    "reading_level": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Explain inflation Keep it under 60 words. Use 3 bullet points.",
+   "runs": [
+    {
+     "answer": "- Inflation is the rate at which the general level of prices for goods and services rises over time.\n- As prices climb, each unit of currency buys fewer goods, reducing purchasing power.\n- Central banks typically aim for modest inflation, around 2% annually, to keep the economy stable.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation is the general rise in prices across an economy over time.\n- As prices increase, each unit of money buys fewer goods and services, reducing purchasing power.\n- Common causes include higher demand, rising production costs, and expansion of the money supply.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6666666666666666,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
     "reading_level": 0.0
+   }
   },
-  "noise": {
-    "overall": 0.05,
-    "bullets": 0.05,
-    "length": 0.05,
-    "reading_level": 0.05
-  },
-  "ablations": [
+  {
+   "segment_id": 2,
+   "prompt": "Explain inflation to a 10-year-old. Use 3 bullet points.",
+   "runs": [
     {
-      "segment_id": 0,
-      "prompt": "to a 10-year-old. Keep it under 60 words. Use 3 bullet points.",
-      "runs": [
-        {
-          "answer": "I'm not sure what you'd like me to explain or describe. Could you tell me the topic? Once I know, I'll write it for a 10-year-old in under 60 words with 3 bullet points.",
-          "scores": {
-            "bullets": 0.0,
-            "length": 1.0,
-            "reading_level": 1.0,
-            "overall": 0.6666666666666666
-          },
-          "stop_reason": "end_turn"
-        },
-        {
-          "answer": "Your message seems to have gotten cut off before the topic came through! What would you like me to explain to a 10-year-old? Once you tell me, I'll keep it under 60 words with 3 bullet points.",
-          "scores": {
-            "bullets": 0.0,
-            "length": 1.0,
-            "reading_level": 1.0,
-            "overall": 0.6666666666666666
-          },
-          "stop_reason": "end_turn"
-        }
-      ],
-      "mean": {
-        "overall": 0.6666666666666666,
-        "bullets": 0.0,
-        "length": 1.0,
-        "reading_level": 1.0
-      }
-    },
-    {
-      "segment_id": 1,
-      "prompt": "Explain inflation Keep it under 60 words. Use 3 bullet points.",
-      "runs": [
-        {
-          "answer": "- Inflation is the rate at which the general level of prices for goods and services rises over time.\n- As prices climb, each unit of currency buys fewer goods, reducing purchasing power.\n- Central banks typically aim for modest inflation, around 2% annually, to keep the economy stable.",
-          "scores": {
-            "bullets": 1.0,
-            "length": 1.0,
-            "reading_level": 0.0,
-            "overall": 0.6666666666666666
-          },
-          "stop_reason": "end_turn"
-        },
-        {
-          "answer": "- Inflation is the general rise in prices across an economy over time.\n- As prices increase, each unit of money buys fewer goods and services, reducing purchasing power.\n- Common causes include higher demand, rising production costs, and expansion of the money supply.",
-          "scores": {
-            "bullets": 1.0,
-            "length": 1.0,
-            "reading_level": 0.0,
-            "overall": 0.6666666666666666
-          },
-          "stop_reason": "end_turn"
-        }
-      ],
-      "mean": {
-        "overall": 0.6666666666666666,
-        "bullets": 1.0,
-        "length": 1.0,
-        "reading_level": 0.0
-      }
-    },
-    {
-      "segment_id": 2,
-      "prompt": "Explain inflation to a 10-year-old. Use 3 bullet points.",
-      "runs": [
-        {
-          "answer": "- Inflation is when things slowly get more expensive over time. A candy bar that cost 50 cents when your grandparents were little might cost a dollar or more today.\n\n- It means your money buys less than it used to. If you have $5, you can get fewer toys or snacks than you could a few years ago, even though the number on your money hasn't changed.\n\n- Most prices rise a little bit each year, which is normal. Grown-ups who run the country try to keep it slow and steady, because if prices shot up too fast, it would be hard for families to afford everyday things.",
-          "scores": {
-            "bullets": 1.0,
-            "length": 0.23333333333333328,
-            "reading_level": 0.6675471698113207,
-            "overall": 0.6336268343815513
-          },
-          "stop_reason": "end_turn"
-        },
-        {
-          "answer": "- Inflation is when prices go up over time, so the same money buys less stuff. A candy bar that cost 50 cents when your parents were kids might cost $1.50 today.\n\n- It usually happens slowly, because lots of people want to buy things and businesses charge a little more to cover their costs, like higher prices for ingredients, wages, and rent.\n\n- Your money doesn't disappear, but it can stretch less far, which is why grown-ups try to earn more money each year so they can keep up with rising prices.",
-          "scores": {
-            "bullets": 1.0,
-            "length": 0.5,
-            "reading_level": 0.13766666666666583,
-            "overall": 0.5458888888888885
-          },
-          "stop_reason": "end_turn"
-        }
-      ],
-      "mean": {
-        "overall": 0.5897578616352199,
-        "bullets": 1.0,
-        "length": 0.36666666666666664,
-        "reading_level": 0.40260691823899325
-      }
-    },
-    {
-      "segment_id": 3,
-      "prompt": "Explain inflation to a 10-year-old. Keep it under 60 words.",
-      "runs": [
-        {
-          "answer": "Inflation is when things slowly cost more money over time. Imagine a candy bar that cost 50 cents when your grandma was little, but costs a dollar today. Your money doesn't buy as much candy as it used to, even though you still have the same coins.",
-          "scores": {
-            "bullets": 0.0,
-            "length": 1.0,
-            "reading_level": 0.7325957446808509,
-            "overall": 0.577531914893617
-          },
-          "stop_reason": "end_turn"
-        },
-        {
-          "answer": "Inflation means things slowly cost more money over time. Imagine a candy bar that cost 50 cents when your parents were kids, but now costs $1.50. Your money buys less candy than it used to, even though you still have the same coins!",
-          "scores": {
-            "bullets": 0.0,
-            "length": 1.0,
-            "reading_level": 0.9813953488372086,
-            "overall": 0.6604651162790695
-          },
-          "stop_reason": "end_turn"
-        }
-      ],
-      "mean": {
-        "overall": 0.6189985155863432,
-        "bullets": 0.0,
-        "length": 1.0,
-        "reading_level": 0.8569955467590298
-      }
-    }
-  ],
-  "attribution": [
-    {
-      "overall": 0.33333333333333337,
+     "answer": "- Inflation is when things slowly get more expensive over time. A candy bar that cost 50 cents when your grandparents were little might cost a dollar or more today.\n\n- It means your money buys less than it used to. If you have $5, you can get fewer toys or snacks than you could a few years ago, even though the number on your money hasn't changed.\n\n- Most prices rise a little bit each year, which is normal. Grown-ups who run the country try to keep it slow and steady, because if prices shot up too fast, it would be hard for families to afford everyday things.",
+     "scores": {
+      "on_task": 1.0,
       "bullets": 1.0,
-      "length": 0.0,
-      "reading_level": 0.0
+      "length": 0.23333333333333328,
+      "reading_level": 0.6675471698113207,
+      "overall": 0.6336268343815513
+     },
+     "stop_reason": "end_turn"
     },
     {
-      "overall": 0.33333333333333337,
-      "bullets": 0.0,
-      "length": 0.0,
-      "reading_level": 1.0
-    },
-    {
-      "overall": 0.4102421383647801,
-      "bullets": 0.0,
-      "length": 0.6333333333333333,
-      "reading_level": 0.5973930817610067
-    },
-    {
-      "overall": 0.3810014844136568,
+     "answer": "- Inflation is when prices go up over time, so the same money buys less stuff. A candy bar that cost 50 cents when your parents were kids might cost $1.50 today.\n\n- It usually happens slowly, because lots of people want to buy things and businesses charge a little more to cover their costs, like higher prices for ingredients, wages, and rent.\n\n- Your money doesn't disappear, but it can stretch less far, which is why grown-ups try to earn more money each year so they can keep up with rising prices.",
+     "scores": {
+      "on_task": 1.0,
       "bullets": 1.0,
-      "length": 0.0,
-      "reading_level": 0.14300445324097022
+      "length": 0.5,
+      "reading_level": 0.13766666666666583,
+      "overall": 0.5458888888888885
+     },
+     "stop_reason": "end_turn"
     }
-  ],
-  "within_noise": [
-    {
-      "overall": false,
-      "bullets": false,
-      "length": true,
-      "reading_level": true
-    },
-    {
-      "overall": false,
-      "bullets": true,
-      "length": true,
-      "reading_level": false
-    },
-    {
-      "overall": false,
-      "bullets": true,
-      "length": false,
-      "reading_level": false
-    },
-    {
-      "overall": false,
-      "bullets": false,
-      "length": true,
-      "reading_level": false
-    }
-  ],
-  "explanations": {},
-  "call_counts": {
-    "segment": 1,
-    "baseline": 3,
-    "ablation": 8
+   ],
+   "mean": {
+    "overall": 0.5897578616352199,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.36666666666666664,
+    "reading_level": 0.40260691823899325
+   }
   },
-  "calls": 12,
-  "input_tokens": 1134,
-  "output_tokens": 1066,
+  {
+   "segment_id": 3,
+   "prompt": "Explain inflation to a 10-year-old. Keep it under 60 words.",
+   "runs": [
+    {
+     "answer": "Inflation is when things slowly cost more money over time. Imagine a candy bar that cost 50 cents when your grandma was little, but costs a dollar today. Your money doesn't buy as much candy as it used to, even though you still have the same coins.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.7325957446808509,
+      "overall": 0.577531914893617
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means things slowly cost more money over time. Imagine a candy bar that cost 50 cents when your parents were kids, but now costs $1.50. Your money buys less candy than it used to, even though you still have the same coins!",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.9813953488372086,
+      "overall": 0.6604651162790695
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6189985155863432,
+    "on_task": 1.0,
+    "bullets": 0.0,
+    "length": 1.0,
+    "reading_level": 0.8569955467590298
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 1.0,
+   "on_task": 1.0,
+   "bullets": 1.0,
+   "length": 0.0,
+   "reading_level": 0.0
+  },
+  {
+   "overall": 0.33333333333333337,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": 1.0
+  },
+  {
+   "overall": 0.4102421383647801,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.6333333333333333,
+   "reading_level": 0.5973930817610067
+  },
+  {
+   "overall": 0.3810014844136568,
+   "on_task": 0.0,
+   "bullets": 1.0,
+   "length": 0.0,
+   "reading_level": 0.14300445324097022
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "bullets": false,
+   "length": true,
+   "reading_level": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": false,
+   "length": true,
+   "reading_level": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 8
+ },
+ "calls": 12,
+ "input_tokens": 1134,
+ "output_tokens": 1066,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
   "model": "claude-haiku-5-5",
-  "config": {
-    "provider": "anthropic",
-    "model": "claude-haiku-5-5",
-    "temperature": null,
-    "thinking": "disabled",
-    "effort": "low",
-    "max_tokens": 800,
-    "segment_max_tokens": 2000,
-    "explain_max_tokens": 120,
-    "baseline_runs": 3,
-    "ablation_runs": 2,
-    "max_segments": 10,
-    "noise_floor_k": 2.0,
-    "min_noise_floor": 0.05,
-    "ablation_mode": "delete",
-    "max_concurrency": 8,
-    "max_calls_per_analysis": 30,
-    "explain_top_n": 3,
-    "price_per_mtok": {
-      "input": 0.1,
-      "output": 0.5
-    }
-  },
-  "created_at": "2026-10-16T07:40:46.068290+00:00"
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T07:40:46.068290+00:00"
 }

@@ -63,7 +63,7 @@ def segment_numbers(result: AnalysisResult, segment_id: int, target: str) -> dic
         "with": result.baseline_mean[target],
         "without": result.ablations[segment_id].mean[target],
         "change": result.attribution[segment_id][target],
-        "noise": result.noise[target],
+        "noise": part_floor(result, segment_id, target),
         "baseline_min": min(r.scores[target] for r in result.baseline_runs),
         "baseline_max": max(r.scores[target] for r in result.baseline_runs),
     }
@@ -75,9 +75,16 @@ def shown_change(n: dict[str, float]) -> float:
     return round(n["with"], 2) - round(n["without"], 2)
 
 
+def part_floor(result: AnalysisResult, segment_id: int, target: str) -> float:
+    """The noise floor this part's effect is compared with."""
+    if result.part_noise:
+        return result.part_noise[segment_id][target]
+    return result.noise[target]
+
+
 def verdict(result: AnalysisResult, segment_id: int, target: str) -> str:
     """'helped' if attr >= noise, 'hurt' if attr <= -noise, else 'no effect'."""
-    a, noise = result.attribution[segment_id][target], result.noise[target]
+    a, noise = result.attribution[segment_id][target], part_floor(result, segment_id, target)
     if a >= noise:
         return "helped"
     if a <= -noise:
@@ -139,7 +146,7 @@ UNCLEAR_NOISE = 0.2  # a noise floor this large means "we can't tell", not "no e
 
 def unclear(result: AnalysisResult, segment_id: int) -> bool:
     """No verdict because the answers varied too much, though removing the part did move the score."""
-    a, noise = abs(result.attribution[segment_id][OVERALL]), result.noise[OVERALL]
+    a, noise = abs(result.attribution[segment_id][OVERALL]), part_floor(result, segment_id, OVERALL)
     floor = result.config.get("min_noise_floor", 0.05)
     return verdict(result, segment_id, OVERALL) == "no effect" and noise >= UNCLEAR_NOISE and a >= floor
 
@@ -154,7 +161,8 @@ def status(result: AnalysisResult, segment_id: int) -> str | None:
 def kind(result: AnalysisResult, segment_id: int) -> str:
     """What one part did, combining the task checks and the per-part check.
 
-    'mattered'  the score dropped without it, or answers stopped doing it without it
+    'mattered'  the task score dropped without it
+    'followed'  answers did it with the part and mostly stopped without it, but the task score didn't move
     'hurt'      the score was better without it
     'ignored'   answers didn't do it even with it in the prompt
     'anyway'    answers did it with or without it
@@ -165,8 +173,10 @@ def kind(result: AnalysisResult, segment_id: int) -> str:
     st = status(result, segment_id)
     if v == "hurt":
         return "hurt"
-    if v == "helped" or st == "needed":
+    if v == "helped":
         return "mattered"
+    if st == "needed":
+        return "followed"
     if st == "ignored":
         return "ignored"
     if unclear(result, segment_id):
@@ -174,6 +184,33 @@ def kind(result: AnalysisResult, segment_id: int) -> str:
     if st == "anyway":
         return "anyway"
     return "quiet"
+
+
+def checks_passed(result: AnalysisResult) -> tuple[int, int]:
+    """How many of the task's checks the full prompt passed on average across its runs."""
+    reqs = _challenge(result.challenge_id).requirements
+    return sum(result.baseline_mean[r.id] >= S.PASS for r in reqs), len(reqs)
+
+
+def did_task(result: AnalysisResult) -> float:
+    """Share of the full prompt's runs where the answer actually did the task (every gate passed)."""
+    gates = [r for r in _challenge(result.challenge_id).requirements if r.gate]
+    if not gates:
+        return 1.0
+    ok = [all(run.scores[g.id] >= S.PASS for g in gates) for run in result.baseline_runs]
+    return sum(ok) / len(ok)
+
+
+def summary_line(result: AnalysisResult) -> str:
+    """One plain sentence on how the full prompt did overall."""
+    passed, total = checks_passed(result)
+    done = did_task(result)
+    if done == 0:
+        return "With this prompt the AI didn't do the task. It asked what you meant or answered something else."
+    if done < 1:
+        n = len(result.baseline_runs)
+        return f"The AI did the task in {round(done * n)} of {n} runs. It passed {passed} of {total} checks on average."
+    return f"Your prompt passed {passed} of {total} checks for this task."
 
 
 def strength(result: AnalysisResult, segment_id: int) -> float:
@@ -190,6 +227,7 @@ def headline(result: AnalysisResult, segment_id: int) -> str:
     k = kind(result, segment_id)
     return {
         "mattered": f'"{seg}" mattered',
+        "followed": f'"{seg}": the AI followed it',
         "hurt": f'"{seg}" worked against you',
         "ignored": f'"{seg}" was ignored',
         "unclear": f'"{seg}": not clear',
@@ -204,11 +242,12 @@ def why(result: AnalysisResult, segment_id: int) -> str:
     """
     k = kind(result, segment_id)
     v = verdict(result, segment_id, OVERALL)
+    if k == "followed":
+        lead = result.explanations.get(segment_id, "Without it, the answer stopped doing this.")
+        return f"{lead} The task checks scored about the same either way."
     if k in ("mattered", "hurt"):
         if k == "mattered" and segment_id in result.explanations:
             return result.explanations[segment_id]
-        if v == "no effect":  # mattered by the per-part check only
-            return "Without it, the answer stopped doing this."
         ch = _challenge(result.challenge_id)
         attr = result.attribution[segment_id]
         req = max(ch.requirements, key=lambda r: abs(attr[r.id]))
@@ -242,7 +281,7 @@ def _join(names: list[str]) -> str:
     return names[0] if len(names) == 1 else ", ".join(names[:-1]) + f" and {names[-1]}"
 
 
-ROW_ORDER = ("mattered", "hurt", "ignored", "unclear")
+ROW_ORDER = ("mattered", "hurt", "followed", "ignored", "unclear")
 
 
 def simple_items(result: AnalysisResult) -> list[tuple[str, str, str]]:
@@ -319,11 +358,26 @@ def requirement_detail(challenge: Challenge, req_id: str, answer: str, score: fl
         if missing:
             msg += f" Missing: {_quote(missing)}."
         return msg + f" Score = {len(found)} / {len(kws)} = {sc}. Case-insensitive text match."
+    if req.scorer == "keyword_groups_present":
+        hits = S.groups_found(answer, p["groups"])
+        missing = [g[0] for g, ok in zip(p["groups"], hits) if not ok]
+        msg = f"Found {sum(hits)} of {len(hits)} required details."
+        if missing:
+            msg += f" Missing: {_quote(missing)}."
+        return msg + f" Score = {sum(hits)} / {len(hits)} = {sc}. Each detail can match any of its spellings."
+    if req.scorer == "lines_naming":
+        n = S.item_lines(answer, p["groups"], p.get("max_words", 8))
+        if p.get("at_least") is not None:
+            return f"{n} short lines name a list item; at least {p['at_least']} are needed to count as a list. Score = {sc}."
+        t = p["target"]
+        return f"{n} short lines name an item, target {t}. Score = 1 − |{n} − {t}| / {t} = {sc}, floored at 0."
     if req.scorer == "keywords_absent":
         kws = p["keywords"]
         used = S.keywords_used(answer, kws)
         if not used:
             return f"None of {_quote(kws)} appear, so score = {sc}."
+        if p.get("strict"):
+            return f"Found {_quote(used)}. Any one of these fails the check, so score = {sc}."
         return (
             f"Found {_quote(used)}. Score = 1 − {len(used)} / {len(kws)} = {sc}. "
             "Mentions right after a negation, like \"doesn't apologize\", don't count."
@@ -391,10 +445,10 @@ def noise_nerd_facts(result: AnalysisResult, target: str = OVERALL) -> str:
     k = result.config.get("noise_floor_k", 2.0)
     floor_min = result.config.get("min_noise_floor", 0.05)
     return (
-        f"We ran your exact prompt {len(scores)} times. Scores: {', '.join(f2(s) for s in scores)} "
-        f"(std {f2(result.baseline_std[target])}).\n"
-        f"Noise floor = max({k:g} × std, {f2(floor_min)}) = {f2(result.noise[target])}. "
-        "Changes smaller than this are shown in grey."
+        f"We ran your exact prompt {len(scores)} times. Scores: {', '.join(f2(s) for s in scores)}.\n"
+        f"Each part is compared with its own noise floor: {k:g} standard errors of the difference between "
+        f"the runs with it and the runs without it, and never less than {f2(floor_min)}. "
+        "Changes smaller than that are shown in grey."
     )
 
 

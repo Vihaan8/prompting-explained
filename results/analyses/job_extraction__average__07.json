@@ -82,6 +82,29 @@
   "accuracy": 0.28867513459481287,
   "no_invented_salary": 0.05
  },
+ "pooled_std": {
+  "overall": 0.02551551815399144,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.10206207261596575,
+  "no_invented_salary": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "json_only": 0.05,
+   "fields": 0.05,
+   "accuracy": 0.16666666666666666,
+   "no_invented_salary": 0.05
+  },
+  {
+   "overall": 0.05,
+   "json_only": 0.05,
+   "fields": 0.05,
+   "accuracy": 0.16666666666666666,
+   "no_invented_salary": 0.05
+  }
+ ],
  "ablations": [
   {
    "segment_id": 0,

@@ -1,0 +1,53 @@
+id: meeting_summary
+title: "Summarize a meeting for your boss"
+level: 2
+category: Write
+subtitle: "Focus and brevity"
+scenario: >
+  Your boss missed this morning's meeting and wants to know what was decided.
+  Get the AI to turn these notes into a summary they can read in 20 seconds.
+fixed_context: |
+  Ops sync, notes (rough)
+  attendees: priya, tom, wen, me
+
+  - tom recapped the Q3 numbers again, nothing new
+  - long tangent about the office coffee machine (broken again)
+  - scheduling software: we compared Vendor A ($24,000/yr) and Vendor B ($18,500/yr).
+    wen is worried about B's support hours but B has the hospital integrations we need.
+    DECISION: go with Vendor B
+  - budget approved at $18,500 for year one
+  - priya owns the rollout. go-live deadline is Nov 22
+  - tom will ask if A can match the price, probably won't matter
+  - next sync moved to thursday
+  - reminder: submit timesheets
+requirements:
+  - id: on_task
+    label: "Is a summary of the vendor decision"
+    short: "actually doing the task"
+    scorer: on_topic
+    params: { any_of: ["vendor"] }
+    gate: true
+  - id: length
+    label: "60 words or fewer"
+    short: "length"
+    scorer: word_count_max
+    params: { max: 60 }
+  - id: key_facts
+    label: "Includes the vendor, the budget, and the deadline"
+    short: "including the key facts"
+    scorer: keyword_groups_present
+    params:
+      groups:
+        - ["Vendor B"]
+        - ["$18,500", "18,500", "18.5k", "18.5K"]
+        - ["Nov 22", "November 22", "Nov. 22", "11/22"]
+  - id: no_noise
+    label: "Leaves out the side topics"
+    short: "leaving out side topics"
+    scorer: keywords_absent
+    params: { keywords: ["coffee", "timesheet", "Q3"] }
+reference_prompt: >
+  Summarize these meeting notes for my boss in under 60 words. Lead with the decision:
+  which vendor we chose, the approved budget, who owns the rollout, and the go-live
+  deadline. Leave out side topics like the coffee machine, Q3 numbers and timesheets.
+  No headings, just two or three short sentences.

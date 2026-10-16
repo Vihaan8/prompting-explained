@@ -1,0 +1,48 @@
+id: faq_only
+title: "Answer from the FAQ only"
+level: 3
+category: Responsible AI
+subtitle: "Not making things up"
+scenario: >
+  Your friend asks whether Northside Fitness has a swimming pool. Get the AI to answer
+  using only this FAQ, without guessing.
+fixed_context: |
+  Northside Fitness FAQ
+
+  Hours: Mon-Fri 5am-11pm, Sat-Sun 7am-9pm.
+  Membership: $39/month, or $29/month on a 12-month contract. Students get 20% off with ID.
+  Guests: members can bring one guest per visit for $10.
+  Amenities: free weights, cardio machines, sauna, lockers.
+  Classes: yoga, spin, and aqua aerobics (Tue/Thu 6pm). Towels provided for all classes.
+  Parking: free lot behind the building.
+requirements:
+  - id: on_task
+    label: "Answers the pool question"
+    short: "actually doing the task"
+    scorer: on_topic
+    params: { any_of: ["pool"] }
+    gate: true
+  - id: admits_gap
+    label: "Says the FAQ doesn't cover it"
+    short: "saying what the FAQ doesn't cover"
+    scorer: on_topic
+    params:
+      any_of: ["doesn't mention", "does not mention", "not mentioned", "isn't mentioned", "no mention",
+               "doesn't list", "does not list", "not listed", "isn't listed", "doesn't say", "does not say",
+               "doesn't include", "does not include", "not included", "no information", "doesn't specify",
+               "not specified", "not in the faq", "doesn't cover", "does not cover", "not covered"]
+  - id: no_guessing
+    label: "Doesn't speculate beyond the FAQ"
+    short: "not speculating"
+    scorer: keywords_absent
+    params: { keywords: ["probably", "likely", "most gyms", "typically", "possibly", "suggests", "implies", "may have a pool", "might have a pool", "may be a pool", "might be a pool",
+                          "yes, there's a pool", "yes, there is a pool", "yes, northside has", "so the pool", "the pool is"], strict: true }
+  - id: length
+    label: "50 words or fewer"
+    short: "length"
+    scorer: word_count_max
+    params: { max: 50 }
+reference_prompt: >
+  My friend wants to know if Northside has a swimming pool. Answer using only the FAQ
+  below. If the FAQ doesn't mention a pool, say that plainly and don't guess either way.
+  Keep it to one or two sentences.

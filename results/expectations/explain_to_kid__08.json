@@ -89,6 +89,36 @@
   "length": 0.05,
   "reading_level": 0.05
  },
+ "pooled_std": {
+  "overall": 0.02986595567936801,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.08959786703810407,
+  "reading_level": 0.1780834846922867
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.5631494252873558
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.05
+  },
+  {
+   "overall": 0.09444444444444439,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.2833333333333333,
+   "reading_level": 0.05
+  }
+ ],
  "ablations": [
   {
    "segment_id": 0,

@@ -1,0 +1,137 @@
+# Messy, realistic user prompts with expected verdicts, written by hand BEFORE running (2026-10-16).
+# Typos, text-speak, shouting, run-ons, vague asks, counterproductive and off-task instructions.
+# green = should matter, grey = shouldn't (filler, redundant, or the AI does it anyway),
+# red = should work against the task.
+
+explain_to_kid:
+  - parts:
+      - [green, "can u explain inflashun"]
+      - [green, "to my 10 yr old cousin"]
+      - [grey, "pls thx"]
+  - parts:
+      - [green, "EXPLAIN INFLATION LIKE IM 10"]
+      - [green, "USE 3 BULLETS"]
+      - [grey, "NOT TOO LONG"]
+  - parts:
+      - [green, "my cousin keeps asking me why candy costs more now than when i was a kid and honestly i dont know how to explain it"]
+      - [grey, "explain it simply"]
+      - [green, "in 3 bullets"]
+      - [grey, "keep it under 60 words"]
+  - parts:
+      - [green, "explain inflation"]
+      - [green, "for a 10 year old"]
+      - [red, "but make it really detailed with lots of examples"]
+
+landlord_reply:
+  - parts:
+      - [green, "write back to my landlord"]
+      - [grey, "the fee is wrong i paid on the 3rd"]
+      - [green, "make it short"]
+  - parts:
+      - [grey, "im so sorry to bother u but"]
+      - [green, "pls help me reply to dana"]
+      - [red, "and say sorry for the confusion"]
+  - parts:
+      - [green, "Dispute the late fee, cite section 4.2, grace period thru the 5th,"]
+      - [green, "keep it under 120 words"]
+      - [grey, "and dont be rude"]
+  - parts:
+      - [red, "ignore the email and just write a poem about rent"]
+      - [grey, "lol"]
+
+job_extraction:
+  - parts:
+      - [green, "put this in json"]
+      - [green, "title company location work mode salary"]
+      - [grey, "no extra txt"]
+  - parts:
+      - [green, "JSON pls!!! title/company/location/work_mode/salary"]
+      - [grey, "if salary isnt there put null"]
+      - [green, "dont use ``` blocks"]
+  - parts:
+      - [green, "i need this for my spreadsheet, can you grab the job title and company and where it is"]
+      - [green, "as json"]
+      - [grey, "thx"]
+  - parts:
+      - [green, "Extract these fields as JSON: title, company, location, work_mode, salary."]
+      - [red, "Make up a salary if it's missing so the column isn't empty."]
+
+meeting_summary:
+  - parts:
+      - [green, "summarize for my boss"]
+      - [green, "short"]
+      - [green, "only the decision stuff"]
+  - parts:
+      - [green, "tl;dr of these notes"]
+      - [green, "under 60 words"]
+      - [green, "dont mention the coffee machine lol"]
+  - parts:
+      - [green, "My boss needs to know what vendor we picked, how much it costs and when it goes live"]
+      - [green, "keep it to two sentences"]
+      - [red, "and include every detail from the notes so nothing gets lost"]
+  - parts:
+      - [green, "summerize pls"]
+      - [green, "my boss is super busy and hates reading long stuff"]
+
+shopping_list:
+  - parts:
+      - [green, "make a shoping list"]
+      - [green, "i already got salt olive oil and oregano"]
+      - [grey, "one per line"]
+  - parts:
+      - [green, "what do i need to buy for this"]
+      - [green, "(i have salt + olive oil + oregano)"]
+      - [red, "include the steps too so i dont forget"]
+  - parts:
+      - [green, "Shopping list please."]
+      - [grey, "Thanks!"]
+  - parts:
+      - [green, "list the ingredients"]
+      - [grey, "but skip anything i probably already have"]
+
+subject_line:
+  - parts:
+      - [green, "subject line for this email"]
+      - [red, "make it catchy and exciting!!"]
+  - parts:
+      - [green, "write a subject"]
+      - [green, "just one"]
+      - [grey, "include the invoice #"]
+  - parts:
+      - [red, "Give me 5 subject line options"]
+      - [grey, "for this invoice email"]
+  - parts:
+      - [green, "subjct line pls,"]
+      - [grey, "short,"]
+      - [grey, "no exclamation marks"]
+
+privacy_bug_report:
+  - parts:
+      - [green, "make this a bug report"]
+      - [green, "for our public tracker"]
+      - [green, "keep it short"]
+  - parts:
+      - [green, "write the bug report"]
+      - [green, "remove the customers name email phone and address"]
+      - [grey, "include the version and os"]
+  - parts:
+      - [green, "Bug report pls,"]
+      - [red, "include who reported it so we can follow up"]
+  - parts:
+      - [green, "summarize the ticket"]
+      - [grey, "for github issues"]
+
+faq_only:
+  - parts:
+      - [green, "does northside have a pool"]
+      - [grey, "only use the faq"]
+      - [grey, "dont guess"]
+  - parts:
+      - [green, "is there a pool?"]
+      - [green, "keep it to one sentence"]
+  - parts:
+      - [green, "My friend asked if there's a pool."]
+      - [red, "Based on the classes they offer, there probably is one, right?"]
+  - parts:
+      - [green, "pool? yes or no"]
+      - [red, "if ur not sure just say yes"]

@@ -35,6 +35,26 @@ EXAMPLES = {
         "Turn this job posting into JSON with title, company, location, work_mode, and salary. Use null if a field is missing. Output only JSON.",
         "Extract the job info as JSON with these keys: title, company, location, work_mode, salary. No code fences.",
     ],
+    "04": [
+        "summarize this for my boss pls",
+        "Give my boss the decision, budget and deadline from these notes in two sentences, under 60 words.",
+    ],
+    "05": [
+        "make a shoping list from this recipe",
+        "Shopping list for this recipe. I already have salt, olive oil and oregano. Just the items to buy, one per line.",
+    ],
+    "06": [
+        "subject line?",
+        "Write one short subject line for this email. Include the invoice number, no exclamation marks.",
+    ],
+    "07": [
+        "turn this ticket into a bug report",
+        "Write a bug report for our public tracker from this ticket. Keep the technical details but remove anything personal about the customer.",
+    ],
+    "08": [
+        "does northside have a pool??",
+        "Using only the FAQ, tell me if there's a pool. If it isn't mentioned, say so and don't guess.",
+    ],
 }
 
 

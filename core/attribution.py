@@ -92,6 +92,35 @@ def noise_floor(std: dict[str, float], k: float, minimum: float) -> dict[str, fl
     return {t: max(k * s, minimum) for t, s in std.items()}
 
 
+def pooled_std(groups: list[list[RunResult]], targets: list[str]) -> dict[str, float]:
+    """Run-to-run spread pooled over every group of repeated runs (reported in the eval only)."""
+    out = {}
+    for t in targets:
+        num = den = 0.0
+        for g in groups:
+            if len(g) > 1:
+                num += (len(g) - 1) * statistics.variance(r.scores[t] for r in g)
+                den += len(g) - 1
+        out[t] = (num / den) ** 0.5 if den else 0.0
+    return out
+
+
+def diff_noise(baseline: list[RunResult], ablated: list[RunResult], targets: list[str], k: float, minimum: float) -> dict[str, float]:
+    """Noise floor for one part: k standard errors of (mean with it - mean without it).
+
+    SE = sqrt(var_with / n_with + var_without / n_without). It uses only the full prompt's
+    runs and this part's own runs, so a part whose removal makes answers erratic doesn't
+    raise the bar for every other part.
+    """
+    out = {}
+    for t in targets:
+        vb = statistics.variance(r.scores[t] for r in baseline) if len(baseline) > 1 else 0.0
+        va = statistics.variance(r.scores[t] for r in ablated) if len(ablated) > 1 else 0.0
+        se = (vb / len(baseline) + va / max(1, len(ablated))) ** 0.5
+        out[t] = max(k * se, minimum)
+    return out
+
+
 async def run_prompt(challenge: Challenge, user_text: str, llm: BudgetedLLM, kind: str) -> RunResult:
     """Send one prompt (with the fixed context attached) and score the answer.
 
@@ -159,18 +188,10 @@ async def analyze(
     baseline = list(results[: config.baseline_runs])
     ablation_runs = list(results[config.baseline_runs :])
 
-    base_mean = _mean(baseline, targets)
-    base_std = _std(baseline, targets)
-    noise = noise_floor(base_std, config.noise_floor_k, config.min_noise_floor)
-
-    ablations, attribution, within = [], [], []
-    for s, p in zip(segments, ablated_prompts):
-        runs = ablation_runs[s.id * config.ablation_runs : (s.id + 1) * config.ablation_runs]
-        mean = _mean(runs, targets)
-        attr = {t: base_mean[t] - mean[t] for t in targets}
-        ablations.append(Ablation(segment_id=s.id, prompt=p, runs=runs, mean=mean))
-        attribution.append(attr)
-        within.append({t: abs(attr[t]) < noise[t] for t in targets})
+    groups = [ablation_runs[s.id * config.ablation_runs : (s.id + 1) * config.ablation_runs] for s in segments]
+    sc = score_runs(challenge, baseline, groups, config)
+    base_mean, attribution, within = sc["baseline_mean"], sc["attribution"], sc["within_noise"]
+    ablations = [Ablation(segment_id=s.id, prompt=p, runs=g, mean=m) for s, p, g, m in zip(segments, ablated_prompts, groups, sc["means"])]
 
     result = AnalysisResult(
         challenge_id=challenge.id,
@@ -181,8 +202,10 @@ async def analyze(
         targets=targets,
         baseline_runs=baseline,
         baseline_mean=base_mean,
-        baseline_std=base_std,
-        noise=noise,
+        baseline_std=sc["baseline_std"],
+        pooled_std=sc["pooled_std"],
+        noise=sc["noise"],
+        part_noise=sc["part_noise"],
         ablations=ablations,
         attribution=attribution,
         within_noise=within,
@@ -225,12 +248,14 @@ def score_runs(
     """Means, std, noise floor, attribution and noise flags from scored runs."""
     targets = challenge.targets
     base_mean, base_std = _mean(baseline, targets), _std(baseline, targets)
-    noise = noise_floor(base_std, config.noise_floor_k, config.min_noise_floor)
+    pooled = pooled_std([baseline, *ablation_runs], targets)
+    noise = noise_floor(base_std, config.noise_floor_k, config.min_noise_floor)  # full prompt only, for reference
+    part_noise = [diff_noise(baseline, runs, targets, config.noise_floor_k, config.min_noise_floor) for runs in ablation_runs]
     means = [_mean(runs, targets) for runs in ablation_runs]
     attribution = [{t: base_mean[t] - m[t] for t in targets} for m in means]
-    within = [{t: abs(a[t]) < noise[t] for t in targets} for a in attribution]
-    return {"baseline_mean": base_mean, "baseline_std": base_std, "noise": noise,
-            "means": means, "attribution": attribution, "within_noise": within}
+    within = [{t: abs(a[t]) < pn[t] for t in targets} for a, pn in zip(attribution, part_noise)]
+    return {"baseline_mean": base_mean, "baseline_std": base_std, "pooled_std": pooled, "noise": noise,
+            "part_noise": part_noise, "means": means, "attribution": attribution, "within_noise": within}
 
 
 def rescore(result: AnalysisResult, challenge: Challenge, config: Config) -> AnalysisResult:
@@ -244,7 +269,8 @@ def rescore(result: AnalysisResult, challenge: Challenge, config: Config) -> Ana
     ablations = [a.model_copy(update={"runs": runs, "mean": m}) for a, runs, m in zip(result.ablations, ablated, s["means"])]
     return result.model_copy(update={
         "targets": challenge.targets, "baseline_runs": baseline, "baseline_mean": s["baseline_mean"],
-        "baseline_std": s["baseline_std"], "noise": s["noise"], "ablations": ablations,
+        "baseline_std": s["baseline_std"], "pooled_std": s["pooled_std"], "noise": s["noise"],
+        "part_noise": s["part_noise"], "ablations": ablations,
         "attribution": s["attribution"], "within_noise": s["within_noise"],
     })
 

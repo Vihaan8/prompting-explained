@@ -1,0 +1,376 @@
+{
+ "challenge_id": "faq_only",
+ "user_prompt": "does northside have a pool only use the faq dont guess",
+ "final_prompt": "does northside have a pool only use the faq dont guess\n\n<document>\nNorthside Fitness FAQ\n\nHours: Mon-Fri 5am-11pm, Sat-Sun 7am-9pm.\nMembership: $39/month, or $29/month on a 12-month contract. Students get 20% off with ID.\nGuests: members can bring one guest per visit for $10.\nAmenities: free weights, cardio machines, sauna, lockers.\nClasses: yoga, spin, and aqua aerobics (Tue/Thu 6pm). Towels provided for all classes.\nParking: free lot behind the building.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "does northside have a pool ",
+   "role": "other",
+   "start": 0,
+   "end": 27
+  },
+  {
+   "id": 1,
+   "text": "only use the faq ",
+   "role": "other",
+   "start": 27,
+   "end": 44
+  },
+  {
+   "id": 2,
+   "text": "dont guess",
+   "role": "other",
+   "start": 44,
+   "end": 54
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "admits_gap",
+  "no_guessing",
+  "length"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "The FAQ doesn't say whether Northside has a pool. It lists amenities as free weights, cardio machines, sauna, and lockers, and mentions aqua aerobics classes on Tuesday and Thursday at 6pm, which suggests there's water access for those classes. But it doesn't explicitly mention a pool or whether it's open for general member use. You'd need to check with the gym directly to confirm.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 0.0,
+    "length": 0.72,
+    "overall": 0.5733333333333334
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "I can't tell from the FAQ. It doesn't mention a pool. The amenities list covers free weights, cardio machines, sauna, and lockers, and the classes list includes aqua aerobics on Tuesday and Thursday at 6pm. That class suggests there may be a pool, but the FAQ doesn't say so directly. For a definite answer, you'd need to contact Northside Fitness.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 0.0,
+    "length": 0.8,
+    "overall": 0.6
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "The FAQ doesn't say whether Northside has a pool. It lists amenities as free weights, cardio machines, sauna, and lockers, and the only pool-related item is aqua aerobics on Tuesdays and Thursdays at 6pm, which suggests there is pool access for those classes. But it doesn't say whether the pool is open for general member use outside of class, so you'd need to ask the gym directly.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 0.0,
+    "length": 0.6599999999999999,
+    "overall": 0.5533333333333333
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.5755555555555555,
+  "on_task": 1.0,
+  "admits_gap": 1.0,
+  "no_guessing": 0.0,
+  "length": 0.7266666666666666
+ },
+ "baseline_std": {
+  "overall": 0.02341256389522829,
+  "on_task": 0.0,
+  "admits_gap": 0.0,
+  "no_guessing": 0.0,
+  "length": 0.07023769168568499
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "admits_gap": 0.05,
+  "no_guessing": 0.05,
+  "length": 0.14047538337136997
+ },
+ "pooled_std": {
+  "overall": 0.13073014331197821,
+  "on_task": 0.0,
+  "admits_gap": 0.0,
+  "no_guessing": 0.31622776601683794,
+  "length": 0.11753013797887477
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.05,
+   "length": 0.08110350040397633
+  },
+  {
+   "overall": 0.40091253933686183,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 1.0,
+   "length": 0.21581885408318202
+  },
+  {
+   "overall": 0.09716982715144647,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.05,
+   "length": 0.2915094814543393
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "only use the faq dont guess",
+   "runs": [
+    {
+     "answer": "I can only answer from the FAQ, so here's what it covers:\n\n- **Hours:** Monday–Friday 5am–11pm; Saturday–Sunday 7am–9pm.\n- **Membership:** $39/month, or $29/month on a 12-month contract. Students get 20% off with ID.\n- **Guests:** Members can bring one guest per visit for $10.\n- **Amenities:** Free weights, cardio machines, sauna, and lockers.\n- **Classes:** Yoga, spin, and aqua aerobics (Tuesday/Thursday at 6pm). Towels are provided for all classes.\n- **Parking:** Free lot behind the building.\n\nThe FAQ doesn't include anything beyond this, so if you have another question, the gym would need to answer it directly.",
+     "scores": {
+      "on_task": 0.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.18000000000000005,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I can only answer from the FAQ, so here's what it covers:\n\n- **Hours:** Monday–Friday 5am–11pm; Saturday–Sunday 7am–9pm.\n- **Membership:** $39/month, or $29/month on a 12-month contract. Students get 20% off with ID.\n- **Guests:** Members can bring one guest per visit for $10.\n- **Amenities:** Free weights, cardio machines, sauna, and lockers.\n- **Classes:** Yoga, spin, and aqua aerobics (Tuesday/Thursday at 6pm). Towels are provided for all classes.\n- **Parking:** Free lot behind the building.\n\nThe FAQ doesn't include anything beyond this, so if you have a different question, you'll need to contact Northside Fitness directly.",
+     "scores": {
+      "on_task": 0.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.18000000000000005,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 0.18000000000000005
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "does northside have a pool dont guess",
+   "runs": [
+    {
+     "answer": "No, the FAQ doesn't mention a swimming pool. It lists free weights, cardio machines, a sauna, and lockers as amenities. There is an aqua aerobics class on Tuesdays and Thursdays at 6pm, but that doesn't confirm a pool is available for general use, so you'd want to call or check with the gym directly.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.92,
+      "overall": 0.9733333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "No, the FAQ doesn't list a pool. It mentions a sauna, free weights, cardio machines, lockers, and classes including aqua aerobics on Tuesday and Thursday at 6pm, but that class is typically held in water, so it's worth checking whether it's held at Northside or somewhere else. To confirm whether there's a pool, you could call the gym or ask at the front desk.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 0.0,
+      "length": 0.72,
+      "overall": 0.5733333333333334
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.7733333333333333,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 0.5,
+    "length": 0.8200000000000001
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "does northside have a pool only use the faq",
+   "runs": [
+    {
+     "answer": "Based on the FAQ, I can't tell whether Northside has a pool-only membership. The FAQ doesn't mention one. It lists the standard membership at $39/month (or $29/month on a 12-month contract, with 20% off for students), and it mentions aqua aerobics classes on Tuesday and Thursday at 6pm, but it doesn't say whether pool access is available separately or on its own. You'd need to contact Northside directly to ask about pool-only options.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.54,
+      "overall": 0.8466666666666667
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Based on the FAQ, I can't tell whether Northside has a pool that's open for general use. The only pool-related mention is aqua aerobics on Tuesdays and Thursdays at 6pm, which is a class. The document doesn't say whether there's lap swimming or open swim access outside of those classes. You'd need to contact Northside directly to find out.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.8200000000000001,
+      "overall": 0.9400000000000001
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.8933333333333333,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 0.68
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.5755555555555555,
+   "on_task": 1.0,
+   "admits_gap": 0.0,
+   "no_guessing": -1.0,
+   "length": 0.5466666666666665
+  },
+  {
+   "overall": -0.19777777777777783,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": -0.5,
+   "length": -0.09333333333333349
+  },
+  {
+   "overall": -0.3177777777777778,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": -1.0,
+   "length": 0.04666666666666652
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "admits_gap": true,
+   "no_guessing": false,
+   "length": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": false,
+   "length": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   0.5,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   0.5,
+   0.5
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  0.6666666666666666,
+  0.8333333333333334
+ ],
+ "follow_without": [
+  1.0,
+  0.75,
+  1.0
+ ],
+ "call_counts": {
+  "baseline": 3,
+  "ablation": 6,
+  "judge": 9
+ },
+ "calls": 18,
+ "input_tokens": 9986,
+ "output_tokens": 1927,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T09:59:18.368756+00:00"
+}

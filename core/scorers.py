@@ -81,6 +81,42 @@ def keywords_present(text: str, keywords: list[str]) -> float:
 _NEGATION = re.compile(r"\b(?:not|no|never|without|don't|doesn't|won't|didn't|do not|does not|will not)\s+(?:\w+\s+){0,3}$")
 
 
+def groups_found(text: str, groups: list[list[str]]) -> list[bool]:
+    """For each group of alternatives, whether any of them appears (case-insensitive)."""
+    low = text.lower().replace("\u2019", "'")
+    return [any(k.lower() in low for k in g) for g in groups]
+
+
+def keyword_groups_present(text: str, groups: list[list[str]]) -> float:
+    """Fraction of groups with at least one alternative present ("Nov 22" or "November 22")."""
+    return sum(groups_found(text, groups)) / len(groups)
+
+
+def item_lines(text: str, groups: list[list[str]], max_words: int = 8) -> int:
+    """Short lines (bulleted or plain) that name an item from the groups."""
+    n = 0
+    for line in text.splitlines():
+        core = _BULLET.sub("", line).strip()
+        if core and len(words(core)) <= max_words and any(k.lower() in core.lower() for g in groups for k in g):
+            n += 1
+    return n
+
+
+def lines_naming(text: str, groups: list[list[str]], max_words: int = 8, at_least: int | None = None,
+                 target: int | None = None) -> float:
+    """Short lines that each name a list item.
+
+    With at_least: a gate, 1 if there are at least that many (a real list, not tips or a question back).
+    With target: 1 for exactly that many lines, less the further off.
+    """
+    if asks_back(text):
+        return 0.0
+    n = item_lines(text, groups, max_words)
+    if at_least is not None:
+        return 1.0 if n >= at_least else 0.0
+    return _clip(1 - abs(n - target) / target)
+
+
 def keywords_used(text: str, keywords: list[str]) -> list[str]:
     """Keywords that appear at least once without a negation just before them.
 
@@ -98,9 +134,14 @@ def keywords_used(text: str, keywords: list[str]) -> list[str]:
     return used
 
 
-def keywords_absent(text: str, keywords: list[str]) -> float:
-    """1 if none of the keywords are used, minus a share for each one that is."""
+def keywords_absent(text: str, keywords: list[str], strict: bool = False) -> float:
+    """1 if none of the keywords are used, minus a share for each one that is.
+
+    With strict=True any single use scores 0 (for leaks and made-up claims, where one is enough).
+    """
     found = len(keywords_used(text, keywords))
+    if strict:
+        return 0.0 if found else 1.0
     return _clip(1 - found / len(keywords))
 
 
@@ -240,6 +281,8 @@ SCORERS: dict[str, Callable[..., float]] = {
     "bullet_count": bullet_count,
     "reading_grade_max": reading_grade_max,
     "keywords_present": keywords_present,
+    "keyword_groups_present": keyword_groups_present,
+    "lines_naming": lines_naming,
     "keywords_absent": keywords_absent,
     "json_only": json_only,
     "json_keys_present": json_keys_present,

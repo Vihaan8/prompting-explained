@@ -1,223 +1,250 @@
 {
-  "challenge_id": "job_extraction",
-  "user_prompt": "Pull the job details into JSON: title, company, location, work_mode, salary. Write work_mode as a single word.",
-  "final_prompt": "Pull the job details into JSON: title, company, location, work_mode, salary. Write work_mode as a single word.\n\n<document>\nok so we're finally hiring!!  Brightline Health is looking for a Data Analyst\nto join our care-ops team. you'd be working w/ claims + scheduling data, building\ndashboards (Tableau, some SQL), and helping clinic managers figure out where\npatients are falling through the cracks.\n\nwhere: our Raleigh, NC office — it's hybrid, so 3 days in, 2 from home\nwho: 2+ yrs w/ SQL, comfortable explaining numbers to non-data people\nperks: $2,000 sign-on bonus!! plus good coffee, flexible hours, health/dental/vision,\n401k match up to 5%, and a team that actually likes each other lol\n\ninterested? send your resume + a short note to careers@brightlinehealth.example\nby end of month. no recruiters pls\n</document>",
-  "segments": [
-    {
-      "id": 0,
-      "text": "Pull the job details into JSON: title, company, location, work_mode, salary. ",
-      "role": "task",
-      "start": 0,
-      "end": 77
-    },
-    {
-      "id": 1,
-      "text": "Write work_mode as a single word.",
-      "role": "constraint",
-      "start": 77,
-      "end": 110
-    }
-  ],
-  "segmentation_method": "llm",
-  "targets": [
-    "overall",
-    "json_only",
-    "fields",
-    "accuracy",
-    "no_invented_salary"
-  ],
-  "baseline_runs": [
-    {
-      "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't state a base salary. It mentions a $2,000 sign-on bonus, which is not the same as salary, so I left the field null.",
-      "scores": {
-        "json_only": 0.5,
-        "fields": 1.0,
-        "accuracy": 1.0,
-        "no_invented_salary": 1.0,
-        "overall": 0.875
-      },
-      "stop_reason": "end_turn"
-    },
-    {
-      "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It mentions a $2,000 sign-on bonus and a 401k match of up to 5%, but neither is a salary figure.",
-      "scores": {
-        "json_only": 0.5,
-        "fields": 1.0,
-        "accuracy": 1.0,
-        "no_invented_salary": 1.0,
-        "overall": 0.875
-      },
-      "stop_reason": "end_turn"
-    },
-    {
-      "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't state a base salary. It mentions a $2,000 sign-on bonus, which is not the same as a salary, so I've left the field null.",
-      "scores": {
-        "json_only": 0.5,
-        "fields": 1.0,
-        "accuracy": 1.0,
-        "no_invented_salary": 1.0,
-        "overall": 0.875
-      },
-      "stop_reason": "end_turn"
-    }
-  ],
-  "baseline_mean": {
-    "overall": 0.875,
+ "challenge_id": "job_extraction",
+ "user_prompt": "Pull the job details into JSON: title, company, location, work_mode, salary. Write work_mode as a single word.",
+ "final_prompt": "Pull the job details into JSON: title, company, location, work_mode, salary. Write work_mode as a single word.\n\n<document>\nok so we're finally hiring!!  Brightline Health is looking for a Data Analyst\nto join our care-ops team. you'd be working w/ claims + scheduling data, building\ndashboards (Tableau, some SQL), and helping clinic managers figure out where\npatients are falling through the cracks.\n\nwhere: our Raleigh, NC office — it's hybrid, so 3 days in, 2 from home\nwho: 2+ yrs w/ SQL, comfortable explaining numbers to non-data people\nperks: $2,000 sign-on bonus!! plus good coffee, flexible hours, health/dental/vision,\n401k match up to 5%, and a team that actually likes each other lol\n\ninterested? send your resume + a short note to careers@brightlinehealth.example\nby end of month. no recruiters pls\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Pull the job details into JSON: title, company, location, work_mode, salary. ",
+   "role": "task",
+   "start": 0,
+   "end": 77
+  },
+  {
+   "id": 1,
+   "text": "Write work_mode as a single word.",
+   "role": "constraint",
+   "start": 77,
+   "end": 110
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "json_only",
+  "fields",
+  "accuracy",
+  "no_invented_salary"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't state a base salary. It mentions a $2,000 sign-on bonus, which is not the same as salary, so I left the field null.",
+   "scores": {
     "json_only": 0.5,
     "fields": 1.0,
     "accuracy": 1.0,
-    "no_invented_salary": 1.0
+    "no_invented_salary": 1.0,
+    "overall": 0.875
+   },
+   "stop_reason": "end_turn"
   },
-  "baseline_std": {
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It mentions a $2,000 sign-on bonus and a 401k match of up to 5%, but neither is a salary figure.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 1.0,
+    "no_invented_salary": 1.0,
+    "overall": 0.875
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't state a base salary. It mentions a $2,000 sign-on bonus, which is not the same as a salary, so I've left the field null.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 1.0,
+    "no_invented_salary": 1.0,
+    "overall": 0.875
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.875,
+  "json_only": 0.5,
+  "fields": 1.0,
+  "accuracy": 1.0,
+  "no_invented_salary": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "json_only": 0.05,
+  "fields": 0.05,
+  "accuracy": 0.05,
+  "no_invented_salary": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.0,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "json_only": 0.05,
+   "fields": 0.05,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  },
+  {
+   "overall": 0.05,
+   "json_only": 0.05,
+   "fields": 0.05,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Write work_mode as a single word.",
+   "runs": [
+    {
+     "answer": "hybrid",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "hybrid",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
     "overall": 0.0,
     "json_only": 0.0,
     "fields": 0.0,
     "accuracy": 0.0,
     "no_invented_salary": 0.0
+   }
   },
-  "noise": {
-    "overall": 0.05,
-    "json_only": 0.05,
-    "fields": 0.05,
-    "accuracy": 0.05,
-    "no_invented_salary": 0.05
-  },
-  "ablations": [
+  {
+   "segment_id": 1,
+   "prompt": "Pull the job details into JSON: title, company, location, work_mode, salary.",
+   "runs": [
     {
-      "segment_id": 0,
-      "prompt": "Write work_mode as a single word.",
-      "runs": [
-        {
-          "answer": "hybrid",
-          "scores": {
-            "json_only": 0.0,
-            "fields": 0.0,
-            "accuracy": 0.0,
-            "no_invented_salary": 0.0,
-            "overall": 0.0
-          },
-          "stop_reason": "end_turn"
-        },
-        {
-          "answer": "hybrid",
-          "scores": {
-            "json_only": 0.0,
-            "fields": 0.0,
-            "accuracy": 0.0,
-            "no_invented_salary": 0.0,
-            "overall": 0.0
-          },
-          "stop_reason": "end_turn"
-        }
-      ],
-      "mean": {
-        "overall": 0.0,
-        "json_only": 0.0,
-        "fields": 0.0,
-        "accuracy": 0.0,
-        "no_invented_salary": 0.0
-      }
-    },
-    {
-      "segment_id": 1,
-      "prompt": "Pull the job details into JSON: title, company, location, work_mode, salary.",
-      "runs": [
-        {
-          "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't state a base salary. It does mention a $2,000 sign-on bonus and a 401k match of up to 5%.",
-          "scores": {
-            "json_only": 0.5,
-            "fields": 1.0,
-            "accuracy": 0.75,
-            "no_invented_salary": 1.0,
-            "overall": 0.8125
-          },
-          "stop_reason": "end_turn"
-        },
-        {
-          "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting does not state a base salary. It mentions a $2,000 sign-on bonus and a 401k match of up to 5%, but no salary range.",
-          "scores": {
-            "json_only": 0.5,
-            "fields": 1.0,
-            "accuracy": 0.75,
-            "no_invented_salary": 1.0,
-            "overall": 0.8125
-          },
-          "stop_reason": "end_turn"
-        }
-      ],
-      "mean": {
-        "overall": 0.8125,
-        "json_only": 0.5,
-        "fields": 1.0,
-        "accuracy": 0.75,
-        "no_invented_salary": 1.0
-      }
-    }
-  ],
-  "attribution": [
-    {
-      "overall": 0.875,
+     "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't state a base salary. It does mention a $2,000 sign-on bonus and a 401k match of up to 5%.",
+     "scores": {
       "json_only": 0.5,
       "fields": 1.0,
-      "accuracy": 1.0,
-      "no_invented_salary": 1.0
+      "accuracy": 0.75,
+      "no_invented_salary": 1.0,
+      "overall": 0.8125
+     },
+     "stop_reason": "end_turn"
     },
     {
-      "overall": 0.0625,
-      "json_only": 0.0,
-      "fields": 0.0,
-      "accuracy": 0.25,
-      "no_invented_salary": 0.0
+     "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting does not state a base salary. It mentions a $2,000 sign-on bonus and a 401k match of up to 5%, but no salary range.",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 1.0,
+      "accuracy": 0.75,
+      "no_invented_salary": 1.0,
+      "overall": 0.8125
+     },
+     "stop_reason": "end_turn"
     }
-  ],
-  "within_noise": [
-    {
-      "overall": false,
-      "json_only": false,
-      "fields": false,
-      "accuracy": false,
-      "no_invented_salary": false
-    },
-    {
-      "overall": false,
-      "json_only": true,
-      "fields": true,
-      "accuracy": false,
-      "no_invented_salary": true
-    }
-  ],
-  "explanations": {},
-  "call_counts": {
-    "segment": 1,
-    "baseline": 3,
-    "ablation": 4
+   ],
+   "mean": {
+    "overall": 0.8125,
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.875,
+   "json_only": 0.5,
+   "fields": 1.0,
+   "accuracy": 1.0,
+   "no_invented_salary": 1.0
   },
-  "calls": 8,
-  "input_tokens": 2873,
-  "output_tokens": 720,
+  {
+   "overall": 0.0625,
+   "json_only": 0.0,
+   "fields": 0.0,
+   "accuracy": 0.25,
+   "no_invented_salary": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "json_only": false,
+   "fields": false,
+   "accuracy": false,
+   "no_invented_salary": false
+  },
+  {
+   "overall": false,
+   "json_only": true,
+   "fields": true,
+   "accuracy": false,
+   "no_invented_salary": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4
+ },
+ "calls": 8,
+ "input_tokens": 2873,
+ "output_tokens": 720,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
   "model": "claude-haiku-5-5",
-  "config": {
-    "provider": "anthropic",
-    "model": "claude-haiku-5-5",
-    "temperature": null,
-    "thinking": "disabled",
-    "effort": "low",
-    "max_tokens": 800,
-    "segment_max_tokens": 2000,
-    "explain_max_tokens": 120,
-    "baseline_runs": 3,
-    "ablation_runs": 2,
-    "max_segments": 10,
-    "noise_floor_k": 2.0,
-    "min_noise_floor": 0.05,
-    "ablation_mode": "delete",
-    "max_concurrency": 8,
-    "max_calls_per_analysis": 30,
-    "explain_top_n": 3,
-    "price_per_mtok": {
-      "input": 0.1,
-      "output": 0.5
-    }
-  },
-  "created_at": "2026-10-16T07:40:44.513732+00:00"
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T07:40:44.513732+00:00"
 }

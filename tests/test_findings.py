@@ -88,7 +88,7 @@ def test_noise_nerd_facts_numbers(res):
     text = F.noise_nerd_facts(res, "length")
     scores = [F.f2(r.scores["length"]) for r in res.baseline_runs]
     assert all(s in text for s in scores)
-    assert F.f2(res.noise["length"]) in text and F.f2(res.baseline_std["length"]) in text
+    assert "standard errors" in text and F.f2(res.config["min_noise_floor"]) in text
 
 
 def test_requirement_details_match_scores():
@@ -175,7 +175,7 @@ def test_simple_items_groups_quiet_parts(res):
 
 def test_unclear_when_answers_vary_a_lot(res):
     noisy = res.model_copy(deep=True)
-    noisy.noise = {**noisy.noise, OVERALL: 0.45}
+    noisy.part_noise = [{**pn, OVERALL: 0.45} for pn in noisy.part_noise]
     noisy.attribution[1] = {**noisy.attribution[1], OVERALL: 0.3}  # moved, but within a large floor
     assert F.verdict(noisy, 1, OVERALL) == "no effect"
     assert F.headline(noisy, 1) == '"Use 3 bullet points.": not clear'
@@ -194,13 +194,23 @@ def _with_judge(res, with_, without):
 
 def test_per_part_check_drives_kinds(res):
     r = _with_judge(res, [1.0, 1.0, 0.0], [1.0, 0.0, 0.0])
-    assert [F.kind(r, i) for i in range(3)] == ["anyway", "mattered", "ignored"]
-    assert F.headline(r, 1) == '"Use 3 bullet points." mattered'
-    assert F.why(r, 1) == "Without it, the answer stopped doing this."
+    assert [F.kind(r, i) for i in range(3)] == ["anyway", "followed", "ignored"]
+    assert F.headline(r, 1) == '"Use 3 bullet points.": the AI followed it'
+    assert F.why(r, 1) == "Without it, the answer stopped doing this. The task checks scored about the same either way."
     assert F.headline(r, 2) == '"Keep it under 60 words." was ignored'
     assert F.why(r, 0).startswith("The AI did this anyway.")
     kinds = [k for k, _, _ in F.simple_items(r)]
-    assert kinds == ["mattered", "ignored", "anyway"]
+    assert kinds == ["followed", "ignored", "anyway"]
+
+
+def test_score_beats_per_part_check_for_green(res):
+    r = res.model_copy(deep=True)
+    r.follow_with, r.follow_without = [1.0, 1.0, 1.0], [1.0, 0.0, 1.0]
+    assert F.kind(r, 1) == "mattered"  # the score dropped without it, so it's green, not just "followed"
+
+
+def test_checks_passed(res):
+    assert F.checks_passed(res) == (4, 4)
 
 
 def test_anyway_parts_are_grouped(res):
@@ -220,3 +230,11 @@ def test_hurt_uses_measured_reason_not_model_sentence(hurt_res):
     r = hurt_res.model_copy(deep=True)
     r.explanations = {2: "Without this part, the answer dropped a sentence."}
     assert F.why(r, 2) == "Without it, the answer did better on length (60 words or fewer)."
+
+
+def test_summary_line_flags_non_answers(res):
+    assert F.summary_line(res) == "Your prompt passed 4 of 4 checks for this task."
+    r = res.model_copy(deep=True)
+    for run in r.baseline_runs:
+        run.scores["on_task"] = 0.0
+    assert F.summary_line(r).startswith("With this prompt the AI didn't do the task.")

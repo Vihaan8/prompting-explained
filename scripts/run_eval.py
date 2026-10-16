@@ -341,7 +341,7 @@ def report(config: Config) -> None:
     calls = sum(r.calls for r in results.values())
     out("# Evaluation summary\n")
     out(f"Model: {config.model}. Settings: {config.baseline_runs} baseline runs, {config.ablation_runs} runs per removed part, "
-        f"noise floor = max({config.noise_floor_k:g} × std, {config.min_noise_floor}).")
+        f"each part's noise floor = max({config.noise_floor_k:g} × standard error of its with/without difference, {config.min_noise_floor}).")
     out(f"Attempts: {len(attempts)} synthetic prompts (3 challenges × 3 personas × 10). Analyses completed: {len(results)}.")
     out(f"Parts per prompt: median {statistics.median(n_seg):g}, range {min(n_seg)}–{max(n_seg)}. "
         f"Segmentation: {methods.get('llm', 0)} by the model, {methods.get('fallback', 0)} by the regex fallback.")
@@ -363,8 +363,9 @@ def report(config: Config) -> None:
     for aid, r in results.items():
         for t in r.targets:
             above = [not r.within_noise[s.id][t] for s in r.segments]
+            floors = [r.part_noise[s.id][t] for s in r.segments] if r.part_noise else [r.noise[t]]
             rows.append({"id": aid, "challenge_id": r.challenge_id, "target": t, "baseline_std": r.baseline_std[t],
-                         "noise_floor": r.noise[t], "n_segments": len(above), "n_above": sum(above)})
+                         "noise_floor": statistics.fmean(floors), "n_segments": len(above), "n_above": sum(above)})
     noise = pd.DataFrame(rows)
     noise.to_csv(RESULTS / "noise_floor.csv", index=False)
     agg = noise.groupby(["challenge_id", "target"]).agg(
@@ -562,13 +563,14 @@ def report(config: Config) -> None:
         n_fail = sum(sum(j is None for j in r.judge_baseline) + sum(j is None for runs in r.judge_ablation for j in runs) for r in judged.values())
         n_judge = sum(len(r.judge_baseline) + sum(len(x) for x in r.judge_ablation) for r in judged.values())
         out(f"An AI rated every answer against every part of its prompt (yes / partly / no / n/a). {len(judged)} analyses, "
-            f"{n_judge} judged answers, {n_fail} judgements unusable. A part is shown as mattered if the task score dropped "
-            "without it, or if answers did it with the part but mostly stopped without it (mean rating gap ≥ 0.5).\n")
-        order = ["mattered", "hurt", "anyway", "ignored", "unclear", "quiet"]
+            f"{n_judge} judged answers, {n_fail} judgements unusable. A part mattered if the task score dropped "
+            "without it. It counts as \"AI followed it\" if answers did it with the part and mostly stopped without it "
+            "(mean rating gap ≥ 0.5) while the score didn't move.\n")
+        order = ["mattered", "followed", "hurt", "anyway", "ignored", "unclear", "quiet"]
         tab = pd.crosstab(kd.role, kd.kind).reindex(columns=order, fill_value=0)
         tab["n"] = tab.sum(axis=1)
         tab = tab.sort_values("n", ascending=False)
-        out("| Role | Parts | Mattered | Hurt | AI did it anyway | Ignored | Not clear | Nothing to act on |\n|---|---|---|---|---|---|---|---|")
+        out("| Role | Parts | Mattered | AI followed it | Hurt | AI did it anyway | Ignored | Not clear | Nothing to act on |\n|---|---|---|---|---|---|---|---|---|")
         for role, row in tab.iterrows():
             cells = " | ".join(f"{100 * row[k] / row.n:.0f}%" for k in order)
             out(f"| {role} | {row.n} | {cells} |")

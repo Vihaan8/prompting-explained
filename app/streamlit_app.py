@@ -215,6 +215,7 @@ with left:
 
 BADGE = {
     "mattered": ("Mattered", "good"),
+    "followed": ("AI followed it", "followed"),
     "hurt": ("Worked against you", "bad"),
     "ignored": ("Ignored", "neutral"),
     "unclear": ("Not clear", "neutral"),
@@ -231,9 +232,9 @@ def heatmap(res: AnalysisResult) -> str:
         lead = s.text[: len(s.text) - len(s.text.lstrip())]
         trail = s.text[len(s.text.rstrip()) :]
         core = text_html(s.text.strip())
-        if k in ("mattered", "hurt"):
+        if k in ("mattered", "hurt", "followed"):
             alpha = 0.35 + 0.65 * F.strength(res, s.id) / max_abs
-            rgb = "207,232,213" if k == "mattered" else "245,211,208"
+            rgb = {"mattered": "207,232,213", "hurt": "245,211,208", "followed": "215,230,243"}[k]
             span = f'<span class="pe-seg" style="background: rgba({rgb},{alpha:.2f})">{core}</span>'
         else:
             span = f'<span class="pe-seg noise">{core}</span>'
@@ -247,7 +248,7 @@ def cards(res: AnalysisResult) -> str:
         label, tone = BADGE[kind]
         if head.endswith(" most"):
             label, head = "Mattered most", head[: -len(" most")]
-        for tail in (" mattered", " worked against you", " was ignored", " didn't matter here", " didn't matter", ": not clear"):
+        for tail in (" mattered", ": the AI followed it", " worked against you", " was ignored", " didn't matter here", " didn't matter", ": not clear"):
             if head.endswith(tail):
                 head = head[: -len(tail)]
                 break
@@ -267,7 +268,7 @@ def how_it_works(res: AnalysisResult) -> None:
         ("Measure the full prompt", f"Your prompt ran {len(res.baseline_runs)} times. Code scored each answer from 0 to 1 on these checks: {checks}. Scores: {runs}."),
         ("Remove one part at a time", f"Each shortened prompt ran {per_part} more times. A part's effect is the score with it minus the score without it."),
         ("Check each part directly", "An AI read every answer and rated whether it did what each part asked. That catches things the code checks can't see."),
-        ("Leave out the noise", f"Effects smaller than twice the run-to-run spread (here {F.f2(res.noise[OVERALL])}) stay grey instead of being claimed."),
+        ("Leave out the noise", "Answers vary from run to run. Each part's effect is compared with how much its own runs and your prompt's runs varied (two standard errors, at least 0.05). Smaller effects stay grey instead of being claimed."),
     ]
     md('<p class="pe-muted">The method is occlusion, also called leave-one-out attribution: remove one part, rerun, compare.</p>')
     md('<ol class="pe-steps">' + "".join(
@@ -281,12 +282,20 @@ def how_it_works(res: AnalysisResult) -> None:
     judged = bool(res.follow_with)
     rows = []
     for s in res.segments:
-        cells = [esc(F.short_segment(s.text)), F.f2(res.baseline_mean[OVERALL]), F.f2(res.ablations[s.id].mean[OVERALL])]
+        cells = [esc(F.short_segment(s.text)), F.f2(res.baseline_mean[OVERALL]), F.f2(res.ablations[s.id].mean[OVERALL]),
+                 F.f2(F.part_floor(res, s.id, OVERALL))]
         if judged:
             cells.append(f"{pct(res.follow_with[s.id])} / {pct(res.follow_without[s.id])}")
         rows.append("<tr>" + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
-    head = "<th>Part</th><th>Score with it</th><th>Without it</th>" + ("<th>Did it, with / without</th>" if judged else "")
+    head = "<th>Part</th><th>Score with it</th><th>Without it</th><th>Noise floor</th>" + ("<th>Did it, with / without</th>" if judged else "")
     md(f'<div class="pe-table"><table><thead><tr>{head}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>')
+    check_rows = "".join(
+        f"<tr><td>{esc(r.label)}</td><td>{F.f2(res.baseline_mean[r.id])}</td>"
+        f"<td>{'passed' if res.baseline_mean[r.id] >= 0.999 else 'missed'}</td></tr>"
+        for r in ch.requirements
+    )
+    md('<p class="pe-step-title" style="margin-top:18px !important">The checks, for your full prompt</p>')
+    md(f'<div class="pe-table"><table><thead><tr><th>Check</th><th>Mean score</th><th>Result</th></tr></thead><tbody>{check_rows}</tbody></table></div>')
     md(
         f'<p class="pe-small">{res.calls} calls to {esc(res.model)}. "Did it" is an AI\'s judgement of whether the answers did what '
         "that part asked. The sentences about parts that mattered were written by an AI comparing the two answers; "
@@ -300,8 +309,14 @@ with right:
         if shown is None:
             md('<div class="pe-empty">Your results will show up here. Write a prompt and analyze it, or pick a sample.</div>')
         else:
+            md(f'<p class="pe-summary">{esc(F.summary_line(shown))}</p>')
             md(heatmap(shown))
-            md('<p class="pe-muted">Green: it changed the answer. Red: the answer did better without it. Grey: no real difference.</p>')
+            md(
+                '<p class="pe-legend"><span class="it"><span class="sw good"></span>Made the answer better</span>'
+                '<span class="it"><span class="sw followed"></span>AI followed it, score unchanged</span>'
+                '<span class="it"><span class="sw bad"></span>Answer was better without it</span>'
+                '<span class="it"><span class="sw neutral"></span>No real difference</span></p>'
+            )
             md(cards(shown))
             with st.expander("See the AI's answer"):
                 mono = " mono" if ch.id == "job_extraction" else ""

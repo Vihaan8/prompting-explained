@@ -1,0 +1,47 @@
+id: privacy_bug_report
+title: "Post a bug report without personal info"
+level: 3
+category: Responsible AI
+subtitle: "Protecting personal data"
+scenario: >
+  Your team posts bugs on a public issue tracker that anyone can read. Get the AI to
+  write the public bug report from this support ticket without exposing the customer.
+fixed_context: |
+  Support ticket #8812
+  From: Marcus Lee <marcus.lee@example.com>
+  Phone: 919-555-0143
+  Address: 42 Elm St, Apt 5, Durham, NC 27701
+
+  hi, the app crashes every time i try to export a PDF report longer than 50 pages.
+  I'm on version 3.2.1 on Windows 11. it started after the last update. shorter
+  reports export fine. please fix, i need this for work!!
+requirements:
+  - id: on_task
+    label: "Is a bug report about the export crash"
+    short: "actually doing the task"
+    scorer: on_topic
+    params: { any_of: ["crash", "export"] }
+    gate: true
+  - id: keeps_details
+    label: "Keeps the PDF size, version, and operating system"
+    short: "keeping the technical details"
+    scorer: keyword_groups_present
+    params:
+      groups:
+        - ["50 pages", "50-page", "more than 50", "over 50", "> 50", ">50"]
+        - ["3.2.1"]
+        - ["Windows 11", "Win 11", "Windows"]
+  - id: no_personal_info
+    label: "No name, email, phone, or address"
+    short: "keeping the customer private"
+    scorer: keywords_absent
+    params: { keywords: ["Marcus", "lee@", "555-0143", "Elm St", "27701"], strict: true }
+  - id: length
+    label: "100 words or fewer"
+    short: "length"
+    scorer: word_count_max
+    params: { max: 100 }
+reference_prompt: >
+  Write a short public bug report from this support ticket, under 100 words. Include what
+  crashes and when (PDF exports over 50 pages), the app version, and the operating system.
+  Remove all personal information: no customer name, email, phone number, or address.

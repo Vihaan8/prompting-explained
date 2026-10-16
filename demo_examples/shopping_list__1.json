@@ -1,0 +1,316 @@
+{
+ "challenge_id": "shopping_list",
+ "user_prompt": "make a shoping list from this recipe",
+ "final_prompt": "make a shoping list from this recipe\n\n<document>\nWeeknight lemon chicken (serves 4)\n\nIngredients\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt\n\nSteps\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "make a shoping list ",
+   "role": "task",
+   "start": 0,
+   "end": 20
+  },
+  {
+   "id": 1,
+   "text": "from this recipe",
+   "role": "context",
+   "start": 20,
+   "end": 36
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "needed_items",
+  "skips_pantry",
+  "one_per_line",
+  "no_steps"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Here's your shopping list for the weeknight lemon chicken:\n\n**Produce**\n- 2 lemons\n- 3 cloves garlic\n- 1 lb baby potatoes\n\n**Meat**\n- 4 chicken thighs\n\n**Pantry**\n- Olive oil\n- Dried oregano\n- Salt",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.25,
+    "no_steps": 1.0,
+    "overall": 0.5625
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here's your shopping list for the weeknight lemon chicken:\n\n**Produce**\n- 2 lemons\n- 3 cloves garlic\n- 1 lb baby potatoes\n\n**Meat**\n- 4 chicken thighs\n\n**Pantry**\n- Olive oil (1 tbsp needed)\n- Dried oregano (1 tsp needed)\n- Salt",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.25,
+    "no_steps": 1.0,
+    "overall": 0.5625
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here's your shopping list for the weeknight lemon chicken:\n\n**Produce**\n- 2 lemons\n- 3 cloves garlic\n- 1 lb baby potatoes\n\n**Meat**\n- 4 chicken thighs\n\n**Pantry**\n- Olive oil (1 tbsp needed, check if you already have some)\n- Dried oregano (1 tsp needed)\n- Salt",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.5,
+    "no_steps": 1.0,
+    "overall": 0.625
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.5833333333333334,
+  "on_task": 1.0,
+  "needed_items": 1.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.3333333333333333,
+  "no_steps": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.03608439182435161,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.14433756729740643,
+  "no_steps": 0.0
+ },
+ "noise": {
+  "overall": 0.07216878364870322,
+  "on_task": 0.05,
+  "needed_items": 0.05,
+  "skips_pantry": 0.05,
+  "one_per_line": 0.28867513459481287,
+  "no_steps": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.0337538578042076,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.1350154312168304,
+  "no_steps": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.16666666666666666,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.07511565157216644,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.3004626062886658,
+   "no_steps": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "from this recipe",
+   "runs": [
+    {
+     "answer": "Your message came through with the recipe but no question, so I'm not sure what you'd like to know. Here's a quick summary in case that helps:\n\n**Weeknight Lemon Chicken (serves 4)**\n\n**Ingredients:**\n- 4 chicken thighs\n- 2 lemons\n- 3 garlic cloves\n- 1 tbsp olive oil\n- 1 tsp dried oregano\n- 1 lb baby potatoes\n- Salt\n\n**Steps:**\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano, and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n\nWhat would you like to know? For example, I can help with substitutions, scaling the recipe, adding vegetables, timing, or checking doneness (chicken thighs are safe at 165°F internal, and they're often more tender cooked a bit past that).",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.0,
+      "no_steps": 0.0,
+      "overall": 0.25
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You didn't include a question, so I'm not sure what you'd like to know. Here's what I can tell you from the recipe:\n\n**Weeknight Lemon Chicken (serves 4)**\n\n**Ingredients:**\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- 1 tbsp olive oil\n- 1 tsp dried oregano\n- 1 lb baby potatoes\n- Salt\n\n**Steps:**\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano, and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n\nLet me know what you'd like to do with it, such as scaling it, adapting it to a different protein, making a substitution, or checking the cooking time.",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.0,
+      "no_steps": 0.0,
+      "overall": 0.25
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.25,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.0,
+    "no_steps": 0.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "make a shoping list",
+   "runs": [
+    {
+     "answer": "Here's your shopping list for the weeknight lemon chicken:\n\n**Produce**\n- 2 lemons\n- 3 cloves garlic\n- 1 lb baby potatoes\n\n**Meat**\n- 4 chicken thighs\n\n**Pantry**\n- Olive oil\n- Dried oregano\n- Salt",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.25,
+      "no_steps": 1.0,
+      "overall": 0.5625
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Shopping List: Weeknight Lemon Chicken (serves 4)**\n\n**Meat & Produce**\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- 1 lb baby potatoes\n\n**Pantry**\n- Olive oil (1 tbsp needed)\n- Dried oregano (1 tsp needed)\n- Salt",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.0,
+      "no_steps": 1.0,
+      "overall": 0.5
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.53125,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.125,
+    "no_steps": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.33333333333333337,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.3333333333333333,
+   "no_steps": 1.0
+  },
+  {
+   "overall": 0.05208333333333337,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.20833333333333331,
+   "no_steps": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": false,
+   "no_steps": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  }
+ ],
+ "explanations": {
+  "0": "Without this part, the answer becomes longer, adds a full recipe with steps, and asks the user what they want to know."
+ },
+ "judge_baseline": [
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    0.5
+   ],
+   [
+    0.5,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  0.25,
+  1.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7,
+  "explain": 1
+ },
+ "calls": 16,
+ "input_tokens": 9250,
+ "output_tokens": 1578,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T10:12:05.561608+00:00"
+}

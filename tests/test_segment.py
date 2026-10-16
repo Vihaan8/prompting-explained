@@ -135,3 +135,9 @@ def test_align_attaches_dropped_connector_to_next_part():
     assert segs is not None
     assert [s.display for s in segs] == ["Use simple words", "and exactly 3 bullets.", "Be firm", "and don't apologize."]
     assert _join(segs) == text
+
+
+def test_opening_bracket_stays_with_its_part():
+    text = "what do i need to buy for this (i have salt + olive oil)"
+    segs = validate_segments(text, [{"text": "what do i need to buy for this", "role": "task"}, {"text": "(i have salt + olive oil)", "role": "context"}])
+    assert [s.display for s in segs] == ["what do i need to buy for this", "(i have salt + olive oil)"]
