@@ -1,0 +1,56 @@
+id: landlord_reply
+title: "Push back on a late fee"
+level: 2
+scenario: >
+  Your landlord charged you a late fee, but your lease says you paid on time.
+  Get the AI to write a firm but respectful reply disputing the fee.
+fixed_context: |
+  From: Dana Whitfield, Maple Court Apartments
+  Subject: Late fee - Unit 3B
+
+  Hi,
+
+  Our records show this month's rent was received on the 3rd. As you know, rent is due
+  on the 1st, so a late fee of $75 has been added to your account. We were disappointed
+  to see this, since on-time payments help us keep the building running for everyone.
+  We'd appreciate it if you could be more careful going forward. Please pay the fee
+  along with next month's rent.
+
+  Thanks for understanding,
+  Dana
+
+  ---
+  Lease excerpt (Maple Court residential lease):
+  Section 4.1: Rent is $1,450 per month, payable by check, money order, or the resident
+  portal.
+  Section 4.2: Rent is due on the 1st. A grace period applies through the 5th; no late
+  fees may be charged during the grace period.
+  Section 4.3: Returned payments incur a $35 fee.
+  Section 9.4: Notices to the landlord must be in writing and may be sent by email.
+requirements:
+  - id: on_task
+    label: "Is a reply to the landlord"
+    short: "actually doing the task"
+    scorer: starts_line_with
+    params: { any_of: ["hi", "hello", "dear", "subject"] }
+    gate: true
+  - id: length
+    label: "120 words or fewer"
+    short: "length"
+    scorer: word_count_max
+    params: { max: 120 }
+  - id: cites_facts
+    label: "Mentions the $75 fee, Section 4.2, and the grace period"
+    short: "citing the facts"
+    scorer: keywords_present
+    params: { keywords: ["$75", "4.2", "grace period"] }
+  - id: no_apology
+    label: "Doesn't apologize"
+    short: "not apologizing"
+    scorer: keywords_absent
+    params: { keywords: ["sorry", "apologize", "apologise"] }
+reference_prompt: >
+  Write a reply to my landlord disputing the $75 late fee in the email below. I paid
+  rent on the 3rd. Cite Section 4.2 of the lease and point out that the grace period
+  runs through the 5th, so no late fee can be charged. Ask for the fee to be removed.
+  Keep it under 120 words. Be firm and respectful, and do not apologize.

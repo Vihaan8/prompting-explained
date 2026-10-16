@@ -1,0 +1,510 @@
+{
+ "challenge_id": "explain_to_kid",
+ "user_prompt": "Write a quick explanation of why prices go up over time, aimed at a 10-year-old. It should be exactly 3 bullet points, 60 words or fewer, and readable at a fifth-grade level.",
+ "final_prompt": "Write a quick explanation of why prices go up over time, aimed at a 10-year-old. It should be exactly 3 bullet points, 60 words or fewer, and readable at a fifth-grade level.",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Write a quick explanation of why prices go up over time, ",
+   "role": "task",
+   "start": 0,
+   "end": 57
+  },
+  {
+   "id": 1,
+   "text": "aimed at a 10-year-old. ",
+   "role": "audience",
+   "start": 57,
+   "end": 81
+  },
+  {
+   "id": 2,
+   "text": "It should be exactly 3 bullet points, ",
+   "role": "format",
+   "start": 81,
+   "end": 119
+  },
+  {
+   "id": 3,
+   "text": "60 words or fewer, ",
+   "role": "constraint",
+   "start": 119,
+   "end": 138
+  },
+  {
+   "id": 4,
+   "text": "and readable at a fifth-grade level.",
+   "role": "constraint",
+   "start": 138,
+   "end": 174
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "bullets",
+  "length",
+  "reading_level"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "- Things cost more over time because it takes more money to make them. Workers want higher pay, and farms, factories, and stores pay more for gas, electricity, and supplies.\n- Money also loses some of its buying power, so the same dollar buys a little less than it used to.\n- When lots of people want something and there isn't enough to go around, sellers can charge more for it.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.8666666666666667,
+    "reading_level": 0.5643529411764703,
+    "overall": 0.8103398692810456
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Prices often go up because making things costs more over time, like paying workers more and buying more expensive materials.\n- When lots of people want something, but there isn't enough of it, sellers can charge more.\n- Over many years, money also slowly becomes worth a little less, so it takes more of it to buy the same things.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.2327586206896548,
+    "overall": 0.7442528735632182
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Things cost more over time because it takes more money to make and ship them, like paying workers and buying materials.\n- Lots of people want to buy stuff, and when demand is high, sellers can charge more.\n- Money slowly loses some of its buying power, so the same dollar can buy a little less than it could before.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.43620689655172384,
+    "overall": 0.8120689655172413
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.7888872361205017,
+  "on_task": 1.0,
+  "bullets": 1.0,
+  "length": 0.9555555555555556,
+  "reading_level": 0.41110615280594964
+ },
+ "baseline_std": {
+  "overall": 0.03866415890873327,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.07698003589195009,
+  "reading_level": 0.16721612914794282
+ },
+ "noise": {
+  "overall": 0.07732831781746655,
+  "on_task": 0.05,
+  "bullets": 0.05,
+  "length": 0.15396007178390017,
+  "reading_level": 0.33443225829588563
+ },
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "aimed at a 10-year-old. It should be exactly 3 bullet points, 60 words or fewer, and readable at a fifth-grade level.",
+   "runs": [
+    {
+     "answer": "Your message seems to have cut off before the actual request came through. Could you tell me what you'd like me to write? Once I know the topic, I'll make it exactly 3 bullet points, 60 words or fewer, written at a fifth-grade reading level for a 10-year-old.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.8216666666666661,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like your message got cut off before the actual request. Could you tell me what you'd like me to write? Once I know the topic, I'll keep it to exactly 3 bullet points, 60 words or fewer, at a fifth-grade reading level for a 10-year-old.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.883234042553191,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "bullets": 0.0,
+    "length": 1.0,
+    "reading_level": 0.8524503546099286
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Write a quick explanation of why prices go up over time, It should be exactly 3 bullet points, 60 words or fewer, and readable at a fifth-grade level.",
+   "runs": [
+    {
+     "answer": "- Things cost more over time because people need more money to make and ship them, like paying workers and buying materials.\n- When lots of people want to buy something, sellers can charge more for it.\n- Money also loses some of its value over time, so it takes more dollars to buy the same thing.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.5236296296296296,
+      "overall": 0.8412098765432098
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Money loses value over time. When the government and banks create more money, each dollar buys a little less.\n- Making things costs more. Wages, materials, and rent often rise, and businesses pass those costs on to shoppers.\n- People want more stuff. When lots of people want the same goods, sellers can charge higher prices.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9206049382716048,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.7618148148148147
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Write a quick explanation of why prices go up over time, aimed at a 10-year-old. 60 words or fewer, and readable at a fifth-grade level.",
+   "runs": [
+    {
+     "answer": "Prices usually go up over time because making things costs more as the years pass. Workers want bigger paychecks, farmers and factories pay more for fuel and materials, and rent and food get more expensive too. Businesses pass those costs on to you by charging a bit more for their goods.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.4139607843137256,
+      "overall": 0.47132026143790856
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Prices go up over time because the things we need to make and sell cost more to get. Farmers pay more for seeds and tractors, and workers want bigger paychecks. When it costs more to make something, stores charge more for it. Also, lots of people wanting the same things can push prices higher too.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.5689934640522876,
+    "on_task": 1.0,
+    "bullets": 0.0,
+    "length": 1.0,
+    "reading_level": 0.7069803921568628
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Write a quick explanation of why prices go up over time, aimed at a 10-year-old. It should be exactly 3 bullet points, and readable at a fifth-grade level.",
+   "runs": [
+    {
+     "answer": "- **Stuff costs more to make.** Workers, farmers, and factories need more pay over time, and the materials used to make things can get more expensive too. Companies pass some of that cost on to you.\n\n- **People want more stuff.** When lots of people want the same toy, game, or snack, sellers can charge more for it, and they often do.\n\n- **Money gets a little less powerful.** Governments and banks usually add new money to the economy over time. When there's more money around, each dollar buys a little less, so prices go up to match.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.41666666666666663,
+      "reading_level": 0.9622763157894731,
+      "overall": 0.7929809941520466
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Things cost more to make.** Workers want bigger paychecks, and farmers and factories pay more for gas, metal, and other materials. When it costs more to make something, the store charges more to cover those costs.\n\n- **People want to buy more stuff.** When lots of people have money and want the same toys, snacks, or video games, sellers can ask for higher prices and still sell them all.\n\n- **Money gets a little weaker.** Governments and banks usually add more money to the economy over time, so each dollar buys a little less than it used to. That means a candy bar that cost one dollar years ago might cost two dollars now.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.1333333333333333,
+      "reading_level": 0.8020714285714284,
+      "overall": 0.6451349206349205
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.7190579573934835,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.27499999999999997,
+    "reading_level": 0.8821738721804508
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "Write a quick explanation of why prices go up over time, aimed at a 10-year-old. It should be exactly 3 bullet points, 60 words or fewer,",
+   "runs": [
+    {
+     "answer": "- Things cost more over time because it takes more money to make them. Workers want higher pay, and farmers, factories, and stores have bigger bills for things like gas and electricity.\n\n- Money also gets a little less powerful over time. When lots of money is added to the economy, each dollar buys a bit less than before.\n\n- Sometimes people want things more than there are to buy, so sellers can charge more. Think of a popular new toy that everyone wants before the stores get more of them.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.5333333333333333,
+      "reading_level": 0.7021818181818176,
+      "overall": 0.745171717171717
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Things cost more over time because it takes more money to make and sell them, like paying workers and buying materials.\n- Lots of people want to buy stuff, so sellers can charge more, especially when there's not enough to go around.\n- Money slowly loses a little value, so the same dollar buys a little less each year, which is called inflation.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9833333333333333,
+      "reading_level": 0.24347540983606564,
+      "overall": 0.7422695810564663
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.7437206491140917,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.7583333333333333,
+    "reading_level": 0.4728286140089416
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.7888872361205017,
+   "on_task": 1.0,
+   "bullets": 1.0,
+   "length": -0.0444444444444444,
+   "reading_level": -0.44134420180397893
+  },
+  {
+   "overall": -0.13171770215110312,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": -0.0444444444444444,
+   "reading_level": -0.3507086620088651
+  },
+  {
+   "overall": 0.21989377206821414,
+   "on_task": 0.0,
+   "bullets": 1.0,
+   "length": -0.0444444444444444,
+   "reading_level": -0.29587423935091317
+  },
+  {
+   "overall": 0.06982927872701816,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.6805555555555556,
+   "reading_level": -0.4710677193745012
+  },
+  {
+   "overall": 0.045166587006409964,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.1972222222222223,
+   "reading_level": -0.06172246120299196
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "bullets": false,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": false,
+   "length": true,
+   "reading_level": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.5
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    0.0,
+    0.0,
+    null,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.6666666666666666
+ ],
+ "follow_without": [
+  0.0,
+  0.75,
+  0.0,
+  1.0,
+  1.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 10
+ },
+ "calls": 14,
+ "input_tokens": 1576,
+ "output_tokens": 1598,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T07:58:50.433645+00:00"
+}

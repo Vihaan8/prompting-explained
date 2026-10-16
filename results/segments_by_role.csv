@@ -1,0 +1,285 @@
+id,challenge_id,persona,role,text,attribution,abs_attribution,noise_floor,above_noise
+explain_to_kid__average__01,explain_to_kid,average,other,My little cousin keeps asking why stuff at the store costs more every year.,-0.11060325241079533,0.11060325241079533,0.12775926921610586,False
+explain_to_kid__average__01,explain_to_kid,average,other,Can you explain inflation so a kid can understand it?,0.10275128324490151,0.10275128324490151,0.12775926921610586,False
+explain_to_kid__average__01,explain_to_kid,average,other,Keep it short with some bullet points.,-0.04337003650836446,0.04337003650836446,0.12775926921610586,False
+explain_to_kid__average__02,explain_to_kid,average,task,Explain inflation,0.708886848273055,0.708886848273055,0.23455579232055893,True
+explain_to_kid__average__02,explain_to_kid,average,audience,to a 10 year old.,0.3061090704952773,0.3061090704952773,0.23455579232055893,True
+explain_to_kid__average__02,explain_to_kid,average,format,Use 3 bullet points.,0.47046419870040546,0.47046419870040546,0.23455579232055893,True
+explain_to_kid__average__03,explain_to_kid,average,task,hey can u explain why prices keep going up at stores?,0.44890906651981743,0.44890906651981743,0.07980495036191333,True
+explain_to_kid__average__03,explain_to_kid,average,audience,my cousin asked and he's like 10.,0.21073664253677354,0.21073664253677354,0.07980495036191333,True
+explain_to_kid__average__03,explain_to_kid,average,constraint,short answer please,-0.09633641996994391,0.09633641996994391,0.07980495036191333,True
+explain_to_kid__average__04,explain_to_kid,average,task,I need to explain inflation to my little cousin.,0.34146189165334806,0.34146189165334806,0.09071626447103502,True
+explain_to_kid__average__04,explain_to_kid,average,audience,"Make it simple, like for a kid,",-0.23215990321844693,0.23215990321844693,0.09071626447103502,True
+explain_to_kid__average__04,explain_to_kid,average,constraint,and don't make it too long.,0.026684113875570237,0.026684113875570237,0.09071626447103502,False
+explain_to_kid__average__05,explain_to_kid,average,task,Write a quick explanation of inflation,0.888888888888889,0.888888888888889,0.05,True
+explain_to_kid__average__05,explain_to_kid,average,audience,for a child.,0.38888888888888895,0.38888888888888895,0.05,True
+explain_to_kid__average__05,explain_to_kid,average,format,Bullet points would be good.,0.2553333333333335,0.2553333333333335,0.05,True
+explain_to_kid__average__05,explain_to_kid,average,constraint,Under 60 words if possible.,0.5596660818713451,0.5596660818713451,0.05,True
+explain_to_kid__average__06,explain_to_kid,average,context,My cousin wants to know why everything gets more expensive.,0.21654275779899096,0.21654275779899096,0.20159232650926878,True
+explain_to_kid__average__06,explain_to_kid,average,task,Can you tell him about inflation,0.33737213201685823,0.33737213201685823,0.20159232650926878,True
+explain_to_kid__average__06,explain_to_kid,average,audience,in simple words he would get?,0.16043944030181084,0.16043944030181084,0.20159232650926878,False
+explain_to_kid__average__07,explain_to_kid,average,task,Can you break down inflation into a few easy bullet points,0.45001050818260113,0.45001050818260113,0.05,True
+explain_to_kid__average__07,explain_to_kid,average,audience,for a fifth grader? Thanks.,0.43307646562940966,0.43307646562940966,0.05,True
+explain_to_kid__average__08,explain_to_kid,average,task,Why do prices at the grocery store keep going up?,0.3333333333333333,0.3333333333333333,0.05,True
+explain_to_kid__average__08,explain_to_kid,average,audience,"Explain it like I'm explaining to a kid,",0.3333333333333333,0.3333333333333333,0.05,True
+explain_to_kid__average__08,explain_to_kid,average,format,in bullet points.,-0.052112235044976696,0.052112235044976696,0.05,True
+explain_to_kid__average__09,explain_to_kid,average,task,Give me a simple explanation of inflation,0.36851851851851847,0.36851851851851847,0.10323970270197301,True
+explain_to_kid__average__09,explain_to_kid,average,audience,"that a child could read and understand,",0.36851851851851847,0.36851851851851847,0.10323970270197301,True
+explain_to_kid__average__09,explain_to_kid,average,format,with bullet points.,0.08788562802480915,0.08788562802480915,0.10323970270197301,False
+explain_to_kid__average__10,explain_to_kid,average,context,My cousin is curious about inflation.,0.7535570470806752,0.7535570470806752,0.18166223443504878,True
+explain_to_kid__average__10,explain_to_kid,average,task,Explain it to him simply. Please,-0.029914823524106793,0.029914823524106793,0.18166223443504878,False
+explain_to_kid__average__10,explain_to_kid,average,format,keep it to three bullet points,0.515977975589536,0.515977975589536,0.18166223443504878,True
+explain_to_kid__average__10,explain_to_kid,average,audience,and make sure a 10 year old can follow it.,-0.027221137697509556,0.027221137697509556,0.18166223443504878,False
+explain_to_kid__expert__01,explain_to_kid,expert,task,Explain inflation,0.09308166665979833,0.09308166665979833,0.08381769932208175,True
+explain_to_kid__expert__01,explain_to_kid,expert,audience,to my 10-year-old cousin,0.06231846240179584,0.06231846240179584,0.08381769932208175,False
+explain_to_kid__expert__01,explain_to_kid,expert,context,who asked why prices keep going up.,-0.0431133557800224,0.0431133557800224,0.08381769932208175,False
+explain_to_kid__expert__01,explain_to_kid,expert,format,"Use exactly 3 bullet points,",0.33785886644219987,0.33785886644219987,0.08381769932208175,True
+explain_to_kid__expert__01,explain_to_kid,expert,constraint,"keep the whole answer to 60 words or fewer,",0.23550745550745555,0.23550745550745555,0.08381769932208175,True
+explain_to_kid__expert__01,explain_to_kid,expert,constraint,and write it at a grade 5 reading level or below.,0.019386644219977822,0.019386644219977822,0.08381769932208175,False
+explain_to_kid__expert__02,explain_to_kid,expert,context,My little cousin wants to know why stuff at the store keeps getting more expensive.,-0.0856533055421943,0.0856533055421943,0.05,True
+explain_to_kid__expert__02,explain_to_kid,expert,task,Can you explain inflation,-0.113233392122281,0.113233392122281,0.05,True
+explain_to_kid__expert__02,explain_to_kid,expert,format,in exactly three bullet points?,0.22287771898883013,0.22287771898883013,0.05,True
+explain_to_kid__expert__02,explain_to_kid,expert,constraint,Keep it under 60 words,0.13082929813647093,0.13082929813647093,0.05,True
+explain_to_kid__expert__02,explain_to_kid,expert,audience,and make sure a 10-year-old can read it easily.,0.17776660787771914,0.17776660787771914,0.05,True
+explain_to_kid__expert__03,explain_to_kid,expert,task,Help me explain inflation,0.996940170940171,0.996940170940171,0.05,True
+explain_to_kid__expert__03,explain_to_kid,expert,audience,to a 10-year-old.,0.002471702471702586,0.002471702471702586,0.05,False
+explain_to_kid__expert__03,explain_to_kid,expert,format,"Give me exactly 3 bullet points,",0.3302735042735043,0.3302735042735043,0.05,True
+explain_to_kid__expert__03,explain_to_kid,expert,constraint,"no more than 60 words total,",0.10080851188385442,0.10080851188385442,0.05,True
+explain_to_kid__expert__03,explain_to_kid,expert,constraint,and use simple words a fifth grader would understand.,0.21745764405845047,0.21745764405845047,0.05,True
+explain_to_kid__expert__04,explain_to_kid,expert,task,I need a short answer for a kid about inflation and rising prices.,1.0,1.0,0.05,True
+explain_to_kid__expert__04,explain_to_kid,expert,format,"Format it as exactly three bullets,",0.33333333333333337,0.33333333333333337,0.05,True
+explain_to_kid__expert__04,explain_to_kid,expert,constraint,"60 words max,",0.17392929292929293,0.17392929292929293,0.05,True
+explain_to_kid__expert__04,explain_to_kid,expert,constraint,written at grade 5 level or lower.,0.18137128731273933,0.18137128731273933,0.05,True
+explain_to_kid__expert__05,explain_to_kid,expert,task,"Write a quick explanation of why prices go up over time,",0.7888872361205017,0.7888872361205017,0.07732831781746655,True
+explain_to_kid__expert__05,explain_to_kid,expert,audience,aimed at a 10-year-old.,-0.13171770215110312,0.13171770215110312,0.07732831781746655,True
+explain_to_kid__expert__05,explain_to_kid,expert,format,"It should be exactly 3 bullet points,",0.21989377206821414,0.21989377206821414,0.07732831781746655,True
+explain_to_kid__expert__05,explain_to_kid,expert,constraint,"60 words or fewer,",0.06982927872701816,0.06982927872701816,0.07732831781746655,False
+explain_to_kid__expert__05,explain_to_kid,expert,constraint,and readable at a fifth-grade level.,0.045166587006409964,0.045166587006409964,0.07732831781746655,False
+explain_to_kid__expert__06,explain_to_kid,expert,context,My cousin is 10 and asked about inflation. Please,1.0,1.0,0.05,True
+explain_to_kid__expert__06,explain_to_kid,expert,format,"answer in three bullet points only,",0.33333333333333337,0.33333333333333337,0.05,True
+explain_to_kid__expert__06,explain_to_kid,expert,constraint,"stay under 60 words,",0.06829861111111135,0.06829861111111135,0.05,True
+explain_to_kid__expert__06,explain_to_kid,expert,constraint,and keep the vocabulary at grade 5 or below.,0.14347719298245643,0.14347719298245643,0.05,True
+explain_to_kid__expert__07,explain_to_kid,expert,task,Explain inflation,0.9569111111111112,0.9569111111111112,0.09176882388391522,True
+explain_to_kid__expert__07,explain_to_kid,expert,audience,so a 10-year-old gets it. Constraints:,-0.04188376068376065,0.04188376068376065,0.09176882388391522,False
+explain_to_kid__expert__07,explain_to_kid,expert,format,"exactly 3 bullets,",0.2902444444444445,0.2902444444444445,0.09176882388391522,True
+explain_to_kid__expert__07,explain_to_kid,expert,constraint,"60 words or less,",0.37173274853801186,0.37173274853801186,0.09176882388391522,True
+explain_to_kid__expert__07,explain_to_kid,expert,constraint,grade 5 reading level or easier.,0.03955000000000031,0.03955000000000031,0.09176882388391522,False
+explain_to_kid__expert__08,explain_to_kid,expert,task,Can you break down inflation for a kid?,0.8955599418218464,0.8955599418218464,0.15174221162430046,True
+explain_to_kid__expert__08,explain_to_kid,expert,format,"Three bullet points exactly,",0.22889327515517977,0.22889327515517977,0.15174221162430046,True
+explain_to_kid__expert__08,explain_to_kid,expert,constraint,"under 60 words,",0.08958094453187371,0.08958094453187371,0.15174221162430046,False
+explain_to_kid__expert__08,explain_to_kid,expert,audience,and simple enough for a grade 5 reader to follow.,0.11807724601128167,0.11807724601128167,0.15174221162430046,False
+explain_to_kid__expert__09,explain_to_kid,expert,task,"Tell me why store prices keep climbing,",0.9555555555555556,0.9555555555555556,0.10183501544346309,True
+explain_to_kid__expert__09,explain_to_kid,expert,audience,explained for a 10-year-old.,-0.028444444444444383,0.028444444444444383,0.10183501544346309,False
+explain_to_kid__expert__09,explain_to_kid,expert,format,"Use exactly three bullet points,",0.30833333333333346,0.30833333333333346,0.10183501544346309,True
+explain_to_kid__expert__09,explain_to_kid,expert,constraint,"no more than 60 words,",0.2986913580246915,0.2986913580246915,0.10183501544346309,True
+explain_to_kid__expert__09,explain_to_kid,expert,constraint,and grade 5 or lower reading level.,0.29498673300165834,0.29498673300165834,0.10183501544346309,True
+explain_to_kid__expert__10,explain_to_kid,expert,task,Please give a kid-friendly explanation of inflation,0.9462485196795539,0.9462485196795539,0.09473577220998981,True
+explain_to_kid__expert__10,explain_to_kid,expert,audience,for my 10-year-old cousin.,0.009445467252909512,0.009445467252909512,0.09473577220998981,False
+explain_to_kid__expert__10,explain_to_kid,expert,format,"It needs exactly 3 bullet points,",0.2795818530128873,0.2795818530128873,0.09473577220998981,True
+explain_to_kid__expert__10,explain_to_kid,expert,constraint,"a 60-word limit,",0.09151836094939525,0.09151836094939525,0.09473577220998981,False
+explain_to_kid__expert__10,explain_to_kid,expert,constraint,and language a grade 5 student can read without help.,0.1280368910411368,0.1280368910411368,0.09473577220998981,True
+explain_to_kid__novice__01,explain_to_kid,novice,task,hi could you explain inflation to me?,0.035783136286143935,0.035783136286143935,0.149712199114488,False
+explain_to_kid__novice__01,explain_to_kid,novice,context,my little cousin asked about why stuff costs more now,0.07162217957198147,0.07162217957198147,0.149712199114488,False
+explain_to_kid__novice__01,explain_to_kid,novice,context,and I dont really know how to explain it,0.0019772472348001946,0.0019772472348001946,0.149712199114488,False
+explain_to_kid__novice__02,explain_to_kid,novice,task,Please explain inflation simply. thanks!,0.4741856386999242,0.4741856386999242,0.07388536064555196,True
+explain_to_kid__novice__03,explain_to_kid,novice,context,my cousin wants to know why prices keep going up at the store.,0.1368785838157539,0.1368785838157539,0.22064047301925976,False
+explain_to_kid__novice__03,explain_to_kid,novice,task,can you help me explain it,0.048307498718205166,0.048307498718205166,0.22064047301925976,False
+explain_to_kid__novice__04,explain_to_kid,novice,task,can u tell me what inflation is?,0.423327120767006,0.423327120767006,0.1792984543683243,True
+explain_to_kid__novice__04,explain_to_kid,novice,audience,kid level pls,0.11897963451652066,0.11897963451652066,0.1792984543683243,False
+explain_to_kid__novice__05,explain_to_kid,novice,task,Could you explain why prices go up?,0.3583547800602919,0.3583547800602919,0.46102341708447553,False
+explain_to_kid__novice__05,explain_to_kid,novice,audience,"My cousin is young, like 10 maybe.",0.31898491854647965,0.31898491854647965,0.46102341708447553,False
+explain_to_kid__novice__06,explain_to_kid,novice,task,I need to explain inflation to a child.,0.3665456662560536,0.3665456662560536,0.40980491347324305,False
+explain_to_kid__novice__06,explain_to_kid,novice,politeness_filler,Could you help?,0.10726548486604559,0.10726548486604559,0.40980491347324305,False
+explain_to_kid__novice__06,explain_to_kid,novice,politeness_filler,Thanks so much.,-0.0832203512775731,0.0832203512775731,0.40980491347324305,False
+explain_to_kid__novice__07,explain_to_kid,novice,task,"whats inflation,",-0.09517231929159642,0.09517231929159642,0.09009152319201634,True
+explain_to_kid__novice__07,explain_to_kid,novice,audience,and how do i explain it to my little cousin,0.10482768070840354,0.10482768070840354,0.09009152319201634,True
+explain_to_kid__novice__08,explain_to_kid,novice,politeness_filler,"Hey, would you mind",-0.06746365743019186,0.06746365743019186,0.14095008696576147,False
+explain_to_kid__novice__08,explain_to_kid,novice,task,explaining inflation,0.23534447265110894,0.23534447265110894,0.14095008696576147,True
+explain_to_kid__novice__08,explain_to_kid,novice,constraint,in an easy way?,-0.05948885347189922,0.05948885347189922,0.14095008696576147,False
+explain_to_kid__novice__08,explain_to_kid,novice,audience,Something a kid could get.,-0.271289265524296,0.271289265524296,0.14095008696576147,True
+explain_to_kid__novice__09,explain_to_kid,novice,context,My cousin asked me why everything costs more every year.,0.2602352663598663,0.2602352663598663,0.20774257194740914,True
+explain_to_kid__novice__09,explain_to_kid,novice,task,Could you help me answer him?,0.005480855296442433,0.005480855296442433,0.20774257194740914,False
+explain_to_kid__novice__09,explain_to_kid,novice,politeness_filler,Thank you!,0.2515360908592774,0.2515360908592774,0.20774257194740914,True
+explain_to_kid__novice__10,explain_to_kid,novice,task,Please help me explain why prices at stores keep rising.,0.5130953630796151,0.5130953630796151,0.12001475502032666,True
+explain_to_kid__novice__10,explain_to_kid,novice,audience,Keep it simple for a kid.,0.5126540625658509,0.5126540625658509,0.12001475502032666,True
+job_extraction__average__01,job_extraction,average,task,"Pull the job title, company, location, remote or onsite status, and salary out of this posting",-0.22499999999999992,0.22499999999999992,0.05,True
+job_extraction__average__01,job_extraction,average,format,and put it in JSON,0.4000000000000001,0.4000000000000001,0.05,True
+job_extraction__average__01,job_extraction,average,context,for my job tracker.,-0.24999999999999994,0.24999999999999994,0.05,True
+job_extraction__average__02,job_extraction,average,task,Can you turn this job posting into JSON?,0.8125,0.8125,0.05,True
+job_extraction__average__02,job_extraction,average,constraint,"I need the title, company, location, work mode, and salary.",0.4375,0.4375,0.05,True
+job_extraction__average__03,job_extraction,average,context,I'm tracking applications in a spreadsheet.,0.0,0.0,0.05,False
+job_extraction__average__03,job_extraction,average,task,"Extract the key info from this posting as JSON,",0.6,0.6,0.05,True
+job_extraction__average__03,job_extraction,average,constraint,just the data please.,-0.050000000000000044,0.050000000000000044,0.05,True
+job_extraction__average__04,job_extraction,average,task,"Make a JSON object from this job ad with the role, company name, where it's based, whether it's remote, and the pay.",0.4875,0.4875,0.05,True
+job_extraction__average__04,job_extraction,average,constraint,Keep it clean.,0.0625,0.0625,0.05,True
+job_extraction__average__05,job_extraction,average,task,Read this posting,0.0,0.0,0.05,False
+job_extraction__average__05,job_extraction,average,task,"and give me JSON with title, company, location, work_mode and salary",0.8125,0.8125,0.05,True
+job_extraction__average__05,job_extraction,average,context,so I can paste it into my tracker.,0.0,0.0,0.05,False
+job_extraction__average__06,job_extraction,average,task,Summarize this job listing into JSON.,0.6,0.6,0.05,True
+job_extraction__average__06,job_extraction,average,constraint,Include the job title and company and location at least.,0.0,0.0,0.05,False
+job_extraction__average__07,job_extraction,average,format,Job tracker needs JSON.,0.7833333333333332,0.7833333333333332,0.07216878364870322,True
+job_extraction__average__07,job_extraction,average,task,"Grab the title, company, location, and work mode from this posting.",0.18333333333333324,0.18333333333333324,0.07216878364870322,True
+job_extraction__average__08,job_extraction,average,task,"Turn this into structured data for my applications list: title, company, location, work mode, salary.",0.4375,0.4375,0.05,True
+job_extraction__average__08,job_extraction,average,format,Output JSON only.,0.4375,0.4375,0.05,True
+job_extraction__average__09,job_extraction,average,format,I want the details from this job post as JSON.,0.6166666666666666,0.6166666666666666,0.2886751345948128,True
+job_extraction__average__09,job_extraction,average,task,"Title, company, where it is, and how much it pays.",0.016666666666666607,0.016666666666666607,0.2886751345948128,False
+job_extraction__average__10,job_extraction,average,task,"Pull out the important fields from this posting for my tracker,",-0.06250000000000006,0.06250000000000006,0.05,True
+job_extraction__average__10,job_extraction,average,format,formatted as JSON,0.4749999999999999,0.4749999999999999,0.05,True
+job_extraction__average__10,job_extraction,average,constraint,with a short explanation of each field.,-0.1750000000000001,0.1750000000000001,0.05,True
+job_extraction__expert__01,job_extraction,expert,task,"Extract the job title, company name, location, and work mode (remote, hybrid, or onsite) from the attached posting",0.09999999999999998,0.09999999999999998,0.05,True
+job_extraction__expert__01,job_extraction,expert,format,and return only a JSON object with those keys plus a salary field.,0.0,0.0,0.05,False
+job_extraction__expert__01,job_extraction,expert,constraint,"If the posting doesn't state a salary, set salary to null rather than estimating one.",0.0,0.0,0.05,False
+job_extraction__expert__01,job_extraction,expert,constraint,No text outside the JSON.,0.0,0.0,0.05,False
+job_extraction__expert__02,job_extraction,expert,context,I'm logging this role in my job tracker.,0.0,0.0,0.05,False
+job_extraction__expert__02,job_extraction,expert,task,"From the attached job posting, output strictly JSON with the keys title, company, location, work_mode, and salary.",0.2875,0.2875,0.05,True
+job_extraction__expert__02,job_extraction,expert,constraint,Use only what the posting says;,-0.0625,0.0625,0.05,True
+job_extraction__expert__02,job_extraction,expert,constraint,"if no salary is listed, leave it null and don't guess.",0.0625,0.0625,0.05,True
+job_extraction__expert__02,job_extraction,expert,format,Nothing but the JSON.,0.125,0.125,0.05,True
+job_extraction__expert__03,job_extraction,expert,task,Parse the attached posting into a JSON object for my spreadsheet import.,0.0,0.0,0.05,False
+job_extraction__expert__03,job_extraction,expert,format,"Required fields: title, company, location, work_mode, salary.",0.17500000000000004,0.17500000000000004,0.05,True
+job_extraction__expert__03,job_extraction,expert,constraint,"Work mode should be one of remote, hybrid, or onsite as stated in the posting.",0.03125,0.03125,0.05,False
+job_extraction__expert__03,job_extraction,expert,constraint,Don't invent a salary if none appears.,0.0,0.0,0.05,False
+job_extraction__expert__03,job_extraction,expert,format,"Output the raw JSON only, no commentary.",0.125,0.125,0.05,True
+job_extraction__expert__04,job_extraction,expert,task,"Pull the key details from the attached job ad: role title, hiring company, location, work arrangement, and pay.",-0.16250000000000003,0.16250000000000003,0.05,True
+job_extraction__expert__04,job_extraction,expert,format,Return them as clean JSON with no extra text.,0.4875,0.4875,0.05,True
+job_extraction__expert__04,job_extraction,expert,constraint,"If pay isn't mentioned, the salary value should be null, not a made-up figure.",-0.06250000000000006,0.06250000000000006,0.05,True
+job_extraction__expert__05,job_extraction,expert,task,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",0.23750000000000004,0.23750000000000004,0.05,True
+job_extraction__expert__05,job_extraction,expert,constraint,"Get the title and company exactly as written,",0.0,0.0,0.05,False
+job_extraction__expert__05,job_extraction,expert,format,"and mark work_mode as remote, hybrid, or onsite.",0.0,0.0,0.05,False
+job_extraction__expert__05,job_extraction,expert,constraint,Salary stays null unless the posting actually states one.,0.0,0.0,0.05,False
+job_extraction__expert__06,job_extraction,expert,task,"From the attached listing, create a JSON record with title, company, location, work_mode, and salary for my tracker.",0.16249999999999998,0.16249999999999998,0.05,True
+job_extraction__expert__06,job_extraction,expert,constraint,Accuracy matters more than completeness:,0.0,0.0,0.05,False
+job_extraction__expert__06,job_extraction,expert,constraint,"if the salary isn't in the text, return null for it instead of inferring from market rates.",0.0,0.0,0.05,False
+job_extraction__expert__07,job_extraction,expert,task,"Turn the attached job posting into a single-line JSON object with the fields title, company, location, work_mode, and salary.",-0.025000000000000022,0.025000000000000022,0.05,False
+job_extraction__expert__07,job_extraction,expert,format,Only JSON in your reply.,0.125,0.125,0.05,True
+job_extraction__expert__07,job_extraction,expert,constraint,"Work mode must reflect what the posting says about remote, hybrid, or in-office work.",-0.125,0.125,0.05,True
+job_extraction__expert__08,job_extraction,expert,task,I need a machine-readable summary of the attached posting for my applications spreadsheet.,-0.15625,0.15625,0.05,True
+job_extraction__expert__08,job_extraction,expert,format,"Output JSON only, with keys title, company, location, work_mode, salary.",0.21250000000000002,0.21250000000000002,0.05,True
+job_extraction__expert__08,job_extraction,expert,constraint,Do not fabricate a salary; use null if the posting omits it.,0.125,0.125,0.05,True
+job_extraction__expert__09,job_extraction,expert,task,"Read the attached job description and return JSON containing title, company, location, work_mode, and salary.",0.23124999999999996,0.23124999999999996,0.05,True
+job_extraction__expert__09,job_extraction,expert,format,Nothing else should appear in your response besides the JSON.,0.125,0.125,0.05,True
+job_extraction__expert__09,job_extraction,expert,constraint,"If the posting is vague about the work arrangement, pick the closest match from remote, hybrid, or onsite based only on its wording,",0.125,0.125,0.05,True
+job_extraction__expert__09,job_extraction,expert,constraint,and leave salary null if it's not stated.,0.125,0.125,0.05,True
+job_extraction__expert__10,job_extraction,expert,task,Extract five fields from the attached posting (,0.0625,0.0625,0.05,True
+job_extraction__expert__10,job_extraction,expert,constraint,"title, company, location, work_mode, salary)",0.275,0.275,0.05,True
+job_extraction__expert__10,job_extraction,expert,format,and format them as JSON for my job tracker.,0.125,0.125,0.05,True
+job_extraction__expert__10,job_extraction,expert,constraint,"Keep the values faithful to the document,",0.0625,0.0625,0.05,True
+job_extraction__expert__10,job_extraction,expert,constraint,"avoid adding any salary the posting doesn't mention,",0.0,0.0,0.05,False
+job_extraction__expert__10,job_extraction,expert,format,and reply with the JSON alone.,0.125,0.125,0.05,True
+job_extraction__novice__01,job_extraction,novice,task,hey can you pull the info out of this job posting for me? thanks,0.0,0.0,0.05,False
+job_extraction__novice__02,job_extraction,novice,task,"I need the job details from this listing put into my tracker,",0.0,0.0,0.05,False
+job_extraction__novice__02,job_extraction,novice,politeness_filler,could you help?,0.0,0.0,0.05,False
+job_extraction__novice__03,job_extraction,novice,task,please get the title and company from this posting,0.0,0.0,0.05,False
+job_extraction__novice__04,job_extraction,novice,task,can u turn this job ad into something i can paste into my spreadsheet,0.0,0.0,0.05,False
+job_extraction__novice__05,job_extraction,novice,task,could you look at this job,0.0,0.0,0.05,False
+job_extraction__novice__05,job_extraction,novice,task,and tell me where it is,0.0,0.0,0.05,False
+job_extraction__novice__05,job_extraction,novice,task,and how much it pays,0.0,0.0,0.05,False
+job_extraction__novice__06,job_extraction,novice,context,"i'm tracking applications,",0.0,0.0,0.05,False
+job_extraction__novice__06,job_extraction,novice,task,can you summarize this posting as json please,0.6,0.6,0.05,True
+job_extraction__novice__07,job_extraction,novice,task,What's the job here?,0.0,0.0,0.05,False
+job_extraction__novice__07,job_extraction,novice,constraint,"Just the basics for my list,",0.0,0.0,0.05,False
+job_extraction__novice__07,job_extraction,novice,politeness_filler,thanks so much,0.0,0.0,0.05,False
+job_extraction__novice__08,job_extraction,novice,politeness_filler,would you mind,0.0,0.0,0.05,False
+job_extraction__novice__08,job_extraction,novice,task,extracting the main stuff from this job posting?,0.0,0.0,0.05,False
+job_extraction__novice__08,job_extraction,novice,constraint,like the role and where,0.0,0.0,0.05,False
+job_extraction__novice__09,job_extraction,novice,task,"help me organize this posting for my job tracker, please",0.0,0.0,0.05,False
+job_extraction__novice__10,job_extraction,novice,task,"can you pull out the details from this one,",0.0,0.0,0.05,False
+job_extraction__novice__10,job_extraction,novice,context,it's for my applications list.,0.0,0.0,0.05,False
+job_extraction__novice__10,job_extraction,novice,politeness_filler,thank you!,0.0,0.0,0.05,False
+landlord_reply__average__01,landlord_reply,average,context,My landlord hit me with a late fee but I paid on time.,-0.13796296296296295,0.13796296296296295,0.07563176983948926,True
+landlord_reply__average__01,landlord_reply,average,task,Can you write a reply disputing it?,-0.2212962962962962,0.2212962962962962,0.07563176983948926,True
+landlord_reply__average__01,landlord_reply,average,tone,Keep it firm but polite.,0.031481481481481555,0.031481481481481555,0.07563176983948926,False
+landlord_reply__average__02,landlord_reply,average,task,Write an email to my landlord saying the $75 late fee is wrong because I paid on time.,0.0351851851851851,0.0351851851851851,0.06789001029564196,False
+landlord_reply__average__02,landlord_reply,average,constraint,Mention my lease section and ask them to remove it.,0.008796296296296302,0.008796296296296302,0.06789001029564196,False
+landlord_reply__average__03,landlord_reply,average,context,I need to push back on a late charge from my landlord.,-0.19537037037037042,0.19537037037037042,0.09659852856107393,True
+landlord_reply__average__03,landlord_reply,average,task,Draft something respectful,0.13796296296296295,0.13796296296296295,0.09659852856107393,True
+landlord_reply__average__03,landlord_reply,average,task,that says I paid on time and they should drop the fee.,0.05601851851851847,0.05601851851851847,0.09659852856107393,False
+landlord_reply__average__04,landlord_reply,average,task,Can you help me respond to my landlord about the fee?,-0.05740740740740735,0.05740740740740735,0.05888190035401723,False
+landlord_reply__average__04,landlord_reply,average,context,I paid rent on the 1st like always.,-0.0532407407407407,0.0532407407407407,0.05888190035401723,False
+landlord_reply__average__04,landlord_reply,average,constraint,Make it short and not rude.,0.26342592592592595,0.26342592592592595,0.05888190035401723,True
+landlord_reply__average__05,landlord_reply,average,task,Reply to my landlord's late fee notice.,0.037962962962962976,0.037962962962962976,0.06194714327288039,False
+landlord_reply__average__05,landlord_reply,average,context,Tell them I didn't pay late and the lease backs me up.,0.21851851851851845,0.21851851851851845,0.06194714327288039,True
+landlord_reply__average__05,landlord_reply,average,tone,Firm tone please.,0.1435185185185185,0.1435185185185185,0.06194714327288039,True
+landlord_reply__average__06,landlord_reply,average,task,Please write a dispute letter about the late fee on my apartment.,-0.22638888888888886,0.22638888888888886,0.0585314097380708,True
+landlord_reply__average__06,landlord_reply,average,constraint,Cite the grace period in my lease so they know I'm within it.,-0.03749999999999998,0.03749999999999998,0.0585314097380708,False
+landlord_reply__average__07,landlord_reply,average,context,My landlord says I owe a late fee.,-0.18564814814814812,0.18564814814814812,0.06901720427253412,True
+landlord_reply__average__07,landlord_reply,average,context,I didn't.,-0.22731481481481486,0.22731481481481486,0.06901720427253412,True
+landlord_reply__average__07,landlord_reply,average,task,Write me a message,0.06574074074074077,0.06574074074074077,0.06901720427253412,False
+landlord_reply__average__07,landlord_reply,average,tone,"that's firm, clear,",-0.2328703703703704,0.2328703703703704,0.06901720427253412,True
+landlord_reply__average__07,landlord_reply,average,constraint,and says I'd like it reversed.,-0.0009259259259257746,0.0009259259259257746,0.06901720427253412,False
+landlord_reply__average__08,landlord_reply,average,task,Draft a note to my landlord disputing the charge.,0.024537037037037024,0.024537037037037024,0.0972354488357413,False
+landlord_reply__average__08,landlord_reply,average,tone,Be respectful.,-0.05046296296296293,0.05046296296296293,0.0972354488357413,False
+landlord_reply__average__08,landlord_reply,average,context,"I'm sorry for any confusion but I did pay on time,",-0.13935185185185195,0.13935185185185195,0.0972354488357413,True
+landlord_reply__average__08,landlord_reply,average,task,so please fix it.,-0.024074074074074137,0.024074074074074137,0.0972354488357413,False
+landlord_reply__average__09,landlord_reply,average,task,Help me write back to my landlord about the late fee.,0.0,0.0,0.05,False
+landlord_reply__average__09,landlord_reply,average,constraint,Keep it under a paragraph or two,0.33333333333333337,0.33333333333333337,0.05,True
+landlord_reply__average__09,landlord_reply,average,constraint,and make sure they understand I'm not paying it.,0.0,0.0,0.05,False
+landlord_reply__average__10,landlord_reply,average,task,Write a polite but direct email contesting my late fee.,0.19305555555555554,0.19305555555555554,0.056382730917178915,True
+landlord_reply__average__10,landlord_reply,average,context,"I paid on time,",-0.06944444444444464,0.06944444444444464,0.056382730917178915,True
+landlord_reply__average__10,landlord_reply,average,context,"the lease says so,",-0.0736111111111113,0.0736111111111113,0.056382730917178915,True
+landlord_reply__average__10,landlord_reply,average,task,and I want the charge removed from my account.,-0.00694444444444442,0.00694444444444442,0.056382730917178915,False
+landlord_reply__expert__01,landlord_reply,expert,task,Write a firm but respectful email to my landlord disputing the $75 late fee.,0.0,0.0,0.05,False
+landlord_reply__expert__01,landlord_reply,expert,context,"My lease Section 4.2 says rent is due on the 1st with a 5-day grace period, and I paid within that window, so the fee shouldn't apply.",0.0,0.0,0.05,False
+landlord_reply__expert__01,landlord_reply,expert,constraint,Keep it under 120 words,0.019444444444444375,0.019444444444444375,0.05,False
+landlord_reply__expert__01,landlord_reply,expert,constraint,and don't apologize.,0.0,0.0,0.05,False
+landlord_reply__expert__02,landlord_reply,expert,task,Draft a reply to my landlord contesting a $75 late fee.,0.0,0.0,0.05,False
+landlord_reply__expert__02,landlord_reply,expert,constraint,"Reference Section 4.2 of the lease and the grace period it establishes,",0.0,0.0,0.05,False
+landlord_reply__expert__02,landlord_reply,expert,constraint,and state clearly that my payment was on time.,0.0,0.0,0.05,False
+landlord_reply__expert__02,landlord_reply,expert,tone,"Firm, polite, no apologies,",0.0,0.0,0.05,False
+landlord_reply__expert__02,landlord_reply,expert,format,120 words max.,0.02499999999999991,0.02499999999999991,0.05,False
+landlord_reply__expert__03,landlord_reply,expert,context,I got charged a $75 late fee but my lease (Section 4.2) gives a grace period and I paid inside it.,0.0,0.0,0.05,False
+landlord_reply__expert__03,landlord_reply,expert,task,Write a short message to the landlord asking them to reverse the fee.,0.5,0.5,0.05,True
+landlord_reply__expert__03,landlord_reply,expert,constraint,"Under 120 words, no apology.",0.0,0.0,0.05,False
+landlord_reply__expert__04,landlord_reply,expert,task,Help me push back on a $75 late charge from my landlord.,0.005555555555555536,0.005555555555555536,0.05,False
+landlord_reply__expert__04,landlord_reply,expert,constraint,"Cite Section 4.2 and the grace period,",0.0,0.0,0.05,False
+landlord_reply__expert__04,landlord_reply,expert,tone,"be respectful but direct,",0.0,0.0,0.05,False
+landlord_reply__expert__04,landlord_reply,expert,constraint,and make sure the whole reply stays at 120 words or fewer,0.21111111111111125,0.21111111111111125,0.05,True
+landlord_reply__expert__04,landlord_reply,expert,constraint,without saying sorry.,0.001388888888888884,0.001388888888888884,0.05,False
+landlord_reply__expert__05,landlord_reply,expert,task,Write a dispute letter to my property manager about the $75 fee.,0.0,0.0,0.05,False
+landlord_reply__expert__05,landlord_reply,expert,context,"My lease's Section 4.2 covers the grace period, and my rent arrived before it expired.",0.005555555555555536,0.005555555555555536,0.05,False
+landlord_reply__expert__05,landlord_reply,expert,tone,Tone should be firm and courteous.,0.0,0.0,0.05,False
+landlord_reply__expert__05,landlord_reply,expert,constraint,"Max 120 words, zero apologies.",0.2333333333333334,0.2333333333333334,0.05,True
+landlord_reply__expert__06,landlord_reply,expert,task,Compose a brief note to my landlord:,0.0,0.0,0.05,False
+landlord_reply__expert__06,landlord_reply,expert,context,the $75 late fee is incorrect.,0.0,0.0,0.05,False
+landlord_reply__expert__06,landlord_reply,expert,context,"Per Section 4.2, the grace period applies and my payment was timely.",0.0,0.0,0.05,False
+landlord_reply__expert__06,landlord_reply,expert,task,Ask for the fee to be removed.,0.0,0.0,0.05,False
+landlord_reply__expert__06,landlord_reply,expert,tone,"Keep it professional, no apology,",0.0,0.0,0.05,False
+landlord_reply__expert__06,landlord_reply,expert,constraint,under 120 words.,0.0,0.0,0.05,False
+landlord_reply__expert__07,landlord_reply,expert,context,"My landlord hit me with a $75 late fee that contradicts Section 4.2 of our lease, which includes a grace period I was within.",0.0,0.0,0.05,False
+landlord_reply__expert__07,landlord_reply,expert,task,Write a respectful but firm reply requesting a correction.,0.0,0.0,0.05,False
+landlord_reply__expert__07,landlord_reply,expert,constraint,"120 words or less,",0.011111111111111072,0.011111111111111072,0.05,False
+landlord_reply__expert__07,landlord_reply,expert,constraint,and please don't apologize.,0.0,0.0,0.05,False
+landlord_reply__expert__08,landlord_reply,expert,task,Need an email to my landlord disputing the $75 fee.,0.0,0.0,0.05,False
+landlord_reply__expert__08,landlord_reply,expert,constraint,"Mention Section 4.2 and the grace period,",0.0,0.0,0.05,False
+landlord_reply__expert__08,landlord_reply,expert,context,"state that I paid on time,",0.0,0.0,0.05,False
+landlord_reply__expert__08,landlord_reply,expert,task,and request a written confirmation the charge is withdrawn.,0.0,0.0,0.05,False
+landlord_reply__expert__08,landlord_reply,expert,constraint,Keep it under 120 words with no apologies.,0.10277777777777786,0.10277777777777786,0.05,True
+landlord_reply__expert__09,landlord_reply,expert,task,"Please write a firm, polite message contesting a $75 late fee.",-0.00462962962962965,0.00462962962962965,0.05,False
+landlord_reply__expert__09,landlord_reply,expert,context,"The lease in Section 4.2 sets out the grace period, and my payment falls inside it.",0.5009259259259259,0.5009259259259259,0.05,True
+landlord_reply__expert__09,landlord_reply,expert,constraint,Don't open with an apology,-0.00462962962962965,0.00462962962962965,0.05,False
+landlord_reply__expert__09,landlord_reply,expert,constraint,and keep the message to 120 words or fewer.,0.03287037037037044,0.03287037037037044,0.05,False
+landlord_reply__expert__10,landlord_reply,expert,task,Write a concise reply disputing my landlord's $75 late fee.,-0.0064814814814814214,0.0064814814814814214,0.05,False
+landlord_reply__expert__10,landlord_reply,expert,task,Point to the grace period in Section 4.2 and say the payment was on time.,-0.0064814814814814214,0.0064814814814814214,0.05,False
+landlord_reply__expert__10,landlord_reply,expert,constraint,"Respectful but firm, no apologizing, no more than 120 words.",-0.0064814814814814214,0.0064814814814814214,0.05,False
+landlord_reply__novice__01,landlord_reply,novice,task,"Hi, could you please write a reply to my landlord about the late fee?",0.07685185185185195,0.07685185185185195,0.05,True
+landlord_reply__novice__01,landlord_reply,novice,context,I paid on time.,-0.06342592592592589,0.06342592592592589,0.05,True
+landlord_reply__novice__02,landlord_reply,novice,task,Can you help me write an email to my landlord saying I didn't owe that late fee? Thanks!,0.7537037037037037,0.7537037037037037,0.05,True
+landlord_reply__novice__03,landlord_reply,novice,task,Please write something to my landlord.,0.1527777777777779,0.1527777777777779,0.11152699944380393,True
+landlord_reply__novice__03,landlord_reply,novice,context,They charged me a late fee but I paid on time.,0.03888888888888886,0.03888888888888886,0.11152699944380393,False
+landlord_reply__novice__03,landlord_reply,novice,politeness_filler,Thank you.,0.1347222222222224,0.1347222222222224,0.11152699944380393,True
+landlord_reply__novice__04,landlord_reply,novice,context,I got charged a late fee by my landlord and I don't think it's right.,-0.2143518518518518,0.2143518518518518,0.10676692818814505,True
+landlord_reply__novice__04,landlord_reply,novice,task,Could you write a reply for me?,0.7787037037037038,0.7787037037037038,0.10676692818814505,True
+landlord_reply__novice__05,landlord_reply,novice,task,Could you write a polite message disputing the late charge?,0.43055555555555564,0.43055555555555564,0.1055555555555554,True
+landlord_reply__novice__05,landlord_reply,novice,context,My lease says I'm fine.,0.004166666666666652,0.004166666666666652,0.1055555555555554,False
+landlord_reply__novice__05,landlord_reply,novice,politeness_filler,Thanks so much.,0.04583333333333339,0.04583333333333339,0.1055555555555554,False
+landlord_reply__novice__06,landlord_reply,novice,task,"Hey, can you draft a note to my landlord about the fee they added?",0.8027777777777777,0.8027777777777777,0.0640697921926156,True
+landlord_reply__novice__06,landlord_reply,novice,context,I already paid rent on time.,-0.04166666666666685,0.04166666666666685,0.0640697921926156,False
+landlord_reply__novice__07,landlord_reply,novice,task,Would you mind writing a response to my landlord?,0.03935185185185175,0.03935185185185175,0.05480980958129157,False
+landlord_reply__novice__07,landlord_reply,novice,context,They said I was late but I wasn't.,-0.1537037037037038,0.1537037037037038,0.05480980958129157,True
+landlord_reply__novice__07,landlord_reply,novice,politeness_filler,Please and thank you.,-0.06620370370370376,0.06620370370370376,0.05480980958129157,True
+landlord_reply__novice__08,landlord_reply,novice,task,Please help me write back to my landlord about the late fee.,-0.1967592592592592,0.1967592592592592,0.06581242831080321,True
+landlord_reply__novice__08,landlord_reply,novice,tone,I'd like it to sound nice but firm if possible.,-0.07175925925925919,0.07175925925925919,0.06581242831080321,True
+landlord_reply__novice__09,landlord_reply,novice,task,Can you write an email saying my rent was on time and the fee shouldn't be there?,0.3898148148148148,0.3898148148148148,0.2734289203533464,True
+landlord_reply__novice__09,landlord_reply,novice,politeness_filler,Thanks in advance.,0.124537037037037,0.124537037037037,0.2734289203533464,False
+landlord_reply__novice__10,landlord_reply,novice,context,My landlord charged me for being late but I paid on time.,0.0893518518518519,0.0893518518518519,0.1325594827272096,False
+landlord_reply__novice__10,landlord_reply,novice,task,Could you please help me reply to them?,0.8185185185185185,0.8185185185185185,0.1325594827272096,True

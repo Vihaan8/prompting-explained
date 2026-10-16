@@ -1,0 +1,344 @@
+{
+ "challenge_id": "job_extraction",
+ "user_prompt": "could you look at this job and tell me where it is and how much it pays",
+ "final_prompt": "could you look at this job and tell me where it is and how much it pays\n\n<document>\nok so we're finally hiring!!  Brightline Health is looking for a Data Analyst\nto join our care-ops team. you'd be working w/ claims + scheduling data, building\ndashboards (Tableau, some SQL), and helping clinic managers figure out where\npatients are falling through the cracks.\n\nwhere: our Raleigh, NC office — it's hybrid, so 3 days in, 2 from home\nwho: 2+ yrs w/ SQL, comfortable explaining numbers to non-data people\nperks: $2,000 sign-on bonus!! plus good coffee, flexible hours, health/dental/vision,\n401k match up to 5%, and a team that actually likes each other lol\n\ninterested? send your resume + a short note to careers@brightlinehealth.example\nby end of month. no recruiters pls\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "could you look at this job ",
+   "role": "task",
+   "start": 0,
+   "end": 27
+  },
+  {
+   "id": 1,
+   "text": "and tell me where it is ",
+   "role": "task",
+   "start": 27,
+   "end": 51
+  },
+  {
+   "id": 2,
+   "text": "and how much it pays",
+   "role": "task",
+   "start": 51,
+   "end": 71
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "json_only",
+  "fields",
+  "accuracy",
+  "no_invented_salary"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "**Location:** Raleigh, NC. The job is hybrid: 3 days in the office and 2 days from home.\n\n**Pay:** The posting doesn't list a salary range. It does mention a $2,000 sign-on bonus, a 401(k) match up to 5%, and health, dental, and vision coverage. You'd need to ask Brightline Health for the base salary.\n\n**Other details:**\n- Role: Data Analyst on the care-operations team\n- Work: claims and scheduling data, Tableau dashboards, SQL, and helping clinic managers find gaps in patient care\n- Requirements: 2+ years of SQL experience and the ability to explain numbers to non-technical people\n- Application: send a resume and short note to careers@brightlinehealth.example by the end of the month. The posting asks that recruiters not contact them.",
+   "scores": {
+    "json_only": 0.0,
+    "fields": 0.0,
+    "accuracy": 0.0,
+    "no_invented_salary": 0.0,
+    "overall": 0.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Location:** Raleigh, NC, hybrid: 3 days in the office and 2 days from home.\n\n**Pay:** The posting doesn't list a salary. It does mention a $2,000 sign-on bonus, a 401k match of up to 5%, and health, dental, and vision coverage. You'd need to ask for the base salary range directly.\n\n**Other details:**\n- **Role:** Data Analyst on the care-ops team, working with claims and scheduling data, building dashboards in Tableau and SQL, and helping clinic managers find gaps in patient care.\n- **Requirements:** 2+ years of SQL experience and the ability to explain numbers to non-technical people.\n- **How to apply:** Send your resume and a short note to careers@brightlinehealth.example by the end of the month. The posting asks that recruiters not contact them.",
+   "scores": {
+    "json_only": 0.0,
+    "fields": 0.0,
+    "accuracy": 0.0,
+    "no_invented_salary": 0.0,
+    "overall": 0.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Location:** Raleigh, NC, hybrid: 3 days in the office, 2 days from home.\n\n**Pay:** The posting doesn't list a salary or hourly range. It mentions a $2,000 sign-on bonus, a 401k match up to 5%, and health, dental, and vision benefits, but no base pay. You'd need to ask the company for the salary range, or check sites like Glassdoor or Levels.fyi for Data Analyst roles in Raleigh to get a sense of what they might offer.\n\n**Next steps:** The posting asks for your resume and a short note sent to careers@brightlinehealth.example by the end of the month, and says not to contact them through recruiters.",
+   "scores": {
+    "json_only": 0.0,
+    "fields": 0.0,
+    "accuracy": 0.0,
+    "no_invented_salary": 0.0,
+    "overall": 0.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.0,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "json_only": 0.05,
+  "fields": 0.05,
+  "accuracy": 0.05,
+  "no_invented_salary": 0.05
+ },
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "and tell me where it is and how much it pays",
+   "runs": [
+    {
+     "answer": "The job is located in **Raleigh, NC**. It's hybrid: 3 days in the office and 2 days from home.\n\nThe document doesn't give a salary. It lists a **$2,000 sign-on bonus**, plus health, dental, and vision coverage, a 401(k) match of up to 5%, and flexible hours. If you need the base pay, you'd have to ask the company directly, since it isn't in the posting.\n\nTo apply, send your resume and a short note to **careers@brightlinehealth.example** by the end of the month.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Based on the posting, the job is in **Raleigh, NC**, with a **hybrid** schedule: 3 days in the office and 2 from home.\n\nThe posting doesn't list a salary. It mentions a **$2,000 sign-on bonus**, plus health, dental, and vision coverage, a **401k match up to 5%**, flexible hours, and good coffee. If pay matters to your decision, you'd need to ask the company for the base salary range.\n\nTo apply, send your resume and a short note to **careers@brightlinehealth.example** by the end of the month. The posting says no recruiters.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "json_only": 0.0,
+    "fields": 0.0,
+    "accuracy": 0.0,
+    "no_invented_salary": 0.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "could you look at this job and how much it pays",
+   "runs": [
+    {
+     "answer": "The posting doesn't state a salary. It lists perks (a $2,000 sign-on bonus, health/dental/vision, a 401k match up to 5%, flexible hours) but no base pay range.\n\nSome points to consider:\n\n- **Ask for the range.** You can reply to careers@brightlinehealth.example and ask for the base salary band before you interview. Many employers will share it, and it's a normal question.\n- **Check market rates.** For a Data Analyst with 2+ years of SQL and Tableau experience in the Raleigh, NC area, you can look at Glassdoor, LinkedIn Salary, or the BLS occupational data for the region to get a rough benchmark. Healthcare analytics roles often pay a bit above general analyst roles, but that varies.\n- **Weigh the benefits.** A 5% 401k match is a meaningful benefit, and the sign-on bonus is one-time money, so compare the total package rather than just the base.\n- **Hybrid setup.** Three days in office and two remote is a common arrangement in the Raleigh area, so that part is standard.\n\nIf you paste in the salary range once you have it, I can help you judge whether the offer is competitive or draft a note to the recruiter asking about compensation.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The posting doesn't state a salary, so I can't tell you what this job pays. The only compensation details are the perks: a $2,000 sign-on bonus, health/dental/vision insurance, a 401k match up to 5%, and flexible hours.\n\nTo find the pay range, you could:\n\n- **Ask the recruiter or hiring contact directly.** Asking \"What's the salary range for this role?\" early is normal and expected. Since they say \"no recruiters,\" you'd email careers@brightlinehealth.example.\n- **Check salary sites** like Glassdoor, Indeed, or Levels.fyi, filtering for Data Analyst roles in Raleigh, NC. Healthcare analytics roles there often fall somewhere in the $65k to $95k range, depending on experience, but treat that as a rough guide rather than a quote for this job.\n- **Look at the job listing itself** on other boards. Some postings include pay ranges that this one left out, and North Carolina doesn't currently require salary disclosure in job postings, so the omission is legal.\n\nIf you share your years of experience and what you're currently earning, I can help you judge whether the offer is competitive or draft the note to careers@brightlinehealth.example asking about pay.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "json_only": 0.0,
+    "fields": 0.0,
+    "accuracy": 0.0,
+    "no_invented_salary": 0.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "could you look at this job and tell me where it is",
+   "runs": [
+    {
+     "answer": "The job is located in **Raleigh, North Carolina**. It's a hybrid role: 3 days in the office and 2 days from home.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The job is located in **Raleigh, North Carolina**, at Brightline Health's office there. It's a **hybrid** role: 3 days in the office and 2 days working from home.\n\nTo apply, send your resume and a short note to **careers@brightlinehealth.example** by the end of the month. The posting asks that recruiters not contact them.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "json_only": 0.0,
+    "fields": 0.0,
+    "accuracy": 0.0,
+    "no_invented_salary": 0.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "json_only": 0.0,
+   "fields": 0.0,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  },
+  {
+   "overall": 0.0,
+   "json_only": 0.0,
+   "fields": 0.0,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  },
+  {
+   "overall": 0.0,
+   "json_only": 0.0,
+   "fields": 0.0,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "json_only": true,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  },
+  {
+   "overall": true,
+   "json_only": true,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  },
+  {
+   "overall": true,
+   "json_only": true,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   1.0,
+   0.5
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  0.5
+ ],
+ "follow_without": [
+  1.0,
+  0.75,
+  0.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 6
+ },
+ "calls": 10,
+ "input_tokens": 3363,
+ "output_tokens": 2150,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T07:59:01.492663+00:00"
+}

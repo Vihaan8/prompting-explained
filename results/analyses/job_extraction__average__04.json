@@ -1,0 +1,267 @@
+{
+ "challenge_id": "job_extraction",
+ "user_prompt": "Make a JSON object from this job ad with the role, company name, where it's based, whether it's remote, and the pay. Keep it clean.",
+ "final_prompt": "Make a JSON object from this job ad with the role, company name, where it's based, whether it's remote, and the pay. Keep it clean.\n\n<document>\nok so we're finally hiring!!  Brightline Health is looking for a Data Analyst\nto join our care-ops team. you'd be working w/ claims + scheduling data, building\ndashboards (Tableau, some SQL), and helping clinic managers figure out where\npatients are falling through the cracks.\n\nwhere: our Raleigh, NC office — it's hybrid, so 3 days in, 2 from home\nwho: 2+ yrs w/ SQL, comfortable explaining numbers to non-data people\nperks: $2,000 sign-on bonus!! plus good coffee, flexible hours, health/dental/vision,\n401k match up to 5%, and a team that actually likes each other lol\n\ninterested? send your resume + a short note to careers@brightlinehealth.example\nby end of month. no recruiters pls\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Make a JSON object from this job ad with the role, company name, where it's based, whether it's remote, and the pay. ",
+   "role": "task",
+   "start": 0,
+   "end": 117
+  },
+  {
+   "id": 1,
+   "text": "Keep it clean.",
+   "role": "constraint",
+   "start": 117,
+   "end": 131
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "json_only",
+  "fields",
+  "accuracy",
+  "no_invented_salary"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "```json\n{\n  \"role\": \"Data Analyst\",\n  \"company_name\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"remote\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"pay\": \"Not specified (includes a $2,000 sign-on bonus)\"\n}\n```",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 0.2,
+    "accuracy": 0.25,
+    "no_invented_salary": 1.0,
+    "overall": 0.4875
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"role\": \"Data Analyst\",\n  \"company_name\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"remote\": \"Hybrid (3 days in-office, 2 days remote)\",\n  \"pay\": \"Not specified (includes a $2,000 sign-on bonus and 401k match up to 5%)\"\n}\n```",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 0.2,
+    "accuracy": 0.25,
+    "no_invented_salary": 1.0,
+    "overall": 0.4875
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"role\": \"Data Analyst\",\n  \"company_name\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"remote\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"pay\": \"Not specified (includes a $2,000 sign-on bonus)\"\n}\n```",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 0.2,
+    "accuracy": 0.25,
+    "no_invented_salary": 1.0,
+    "overall": 0.4875
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.4875,
+  "json_only": 0.5,
+  "fields": 0.20000000000000004,
+  "accuracy": 0.25,
+  "no_invented_salary": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "json_only": 0.05,
+  "fields": 0.05,
+  "accuracy": 0.05,
+  "no_invented_salary": 0.05
+ },
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Keep it clean.",
+   "runs": [
+    {
+     "answer": "Brightline Health is hiring a Data Analyst for its care-ops team in Raleigh, NC.\n\n**The role:** You'd work with claims and scheduling data, build dashboards in Tableau and SQL, and help clinic managers find where patients are falling through the cracks.\n\n**Location:** Hybrid, with 3 days in the Raleigh office and 2 days remote.\n\n**Requirements:**\n- 2+ years of SQL experience\n- Comfort explaining numbers to non-technical audiences\n\n**Benefits:**\n- $2,000 sign-on bonus\n- Health, dental, and vision insurance\n- 401(k) with up to a 5% match\n- Flexible hours\n\n**How to apply:** Send your resume and a short note to careers@brightlinehealth.example by the end of the month. The company asks that recruiters not contact them.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "\"Keep it clean\" could mean a few things, so I'll assume you want a clean, professional summary of this job posting.\n\n**Data Analyst – Brightline Health (Care-Ops Team)**\n\n**Location:** Raleigh, NC (hybrid: 3 days in-office, 2 remote)\n\n**Role:** Work with claims and scheduling data to build dashboards (Tableau, SQL) and help clinic managers identify where patients are falling through the cracks in their care.\n\n**Requirements:**\n- 2+ years of SQL experience\n- Ability to explain data findings clearly to non-technical audiences\n\n**Benefits:**\n- $2,000 sign-on bonus\n- Health, dental, and vision insurance\n- 401(k) with up to 5% match\n- Flexible hours\n\n**How to apply:** Send your resume and a short cover note to careers@brightlinehealth.example by the end of the month. Please do not contact via recruiters.\n\nIf you'd like, I can also draft a cover note template or a shorter version for a job board.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "json_only": 0.0,
+    "fields": 0.0,
+    "accuracy": 0.0,
+    "no_invented_salary": 0.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Make a JSON object from this job ad with the role, company name, where it's based, whether it's remote, and the pay.",
+   "runs": [
+    {
+     "answer": "```json\n{\n  \"role\": \"Data Analyst\",\n  \"company_name\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC (hybrid: 3 days in-office, 2 days remote)\",\n  \"remote\": \"Hybrid\",\n  \"pay\": \"Not specified (a $2,000 sign-on bonus is offered; base salary is not stated)\"\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.2,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.425
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"role\": \"Data Analyst\",\n  \"company_name\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC (hybrid: 3 days in-office, 2 days remote)\",\n  \"remote\": \"Hybrid\",\n  \"pay\": \"Not specified (a $2,000 sign-on bonus is offered; base salary is not listed)\"\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.2,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.425
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.425,
+    "json_only": 0.5,
+    "fields": 0.2,
+    "accuracy": 0.0,
+    "no_invented_salary": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.4875,
+   "json_only": 0.5,
+   "fields": 0.20000000000000004,
+   "accuracy": 0.25,
+   "no_invented_salary": 1.0
+  },
+  {
+   "overall": 0.0625,
+   "json_only": 0.0,
+   "fields": 2.7755575615628914e-17,
+   "accuracy": 0.25,
+   "no_invented_salary": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "json_only": false,
+   "fields": false,
+   "accuracy": false,
+   "no_invented_salary": false
+  },
+  {
+   "overall": false,
+   "json_only": true,
+   "fields": true,
+   "accuracy": false,
+   "no_invented_salary": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   0.0
+  ],
+  [
+   1.0,
+   0.0
+  ],
+  [
+   0.5,
+   0.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.5,
+    1.0
+   ],
+   [
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    0.5
+   ]
+  ]
+ ],
+ "follow_with": [
+  0.8333333333333334,
+  0.0
+ ],
+ "follow_without": [
+  0.5,
+  0.5
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4
+ },
+ "calls": 8,
+ "input_tokens": 2915,
+ "output_tokens": 1277,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T07:58:28.718374+00:00"
+}

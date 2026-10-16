@@ -1,0 +1,116 @@
+
+=== case 1 [explain_to_kid] Explain inflation to a 10-year-old. Keep it under 60 words. Use 3 bullet points.
+baseline mean: overall=1.00  bullets=1.00  length=1.00  reading_level=1.00
+noise floor:   overall=0.05  bullets=0.05  length=0.05  reading_level=0.05
+
+ #  role                    overall       bullets        length  reading_leve  segment
+ 0  task                     +0.33         +1.00         +0.00~        +0.00~  Explain inflation
+ 1  audience                 +0.33         +0.00~        +0.00~        +1.00   to a 10-year-old.
+ 2  constraint               +0.41         +0.00~        +0.63         +0.60   Keep it under 60 words.
+ 3  format                   +0.38         +1.00         +0.00~        +0.14   Use 3 bullet points.
+
+segmentation: llm | calls: 12 {'segment': 1, 'baseline': 3, 'ablation': 8} | tokens: 1134 in / 1066 out | model: claude-haiku-5-5
+  check: 'Keep it under 60 words.' -> length: +0.63 vs noise 0.05 (clears the floor)
+
+=== case 2 [explain_to_kid] Can you please explain what inflation is? My cousin is 10. Use simple words and exactly 3 bullets. Thanks so much!
+baseline mean: overall=0.85  bullets=1.00  length=0.92  reading_level=0.64
+noise floor:   overall=0.24  bullets=0.05  length=0.19  reading_level=0.64
+
+ #  role                    overall       bullets        length  reading_leve  segment
+ 0  task                     +0.19~        +1.00         -0.08~        -0.36~  Can you please explain what inflation is?
+ 1  audience                 -0.01~        +0.00~        -0.08~        +0.04~  My cousin is 10.
+ 2  constraint               +0.17~        +0.00~        +0.06~        +0.47~  Use simple words
+ 3  format                   +0.44         +1.00         +0.52         -0.19~  and exactly 3 bullets.
+ 4  politeness_filler        -0.10~        +0.00~        -0.08~        -0.21~  Thanks so much!
+
+segmentation: llm | calls: 14 {'segment': 1, 'baseline': 3, 'ablation': 10} | tokens: 1312 in / 1523 out | model: claude-haiku-5-5
+  check: 'and exactly 3 bullets.' -> bullets: +1.00 vs noise 0.05 (clears the floor)
+
+=== case 3 [explain_to_kid] You are a friendly teacher. Explain why prices go up, for a kid, in under 60 words, with a candy example.
+baseline mean: overall=0.65  bullets=0.00  length=0.94  reading_level=1.00
+noise floor:   overall=0.05  bullets=0.05  length=0.14  reading_level=0.05
+
+ #  role                    overall       bullets        length  reading_leve  segment
+ 0  role                     +0.04~        +0.00~        -0.01~        +0.12   You are a friendly teacher.
+ 1  task                     -0.01~        +0.00~        -0.02~        +0.00~  Explain why prices go up,
+ 2  audience                 +0.04~        +0.00~        -0.06~        +0.17   for a kid,
+ 3  constraint               +0.04~        -0.83         +0.94         +0.00~  in under 60 words,
+ 4  example                  +0.02~        +0.00~        +0.04~        +0.02~  with a candy example.
+
+segmentation: llm | calls: 14 {'segment': 1, 'baseline': 3, 'ablation': 10} | tokens: 1240 in / 2163 out | model: claude-haiku-5-5
+  check: 'in under 60 words,' -> length: +0.94 vs noise 0.14 (clears the floor)
+
+=== case 4 [landlord_reply] Write a reply to my landlord disputing the $75 late fee. Mention Section 4.2 and the grace period. Keep it under 120 words.
+baseline mean: overall=1.00  length=1.00  cites_facts=1.00  no_apology=1.00
+noise floor:   overall=0.05  length=0.05  cites_facts=0.05  no_apology=0.05
+
+ #  role                    overall        length   cites_facts    no_apology  segment
+ 0  task                     +0.00~        +0.00~        +0.00~        +0.00~  Write a reply to my landlord disputing the $75 late fee.
+ 1  constraint               +0.00~        +0.00~        +0.00~        +0.00~  Mention Section 4.2 and the grace period.
+ 2  constraint               +0.12         +0.35         +0.00~        +0.00~  Keep it under 120 words.
+
+segmentation: llm | calls: 10 {'segment': 1, 'baseline': 3, 'ablation': 6} | tokens: 4145 in / 1836 out | model: claude-haiku-5-5
+  check: 'Keep it under 120 words.' -> length: +0.35 vs noise 0.05 (clears the floor)
+
+=== case 5 [landlord_reply] Help me respond to this email. I paid on the 3rd, which is inside the grace period. Be firm and don't apologize.
+baseline mean: overall=0.77  length=0.31  cites_facts=1.00  no_apology=1.00
+noise floor:   overall=0.18  length=0.55  cites_facts=0.05  no_apology=0.05
+
+ #  role                    overall        length   cites_facts    no_apology  segment
+ 0  task                     -0.21         -0.64         +0.00~        +0.00~  Help me respond to this email.
+ 1  context                  +0.05~        +0.15~        +0.00~        +0.00~  I paid on the 3rd, which is inside the grace period.
+ 2  tone                     +0.03~        +0.08~        +0.00~        +0.00~  Be firm and don't apologize.
+
+segmentation: llm | calls: 10 {'segment': 1, 'baseline': 3, 'ablation': 6} | tokens: 4081 in / 3372 out | model: claude-haiku-5-5
+  check: 'Be firm and don't apologize.' -> no_apology: +0.00 vs noise 0.05 (does NOT clear the floor)
+
+=== case 6 [landlord_reply] Please write a polite email to my landlord about the late fee. Cite the lease section. Thank you!
+baseline mean: overall=0.88  length=0.64  cites_facts=1.00  no_apology=1.00
+noise floor:   overall=0.13  length=0.38  cites_facts=0.05  no_apology=0.05
+
+ #  role                    overall        length   cites_facts    no_apology  segment
+ 0  task                     -0.12~        -0.36~        +0.00~        +0.00~  Please write a polite email to my landlord about the late...
+ 1  constraint               +0.06~        +0.18~        +0.00~        +0.00~  Cite the lease section.
+ 2  politeness_filler        -0.03~        -0.10~        +0.00~        +0.00~  Thank you!
+
+segmentation: llm | calls: 10 {'segment': 1, 'baseline': 3, 'ablation': 6} | tokens: 4017 in / 2475 out | model: claude-haiku-5-5
+  check: 'Cite the lease section.' -> cites_facts: +0.00 vs noise 0.05 (does NOT clear the floor)
+
+=== case 7 [job_extraction] Turn this job posting into JSON with title, company, location, work_mode, and salary. Use null if a field is missing. Output only JSON.
+baseline mean: overall=0.88  json_only=0.50  fields=1.00  accuracy=1.00  no_invented_salary=1.00
+noise floor:   overall=0.05  json_only=0.05  fields=0.05  accuracy=0.05  no_invented_salary=0.05
+
+ #  role                    overall     json_only        fields      accuracy  no_invented_  segment
+ 0  task                     +0.28         +0.00~        +0.60         +0.50         +0.00~  Turn this job posting into JSON with title, company, loca...
+ 1  constraint               +0.06         +0.00~        +0.00~        +0.25         +0.00~  Use null if a field is missing.
+ 2  format                   +0.06         +0.00~        +0.00~        +0.25         +0.00~  Output only JSON.
+
+segmentation: llm | calls: 10 {'segment': 1, 'baseline': 3, 'ablation': 6} | tokens: 3563 in / 1568 out | model: claude-haiku-5-5
+  check: 'Use null if a field is missing.' -> no_invented_salary: +0.00 vs noise 0.05 (does NOT clear the floor)
+
+=== case 8 [job_extraction] Extract the job info as JSON with these keys: title, company, location, work_mode, salary. No code fences.
+baseline mean: overall=0.94  json_only=1.00  fields=1.00  accuracy=0.75  no_invented_salary=1.00
+noise floor:   overall=0.05  json_only=0.05  fields=0.05  accuracy=0.05  no_invented_salary=0.05
+
+ #  role                    overall     json_only        fields      accuracy  no_invented_  segment
+ 0  task                     +0.00~        +0.00~        +0.00~        +0.00~        +0.00~  Extract the job info as JSON
+ 1  format                   +0.19         +0.00~        +0.50         +0.25         +0.00~  with these keys: title, company, location, work_mode, sal...
+ 2  constraint               +0.12         +0.50         +0.00~        +0.00~        +0.00~  No code fences.
+
+segmentation: llm | calls: 10 {'segment': 1, 'baseline': 3, 'ablation': 6} | tokens: 3483 in / 1336 out | model: claude-haiku-5-5
+  check: 'No code fences.' -> json_only: +0.50 vs noise 0.05 (clears the floor)
+
+=== case 9 [job_extraction] Pull the job details into JSON: title, company, location, work_mode, salary. Write work_mode as a single word.
+baseline mean: overall=0.88  json_only=0.50  fields=1.00  accuracy=1.00  no_invented_salary=1.00
+noise floor:   overall=0.05  json_only=0.05  fields=0.05  accuracy=0.05  no_invented_salary=0.05
+
+ #  role                    overall     json_only        fields      accuracy  no_invented_  segment
+ 0  task                     +0.88         +0.50         +1.00         +1.00         +1.00   Pull the job details into JSON: title, company, location,...
+ 1  constraint               +0.06         +0.00~        +0.00~        +0.25         +0.00~  Write work_mode as a single word.
+
+segmentation: llm | calls: 8 {'segment': 1, 'baseline': 3, 'ablation': 4} | tokens: 2873 in / 720 out | model: claude-haiku-5-5
+  check: 'Write work_mode as a single word.' -> accuracy: +0.25 vs noise 0.05 (clears the floor)
+
+per challenge (obvious segment clears noise in at least one prompt): {'explain_to_kid': True, 'landlord_reply': True, 'job_extraction': True}
+checkpoint: GO (3/3 challenges)
+98 calls, 25848 in / 16059 out tokens, ~$0.0106 (claude-haiku-5-5, ablation_runs=2)

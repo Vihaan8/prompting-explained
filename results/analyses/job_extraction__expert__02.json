@@ -1,0 +1,510 @@
+{
+ "challenge_id": "job_extraction",
+ "user_prompt": "I'm logging this role in my job tracker. From the attached job posting, output strictly JSON with the keys title, company, location, work_mode, and salary. Use only what the posting says; if no salary is listed, leave it null and don't guess. Nothing but the JSON.",
+ "final_prompt": "I'm logging this role in my job tracker. From the attached job posting, output strictly JSON with the keys title, company, location, work_mode, and salary. Use only what the posting says; if no salary is listed, leave it null and don't guess. Nothing but the JSON.\n\n<document>\nok so we're finally hiring!!  Brightline Health is looking for a Data Analyst\nto join our care-ops team. you'd be working w/ claims + scheduling data, building\ndashboards (Tableau, some SQL), and helping clinic managers figure out where\npatients are falling through the cracks.\n\nwhere: our Raleigh, NC office — it's hybrid, so 3 days in, 2 from home\nwho: 2+ yrs w/ SQL, comfortable explaining numbers to non-data people\nperks: $2,000 sign-on bonus!! plus good coffee, flexible hours, health/dental/vision,\n401k match up to 5%, and a team that actually likes each other lol\n\ninterested? send your resume + a short note to careers@brightlinehealth.example\nby end of month. no recruiters pls\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "I'm logging this role in my job tracker. ",
+   "role": "context",
+   "start": 0,
+   "end": 41
+  },
+  {
+   "id": 1,
+   "text": "From the attached job posting, output strictly JSON with the keys title, company, location, work_mode, and salary. ",
+   "role": "task",
+   "start": 41,
+   "end": 156
+  },
+  {
+   "id": 2,
+   "text": "Use only what the posting says; ",
+   "role": "constraint",
+   "start": 156,
+   "end": 188
+  },
+  {
+   "id": 3,
+   "text": "if no salary is listed, leave it null and don't guess. ",
+   "role": "constraint",
+   "start": 188,
+   "end": 243
+  },
+  {
+   "id": 4,
+   "text": "Nothing but the JSON.",
+   "role": "format",
+   "start": 243,
+   "end": 264
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "json_only",
+  "fields",
+  "accuracy",
+  "no_invented_salary"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\", \"salary\": null}",
+   "scores": {
+    "json_only": 1.0,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.9375
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\", \"salary\": null}",
+   "scores": {
+    "json_only": 1.0,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.9375
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"Hybrid (3 days in office, 2 days from home)\", \"salary\": null}",
+   "scores": {
+    "json_only": 1.0,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.9375
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.9375,
+  "json_only": 1.0,
+  "fields": 1.0,
+  "accuracy": 0.75,
+  "no_invented_salary": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "json_only": 0.05,
+  "fields": 0.05,
+  "accuracy": 0.05,
+  "no_invented_salary": 0.05
+ },
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "From the attached job posting, output strictly JSON with the keys title, company, location, work_mode, and salary. Use only what the posting says; if no salary is listed, leave it null and don't guess. Nothing but the JSON.",
+   "runs": [
+    {
+     "answer": "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 1.0,
+      "accuracy": 0.75,
+      "no_invented_salary": 1.0,
+      "overall": 0.9375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 1.0,
+      "accuracy": 0.75,
+      "no_invented_salary": 1.0,
+      "overall": 0.9375
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9375,
+    "json_only": 1.0,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "I'm logging this role in my job tracker. Use only what the posting says; if no salary is listed, leave it null and don't guess. Nothing but the JSON.",
+   "runs": [
+    {
+     "answer": "```json\n{\n  \"company\": \"Brightline Health\",\n  \"job_title\": \"Data Analyst\",\n  \"team\": \"Care-Ops\",\n  \"location\": \"Raleigh, NC\",\n  \"work_arrangement\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null,\n  \"signing_bonus\": \"$2,000\",\n  \"benefits\": [\n    \"Health insurance\",\n    \"Dental insurance\",\n    \"Vision insurance\",\n    \"401(k) with up to 5% match\",\n    \"Flexible hours\",\n    \"Good coffee\"\n  ],\n  \"responsibilities\": [\n    \"Work with claims and scheduling data\",\n    \"Build dashboards (Tableau, SQL)\",\n    \"Help clinic managers identify where patients fall through the cracks\"\n  ],\n  \"requirements\": [\n    \"2+ years of SQL experience\",\n    \"Ability to explain numbers to non-technical audiences\"\n  ],\n  \"tools\": [\"SQL\", \"Tableau\"],\n  \"application_method\": \"Email resume and short note to careers@brightlinehealth.example\",\n  \"application_deadline\": \"End of month\",\n  \"notes\": \"No recruiters, per posting\"\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.6,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.65
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"company\": \"Brightline Health\",\n  \"job_title\": \"Data Analyst\",\n  \"department\": \"Care-Ops team\",\n  \"location\": \"Raleigh, NC\",\n  \"work_arrangement\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"employment_type\": null,\n  \"salary\": null,\n  \"salary_currency\": null,\n  \"sign_on_bonus\": \"$2,000\",\n  \"responsibilities\": [\n    \"Work with claims and scheduling data\",\n    \"Build dashboards (Tableau, some SQL)\",\n    \"Help clinic managers identify where patients are falling through the cracks\"\n  ],\n  \"requirements\": [\n    \"2+ years of SQL experience\",\n    \"Ability to explain numbers to non-data audiences\"\n  ],\n  \"benefits\": [\n    \"Health, dental, and vision insurance\",\n    \"401(k) match up to 5%\",\n    \"Flexible hours\",\n    \"Coffee\"\n  ],\n  \"application_method\": \"Email resume and short note to careers@brightlinehealth.example\",\n  \"application_deadline\": \"End of current month\",\n  \"notes\": \"No recruiters, per posting.\"\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.6,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.65
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.65,
+    "json_only": 0.5,
+    "fields": 0.6,
+    "accuracy": 0.5,
+    "no_invented_salary": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "I'm logging this role in my job tracker. From the attached job posting, output strictly JSON with the keys title, company, location, work_mode, and salary. if no salary is listed, leave it null and don't guess. Nothing but the JSON.",
+   "runs": [
+    {
+     "answer": "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"Hybrid\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 1.0,
+      "accuracy": 1.0,
+      "no_invented_salary": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"Hybrid\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 1.0,
+      "accuracy": 1.0,
+      "no_invented_salary": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "json_only": 1.0,
+    "fields": 1.0,
+    "accuracy": 1.0,
+    "no_invented_salary": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "I'm logging this role in my job tracker. From the attached job posting, output strictly JSON with the keys title, company, location, work_mode, and salary. Use only what the posting says; Nothing but the JSON.",
+   "runs": [
+    {
+     "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": \"Not specified\"\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 1.0,
+      "accuracy": 0.75,
+      "no_invented_salary": 1.0,
+      "overall": 0.8125
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"Hybrid (3 days in office, 2 days from home)\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 1.0,
+      "accuracy": 0.75,
+      "no_invented_salary": 1.0,
+      "overall": 0.9375
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.875,
+    "json_only": 0.75,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "I'm logging this role in my job tracker. From the attached job posting, output strictly JSON with the keys title, company, location, work_mode, and salary. Use only what the posting says; if no salary is listed, leave it null and don't guess.",
+   "runs": [
+    {
+     "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days from home)\",\n  \"salary\": null\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 1.0,
+      "accuracy": 0.75,
+      "no_invented_salary": 1.0,
+      "overall": 0.8125
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 1.0,
+      "accuracy": 0.75,
+      "no_invented_salary": 1.0,
+      "overall": 0.8125
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.8125,
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "json_only": 0.0,
+   "fields": 0.0,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  },
+  {
+   "overall": 0.2875,
+   "json_only": 0.5,
+   "fields": 0.4,
+   "accuracy": 0.25,
+   "no_invented_salary": 0.0
+  },
+  {
+   "overall": -0.0625,
+   "json_only": 0.0,
+   "fields": 0.0,
+   "accuracy": -0.25,
+   "no_invented_salary": 0.0
+  },
+  {
+   "overall": 0.0625,
+   "json_only": 0.25,
+   "fields": 0.0,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  },
+  {
+   "overall": 0.125,
+   "json_only": 0.5,
+   "fields": 0.0,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "json_only": true,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  },
+  {
+   "overall": false,
+   "json_only": false,
+   "fields": false,
+   "accuracy": false,
+   "no_invented_salary": true
+  },
+  {
+   "overall": false,
+   "json_only": true,
+   "fields": true,
+   "accuracy": false,
+   "no_invented_salary": true
+  },
+  {
+   "overall": false,
+   "json_only": false,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  },
+  {
+   "overall": false,
+   "json_only": false,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   null,
+   1.0,
+   1.0,
+   1.0,
+   0.0
+  ],
+  [
+   null,
+   1.0,
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   null,
+   1.0,
+   1.0,
+   1.0,
+   0.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+   ],
+   [
+    null,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+   ]
+  ],
+  [
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    0.5,
+    1.0,
+    0.5,
+    0.0
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    null,
+    0.5,
+    1.0,
+    1.0,
+    0.0
+   ],
+   [
+    null,
+    0.5,
+    1.0,
+    1.0,
+    0.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  null,
+  1.0,
+  1.0,
+  1.0,
+  0.16666666666666666
+ ],
+ "follow_without": [
+  null,
+  0.0,
+  1.0,
+  0.75,
+  0.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 10
+ },
+ "calls": 14,
+ "input_tokens": 5339,
+ "output_tokens": 1744,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T07:59:02.659037+00:00"
+}

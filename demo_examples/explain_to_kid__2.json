@@ -1,0 +1,518 @@
+{
+  "challenge_id": "explain_to_kid",
+  "user_prompt": "You are a friendly teacher. Explain why prices go up, for a kid, in under 60 words, with a candy example.",
+  "final_prompt": "You are a friendly teacher. Explain why prices go up, for a kid, in under 60 words, with a candy example.",
+  "segments": [
+    {
+      "id": 0,
+      "text": "You are a friendly teacher. ",
+      "role": "role",
+      "start": 0,
+      "end": 28
+    },
+    {
+      "id": 1,
+      "text": "Explain why prices go up, ",
+      "role": "task",
+      "start": 28,
+      "end": 54
+    },
+    {
+      "id": 2,
+      "text": "for a kid, ",
+      "role": "audience",
+      "start": 54,
+      "end": 65
+    },
+    {
+      "id": 3,
+      "text": "in under 60 words, ",
+      "role": "constraint",
+      "start": 65,
+      "end": 84
+    },
+    {
+      "id": 4,
+      "text": "with a candy example.",
+      "role": "example",
+      "start": 84,
+      "end": 105
+    }
+  ],
+  "segmentation_method": "llm",
+  "targets": [
+    "overall",
+    "on_task",
+    "bullets",
+    "length",
+    "reading_level"
+  ],
+  "baseline_runs": [
+    {
+      "answer": "Imagine your favorite candy bar costs $1. Lots of kids want it, but the store only has a few left. The store can ask for more money because people still want to buy it. Prices also go up when it costs the store more to make or bring the candy, like paying more for sugar. That's why prices can rise over time!",
+      "scores": {
+        "on_task": 1.0,
+        "bullets": 0.0,
+        "length": 0.9666666666666667,
+        "reading_level": 1.0,
+        "overall": 0.6555555555555556
+      },
+      "stop_reason": "end_turn"
+    },
+    {
+      "answer": "Imagine your favorite candy bar costs one dollar. If lots of kids want it but the store only has a few left, the store can ask for more money, and some kids might pay it. Prices also go up when it costs the store more to make or buy the candy, like when sugar gets more expensive. So prices rise when more people want something or when it gets harder to make.",
+      "scores": {
+        "on_task": 1.0,
+        "bullets": 0.0,
+        "length": 0.8,
+        "reading_level": 0.764,
+        "overall": 0.5213333333333333
+      },
+      "stop_reason": "end_turn"
+    },
+    {
+      "answer": "Imagine you and your friends all want the same yummy candy, but the store only has ten bars left. Everyone is eager to buy, so the store can ask for more money. If the candy were super easy to find, the store would have to keep prices low. That's why prices go up when lots of people want something and there isn't much of it!",
+      "scores": {
+        "on_task": 1.0,
+        "bullets": 0.0,
+        "length": 0.9166666666666666,
+        "reading_level": 0.8732692307692311,
+        "overall": 0.5966452991452993
+      },
+      "stop_reason": "end_turn"
+    }
+  ],
+  "baseline_mean": {
+    "overall": 0.5911780626780627,
+    "on_task": 1.0,
+    "bullets": 0.0,
+    "length": 0.8944444444444445,
+    "reading_level": 0.8790897435897437
+  },
+  "baseline_std": {
+    "overall": 0.06727792535824373,
+    "on_task": 0.0,
+    "bullets": 0.0,
+    "length": 0.08552669065744804,
+    "reading_level": 0.11810761523763111
+  },
+  "noise": {
+    "overall": 0.13455585071648746,
+    "on_task": 0.05,
+    "bullets": 0.05,
+    "length": 0.17105338131489609,
+    "reading_level": 0.23621523047526222
+  },
+  "ablations": [
+    {
+      "segment_id": 0,
+      "prompt": "Explain why prices go up, for a kid, in under 60 words, with a candy example.",
+      "runs": [
+        {
+          "answer": "Imagine your favorite candy bar costs $1. Lots of kids want it, but the store only has a few left. The store owner sees that everyone wants it, so they raise the price to $1.25. Also, if it costs the store more to make or buy the candy, they raise the price to cover that. That's why prices go up over time.",
+          "scores": {
+            "on_task": 1.0,
+            "bullets": 0.0,
+            "length": 0.9666666666666667,
+            "reading_level": 1.0,
+            "overall": 0.6555555555555556
+          },
+          "stop_reason": "end_turn"
+        },
+        {
+          "answer": "Imagine your favorite candy bar costs $1. If lots of kids want it but the store only has a few left, the store can charge more. And if it costs more to make the candy, like when sugar gets expensive, the store has to raise the price too. When more people want something, or it gets harder to make, prices go up.",
+          "scores": {
+            "on_task": 1.0,
+            "bullets": 0.0,
+            "length": 0.9666666666666667,
+            "reading_level": 1.0,
+            "overall": 0.6555555555555556
+          },
+          "stop_reason": "end_turn"
+        }
+      ],
+      "mean": {
+        "overall": 0.6555555555555556,
+        "on_task": 1.0,
+        "bullets": 0.0,
+        "length": 0.9666666666666667,
+        "reading_level": 1.0
+      }
+    },
+    {
+      "segment_id": 1,
+      "prompt": "You are a friendly teacher. for a kid, in under 60 words, with a candy example.",
+      "runs": [
+        {
+          "answer": "Hi there, friend! Let's talk about fractions using candy. Imagine you have a chocolate bar with 4 equal pieces. If you eat 1 piece, you ate 1 out of 4 pieces, which we write as 1/4. The bottom number tells us how many equal pieces there are in total, and the top number tells us how many pieces we took. Yummy math!",
+          "scores": {
+            "on_task": 0.0,
+            "bullets": 0.0,
+            "length": 0.9666666666666667,
+            "reading_level": 1.0,
+            "overall": 0.0
+          },
+          "stop_reason": "end_turn"
+        },
+        {
+          "answer": "Imagine you have 5 candies, and your friend gives you 3 more. Now you have 8 candies in total! That's addition. When you put groups of things together, you add them up to find out how many there are altogether. Want to try one with your own candy?",
+          "scores": {
+            "on_task": 0.0,
+            "bullets": 0.0,
+            "length": 1.0,
+            "reading_level": 1.0,
+            "overall": 0.0
+          },
+          "stop_reason": "end_turn"
+        }
+      ],
+      "mean": {
+        "overall": 0.0,
+        "on_task": 0.0,
+        "bullets": 0.0,
+        "length": 0.9833333333333334,
+        "reading_level": 1.0
+      }
+    },
+    {
+      "segment_id": 2,
+      "prompt": "You are a friendly teacher. Explain why prices go up, in under 60 words, with a candy example.",
+      "runs": [
+        {
+          "answer": "Imagine a candy shop with 100 candies, and 50 kids all want one. The kids compete by offering more coins, so the shopkeeper raises the price. When lots of people want something and there isn't enough to go around, prices go up. Supply and demand at work!",
+          "scores": {
+            "on_task": 1.0,
+            "bullets": 0.0,
+            "length": 1.0,
+            "reading_level": 0.937670212765957,
+            "overall": 0.6458900709219857
+          },
+          "stop_reason": "end_turn"
+        },
+        {
+          "answer": "Imagine a candy shop with 100 candies, and 50 kids all want one. Kids start offering more coins to get one, so the shopkeeper raises the price. That's how prices go up: when more people want something than there is available, sellers can charge more. This is called supply and demand!",
+          "scores": {
+            "on_task": 1.0,
+            "bullets": 0.0,
+            "length": 1.0,
+            "reading_level": 0.9305588235294117,
+            "overall": 0.6435196078431372
+          },
+          "stop_reason": "end_turn"
+        }
+      ],
+      "mean": {
+        "overall": 0.6447048393825614,
+        "on_task": 1.0,
+        "bullets": 0.0,
+        "length": 1.0,
+        "reading_level": 0.9341145181476843
+      }
+    },
+    {
+      "segment_id": 3,
+      "prompt": "You are a friendly teacher. Explain why prices go up, for a kid, with a candy example.",
+      "runs": [
+        {
+          "answer": "Hi there! Let's talk about why prices go up, using candy!\n\nImagine you and your friends LOVE a certain chocolate bar called the Super Crunchy Bar. Every day after school, everyone wants one. The shop only has 10 bars on the shelf, but 20 kids want to buy them. What happens?\n\nThe kids start asking, \"How much will you pay for that last bar?\" One kid says, \"I'll pay 50 cents!\" Another says, \"I'll pay 60 cents!\" Now the shopkeeper sees that people are happy to pay more, so the shopkeeper raises the price to 75 cents. Hooray for the shopkeeper!\n\nThat's the big idea: **when lots of people want something and there isn't enough of it, the price goes up.**\n\nNow let's flip it. Suppose the candy company makes a HUGE batch, and now there are 100 bars on the shelf but only 10 kids who want them. The shopkeeper worries nobody will buy, so the price goes down to get kids to try them.\n\nSomething else can make prices go up too. Say the sugar and cocoa that go into the candy suddenly cost more to buy. The candy company has to pay more to make each bar, so it raises the price to keep making money. That's called higher costs.\n\nSo remember the two big reasons:\n1. **More people want it, or there's less of it** (like those 10 bars and 20 kids)\n2. **It costs more to make it** (like pricier sugar and cocoa)\n\nCan you think of something you like to buy? What do you think would make its price go up? 🍫",
+          "scores": {
+            "on_task": 1.0,
+            "bullets": 0.6666666666666667,
+            "length": 0.0,
+            "reading_level": 1.0,
+            "overall": 0.5555555555555556
+          },
+          "stop_reason": "end_turn"
+        },
+        {
+          "answer": "Hi there! Let's talk about why prices sometimes go up. Let's pretend you run a candy stand.\n\nImagine you sell lollipops for 50 cents each. Lots of kids love them, and every day you sell out in an hour! Now think about what happens when you want to buy more lollipops from the candy factory:\n\n**1. Sugar costs more.** If the farm that grows sugar has a bad year because of too little rain, sugar gets scarce. The factory has to pay more for it, and that cost gets passed along to you. So you have to charge more for your lollipops, maybe 60 cents.\n\n**2. Lots of kids want them.** Suppose it's the last week of summer and everyone wants a treat. You have only 20 lollipops left, but 50 kids are lined up. Some kids would happily pay 75 cents to get one. When lots of people want something and there isn't much of it, the price tends to rise.\n\n**3. Things get more expensive to run.** Maybe the rent for your stand goes up, or the wrappers cost more. You need to charge a bit more just to keep your stand open and still earn something for your work.\n\nSo prices go up when *making* things costs more, or when *more people want* the things than there are to go around. And when there are plenty of lollipops and not many kids wanting them, the price can come back down!\n\nCan you think of something you buy that might have gotten more expensive lately?",
+          "scores": {
+            "on_task": 1.0,
+            "bullets": 0.0,
+            "length": 0.0,
+            "reading_level": 1.0,
+            "overall": 0.3333333333333333
+          },
+          "stop_reason": "end_turn"
+        }
+      ],
+      "mean": {
+        "overall": 0.4444444444444444,
+        "on_task": 1.0,
+        "bullets": 0.33333333333333337,
+        "length": 0.0,
+        "reading_level": 1.0
+      }
+    },
+    {
+      "segment_id": 4,
+      "prompt": "You are a friendly teacher. Explain why prices go up, for a kid, in under 60 words,",
+      "runs": [
+        {
+          "answer": "Prices go up when lots of people want something but there isn't enough of it to go around. Imagine everyone wants the last cookie in the jar. Sellers know people will pay more, so they raise the price. Sometimes it costs more to make things, like flour or gas, so stores raise prices to cover that. Prices can also rise when people have more money to spend!",
+          "scores": {
+            "on_task": 1.0,
+            "bullets": 0.0,
+            "length": 0.8833333333333333,
+            "reading_level": 0.9730985074626866,
+            "overall": 0.6188106135986733
+          },
+          "stop_reason": "end_turn"
+        },
+        {
+          "answer": "Prices go up when lots of people want something but there isn't enough of it to go around. Imagine everyone wants the last cookie in the jar. Sellers know people will pay more, so they raise the price. Costs can also go up, like when it costs more to grow wheat or make toys, and sellers pass that cost along to you.",
+          "scores": {
+            "on_task": 1.0,
+            "bullets": 0.0,
+            "length": 0.9666666666666667,
+            "reading_level": 0.9399677419354837,
+            "overall": 0.6355448028673835
+          },
+          "stop_reason": "end_turn"
+        }
+      ],
+      "mean": {
+        "overall": 0.6271777082330283,
+        "on_task": 1.0,
+        "bullets": 0.0,
+        "length": 0.925,
+        "reading_level": 0.9565331246990851
+      }
+    }
+  ],
+  "attribution": [
+    {
+      "overall": -0.06437749287749284,
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": -0.07222222222222219,
+      "reading_level": -0.12091025641025632
+    },
+    {
+      "overall": 0.5911780626780627,
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": -0.0888888888888889,
+      "reading_level": -0.12091025641025632
+    },
+    {
+      "overall": -0.05352677670449868,
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": -0.10555555555555551,
+      "reading_level": -0.05502477455794064
+    },
+    {
+      "overall": 0.1467336182336183,
+      "on_task": 0.0,
+      "bullets": -0.33333333333333337,
+      "length": 0.8944444444444445,
+      "reading_level": -0.12091025641025632
+    },
+    {
+      "overall": -0.0359996455549656,
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": -0.030555555555555558,
+      "reading_level": -0.07744338110934146
+    }
+  ],
+  "within_noise": [
+    {
+      "overall": true,
+      "on_task": true,
+      "bullets": true,
+      "length": true,
+      "reading_level": true
+    },
+    {
+      "overall": false,
+      "on_task": false,
+      "bullets": true,
+      "length": true,
+      "reading_level": true
+    },
+    {
+      "overall": true,
+      "on_task": true,
+      "bullets": true,
+      "length": true,
+      "reading_level": true
+    },
+    {
+      "overall": false,
+      "on_task": true,
+      "bullets": false,
+      "length": false,
+      "reading_level": true
+    },
+    {
+      "overall": true,
+      "on_task": true,
+      "bullets": true,
+      "length": true,
+      "reading_level": true
+    }
+  ],
+  "explanations": {
+    "1": "Without this part, the answer shifts from explaining why prices rise to teaching fractions with a candy-bar example.",
+    "3": "Without this part, the answer becomes much longer and more playful, adding a story with shopkeepers, emoji, and an interactive question for the child.",
+    "4": "Without this part, the answer uses a different analogy, the last cookie in a jar, instead of the candy bar example, and drops the cost-of-sugar framing for flour and gas."
+  },
+  "judge_baseline": [
+    [
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.5,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  ],
+  "judge_ablation": [
+    [
+      [
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        0.5,
+        0.0,
+        1.0,
+        1.0,
+        0.5
+      ],
+      [
+        0.5,
+        0.0,
+        1.0,
+        1.0,
+        0.5
+      ]
+    ],
+    [
+      [
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.5,
+        1.0,
+        0.5,
+        1.0,
+        0.5
+      ]
+    ]
+  ],
+  "follow_with": [
+    0.5,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "follow_without": [
+    0.5,
+    0.0,
+    1.0,
+    0.0,
+    0.25
+  ],
+  "call_counts": {
+    "segment": 1,
+    "baseline": 3,
+    "ablation": 10,
+    "judge": 13,
+    "explain": 3
+  },
+  "calls": 30,
+  "input_tokens": 12161,
+  "output_tokens": 3385,
+  "model": "claude-haiku-5-5",
+  "config": {
+    "provider": "anthropic",
+    "model": "claude-haiku-5-5",
+    "temperature": null,
+    "thinking": "disabled",
+    "effort": "low",
+    "max_tokens": 800,
+    "segment_max_tokens": 2000,
+    "explain_max_tokens": 120,
+    "judge_parts": true,
+    "judge_max_tokens": 600,
+    "baseline_runs": 3,
+    "ablation_runs": 2,
+    "max_segments": 10,
+    "noise_floor_k": 2.0,
+    "min_noise_floor": 0.05,
+    "ablation_mode": "delete",
+    "max_concurrency": 8,
+    "max_calls_per_analysis": 60,
+    "explain_top_n": 3,
+    "price_per_mtok": {
+      "input": 0.1,
+      "output": 0.5
+    }
+  },
+  "created_at": "2026-10-16T08:48:53.871988+00:00"
+}

@@ -1,0 +1,598 @@
+{
+ "challenge_id": "explain_to_kid",
+ "user_prompt": "Explain inflation to my 10-year-old cousin who asked why prices keep going up. Use exactly 3 bullet points, keep the whole answer to 60 words or fewer, and write it at a grade 5 reading level or below.",
+ "final_prompt": "Explain inflation to my 10-year-old cousin who asked why prices keep going up. Use exactly 3 bullet points, keep the whole answer to 60 words or fewer, and write it at a grade 5 reading level or below.",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Explain inflation ",
+   "role": "task",
+   "start": 0,
+   "end": 18
+  },
+  {
+   "id": 1,
+   "text": "to my 10-year-old cousin ",
+   "role": "audience",
+   "start": 18,
+   "end": 43
+  },
+  {
+   "id": 2,
+   "text": "who asked why prices keep going up. ",
+   "role": "context",
+   "start": 43,
+   "end": 79
+  },
+  {
+   "id": 3,
+   "text": "Use exactly 3 bullet points, ",
+   "role": "format",
+   "start": 79,
+   "end": 108
+  },
+  {
+   "id": 4,
+   "text": "keep the whole answer to 60 words or fewer, ",
+   "role": "constraint",
+   "start": 108,
+   "end": 152
+  },
+  {
+   "id": 5,
+   "text": "and write it at a grade 5 reading level or below.",
+   "role": "constraint",
+   "start": 152,
+   "end": 201
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "bullets",
+  "length",
+  "reading_level"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "- Inflation means money buys less over time, so prices slowly go up.\n- It can happen when lots of people want things, but there isn't enough to go around.\n- It can also happen when making things costs more, like wages, fuel, or materials.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.5983809523809519,
+    "overall": 0.866126984126984
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys less.\n- It happens when lots of people want to buy things, but there isn't quite enough stuff to go around.\n- Also, it can cost more to make things, like wages, food, and fuel, so stores raise prices.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.8097142857142856,
+    "overall": 0.9365714285714285
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- It can happen when lots of people want things, but there isn't enough to go around.\n- It can also happen when making things costs more, like wages, gas, or materials.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.7021818181818176,
+    "overall": 0.9007272727272726
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.9011418951418951,
+  "on_task": 1.0,
+  "bullets": 1.0,
+  "length": 1.0,
+  "reading_level": 0.703425685425685
+ },
+ "baseline_std": {
+  "overall": 0.03522405246534871,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.0,
+  "reading_level": 0.10567215739604618
+ },
+ "noise": {
+  "overall": 0.07044810493069742,
+  "on_task": 0.05,
+  "bullets": 0.05,
+  "length": 0.05,
+  "reading_level": 0.21134431479209237
+ },
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "to my 10-year-old cousin who asked why prices keep going up. Use exactly 3 bullet points, keep the whole answer to 60 words or fewer, and write it at a grade 5 reading level or below.",
+   "runs": [
+    {
+     "answer": "- Prices go up when more people want to buy something than there is to sell.\n- Making things costs more sometimes, like paying workers, buying gas, or getting materials.\n- Companies raise prices to earn money, and when money is printed or saved less, each dollar buys a bit less.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.5758333333333333,
+      "overall": 0.8586111111111111
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Prices go up when more people want to buy something than there is to sell.\n- Making things costs more sometimes, like gas, wages, and materials.\n- Money also loses some value over time, so it takes more dollars to buy the same thing.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.8231428571428566,
+      "overall": 0.9410476190476188
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.899829365079365,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.699488095238095
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Explain inflation who asked why prices keep going up. Use exactly 3 bullet points, keep the whole answer to 60 words or fewer, and write it at a grade 5 reading level or below.",
+   "runs": [
+    {
+     "answer": "- Inflation means prices rise over time, so your money buys less.\n- It often happens when many people want to buy things, but there isn't enough to go around.\n- Higher costs for making and shipping goods can also push prices up.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.7149999999999999,
+      "overall": 0.9049999999999999
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time, so prices slowly rise.\n- It often happens when more people want things than stores can supply.\n- Costs for workers, fuel, and materials can also push stores to raise prices.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.7075555555555553,
+      "overall": 0.9025185185185185
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9037592592592592,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.7112777777777776
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Explain inflation to my 10-year-old cousin Use exactly 3 bullet points, keep the whole answer to 60 words or fewer, and write it at a grade 5 reading level or below.",
+   "runs": [
+    {
+     "answer": "- Inflation means prices go up over time.\n- A candy bar that cost $1 last year might cost $1.10 now.\n- Your money buys a little less than it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time.\n- A toy that cost $10 last year might cost $11 this year.\n- Your money buys a little less stuff than it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Explain inflation to my 10-year-old cousin who asked why prices keep going up. keep the whole answer to 60 words or fewer, and write it at a grade 5 reading level or below.",
+   "runs": [
+    {
+     "answer": "Inflation means prices go up over time. Money gets a little less powerful, so you need more of it to buy the same things. Why? Lots of people want to buy things, and businesses charge more because costs for things like food, gas, and wages keep rising. So a toy that cost $10 might cost $12 later.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices slowly go up over time. Think of it like this: when lots of people have more money to spend, stores can charge more because people still want to buy things. Also, it can cost more to make things, like food or toys, so stores raise prices to cover that. So a candy bar that cost one dollar before might cost two dollars now.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 0.9,
+      "reading_level": 0.8988787878787875,
+      "overall": 0.5996262626262625
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6331464646464646,
+    "on_task": 1.0,
+    "bullets": 0.0,
+    "length": 0.95,
+    "reading_level": 0.9494393939393937
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "Explain inflation to my 10-year-old cousin who asked why prices keep going up. Use exactly 3 bullet points, and write it at a grade 5 reading level or below.",
+   "runs": [
+    {
+     "answer": "- Money is like a team's points. When there are lots of points around and not many things to buy, people are willing to pay more for each thing, so prices go up.\n\n- Things cost more to make sometimes, like gas, wood, or workers' pay. Stores raise their prices to cover those costs, and the price tags go up.\n\n- Over time, a dollar buys a little less than it used to. That's why your grandparents might say a candy bar was much cheaper when they were kids.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.5666666666666667,
+      "reading_level": 1.0,
+      "overall": 0.8555555555555555
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Money is worth a little less over time. Think about it like this: a candy bar cost 50 cents when your parents were kids, and now it might cost $1.50. The candy didn't change much, but the money you use to buy it is worth less than it used to be.\n\n- Lots of people want to buy things, but there isn't always enough stuff to go around. When everyone has more money to spend, stores can raise their prices, and they often do.\n\n- Things cost more to make and bring to stores, like gas, food, and workers' pay. When those costs go up, companies raise their prices to keep up, and that makes everything cost more.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.06666666666666665,
+      "reading_level": 0.956807881773399,
+      "overall": 0.6744915161466886
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.765023535851122,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.31666666666666665,
+    "reading_level": 0.9784039408866996
+   }
+  },
+  {
+   "segment_id": 5,
+   "prompt": "Explain inflation to my 10-year-old cousin who asked why prices keep going up. Use exactly 3 bullet points, keep the whole answer to 60 words or fewer,",
+   "runs": [
+    {
+     "answer": "- Inflation means money buys less than it used to, so things cost more over time.\n- It often happens when lots of people want to buy things, or when making things gets more expensive.\n- Think of it like a candy bar that cost $1 last year and costs $1.10 now.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.9542040816326527,
+      "overall": 0.9847346938775509
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys a little less over time, so things cost more.\n- It often happens when lots of people want to buy things, or when making things gets more expensive.\n- Think of it like a candy bar that gets slightly smaller or pricier each year, while your allowance stays the same.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.589076923076923,
+      "overall": 0.8630256410256409
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.923880167451596,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.7716405023547879
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0013125300625301817,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": 0.00393759018758999
+  },
+  {
+   "overall": -0.0026173641173640183,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": -0.00785209235209261
+  },
+  {
+   "overall": -0.09885810485810487,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": -0.29657431457431505
+  },
+  {
+   "overall": 0.2679954304954305,
+   "on_task": 0.0,
+   "bullets": 1.0,
+   "length": 0.050000000000000044,
+   "reading_level": -0.24601370851370874
+  },
+  {
+   "overall": 0.1361183592907731,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.6833333333333333,
+   "reading_level": -0.2749782554610146
+  },
+  {
+   "overall": -0.022738272309700824,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": -0.06821481692910292
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": false,
+   "length": false,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   0.5,
+   0.5,
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   0.5,
+   0.5,
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   1.0,
+   0.5,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.5,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    0.5,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    0.5,
+    0.5,
+    0.0,
+    0.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  0.6666666666666666,
+  0.5,
+  1.0,
+  1.0,
+  0.6666666666666666
+ ],
+ "follow_without": [
+  1.0,
+  0.5,
+  0.5,
+  0.0,
+  0.5,
+  1.0
+ ],
+ "call_counts": {
+  "baseline": 3,
+  "ablation": 12
+ },
+ "calls": 15,
+ "input_tokens": 1052,
+ "output_tokens": 1360,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T08:00:40.862501+00:00"
+}

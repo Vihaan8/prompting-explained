@@ -1,0 +1,473 @@
+{
+  "model": "claude-haiku-5-5",
+  "ablation_runs": 1,
+  "go": true,
+  "by_challenge": {
+    "explain_to_kid": true,
+    "landlord_reply": true,
+    "job_extraction": true
+  },
+  "cases": [
+    {
+      "case": 1,
+      "challenge": "explain_to_kid",
+      "prompt": "Explain inflation to a 10-year-old. Keep it under 60 words. Use 3 bullet points.",
+      "phrase": "under 60 words",
+      "requirement": "length",
+      "segments": [
+        [
+          "task",
+          "Explain inflation to a 10-year-old."
+        ],
+        [
+          "constraint",
+          "Keep it under 60 words."
+        ],
+        [
+          "format",
+          "Use 3 bullet points."
+        ]
+      ],
+      "segmentation": "llm",
+      "baseline_mean": {
+        "overall": 1.0,
+        "bullets": 1.0,
+        "length": 1.0,
+        "reading_level": 1.0
+      },
+      "baseline_std": {
+        "overall": 0.0,
+        "bullets": 0.0,
+        "length": 0.0,
+        "reading_level": 0.0
+      },
+      "noise": {
+        "overall": 0.05,
+        "bullets": 0.05,
+        "length": 0.05,
+        "reading_level": 0.05
+      },
+      "calls": 7,
+      "input_tokens": 964,
+      "output_tokens": 562,
+      "table": "baseline mean: overall=1.00  bullets=1.00  length=1.00  reading_level=1.00\nnoise floor:   overall=0.05  bullets=0.05  length=0.05  reading_level=0.05\n\n #  role                    overall       bullets        length  reading_leve  segment\n 0  task                     +0.43         +1.00         +0.00~        +0.28   Explain inflation to a 10-year-old.\n 1  constraint               +0.29         +0.00~        +0.62         +0.26   Keep it under 60 words.\n 2  format                   +0.38         +1.00         +0.00~        +0.15   Use 3 bullet points.\n\nsegmentation: llm | calls: 7 {'segment': 1, 'baseline': 3, 'ablation': 3} | tokens: 964 in / 562 out | model: claude-haiku-5-5",
+      "found": true,
+      "segment": "Keep it under 60 words.",
+      "attribution": 0.6166666666666667,
+      "noise_floor": 0.05,
+      "clears_noise": true
+    },
+    {
+      "case": 2,
+      "challenge": "explain_to_kid",
+      "prompt": "Can you please explain what inflation is? My cousin is 10. Use simple words and exactly 3 bullets. Thanks so much!",
+      "phrase": "exactly 3 bullets",
+      "requirement": "bullets",
+      "segments": [
+        [
+          "task",
+          "Can you please explain what inflation is?"
+        ],
+        [
+          "audience",
+          "My cousin is 10."
+        ],
+        [
+          "constraint",
+          "Use simple words"
+        ],
+        [
+          "format",
+          "and exactly 3 bullets."
+        ],
+        [
+          "politeness_filler",
+          "Thanks so much!"
+        ]
+      ],
+      "segmentation": "llm",
+      "baseline_mean": {
+        "overall": 0.9416226240903659,
+        "bullets": 1.0,
+        "length": 0.9388888888888888,
+        "reading_level": 0.8859789833822092
+      },
+      "baseline_std": {
+        "overall": 0.020626512873528353,
+        "bullets": 0.0,
+        "length": 0.07876359377087683,
+        "reading_level": 0.10701814125075358
+      },
+      "noise": {
+        "overall": 0.05,
+        "bullets": 0.05,
+        "length": 0.15752718754175365,
+        "reading_level": 0.21403628250150716
+      },
+      "calls": 9,
+      "input_tokens": 1110,
+      "output_tokens": 992,
+      "table": "baseline mean: overall=0.94  bullets=1.00  length=0.94  reading_level=0.89\nnoise floor:   overall=0.05  bullets=0.05  length=0.16  reading_level=0.21\n\n #  role                    overall       bullets        length  reading_leve  segment\n 0  task                     +0.42         +1.00         -0.06~        +0.32   Can you please explain what inflation is?\n 1  audience                 +0.06         +0.00~        -0.06~        +0.24   My cousin is 10.\n 2  constraint               +0.08         +0.00~        +0.11~        +0.13~  Use simple words\n 3  format                   +0.54         +1.00         +0.71         -0.08~  and exactly 3 bullets.\n 4  politeness_filler        +0.08         +0.00~        -0.06~        +0.29   Thanks so much!\n\nsegmentation: llm | calls: 9 {'segment': 1, 'baseline': 3, 'ablation': 5} | tokens: 1110 in / 992 out | model: claude-haiku-5-5",
+      "found": true,
+      "segment": "and exactly 3 bullets.",
+      "attribution": 1.0,
+      "noise_floor": 0.05,
+      "clears_noise": true
+    },
+    {
+      "case": 3,
+      "challenge": "explain_to_kid",
+      "prompt": "You are a friendly teacher. Explain why prices go up, for a kid, in under 60 words, with a candy example.",
+      "phrase": "under 60 words",
+      "requirement": "length",
+      "segments": [
+        [
+          "role",
+          "You are a friendly teacher."
+        ],
+        [
+          "task",
+          "Explain why prices go up,"
+        ],
+        [
+          "audience",
+          "for a kid,"
+        ],
+        [
+          "constraint",
+          "in under 60 words,"
+        ],
+        [
+          "example",
+          "with a candy example."
+        ]
+      ],
+      "segmentation": "llm",
+      "baseline_mean": {
+        "overall": 0.6328247354497355,
+        "bullets": 0.0,
+        "length": 0.9611111111111111,
+        "reading_level": 0.9373630952380951
+      },
+      "baseline_std": {
+        "overall": 0.03255185967547252,
+        "bullets": 0.0,
+        "length": 0.034694433324435545,
+        "reading_level": 0.07433882959721907
+      },
+      "noise": {
+        "overall": 0.06510371935094504,
+        "bullets": 0.05,
+        "length": 0.06938886664887109,
+        "reading_level": 0.14867765919443815
+      },
+      "calls": 9,
+      "input_tokens": 1062,
+      "output_tokens": 1218,
+      "table": "baseline mean: overall=0.63  bullets=0.00  length=0.96  reading_level=0.94\nnoise floor:   overall=0.07  bullets=0.05  length=0.07  reading_level=0.15\n\n #  role                    overall       bullets        length  reading_leve  segment\n 0  role                     +0.03~        +0.00~        -0.02~        +0.10~  You are a friendly teacher.\n 1  task                     -0.02~        +0.00~        -0.04~        -0.01~  Explain why prices go up,\n 2  audience                 +0.03~        +0.00~        +0.03~        +0.06~  for a kid,\n 3  constraint               +0.08         -0.67         +0.96         -0.06~  in under 60 words,\n 4  example                  +0.10         +0.00~        +0.09         +0.20   with a candy example.\n\nsegmentation: llm | calls: 9 {'segment': 1, 'baseline': 3, 'ablation': 5} | tokens: 1062 in / 1218 out | model: claude-haiku-5-5",
+      "found": true,
+      "segment": "in under 60 words,",
+      "attribution": 0.9611111111111111,
+      "noise_floor": 0.06938886664887109,
+      "clears_noise": true
+    },
+    {
+      "case": 4,
+      "challenge": "landlord_reply",
+      "prompt": "Write a reply to my landlord disputing the $75 late fee. Mention Section 4.2 and the grace period. Keep it under 120 words.",
+      "phrase": "under 120 words",
+      "requirement": "length",
+      "segments": [
+        [
+          "task",
+          "Write a reply to my landlord disputing the $75 late fee."
+        ],
+        [
+          "constraint",
+          "Mention Section 4.2 and the grace period."
+        ],
+        [
+          "constraint",
+          "Keep it under 120 words."
+        ]
+      ],
+      "segmentation": "llm",
+      "baseline_mean": {
+        "overall": 1.0,
+        "length": 1.0,
+        "cites_facts": 1.0,
+        "no_apology": 1.0
+      },
+      "baseline_std": {
+        "overall": 0.0,
+        "length": 0.0,
+        "cites_facts": 0.0,
+        "no_apology": 0.0
+      },
+      "noise": {
+        "overall": 0.05,
+        "length": 0.05,
+        "cites_facts": 0.05,
+        "no_apology": 0.05
+      },
+      "calls": 7,
+      "input_tokens": 2116,
+      "output_tokens": 1209,
+      "table": "baseline mean: overall=1.00  length=1.00  cites_facts=1.00  no_apology=1.00\nnoise floor:   overall=0.05  length=0.05  cites_facts=0.05  no_apology=0.05\n\n #  role                    overall        length   cites_facts    no_apology  segment\n 0  task                     +0.00~        +0.00~        +0.00~        +0.00~  Write a reply to my landlord disputing the $75 late fee.\n 1  constraint               +0.00~        +0.00~        +0.00~        +0.00~  Mention Section 4.2 and the grace period.\n 2  constraint               +0.04~        +0.12         +0.00~        +0.00~  Keep it under 120 words.\n\nsegmentation: llm | calls: 7 {'segment': 1, 'baseline': 3, 'ablation': 3} | tokens: 2116 in / 1209 out | model: claude-haiku-5-5",
+      "found": true,
+      "segment": "Keep it under 120 words.",
+      "attribution": 0.125,
+      "noise_floor": 0.05,
+      "clears_noise": true
+    },
+    {
+      "case": 5,
+      "challenge": "landlord_reply",
+      "prompt": "Help me respond to this email. I paid on the 3rd, which is inside the grace period. Be firm and don't apologize.",
+      "phrase": "don't apologize",
+      "requirement": "no_apology",
+      "segments": [
+        [
+          "task",
+          "Help me respond to this email."
+        ],
+        [
+          "context",
+          "I paid on the 3rd, which is inside the grace period."
+        ],
+        [
+          "tone",
+          "Be firm and don't apologize."
+        ]
+      ],
+      "segmentation": "llm",
+      "baseline_mean": {
+        "overall": 0.987962962962963,
+        "length": 0.9638888888888889,
+        "cites_facts": 1.0,
+        "no_apology": 1.0
+      },
+      "baseline_std": {
+        "overall": 0.020848759720736475,
+        "length": 0.06254627916220949,
+        "cites_facts": 0.0,
+        "no_apology": 0.0
+      },
+      "noise": {
+        "overall": 0.05,
+        "length": 0.12509255832441898,
+        "cites_facts": 0.05,
+        "no_apology": 0.05
+      },
+      "calls": 8,
+      "input_tokens": 2825,
+      "output_tokens": 1839,
+      "table": "baseline mean: overall=0.99  length=0.96  cites_facts=1.00  no_apology=1.00\nnoise floor:   overall=0.05  length=0.13  cites_facts=0.05  no_apology=0.05\n\n #  role                    overall        length   cites_facts    no_apology  segment\n 0  task                     +0.11         +0.32         +0.00~        +0.00~  Help me respond to this email.\n 1  context                  +0.22         +0.66         +0.00~        +0.00~  I paid on the 3rd, which is inside the grace period.\n 2  tone                     +0.14         +0.41         +0.00~        +0.00~  Be firm and don't apologize.\n\nsegmentation: llm | calls: 8 {'segment': 2, 'baseline': 3, 'ablation': 3} | tokens: 2825 in / 1839 out | model: claude-haiku-5-5",
+      "found": true,
+      "segment": "Be firm and don't apologize.",
+      "attribution": 0.0,
+      "noise_floor": 0.05,
+      "clears_noise": false
+    },
+    {
+      "case": 6,
+      "challenge": "landlord_reply",
+      "prompt": "Please write a polite email to my landlord about the late fee. Cite the lease section. Thank you!",
+      "phrase": "Cite the lease section",
+      "requirement": "cites_facts",
+      "segments": [
+        [
+          "task",
+          "Please write a polite email to my landlord about the late fee."
+        ],
+        [
+          "constraint",
+          "Cite the lease section."
+        ],
+        [
+          "politeness_filler",
+          "Thank you!"
+        ]
+      ],
+      "segmentation": "llm",
+      "baseline_mean": {
+        "overall": 0.9777777777777779,
+        "length": 0.9333333333333332,
+        "cites_facts": 1.0,
+        "no_apology": 1.0
+      },
+      "baseline_std": {
+        "overall": 0.0222222222222222,
+        "length": 0.06666666666666665,
+        "cites_facts": 0.0,
+        "no_apology": 0.0
+      },
+      "noise": {
+        "overall": 0.05,
+        "length": 0.1333333333333333,
+        "cites_facts": 0.05,
+        "no_apology": 0.05
+      },
+      "calls": 7,
+      "input_tokens": 2020,
+      "output_tokens": 1458,
+      "table": "baseline mean: overall=0.98  length=0.93  cites_facts=1.00  no_apology=1.00\nnoise floor:   overall=0.05  length=0.13  cites_facts=0.05  no_apology=0.05\n\n #  role                    overall        length   cites_facts    no_apology  segment\n 0  task                     -0.02~        -0.07~        +0.00~        +0.00~  Please write a polite email to my landlord about the late...\n 1  constraint               +0.04~        +0.12~        +0.00~        +0.00~  Cite the lease section.\n 2  politeness_filler        +0.03~        +0.07~        +0.00~        +0.00~  Thank you!\n\nsegmentation: llm | calls: 7 {'segment': 1, 'baseline': 3, 'ablation': 3} | tokens: 2020 in / 1458 out | model: claude-haiku-5-5",
+      "found": true,
+      "segment": "Cite the lease section.",
+      "attribution": 0.0,
+      "noise_floor": 0.05,
+      "clears_noise": false
+    },
+    {
+      "case": 7,
+      "challenge": "job_extraction",
+      "prompt": "Turn this job posting into JSON with title, company, location, work_mode, and salary. Use null if a field is missing. Output only JSON.",
+      "phrase": "Use null if a field is missing",
+      "requirement": "no_invented_salary",
+      "segments": [
+        [
+          "task",
+          "Turn this job posting into JSON with title, company, location, work_mode, and salary."
+        ],
+        [
+          "constraint",
+          "Use null if a field is missing."
+        ],
+        [
+          "format",
+          "Output only JSON."
+        ]
+      ],
+      "segmentation": "llm",
+      "baseline_mean": {
+        "overall": 0.875,
+        "json_only": 0.5,
+        "fields": 1.0,
+        "accuracy": 1.0,
+        "no_invented_salary": 1.0
+      },
+      "baseline_std": {
+        "overall": 0.0,
+        "json_only": 0.0,
+        "fields": 0.0,
+        "accuracy": 0.0,
+        "no_invented_salary": 0.0
+      },
+      "noise": {
+        "overall": 0.05,
+        "json_only": 0.05,
+        "fields": 0.05,
+        "accuracy": 0.05,
+        "no_invented_salary": 0.05
+      },
+      "calls": 7,
+      "input_tokens": 2524,
+      "output_tokens": 879,
+      "table": "baseline mean: overall=0.88  json_only=0.50  fields=1.00  accuracy=1.00  no_invented_salary=1.00\nnoise floor:   overall=0.05  json_only=0.05  fields=0.05  accuracy=0.05  no_invented_salary=0.05\n\n #  role                    overall     json_only        fields      accuracy  no_invented_  segment\n 0  task                     +0.22         +0.00~        +0.40         +0.50         +0.00~  Turn this job posting into JSON with title, company, loca...\n 1  constraint               +0.06         +0.00~        +0.00~        +0.25         +0.00~  Use null if a field is missing.\n 2  format                   +0.06         +0.00~        +0.00~        +0.25         +0.00~  Output only JSON.\n\nsegmentation: llm | calls: 7 {'segment': 1, 'baseline': 3, 'ablation': 3} | tokens: 2524 in / 879 out | model: claude-haiku-5-5",
+      "found": true,
+      "segment": "Use null if a field is missing.",
+      "attribution": 0.0,
+      "noise_floor": 0.05,
+      "clears_noise": false
+    },
+    {
+      "case": 8,
+      "challenge": "job_extraction",
+      "prompt": "Extract the job info as JSON with these keys: title, company, location, work_mode, salary. No code fences.",
+      "phrase": "No code fences",
+      "requirement": "json_only",
+      "segments": [
+        [
+          "task",
+          "Extract the job info as JSON with these keys: title, company, location, work_mode, salary."
+        ],
+        [
+          "constraint",
+          "No code fences."
+        ]
+      ],
+      "segmentation": "llm",
+      "baseline_mean": {
+        "overall": 0.9375,
+        "json_only": 1.0,
+        "fields": 1.0,
+        "accuracy": 0.75,
+        "no_invented_salary": 1.0
+      },
+      "baseline_std": {
+        "overall": 0.0,
+        "json_only": 0.0,
+        "fields": 0.0,
+        "accuracy": 0.0,
+        "no_invented_salary": 0.0
+      },
+      "noise": {
+        "overall": 0.05,
+        "json_only": 0.05,
+        "fields": 0.05,
+        "accuracy": 0.05,
+        "no_invented_salary": 0.05
+      },
+      "calls": 6,
+      "input_tokens": 2173,
+      "output_tokens": 627,
+      "table": "baseline mean: overall=0.94  json_only=1.00  fields=1.00  accuracy=0.75  no_invented_salary=1.00\nnoise floor:   overall=0.05  json_only=0.05  fields=0.05  accuracy=0.05  no_invented_salary=0.05\n\n #  role                    overall     json_only        fields      accuracy  no_invented_  segment\n 0  task                     +0.94         +1.00         +1.00         +0.75         +1.00   Extract the job info as JSON with these keys: title, comp...\n 1  constraint               +0.12         +0.50         +0.00~        +0.00~        +0.00~  No code fences.\n\nsegmentation: llm | calls: 6 {'segment': 1, 'baseline': 3, 'ablation': 2} | tokens: 2173 in / 627 out | model: claude-haiku-5-5",
+      "found": true,
+      "segment": "No code fences.",
+      "attribution": 0.5,
+      "noise_floor": 0.05,
+      "clears_noise": true
+    },
+    {
+      "case": 9,
+      "challenge": "job_extraction",
+      "prompt": "Can you summarize this job posting for my spreadsheet as JSON? Please include the salary.",
+      "phrase": "as JSON",
+      "requirement": "json_only",
+      "segments": [
+        [
+          "task",
+          "Can you summarize this job posting for my spreadsheet as JSON? Please"
+        ],
+        [
+          "constraint",
+          "include the salary."
+        ]
+      ],
+      "segmentation": "llm",
+      "baseline_mean": {
+        "overall": 0.65,
+        "json_only": 0.5,
+        "fields": 0.6,
+        "accuracy": 0.5,
+        "no_invented_salary": 1.0
+      },
+      "baseline_std": {
+        "overall": 0.0,
+        "json_only": 0.0,
+        "fields": 0.0,
+        "accuracy": 0.0,
+        "no_invented_salary": 0.0
+      },
+      "noise": {
+        "overall": 0.05,
+        "json_only": 0.05,
+        "fields": 0.05,
+        "accuracy": 0.05,
+        "no_invented_salary": 0.05
+      },
+      "calls": 6,
+      "input_tokens": 2153,
+      "output_tokens": 1998,
+      "table": "baseline mean: overall=0.65  json_only=0.50  fields=0.60  accuracy=0.50  no_invented_salary=1.00\nnoise floor:   overall=0.05  json_only=0.05  fields=0.05  accuracy=0.05  no_invented_salary=0.05\n\n #  role                    overall     json_only        fields      accuracy  no_invented_  segment\n 0  task                     +0.65         +0.50         +0.60         +0.50         +1.00   Can you summarize this job posting for my spreadsheet as ...\n 1  constraint               +0.05         +0.00~        +0.20         +0.00~        +0.00~  include the salary.\n\nsegmentation: llm | calls: 6 {'segment': 1, 'baseline': 3, 'ablation': 2} | tokens: 2153 in / 1998 out | model: claude-haiku-5-5",
+      "found": true,
+      "segment": "Can you summarize this job posting for my spreadsheet as JSON? Please",
+      "attribution": 0.5,
+      "noise_floor": 0.05,
+      "clears_noise": true
+    }
+  ],
+  "calls": 66,
+  "input_tokens": 16947,
+  "output_tokens": 10782
+}

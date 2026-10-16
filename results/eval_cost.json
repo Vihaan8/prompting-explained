@@ -1,0 +1,32 @@
+{
+  "analyses": {
+    "calls": 927,
+    "input_tokens": 272202,
+    "output_tokens": 209061,
+    "usd": 0.1317507
+  },
+  "faithfulness": {
+    "calls": 420,
+    "input_tokens": 88726,
+    "output_tokens": 89823,
+    "usd": 0.0537841
+  },
+  "stability_reruns": {
+    "calls": 264,
+    "input_tokens": 63955,
+    "output_tokens": 63000,
+    "usd": 0.0378955
+  },
+  "segmentation_stability": {
+    "calls": 93,
+    "input_tokens": 70959,
+    "output_tokens": 9055,
+    "usd": 0.0116234
+  },
+  "judge": {
+    "calls": 1100,
+    "input_tokens": 1122606,
+    "output_tokens": 67996,
+    "usd": 0.14625860000000002
+  }
+}

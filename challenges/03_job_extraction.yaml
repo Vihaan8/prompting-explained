@@ -1,0 +1,51 @@
+id: job_extraction
+title: "Job posting to JSON"
+level: 3
+scenario: >
+  You're tracking job applications in a spreadsheet. Get the AI to pull the key
+  details from this posting into clean JSON for your job tracker.
+fixed_context: |
+  ok so we're finally hiring!!  Brightline Health is looking for a Data Analyst
+  to join our care-ops team. you'd be working w/ claims + scheduling data, building
+  dashboards (Tableau, some SQL), and helping clinic managers figure out where
+  patients are falling through the cracks.
+
+  where: our Raleigh, NC office — it's hybrid, so 3 days in, 2 from home
+  who: 2+ yrs w/ SQL, comfortable explaining numbers to non-data people
+  perks: $2,000 sign-on bonus!! plus good coffee, flexible hours, health/dental/vision,
+  401k match up to 5%, and a team that actually likes each other lol
+
+  interested? send your resume + a short note to careers@brightlinehealth.example
+  by end of month. no recruiters pls
+requirements:
+  - id: json_only
+    label: "Only JSON, no extra text"
+    short: "JSON only"
+    scorer: json_only
+    params: {}
+  - id: fields
+    label: "Has title, company, location, work_mode, and salary"
+    short: "having every field"
+    scorer: json_keys_present
+    params: { keys: [title, company, location, work_mode, salary] }
+  - id: accuracy
+    label: "Title, company, location, and work mode are correct"
+    short: "getting the fields right"
+    scorer: json_field_accuracy
+    params:
+      expected:
+        title: "Data Analyst"
+        company: "Brightline Health"
+        location: "Raleigh, NC"
+        work_mode: "hybrid"
+  - id: no_invented_salary
+    label: "Doesn't invent a salary"
+    short: "not inventing a salary"
+    scorer: json_field_null
+    params: { field: salary }
+reference_prompt: >
+  Extract the job details from the posting below into a JSON object with exactly these
+  keys: title, company, location, work_mode, salary. Copy values exactly as they appear
+  in the posting. Write location as "City, ST" and work_mode as one of remote, hybrid,
+  or onsite. If a value is not in the posting, use null. Do not guess. Output only the
+  raw JSON object, with no code fences and no other text.

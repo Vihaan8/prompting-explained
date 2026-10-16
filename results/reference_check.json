@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "model": "claude-haiku-5-5",
+    "calls": 18,
+    "input_tokens": 7112,
+    "output_tokens": 2155
+  },
+  "challenges": {
+    "explain_to_kid": {
+      "reference_prompt": "Explain inflation to a 10-year-old. Use exactly 3 short bullet points, 60 words total or less, and one example about candy prices. Keep every sentence under 10 words and use simple everyday words.\n",
+      "runs": 5,
+      "passes": {
+        "on_task": 5,
+        "bullets": 5,
+        "length": 5,
+        "reading_level": 5
+      },
+      "all_passed": true,
+      "answers": [
+        "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar you have buys a little less candy than before.",
+        "- Inflation means prices go up over time, so things cost more.\n- Your mom's candy bar that cost 25 cents long ago might cost a dollar now.\n- Because each dollar buys less candy, your money doesn't stretch as far.",
+        "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar buys a little less candy than before.",
+        "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar you have can buy less candy than before.",
+        "- Inflation means prices go up over time.\n- Your candy that cost 25 cents might cost 50 cents later.\n- Each dollar you have buys a little less candy than before."
+      ],
+      "scores": [
+        {
+          "on_task": 1.0,
+          "bullets": 1.0,
+          "length": 1.0,
+          "reading_level": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "bullets": 1.0,
+          "length": 1.0,
+          "reading_level": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "bullets": 1.0,
+          "length": 1.0,
+          "reading_level": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "bullets": 1.0,
+          "length": 1.0,
+          "reading_level": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "bullets": 1.0,
+          "length": 1.0,
+          "reading_level": 1.0,
+          "overall": 1.0
+        }
+      ]
+    },
+    "landlord_reply": {
+      "reference_prompt": "Write a reply to my landlord disputing the $75 late fee in the email below. I paid rent on the 3rd. Cite Section 4.2 of the lease and point out that the grace period runs through the 5th, so no late fee can be charged. Ask for the fee to be removed. Keep it under 120 words. Be firm and respectful, and do not apologize.\n",
+      "runs": 5,
+      "passes": {
+        "on_task": 5,
+        "length": 5,
+        "cites_facts": 5,
+        "no_apology": 5
+      },
+      "all_passed": true,
+      "answers": [
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nI received your email regarding the $75 late fee on Unit 3B. I paid this month's rent on the 3rd, which falls within the grace period under Section 4.2 of my lease. That section states that rent is due on the 1st, that a grace period applies through the 5th, and that no late fees may be charged during the grace period.\n\nBecause the payment was received within the grace period, the $75 fee is not permitted under the lease. Please remove it from my account and confirm in writing once this has been done.\n\nThank you,\n[Your Name]\nUnit 3B",
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nI'm writing to dispute the $75 late fee on my account for this month. My rent was received on the 3rd, which falls within the grace period under Section 4.2 of my lease. That section states that rent is due on the 1st, a grace period applies through the 5th, and no late fees may be charged during the grace period.\n\nBecause the payment was made within that period, the fee is not permitted under the lease. Please remove the $75 charge from my account and confirm in writing once this has been done.\n\nThank you,\n[Your Name]\nUnit 3B",
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nI'm writing to dispute the $75 late fee on my account for this month's rent. My payment was received on the 3rd, which falls within the grace period set out in Section 4.2 of my lease. That section states that rent is due on the 1st, a grace period applies through the 5th, and no late fees may be charged during the grace period.\n\nBecause the payment was made within the grace period, the fee is not permitted under the lease. Please remove the $75 charge from my account and confirm in writing once this is done.\n\nThank you,\n[Your Name]\nUnit 3B",
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nThank you for your email. I'm disputing the $75 late fee on my account for this month. My rent payment was received on the 3rd, which falls within the grace period under Section 4.2 of my lease. That section states that rent is due on the 1st, a grace period applies through the 5th, and no late fees may be charged during the grace period.\n\nBecause the payment was made within that period, the fee was not authorized under the lease. Please remove the $75 charge from my account and confirm in writing once this has been done.\n\nRegards,\n[Your Name]\nUnit 3B",
+        "Subject: Re: Late fee - Unit 3B\n\nHi Dana,\n\nThank you for your email. I paid this month's rent on the 3rd, which falls within the grace period under Section 4.2 of the lease. That section states that rent is due on the 1st, that a grace period applies through the 5th, and that no late fees may be charged during the grace period.\n\nBecause the payment was received within that window, the $75 late fee is not permitted under the lease. Please remove it from my account.\n\nI'd appreciate written confirmation once this has been corrected.\n\nBest regards,\n[Your Name]\nUnit 3B"
+      ],
+      "scores": [
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "cites_facts": 1.0,
+          "no_apology": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "cites_facts": 1.0,
+          "no_apology": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "cites_facts": 1.0,
+          "no_apology": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "cites_facts": 1.0,
+          "no_apology": 1.0,
+          "overall": 1.0
+        },
+        {
+          "on_task": 1.0,
+          "length": 1.0,
+          "cites_facts": 1.0,
+          "no_apology": 1.0,
+          "overall": 1.0
+        }
+      ]
+    },
+    "job_extraction": {
+      "reference_prompt": "Extract the job details from the posting below into a JSON object with exactly these keys: title, company, location, work_mode, salary. Copy values exactly as they appear in the posting. Write location as \"City, ST\" and work_mode as one of remote, hybrid, or onsite. If a value is not in the posting, use null. Do not guess. Output only the raw JSON object, with no code fences and no other text.\n",
+      "runs": 5,
+      "passes": {
+        "json_only": 5,
+        "fields": 5,
+        "accuracy": 5,
+        "no_invented_salary": 5
+      },
+      "all_passed": true,
+      "answers": [
+        "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+        "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+        "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+        "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+        "{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}"
+      ],
+      "scores": [
+        {
+          "json_only": 1.0,
+          "fields": 1.0,
+          "accuracy": 1.0,
+          "no_invented_salary": 1.0,
+          "overall": 1.0
+        },
+        {
+          "json_only": 1.0,
+          "fields": 1.0,
+          "accuracy": 1.0,
+          "no_invented_salary": 1.0,
+          "overall": 1.0
+        },
+        {
+          "json_only": 1.0,
+          "fields": 1.0,
+          "accuracy": 1.0,
+          "no_invented_salary": 1.0,
+          "overall": 1.0
+        },
+        {
+          "json_only": 1.0,
+          "fields": 1.0,
+          "accuracy": 1.0,
+          "no_invented_salary": 1.0,
+          "overall": 1.0
+        },
+        {
+          "json_only": 1.0,
+          "fields": 1.0,
+          "accuracy": 1.0,
+          "no_invented_salary": 1.0,
+          "overall": 1.0
+        }
+      ]
+    }
+  }
+}

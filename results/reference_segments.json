@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "model": "claude-haiku-5-5",
+    "calls": 18,
+    "input_tokens": 7112,
+    "output_tokens": 2155
+  },
+  "challenges": {
+    "explain_to_kid": {
+      "method": "llm",
+      "segments": [
+        {
+          "id": 0,
+          "text": "Explain inflation to a 10-year-old. ",
+          "role": "task",
+          "start": 0,
+          "end": 36
+        },
+        {
+          "id": 1,
+          "text": "Use exactly 3 short bullet points, ",
+          "role": "format",
+          "start": 36,
+          "end": 71
+        },
+        {
+          "id": 2,
+          "text": "60 words total or less, ",
+          "role": "constraint",
+          "start": 71,
+          "end": 95
+        },
+        {
+          "id": 3,
+          "text": "and one example about candy prices. ",
+          "role": "example",
+          "start": 95,
+          "end": 131
+        },
+        {
+          "id": 4,
+          "text": "Keep every sentence under 10 words ",
+          "role": "constraint",
+          "start": 131,
+          "end": 166
+        },
+        {
+          "id": 5,
+          "text": "and use simple everyday words.\n",
+          "role": "constraint",
+          "start": 166,
+          "end": 197
+        }
+      ]
+    },
+    "landlord_reply": {
+      "method": "llm",
+      "segments": [
+        {
+          "id": 0,
+          "text": "Write a reply to my landlord disputing the $75 late fee in the email below. ",
+          "role": "task",
+          "start": 0,
+          "end": 76
+        },
+        {
+          "id": 1,
+          "text": "I paid rent on the 3rd. ",
+          "role": "context",
+          "start": 76,
+          "end": 100
+        },
+        {
+          "id": 2,
+          "text": "Cite Section 4.2 of the lease and point out that the grace period runs through the 5th, so no late fee can be charged. ",
+          "role": "constraint",
+          "start": 100,
+          "end": 219
+        },
+        {
+          "id": 3,
+          "text": "Ask for the fee to be removed. ",
+          "role": "task",
+          "start": 219,
+          "end": 250
+        },
+        {
+          "id": 4,
+          "text": "Keep it under 120 words. ",
+          "role": "constraint",
+          "start": 250,
+          "end": 275
+        },
+        {
+          "id": 5,
+          "text": "Be firm and respectful, and do not apologize.\n",
+          "role": "tone",
+          "start": 275,
+          "end": 321
+        }
+      ]
+    },
+    "job_extraction": {
+      "method": "llm",
+      "segments": [
+        {
+          "id": 0,
+          "text": "Extract the job details from the posting below into a JSON object with exactly these keys: title, company, location, work_mode, salary. ",
+          "role": "task",
+          "start": 0,
+          "end": 136
+        },
+        {
+          "id": 1,
+          "text": "Copy values exactly as they appear in the posting. ",
+          "role": "constraint",
+          "start": 136,
+          "end": 187
+        },
+        {
+          "id": 2,
+          "text": "Write location as \"City, ST\" and work_mode as one of remote, hybrid, or onsite. ",
+          "role": "format",
+          "start": 187,
+          "end": 267
+        },
+        {
+          "id": 3,
+          "text": "If a value is not in the posting, use null. ",
+          "role": "constraint",
+          "start": 267,
+          "end": 311
+        },
+        {
+          "id": 4,
+          "text": "Do not guess. ",
+          "role": "constraint",
+          "start": 311,
+          "end": 325
+        },
+        {
+          "id": 5,
+          "text": "Output only the raw JSON object, with no code fences and no other text.\n",
+          "role": "format",
+          "start": 325,
+          "end": 397
+        }
+      ]
+    }
+  }
+}

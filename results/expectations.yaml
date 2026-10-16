@@ -1,0 +1,106 @@
+# Expected verdicts, written by hand BEFORE running the tool on these prompts (2026-10-16).
+# green = this part should matter (the answer gets worse at the task without it)
+# grey  = it shouldn't matter (filler, redundant, or the AI does it anyway)
+# red   = it should work against the task (the answer does better without it)
+# Each prompt is given as its parts, in order; the tool is run with exactly these parts.
+
+explain_to_kid:
+  - parts:
+      - [green, "Explain inflation to a 10-year-old."]
+      - [green, "Use exactly 3 bullet points."]
+      - [green, "Keep it under 60 words."]
+  - parts:
+      - [green, "Explain inflation"]
+      - [green, "to a 10-year-old,"]
+      - [grey, "please."]
+      - [grey, "Thank you so much!"]
+  - parts:
+      - [green, "Explain inflation to a kid"]
+      - [green, "in 3 bullet points."]
+      - [red, "Use proper economics terms like CPI and monetary policy."]
+  - parts:
+      - [green, "Explain inflation to a 10-year-old in 3 bullets."]
+      - [red, "Make it detailed, at least 150 words."]
+  - parts:
+      - [grey, "You are a friendly teacher."]
+      - [green, "Explain why prices go up to a 10-year-old"]
+      - [green, "in under 60 words,"]
+      - [grey, "with a candy example."]
+  - parts:
+      - [green, "Explain inflation to a 10-year-old."]
+      - [green, "Use exactly 3 short bullet points."]
+      - [grey, "Use simple words."]
+      - [grey, "Make sure a child could understand it."]
+  - parts:
+      - [grey, "Hi!"]
+      - [green, "My cousin is 10 and wants to know why prices go up."]
+      - [green, "Answer in 3 bullet points under 60 words."]
+  - parts:
+      - [green, "Explain inflation"]
+      - [green, "in 3 bullet points"]
+      - [red, "with a long introduction paragraph first."]
+
+landlord_reply:
+  - parts:
+      - [green, "Write a reply to my landlord disputing the late fee."]
+      - [green, "Keep it under 120 words."]
+      - [grey, "Thanks!"]
+  - parts:
+      - [green, "Write a reply to my landlord."]
+      - [grey, "Dispute the $75 fee."]
+      - [grey, "Mention Section 4.2 and the grace period."]
+      - [green, "Under 120 words."]
+  - parts:
+      - [green, "Write a short reply to my landlord disputing the fee, under 120 words."]
+      - [red, "Start by apologizing for any confusion."]
+  - parts:
+      - [green, "Write a reply to my landlord disputing the late fee."]
+      - [red, "Make it detailed and thorough, at least 200 words."]
+  - parts:
+      - [green, "Draft an email reply to Dana"]
+      - [grey, "saying I paid on the 3rd"]
+      - [grey, "and that the lease has a grace period."]
+      - [green, "Keep it brief, under 100 words."]
+  - parts:
+      - [grey, "Please"]
+      - [green, "write a firm reply to my landlord about the late fee."]
+      - [grey, "Don't apologize."]
+      - [green, "Keep it under 120 words."]
+  - parts:
+      - [green, "Reply to this email and dispute the fee."]
+      - [grey, "Be respectful."]
+      - [grey, "Cite the lease."]
+  - parts:
+      - [green, "Write a reply to my landlord disputing the $75 fee in under 120 words."]
+      - [red, "Also include a long explanation of tenant rights in my state."]
+
+job_extraction:
+  - parts:
+      - [green, "Extract the job details from this posting as JSON"]
+      - [green, "with keys title, company, location, work_mode, salary."]
+      - [green, "Output only the JSON, no code fences."]
+  - parts:
+      - [green, "Turn this posting into JSON with title, company, location, work_mode, and salary."]
+      - [grey, "Use null if a field is missing."]
+      - [grey, "Thanks!"]
+  - parts:
+      - [green, "Extract title, company, location, work_mode, and salary as JSON."]
+      - [red, "Wrap it in a markdown code block."]
+  - parts:
+      - [green, "Extract title, company, location, work_mode, and salary as JSON."]
+      - [green, "Write work_mode as a single word."]
+      - [green, "No code fences or extra text."]
+  - parts:
+      - [green, "Give me JSON with title, company, location, work_mode, salary for this job."]
+      - [red, "After the JSON, add a one-sentence summary of the role."]
+  - parts:
+      - [grey, "Could you please"]
+      - [green, "pull the title, company, location, work_mode and salary out of this posting as JSON?"]
+      - [grey, "I'm tracking my applications."]
+  - parts:
+      - [green, "Extract title, company, location, work_mode, salary as raw JSON only."]
+      - [red, "Include every other detail from the posting too, like perks and requirements."]
+  - parts:
+      - [green, "Make a JSON object for this job posting"]
+      - [green, "using exactly these keys: title, company, location, work_mode, salary."]
+      - [grey, "Don't guess anything that isn't in the posting."]

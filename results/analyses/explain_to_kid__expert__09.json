@@ -1,0 +1,510 @@
+{
+ "challenge_id": "explain_to_kid",
+ "user_prompt": "Tell me why store prices keep climbing, explained for a 10-year-old. Use exactly three bullet points, no more than 60 words, and grade 5 or lower reading level.",
+ "final_prompt": "Tell me why store prices keep climbing, explained for a 10-year-old. Use exactly three bullet points, no more than 60 words, and grade 5 or lower reading level.",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Tell me why store prices keep climbing, ",
+   "role": "task",
+   "start": 0,
+   "end": 40
+  },
+  {
+   "id": 1,
+   "text": "explained for a 10-year-old. ",
+   "role": "audience",
+   "start": 40,
+   "end": 69
+  },
+  {
+   "id": 2,
+   "text": "Use exactly three bullet points, ",
+   "role": "format",
+   "start": 69,
+   "end": 102
+  },
+  {
+   "id": 3,
+   "text": "no more than 60 words, ",
+   "role": "constraint",
+   "start": 102,
+   "end": 125
+  },
+  {
+   "id": 4,
+   "text": "and grade 5 or lower reading level.",
+   "role": "constraint",
+   "start": 125,
+   "end": 160
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "bullets",
+  "length",
+  "reading_level"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "- Stores pay more to get things. When it costs more for farmers, truck drivers, and factories to make and move goods, stores charge more so they don't lose money.\n- Demand can push prices up. When lots of people want the same thing, and there isn't enough to go around, sellers can raise the price.\n- Money loses some value over time. When there is more money floating around, each dollar buys a little less, so prices rise to match.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.7,
+    "reading_level": 1.0,
+    "overall": 0.9
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Stores pay more to get things. Farmers, factories, and truck drivers often cost more, and fuel and rent can go up too.\n- Shops pass those costs on to you. If it costs the store more to stock milk, they raise the price so they still make money.\n- Demand can push prices up. When lots of people want the same thing, stores can charge more for it.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.9,
+    "reading_level": 1.0,
+    "overall": 0.9666666666666667
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Stores pay more to get things. Farmers, factories, and truck drivers may need more money to make and move food and toys.\n- Fuel, electricity, and rent cost more too. Keeping a store open takes more money each month.\n- Some people are willing to pay more. When lots of people want something, stores can raise prices and still sell it.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.9555555555555556,
+  "on_task": 1.0,
+  "bullets": 1.0,
+  "length": 0.8666666666666667,
+  "reading_level": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.05091750772173154,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.1527525231651947,
+  "reading_level": 0.0
+ },
+ "noise": {
+  "overall": 0.10183501544346309,
+  "on_task": 0.05,
+  "bullets": 0.05,
+  "length": 0.3055050463303894,
+  "reading_level": 0.05
+ },
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "explained for a 10-year-old. Use exactly three bullet points, no more than 60 words, and grade 5 or lower reading level.",
+   "runs": [
+    {
+     "answer": "Please tell me what topic you'd like explained. Once I know the subject, I'll write three short bullet points, under 60 words total, at a grade 5 reading level for a 10-year-old.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.9199999999999996,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Sure! What topic would you like me to explain? Tell me what you want to learn about, and I'll make it simple and fun for a 10-year-old.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "bullets": 0.0,
+    "length": 1.0,
+    "reading_level": 0.9599999999999997
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Tell me why store prices keep climbing, Use exactly three bullet points, no more than 60 words, and grade 5 or lower reading level.",
+   "runs": [
+    {
+     "answer": "- Companies pay more for things they need to make and sell, like food, fuel, and workers' wages.\n- Shipping and rent cost more too, so stores spend more to keep their doors open.\n- When many people want the same goods, stores can raise prices and still sell them.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Stores pay more for things they sell, like food, fuel, and shipping.\n- Workers ask for higher pay, and businesses raise prices to cover it.\n- Companies sometimes charge more because people are still willing to buy.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.9039999999999999,
+      "overall": 0.968
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.984,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.952
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Tell me why store prices keep climbing, explained for a 10-year-old. no more than 60 words, and grade 5 or lower reading level.",
+   "runs": [
+    {
+     "answer": "Prices in stores keep going up because lots of things cost more to make and move. Farmers pay more for fuel and fertilizer. Factories pay more for workers and materials. Trucks cost more to run. When businesses spend more, they raise prices so they can still make money. Also, when lots of people want the same things, stores can charge more.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 0.9833333333333333,
+      "reading_level": 1.0,
+      "overall": 0.6611111111111111
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Prices in stores keep going up because lots of things cost more to make and bring to the store. Farmers pay more for fuel and seeds. Factories pay more for workers and materials. Trucks cost more to run. When stores pay more, they often raise prices so they can still make money. Sometimes people want to buy a lot of things, which also pushes prices higher.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 0.9,
+      "reading_level": 1.0,
+      "overall": 0.6333333333333333
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6472222222222221,
+    "on_task": 1.0,
+    "bullets": 0.0,
+    "length": 0.9416666666666667,
+    "reading_level": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Tell me why store prices keep climbing, explained for a 10-year-old. Use exactly three bullet points, and grade 5 or lower reading level.",
+   "runs": [
+    {
+     "answer": "- **Things cost more to make and move.** Farmers, factories, and truck drivers pay more for fuel, fertilizer, metal, and wages. When it costs more to make a cereal box or bring it to the store, the store often has to charge more for it.\n\n- **People want to buy a lot of stuff.** When lots of people have money and want the same things, stores can raise prices and still sell out. Sometimes there are not enough toys, cars, or houses to go around, so the price goes up.\n\n- **Money gets worth a little less over time.** Banks and governments often make more money available, and each dollar can buy a little less than it used to. So a candy bar that cost one dollar may now cost two, even if the candy stayed the same.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.0,
+      "reading_level": 0.941185185185185,
+      "overall": 0.6470617283950616
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Things cost more to make and move.** Farmers, factories, and truck drivers pay more for fuel, workers, and supplies. When it costs more to make a sandwich or a toy, the store has to charge more to cover that.\n\n- **People want to buy a lot, and there aren't always enough things.** When lots of people have money to spend, they buy more stuff. If stores or farms can't make enough right away, the things people want can get pricey, like a popular toy that sells out.\n\n- **Money itself gets a little weaker over time.** Governments and banks often want prices to go up slowly, a little each year. So a dollar buys a bit less than it did before, and stores raise their prices to keep up.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6568641975308641,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.0,
+    "reading_level": 0.9705925925925925
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "Tell me why store prices keep climbing, explained for a 10-year-old. Use exactly three bullet points, no more than 60 words,",
+   "runs": [
+    {
+     "answer": "- Stores pay more to get things made and shipped, like flour, gas for trucks, and workers' paychecks, so they raise prices to cover those costs.\n- Sometimes lots of people want the same things at once, and when demand is higher than supply, sellers can charge more.\n- Money also loses some value over time, so it takes more dollars to buy the same toy or sandwich as before.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8833333333333333,
+      "reading_level": 0.34674626865671665,
+      "overall": 0.7433598673300166
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Things cost more to make and move, like gas for trucks, electricity for factories, and wages for workers, so stores pay more to get their items.\n- Sometimes there are shortages, like when not enough of something is grown or built, so people compete for it and prices rise.\n- Stores and companies raise prices to cover their higher costs and make a profit, and when lots of people have money to spend, they're willing to pay more.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.7333333333333334,
+      "reading_level": 0.0,
+      "overall": 0.5777777777777778
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6605688225538973,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.8083333333333333,
+    "reading_level": 0.17337313432835832
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.9555555555555556,
+   "on_task": 1.0,
+   "bullets": 1.0,
+   "length": -0.1333333333333333,
+   "reading_level": 0.04000000000000026
+  },
+  {
+   "overall": -0.028444444444444383,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": -0.1333333333333333,
+   "reading_level": 0.04800000000000004
+  },
+  {
+   "overall": 0.30833333333333346,
+   "on_task": 0.0,
+   "bullets": 1.0,
+   "length": -0.07499999999999996,
+   "reading_level": 0.0
+  },
+  {
+   "overall": 0.2986913580246915,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.8666666666666667,
+   "reading_level": 0.02940740740740755
+  },
+  {
+   "overall": 0.29498673300165834,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.05833333333333335,
+   "reading_level": 0.8266268656716417
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "bullets": false,
+   "length": true,
+   "reading_level": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": false,
+   "length": true,
+   "reading_level": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": false
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.8333333333333334
+ ],
+ "follow_without": [
+  0.0,
+  1.0,
+  0.0,
+  1.0,
+  0.5
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 10
+ },
+ "calls": 14,
+ "input_tokens": 1480,
+ "output_tokens": 1671,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T07:58:52.637463+00:00"
+}

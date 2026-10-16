@@ -1,0 +1,425 @@
+{
+ "challenge_id": "job_extraction",
+ "user_prompt": "Extract the job title, company name, location, and work mode (remote, hybrid, or onsite) from the attached posting and return only a JSON object with those keys plus a salary field. If the posting doesn't state a salary, set salary to null rather than estimating one. No text outside the JSON.",
+ "final_prompt": "Extract the job title, company name, location, and work mode (remote, hybrid, or onsite) from the attached posting and return only a JSON object with those keys plus a salary field. If the posting doesn't state a salary, set salary to null rather than estimating one. No text outside the JSON.\n\n<document>\nok so we're finally hiring!!  Brightline Health is looking for a Data Analyst\nto join our care-ops team. you'd be working w/ claims + scheduling data, building\ndashboards (Tableau, some SQL), and helping clinic managers figure out where\npatients are falling through the cracks.\n\nwhere: our Raleigh, NC office — it's hybrid, so 3 days in, 2 from home\nwho: 2+ yrs w/ SQL, comfortable explaining numbers to non-data people\nperks: $2,000 sign-on bonus!! plus good coffee, flexible hours, health/dental/vision,\n401k match up to 5%, and a team that actually likes each other lol\n\ninterested? send your resume + a short note to careers@brightlinehealth.example\nby end of month. no recruiters pls\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Extract the job title, company name, location, and work mode (remote, hybrid, or onsite) from the attached posting ",
+   "role": "task",
+   "start": 0,
+   "end": 115
+  },
+  {
+   "id": 1,
+   "text": "and return only a JSON object with those keys plus a salary field. ",
+   "role": "format",
+   "start": 115,
+   "end": 182
+  },
+  {
+   "id": 2,
+   "text": "If the posting doesn't state a salary, set salary to null rather than estimating one. ",
+   "role": "constraint",
+   "start": 182,
+   "end": 268
+  },
+  {
+   "id": 3,
+   "text": "No text outside the JSON.",
+   "role": "constraint",
+   "start": 268,
+   "end": 293
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "json_only",
+  "fields",
+  "accuracy",
+  "no_invented_salary"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "{\"job_title\": \"Data Analyst\", \"company_name\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+   "scores": {
+    "json_only": 1.0,
+    "fields": 0.6,
+    "accuracy": 0.5,
+    "no_invented_salary": 1.0,
+    "overall": 0.775
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "{\"job_title\": \"Data Analyst\", \"company_name\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+   "scores": {
+    "json_only": 1.0,
+    "fields": 0.6,
+    "accuracy": 0.5,
+    "no_invented_salary": 1.0,
+    "overall": 0.775
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "{\"job_title\": \"Data Analyst\", \"company_name\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+   "scores": {
+    "json_only": 1.0,
+    "fields": 0.6,
+    "accuracy": 0.5,
+    "no_invented_salary": 1.0,
+    "overall": 0.775
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.775,
+  "json_only": 1.0,
+  "fields": 0.6,
+  "accuracy": 0.5,
+  "no_invented_salary": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "json_only": 0.05,
+  "fields": 0.05,
+  "accuracy": 0.05,
+  "no_invented_salary": 0.05
+ },
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "and return only a JSON object with those keys plus a salary field. If the posting doesn't state a salary, set salary to null rather than estimating one. No text outside the JSON.",
+   "runs": [
+    {
+     "answer": "```json\n{\n  \"job_title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"team\": \"Care-ops\",\n  \"location\": \"Raleigh, NC\",\n  \"work_arrangement\": \"Hybrid (3 days in office, 2 remote)\",\n  \"responsibilities\": [\n    \"Work with claims and scheduling data\",\n    \"Build dashboards using Tableau and SQL\",\n    \"Help clinic managers identify where patients fall through the cracks\"\n  ],\n  \"qualifications\": [\n    \"2+ years of SQL experience\",\n    \"Ability to explain numbers to non-technical audiences\"\n  ],\n  \"benefits\": [\n    \"$2,000 sign-on bonus\",\n    \"Flexible hours\",\n    \"Health, dental, and vision insurance\",\n    \"401(k) match up to 5%\"\n  ],\n  \"application_instructions\": \"Send resume and a short note to careers@brightlinehealth.example by end of month. No recruiters.\",\n  \"salary\": null\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.6,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.65
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I can't see a set of keys in your message, so I've used the fields most job-posting extractions include: title, company, location, employment_type, requirements, benefits, how_to_apply, and salary. Adjust the names if you had something else in mind.\n\n```json\n{\"title\": \"Data Analyst\", \"company\": \"Brightline Health\", \"location\": \"Raleigh, NC (hybrid: 3 days in office, 2 remote)\", \"employment_type\": null, \"requirements\": [\"2+ years of SQL experience\", \"Comfortable explaining data to non-technical audiences\", \"Experience with Tableau is a plus\"], \"benefits\": [\"$2,000 sign-on bonus\", \"Health, dental, and vision insurance\", \"401(k) match up to 5%\", \"Flexible hours\"], \"how_to_apply\": \"Send resume and a short note to careers@brightlinehealth.example by end of month. No recruiters.\", \"salary\": null}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.8,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.7
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.675,
+    "json_only": 0.5,
+    "fields": 0.7,
+    "accuracy": 0.5,
+    "no_invented_salary": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Extract the job title, company name, location, and work mode (remote, hybrid, or onsite) from the attached posting If the posting doesn't state a salary, set salary to null rather than estimating one. No text outside the JSON.",
+   "runs": [
+    {
+     "answer": "{\"job_title\": \"Data Analyst\", \"company_name\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 0.6,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.775
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "{\"job_title\": \"Data Analyst\", \"company_name\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 0.6,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.775
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.775,
+    "json_only": 1.0,
+    "fields": 0.6,
+    "accuracy": 0.5,
+    "no_invented_salary": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Extract the job title, company name, location, and work mode (remote, hybrid, or onsite) from the attached posting and return only a JSON object with those keys plus a salary field. No text outside the JSON.",
+   "runs": [
+    {
+     "answer": "{\"job_title\": \"Data Analyst\", \"company_name\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 0.6,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.775
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "{\"job_title\": \"Data Analyst\", \"company_name\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": \"Not specified\"}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 0.6,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.775
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.775,
+    "json_only": 1.0,
+    "fields": 0.6,
+    "accuracy": 0.5,
+    "no_invented_salary": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Extract the job title, company name, location, and work mode (remote, hybrid, or onsite) from the attached posting and return only a JSON object with those keys plus a salary field. If the posting doesn't state a salary, set salary to null rather than estimating one.",
+   "runs": [
+    {
+     "answer": "{\"job_title\": \"Data Analyst\", \"company_name\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 0.6,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.775
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "{\"job_title\": \"Data Analyst\", \"company_name\": \"Brightline Health\", \"location\": \"Raleigh, NC\", \"work_mode\": \"hybrid\", \"salary\": null}",
+     "scores": {
+      "json_only": 1.0,
+      "fields": 0.6,
+      "accuracy": 0.5,
+      "no_invented_salary": 1.0,
+      "overall": 0.775
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.775,
+    "json_only": 1.0,
+    "fields": 0.6,
+    "accuracy": 0.5,
+    "no_invented_salary": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.09999999999999998,
+   "json_only": 0.5,
+   "fields": -0.09999999999999998,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  },
+  {
+   "overall": 0.0,
+   "json_only": 0.0,
+   "fields": 0.0,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  },
+  {
+   "overall": 0.0,
+   "json_only": 0.0,
+   "fields": 0.0,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  },
+  {
+   "overall": 0.0,
+   "json_only": 0.0,
+   "fields": 0.0,
+   "accuracy": 0.0,
+   "no_invented_salary": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "json_only": false,
+   "fields": false,
+   "accuracy": true,
+   "no_invented_salary": true
+  },
+  {
+   "overall": true,
+   "json_only": true,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  },
+  {
+   "overall": true,
+   "json_only": true,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  },
+  {
+   "overall": true,
+   "json_only": true,
+   "fields": true,
+   "accuracy": true,
+   "no_invented_salary": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    0.0,
+    1.0,
+    0.0
+   ],
+   [
+    1.0,
+    0.5,
+    1.0,
+    0.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    0.5,
+    0.0,
+    0.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  1.0,
+  1.0,
+  0.5,
+  1.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 8
+ },
+ "calls": 12,
+ "input_tokens": 4665,
+ "output_tokens": 1329,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T07:59:03.463602+00:00"
+}

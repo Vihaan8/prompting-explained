@@ -1,0 +1,425 @@
+{
+ "challenge_id": "explain_to_kid",
+ "user_prompt": "Write a quick explanation of inflation for a child. Bullet points would be good. Under 60 words if possible.",
+ "final_prompt": "Write a quick explanation of inflation for a child. Bullet points would be good. Under 60 words if possible.",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Write a quick explanation of inflation ",
+   "role": "task",
+   "start": 0,
+   "end": 39
+  },
+  {
+   "id": 1,
+   "text": "for a child. ",
+   "role": "audience",
+   "start": 39,
+   "end": 52
+  },
+  {
+   "id": 2,
+   "text": "Bullet points would be good. ",
+   "role": "format",
+   "start": 52,
+   "end": 81
+  },
+  {
+   "id": 3,
+   "text": "Under 60 words if possible.",
+   "role": "constraint",
+   "start": 81,
+   "end": 108
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "bullets",
+  "length",
+  "reading_level"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "- Inflation is when things slowly cost more money.\n- Your $5 might buy a lot of candy today but less candy next year.\n- It happens when lots of people want to buy things, or when making things gets more expensive.\n- Grown-ups watch it closely to keep prices steady.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 0.6666666666666667,
+    "length": 1.0,
+    "reading_level": 1.0,
+    "overall": 0.888888888888889
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices slowly go up over time.\n- Your ice cream that cost $1 last year might cost $1.10 now.\n- Because money buys less, each dollar can get you fewer treats.\n- It's normal for prices to rise a little each year.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 0.6666666666666667,
+    "length": 1.0,
+    "reading_level": 1.0,
+    "overall": 0.888888888888889
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation is when things get more expensive over time.\n- A candy bar that cost $1 last year might cost $1.10 now.\n- Your money buys a little less than it used to.\n- It usually happens slowly, like prices creeping up.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 0.6666666666666667,
+    "length": 1.0,
+    "reading_level": 1.0,
+    "overall": 0.888888888888889
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.888888888888889,
+  "on_task": 1.0,
+  "bullets": 0.6666666666666666,
+  "length": 1.0,
+  "reading_level": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.0,
+  "reading_level": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "bullets": 0.05,
+  "length": 0.05,
+  "reading_level": 0.05
+ },
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "for a child. Bullet points would be good. Under 60 words if possible.",
+   "runs": [
+    {
+     "answer": "Could you tell me what you'd like explained to the child? For example, the topic (like photosynthesis, the water cycle, or how to tie shoes) and the child's approximate age will help me keep it short and suited to them.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.3719999999999992,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You didn't say what the topic is, so I'm not sure what to explain. Could you tell me what you'd like covered? Once I know, I'll keep it simple, use bullet points, and stay under 60 words.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "bullets": 0.0,
+    "length": 1.0,
+    "reading_level": 0.6859999999999996
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Write a quick explanation of inflation Bullet points would be good. Under 60 words if possible.",
+   "runs": [
+    {
+     "answer": "- Inflation is a sustained rise in the general price level\n- It reduces the purchasing power of money\n- Common causes: high demand, rising production costs, expanded money supply\n- Central banks usually aim for about 2% annual inflation\n- Moderate inflation is normal; rapid inflation erodes savings",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.33333333333333337,
+      "length": 1.0,
+      "reading_level": 0.0,
+      "overall": 0.4444444444444445
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation is a sustained rise in the general price level\n- It reduces purchasing power, so each unit of money buys less\n- Common causes: excess demand, rising production costs, and expanding money supply\n- Central banks typically aim for about 2% annual inflation",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.6666666666666667,
+      "length": 1.0,
+      "reading_level": 0.0,
+      "overall": 0.5555555555555556
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.5,
+    "on_task": 1.0,
+    "bullets": 0.5,
+    "length": 1.0,
+    "reading_level": 0.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Write a quick explanation of inflation for a child. Under 60 words if possible.",
+   "runs": [
+    {
+     "answer": "Inflation is when things slowly cost more money over time. Imagine a candy bar that cost 50 cents when your grandma was little, but costs a dollar today. Your money can buy less candy than it used to, even though you have the same coins!",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.8013333333333328,
+      "overall": 0.6004444444444442
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation is when things slowly cost more money over time. Imagine a candy bar that cost 50 cents when your grandparents were young. Today, the same candy bar might cost a dollar! Your money can buy a little less than it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6335555555555554,
+    "on_task": 1.0,
+    "bullets": 0.0,
+    "length": 1.0,
+    "reading_level": 0.9006666666666664
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Write a quick explanation of inflation for a child. Bullet points would be good.",
+   "runs": [
+    {
+     "answer": "Inflation: What Is It?\n\n- **Prices go up over time.** A candy bar that cost 25 cents when your grandparents were kids might cost a dollar today.\n- **Your money buys less.** If prices go up and your allowance stays the same, you can get fewer things with it.\n- **It happens slowly.** Most of the time prices creep up a little bit each year, not all at once.\n- **Why does it happen?** Sometimes lots of people want to buy the same things, and stores raise prices because they can. Sometimes making things costs more, like flour or gas, so stores charge more too.\n- **It's like shrinking the money.** Imagine your dollar slowly getting smaller. It still says \"one dollar,\" but it can't hold as much stuff.\n- **Grown-ups try to keep it steady.** Banks and government leaders adjust things like interest rates to keep prices from rising too fast or falling too much.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 0.0,
+      "reading_level": 1.0,
+      "overall": 0.3333333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means things slowly get more expensive over time.\n- Imagine a candy bar that cost $1 when your grandparents were kids. Today, that same candy bar might cost $2.\n- It's not that the candy got worse. The money just buys a little less than it used to.\n- Prices go up for lots of reasons: it costs more to make things, more people want to buy the same stuff, or there's more money floating around.\n- A little inflation is normal. Most countries aim for a small amount each year, like 2%.\n- Too much inflation is a problem, because it's hard to save money and hard to know what things will cost next month.\n- So when you hear adults say \"inflation is up,\" they mean the stuff we buy is getting pricier faster than usual.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 0.0,
+      "reading_level": 0.9753368421052627,
+      "overall": 0.32511228070175424
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.3292228070175438,
+    "on_task": 1.0,
+    "bullets": 0.0,
+    "length": 0.0,
+    "reading_level": 0.9876684210526314
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.888888888888889,
+   "on_task": 1.0,
+   "bullets": 0.6666666666666666,
+   "length": 0.0,
+   "reading_level": 0.3140000000000004
+  },
+  {
+   "overall": 0.38888888888888895,
+   "on_task": 0.0,
+   "bullets": 0.16666666666666663,
+   "length": 0.0,
+   "reading_level": 1.0
+  },
+  {
+   "overall": 0.2553333333333335,
+   "on_task": 0.0,
+   "bullets": 0.6666666666666666,
+   "length": 0.0,
+   "reading_level": 0.0993333333333336
+  },
+  {
+   "overall": 0.5596660818713451,
+   "on_task": 0.0,
+   "bullets": 0.6666666666666666,
+   "length": 1.0,
+   "reading_level": 0.012331578947368582
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "bullets": false,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": false,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": false,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": false,
+   "length": false,
+   "reading_level": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    0.0,
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.5,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    0.5,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    0.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    0.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    0.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  0.0,
+  0.5,
+  0.0,
+  0.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 8
+ },
+ "calls": 12,
+ "input_tokens": 1134,
+ "output_tokens": 1345,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 30,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T07:58:47.081218+00:00"
+}

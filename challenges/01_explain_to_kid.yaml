@@ -1,0 +1,33 @@
+id: explain_to_kid
+title: "Explain it to a 10-year-old"
+level: 1
+scenario: >
+  Your little cousin asked why prices at the store keep going up.
+  Get the AI to explain inflation in a way a 10-year-old would get.
+fixed_context: null
+requirements:
+  - id: on_task
+    label: "Actually explains why prices go up"
+    short: "actually doing the task"
+    scorer: on_topic
+    params: { any_of: ["price", "cost", "money", "expensive", "inflation"] }
+    gate: true
+  - id: bullets
+    label: "Exactly 3 bullet points"
+    short: "bullet points"
+    scorer: bullet_count
+    params: { target: 3 }
+  - id: length
+    label: "60 words or fewer"
+    short: "length"
+    scorer: word_count_max
+    params: { max: 60 }
+  - id: reading_level
+    label: "Readable by a 10-year-old (grade 5 or below)"
+    short: "reading level"
+    scorer: reading_grade_max
+    params: { max_grade: 5 }
+reference_prompt: >
+  Explain inflation to a 10-year-old. Use exactly 3 short bullet points,
+  60 words total or less, and one example about candy prices. Keep every sentence
+  under 10 words and use simple everyday words.
