@@ -1,6 +1,8 @@
 id: landlord_reply
 title: "Push back on a late fee"
 level: 2
+category: Write
+subtitle: "Context and constraints"
 scenario: >
   Your landlord charged you a late fee, but your lease says you paid on time.
   Get the AI to write a firm but respectful reply disputing the fee.

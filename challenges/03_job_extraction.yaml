@@ -1,6 +1,8 @@
 id: job_extraction
 title: "Job posting to JSON"
 level: 3
+category: Extract
+subtitle: "Structure and accuracy"
 scenario: >
   You're tracking job applications in a spreadsheet. Get the AI to pull the key
   details from this posting into clean JSON for your job tracker.

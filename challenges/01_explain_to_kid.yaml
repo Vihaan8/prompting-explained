@@ -1,6 +1,8 @@
 id: explain_to_kid
 title: "Explain it to a 10-year-old"
 level: 1
+category: Explain
+subtitle: "Audience and format"
 scenario: >
   Your little cousin asked why prices at the store keep going up.
   Get the AI to explain inflation in a way a 10-year-old would get.

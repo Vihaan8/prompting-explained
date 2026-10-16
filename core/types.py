@@ -53,6 +53,8 @@ class Challenge(BaseModel):
     id: str
     title: str
     level: int
+    category: str = "Other"  # groups tasks in the task menu
+    subtitle: str = ""  # what the task practices, shown under its title
     scenario: str
     fixed_context: str | None = None
     requirements: list[Requirement]
