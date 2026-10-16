@@ -4,7 +4,7 @@ A small web app that shows which parts of your prompt actually changed an AI's a
 
 You pick a task (explain inflation to a 10-year-old, push back on a late fee, turn a messy job posting into JSON), write a prompt, and the app takes it apart. It runs your prompt a few times, then runs it again with one piece removed at a time, and tells you which pieces made a difference and which ones the AI would have handled anyway. "Please" and "thanks" almost never matter. "Use 3 bullet points" almost always does. Sometimes the attached email does all the work and nothing you wrote matters much, which is useful to know too.
 
-![Picking a task and an example prompt, then the prompt with highlighted parts and what mattered](docs/screenshot.jpg)
+![Picking a task and a sample prompt, then the prompt with highlighted parts and what mattered](docs/screenshot.jpg)
 
 I built this for an explainable AI course. The question I wanted to answer:
 
@@ -84,7 +84,7 @@ cp .env.example .env        # add your ANTHROPIC_API_KEY
 .venv/bin/streamlit run app/streamlit_app.py
 ```
 
-Without a key, pick "Learn from an example" under any task to open one of six saved analyses. One live analysis is around 15 to 40 calls to Haiku, a fraction of a cent.
+Without a key, pick a task and choose "Use a sample prompt" to open one of six saved analyses. One live analysis is around 15 to 40 calls to Haiku, a fraction of a cent.
 
 Tests use a fake model and make no API calls:
 

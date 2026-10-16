@@ -72,44 +72,57 @@ by_id = {c.id: c for c in challenges}
 config = load_config()
 key_on_server = server_key()
 
-ss.setdefault("task", challenges[0].id)
-ss.setdefault("mode", "custom" if key_on_server else "example")
+def about() -> None:
+    st.write("")
+    with st.expander("About this tool"):
+        st.markdown(
+            "This tool removes one part of your prompt at a time, reruns it, and checks whether the answer "
+            "changed. Results are estimates for one AI model on these tasks, not general rules."
+        )
+
+
+def reset_below_task() -> None:
+    """A new task clears every later step."""
+    ss.result, ss.error = None, None
+    ss.mode = None
+    ss.sample = None
+
+
+def reset_below_mode() -> None:
+    """A new start choice (or Try again) clears the sample pick and any result."""
+    ss.result, ss.error = None, None
+    ss.sample = None
+
 
 st.title("prompting-explained")
 md('<p class="pe-subtitle">See which parts of your prompt changed the answer.</p>')
 
-md('<p class="pe-step">1. Pick a task</p>')
-cols = st.columns(len(challenges))
-for col, c in zip(cols, challenges):
-    with col:
-        selected = ss.task == c.id
-        if st.button(c.title, key=f"task_{c.id}", type="primary" if selected else "secondary", use_container_width=True):
-            if not selected:
-                ss.task, ss.result, ss.error = c.id, None, None
-                st.rerun()
+task_id = st.radio(
+    "1. Pick a task",
+    [c.id for c in challenges],
+    format_func=lambda i: f"Task {[c.id for c in challenges].index(i) + 1}: {by_id[i].title}",
+    index=None,
+    key="task",
+    on_change=reset_below_task,
+)
+if task_id is None:
+    about()
+    st.stop()
 
-ch = by_id[ss.task]
+ch = by_id[task_id]
 md(f'<div class="pe-card">{esc(ch.scenario.strip())}</div>')
 if ch.fixed_context:
     with st.expander("Attached automatically"):
         md(f'<div class="pe-doc">{text_html(ch.fixed_context.strip())}</div>')
 
-md('<p class="pe-step">2. Write a prompt, or learn from an example</p>')
-MODES = {"custom": "Write your own", "example": "Learn from an example"}
-
-
-def keep_mode() -> None:
-    """Clicking the selected option again would clear it; keep the last choice instead."""
-    if ss.mode is None:
-        ss.mode = ss.get("last_mode", "custom")
-    ss.last_mode = ss.mode
-    ss.result, ss.error = None, None
-
-
-mode = st.segmented_control(
-    "How do you want to start?", list(MODES), format_func=MODES.get, key="mode",
-    label_visibility="collapsed", on_change=keep_mode,
-) or ss.get("last_mode", "custom")
+MODES = {"custom": "Write my own prompt", "sample": "Use a sample prompt"}
+mode = st.radio(
+    "2. How do you want to start?", list(MODES), format_func=MODES.get, index=None, key="mode",
+    horizontal=True, on_change=reset_below_mode,
+)
+if mode is None:
+    about()
+    st.stop()
 
 
 def run_live(prompt: str) -> None:
@@ -154,28 +167,33 @@ def run_live(prompt: str) -> None:
     st.rerun()
 
 
-if mode == "example":
+shown = None
+if mode == "sample":
     files = demo_files(ch)
-    examples = {p: AnalysisResult.model_validate_json(p.read_text()) for p in files}
-    md('<p class="pe-muted">These prompts were analyzed ahead of time, so they open instantly.</p>')
-    for path, ex in examples.items():
-        shown = ss.result is not None and ss.result.user_prompt == ex.user_prompt
-        if st.button(ex.user_prompt, key=f"ex_{path.stem}", type="primary" if shown else "secondary", use_container_width=True):
-            ss.result, ss.error = ex, None
-            st.rerun()
+    examples = {p.stem: AnalysisResult.model_validate_json(p.read_text()) for p in files}
+    pick = st.radio(
+        "3. Pick a sample prompt",
+        list(examples),
+        format_func=lambda k: f"Sample {list(examples).index(k) + 1}: {examples[k].user_prompt}",
+        index=None,
+        key="sample",
+        help="These were analyzed ahead of time, so they open instantly.",
+    )
+    shown = examples[pick] if pick else None
 else:
-    prompt = st.text_area("Your prompt", height=120, key=f"prompt_{ch.id}", placeholder="Write the prompt you'd give the AI.")
+    prompt = st.text_area("3. Write your prompt", height=120, key=f"prompt_{ch.id}", placeholder="Write the prompt you'd give the AI.")
     capped = ss.analyses_run >= SESSION_CAP
     if not key_on_server:
-        st.info("Live analysis isn't set up here (no API key). Try \"Learn from an example\" instead.")
+        st.info("Live analysis isn't set up here (no API key). Try a sample prompt instead.")
     elif capped:
-        st.info(f"You've used the {SESSION_CAP} analyses for this session. The examples still work.")
+        st.info(f"You've used the {SESSION_CAP} analyses for this session. The sample prompts still work.")
     elif st.button("Analyze", type="primary"):
         ss.error = None
         if prompt.strip():
             run_live(prompt)
         else:
             ss.error = "Write a prompt first."
+    shown = ss.result
 
 if ss.error:
     st.error(ss.error)
@@ -239,7 +257,7 @@ def how_measured(res: AnalysisResult) -> None:
         )
 
 
-res = ss.result
+res = shown
 if res is not None:
     st.write("")
     md(heatmap(res))
@@ -251,13 +269,6 @@ if res is not None:
         mono = " mono" if ch.id == "job_extraction" else ""
         md(f'<div class="pe-answer{mono}">{text_html(res.baseline_runs[0].answer)}</div>')
     how_measured(res)
-    if st.button("Try again"):
-        ss.result, ss.error = None, None
-        st.rerun()
+    st.button("Try again", on_click=reset_below_mode)
 
-st.write("")
-with st.expander("About this tool"):
-    st.markdown(
-        "This tool removes one part of your prompt at a time, reruns it, and checks whether the answer "
-        "changed. Results are estimates for one AI model on these tasks, not general rules."
-    )
+about()

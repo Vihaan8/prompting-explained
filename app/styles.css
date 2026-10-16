@@ -42,11 +42,10 @@ header[data-testid="stHeader"] { background: transparent; }
 [data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"], [data-testid="stExpandSidebarButton"] { display: none !important; }
 
 /* Steps and choice buttons */
-.pe-step { font-size: 15px; font-weight: 500; color: var(--ink); margin: 1.2rem 0 0.4rem 0; }
 .stButton button[data-testid="stBaseButton-secondary"] { background: var(--surface); border: 1px solid var(--border); color: var(--ink); text-align: left; justify-content: flex-start; }
 .stButton button[data-testid="stBaseButton-secondary"]:hover { border-color: var(--accent); color: var(--accent-ink); background: var(--surface); }
 .stButton button p { white-space: normal; text-align: left; line-height: 1.45; }
-[data-testid="stSegmentedControl"] button[aria-checked="true"], [data-testid="stButtonGroup"] button[kind="segmented_controlActive"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
 
 /* Buttons: primary = lavender */
 .stButton button[kind="primary"], .stButton button[data-testid="stBaseButton-primary"] {
@@ -85,3 +84,11 @@ header[data-testid="stHeader"] { background: transparent; }
 .pe-head.helped { color: var(--helped-ink); }
 .pe-head.hurt { color: var(--hurt-ink); }
 .pe-why { margin: 3px 0 0 0; font-size: 15px; color: var(--muted); line-height: 1.55; }
+
+/* Step lists: radio options as quiet selectable rows */
+[data-testid="stRadio"] > label p { font-size: 15px; font-weight: 500; color: var(--ink); }
+[data-testid="stRadio"] [role="radiogroup"] { gap: 6px; }
+[data-testid="stRadio"] [role="radiogroup"] > label { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; margin: 0; width: 100%; }
+[data-testid="stRadio"] [role="radiogroup"][aria-orientation="horizontal"] > label,
+[data-testid="stRadio"] div[role="radiogroup"]:has(> label:nth-child(2):last-child) > label { width: auto; }
+[data-testid="stRadio"] [role="radiogroup"] > label:has(input:checked) { border-color: var(--accent-ink); background: var(--accent); }
