@@ -3,7 +3,8 @@
     python scripts/generate_attempts.py
 
 Writes results/attempts.jsonl with one {id, challenge_id, persona, prompt} per line.
-These stand in for real user prompts, so no labeling is needed.
+These stand in for real user prompts, so no labeling is needed. Challenges that already
+have attempts in the file are skipped, so adding a challenge only generates its prompts.
 """
 
 from __future__ import annotations
@@ -64,8 +65,12 @@ Rules:
 async def main() -> None:
     config = load_config()
     llm = BudgetedLLM(make_llm(config), max_calls=100, max_concurrency=config.max_concurrency)
+    existing = [json.loads(line) for line in OUT.read_text().splitlines() if line.strip()] if OUT.exists() else []
+    have = {r["challenge_id"] for r in existing}
     jobs = []
     for ch in load_all():
+        if ch.id in have:
+            continue
         checklist = "\n".join(f"- {r.label}" for r in ch.requirements)
         note = (
             "\nThe relevant document (an email, lease, or posting) is attached to the prompt automatically.\n"
@@ -76,6 +81,9 @@ async def main() -> None:
             req = REQUEST.format(n=PER_PERSONA, persona_desc=desc, scenario=ch.scenario.strip(), context_note=note, checklist=checklist)
             jobs.append((ch.id, persona, llm.complete(req, kind="generate", max_tokens=config.segment_max_tokens, json_schema=SCHEMA)))
 
+    if not jobs:
+        print(f"every challenge already has attempts in {OUT.relative_to(ROOT)}")
+        return
     responses = await asyncio.gather(*(j[2] for j in jobs))
     rows = []
     for (cid, persona, _), resp in zip(jobs, responses):
@@ -86,8 +94,8 @@ async def main() -> None:
             rows.append({"id": f"{cid}__{persona}__{i:02d}", "challenge_id": cid, "persona": persona, "prompt": p})
 
     OUT.parent.mkdir(exist_ok=True)
-    OUT.write_text("".join(json.dumps(r) + "\n" for r in rows))
-    print(f"wrote {len(rows)} attempts to {OUT.relative_to(ROOT)}")
+    OUT.write_text("".join(json.dumps(r) + "\n" for r in existing + rows))
+    print(f"added {len(rows)} attempts to {OUT.relative_to(ROOT)}")
     print(f"{llm.calls} calls, ~${config.cost_usd(llm.input_tokens, llm.output_tokens):.4f}")
 
 

@@ -1,0 +1,916 @@
+{
+ "challenge_id": "meeting_summary",
+ "user_prompt": "My manager wasn't at this morning's meeting and needs the outcome fast. From the attached notes, write a quick summary of the vendor decision that names the vendor, the budget, and the deadline. Stay under 60 words and skip any tangents.",
+ "final_prompt": "My manager wasn't at this morning's meeting and needs the outcome fast. From the attached notes, write a quick summary of the vendor decision that names the vendor, the budget, and the deadline. Stay under 60 words and skip any tangents.\n\n<document>\nOps sync, notes (rough)\nattendees: priya, tom, wen, me\n\n- tom recapped the Q3 numbers again, nothing new\n- long tangent about the office coffee machine (broken again)\n- scheduling software: we compared Vendor A ($24,000/yr) and Vendor B ($18,500/yr).\n  wen is worried about B's support hours but B has the hospital integrations we need.\n  DECISION: go with Vendor B\n- budget approved at $18,500 for year one\n- priya owns the rollout. go-live deadline is Nov 22\n- tom will ask if A can match the price, probably won't matter\n- next sync moved to thursday\n- reminder: submit timesheets\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "My manager wasn't at this morning's meeting and needs the outcome fast. ",
+   "role": "context",
+   "start": 0,
+   "end": 72
+  },
+  {
+   "id": 1,
+   "text": "From the attached notes, write a quick summary of the vendor decision ",
+   "role": "task",
+   "start": 72,
+   "end": 142
+  },
+  {
+   "id": 2,
+   "text": "that names the vendor, the budget, and the deadline. ",
+   "role": "constraint",
+   "start": 142,
+   "end": 195
+  },
+  {
+   "id": 3,
+   "text": "Stay under 60 words and skip any tangents.",
+   "role": "constraint",
+   "start": 195,
+   "end": 237
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "length",
+  "key_facts",
+  "no_noise"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Decision: We're going with Vendor B for scheduling software, at $18,500 for year one. Priya owns the rollout, with go-live by November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: We're going with Vendor B for scheduling software, at $18,500 for year one. Priya owns the rollout, with go-live by November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: We're going with Vendor B for scheduling software, at $18,500 for year one. Priya owns the rollout, with go-live set for November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: We're going with Vendor B for scheduling software, at $18,500 for year one. Priya owns the rollout, with go-live by November 22. Vendor B was chosen for its hospital integrations, despite concerns about its support hours.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: We're going with Vendor B for scheduling software, at $18,500 for year one. Priya owns the rollout, with go-live by November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "The team chose Vendor B for scheduling software, at $18,500 for year one, because it has the hospital integrations needed. Priya owns the rollout, with go-live by Nov 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: The team chose Vendor B for scheduling software, with a year-one budget of $18,500. Priya owns the rollout, with go-live set for November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Your manager missed the decision on scheduling software: the team chose Vendor B over Vendor A, mainly for its hospital integrations. Approved budget is $18,500 for year one. Priya owns the rollout, with go-live on Nov 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: We're going with Vendor B for scheduling software, at $18,500 for year one. Priya owns the rollout, with go-live by Nov 22. Vendor B was chosen for its hospital integrations, despite concerns about its support hours.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: The team chose Vendor B for scheduling software, citing the hospital integrations it offers. Year-one budget is $18,500. Priya owns the rollout, with go-live set for November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: The team chose Vendor B for scheduling software, citing its hospital integrations. Budget is $18,500 for year one. Priya owns the rollout, with go-live by November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Your manager missed the morning's meeting. Decision: the team chose Vendor B for scheduling software, with a year-one budget of $18,500. Priya owns the rollout, and go-live is November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "length": 1.0,
+  "key_facts": 1.0,
+  "no_noise": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "length": 0.0,
+  "key_facts": 0.0,
+  "no_noise": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "length": 0.05,
+  "key_facts": 0.05,
+  "no_noise": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.021420731468031494,
+  "on_task": 0.0,
+  "length": 0.06426219440409446,
+  "key_facts": 0.0,
+  "no_noise": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.05,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.05,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.05,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.0829621362392671,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "From the attached notes, write a quick summary of the vendor decision that names the vendor, the budget, and the deadline. Stay under 60 words and skip any tangents.",
+   "runs": [
+    {
+     "answer": "Decision: The team chose Vendor B for scheduling software, citing its hospital integrations despite support-hours concerns. Budget is $18,500 for year one. Priya owns the rollout, with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The ops team chose Vendor B for scheduling software, primarily for its hospital integrations, at an approved year-one budget of $18,500. Priya owns the rollout, with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The ops team chose Vendor B for scheduling software because it has the hospital integrations they need, despite Wen's concern about its support hours. The approved year-one budget is $18,500, and Priya owns the rollout with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: The team chose Vendor B for scheduling software, with an approved year-one budget of $18,500. It has the hospital integrations needed, though Wen flagged concerns about its support hours. Priya owns the rollout, with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: The team chose Vendor B for scheduling software, at an approved year-one budget of $18,500. Priya owns the rollout, with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: The team chose Vendor B for scheduling software, citing its hospital integrations despite support-hour concerns. Budget: $18,500 for year one. Priya owns the rollout, with go-live by November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: The team chose Vendor B for scheduling software, citing its hospital integrations, over Vendor A. Budget is $18,500 for year one. Priya owns the rollout, with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software, approved at $18,500 for year one. Priya owns the rollout, with go-live set for November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision:** The team chose Vendor B for scheduling software, at a budget of $18,500 for year one. Priya owns the rollout, with a go-live deadline of Nov 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision:** The team chose Vendor B for scheduling software, at a year-one budget of $18,500. Priya owns the rollout, with go-live set for November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software because it has the hospital integrations needed, despite Wen's concerns about its support hours. The approved year-one budget is $18,500, and Priya owns the rollout with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software, approved at $18,500 for year one. Priya owns the rollout, with go-live set for November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "My manager wasn't at this morning's meeting and needs the outcome fast. that names the vendor, the budget, and the deadline. Stay under 60 words and skip any tangents.",
+   "runs": [
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software. Budget is $18,500 for year one. Priya owns the rollout, with go-live by November 22. Vendor A ($24,000/yr) is out, though Tom may ask whether A can match the price. Next sync is Thursday.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software, which has the hospital integrations we need. Budget is $18,500 for year one. Priya owns the rollout, with go-live by November 22. Wen raised concerns about Vendor B's support hours. Tom may ask whether Vendor A can match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: We're going with Vendor B for scheduling software. Budget is $18,500 for year one. Priya owns the rollout, with go-live by November 22. Wen raised concerns about Vendor B's support hours, but B has the hospital integrations we need. Tom may ask whether Vendor A can match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software, chosen for its hospital integrations despite weaker support hours. Year-one budget is $18,500. Priya owns the rollout, with go-live by November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software, chosen for its hospital integrations despite Wen's concern about support hours. Budget is $18,500 for year one. Priya owns the rollout, with go-live by November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software, at $18,500 for year one. B was chosen over Vendor A ($24,000/yr) because it has the hospital integrations we need. Priya owns the rollout, with go-live by November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software. Year-one budget is $18,500, approved. Priya owns the rollout, with go-live by November 22. Vendor B was chosen over Vendor A ($24,000/yr) because it has the hospital integrations we need, though support hours are a concern. Tom may ask whether A will match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software. Budget is $18,500 for year one, and it has the hospital integrations we need. Priya owns the rollout, with go-live by November 22. Tom may ask whether Vendor A can match the price, but that's unlikely to change the decision.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software, at $18,500 for year one. Vendor B has the hospital integrations we need. Priya owns the rollout, with go-live by November 22. Tom may ask whether Vendor A can match the price, but that's unlikely to change the outcome.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software, at $18,500 for year one. B was chosen over Vendor A ($24,000/yr) because it has the hospital integrations we need, though support hours are a concern. Priya owns the rollout, with go-live by November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software. Year-one budget is $18,500, approved. Priya owns the rollout, with go-live by November 22. Vendor B was chosen over Vendor A ($24,000/yr) because it has the hospital integrations we need, though support hours are a concern. Tom may ask whether A can match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software. Budget is $18,500 for year one. Priya owns the rollout, with go-live by November 22. Wen flagged concerns about B's support hours, but B has the hospital integrations we need. Tom may ask whether Vendor A can match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "My manager wasn't at this morning's meeting and needs the outcome fast. From the attached notes, write a quick summary of the vendor decision Stay under 60 words and skip any tangents.",
+   "runs": [
+    {
+     "answer": "Decision: We're going with Vendor B for scheduling software at $18,500/yr, chosen over Vendor A ($24,000/yr) because it has the hospital integrations we need. Wen flagged concerns about B's support hours. Priya owns the rollout, with go-live by Nov 22. Budget is approved for year one.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision from this morning's ops sync: we're going with Vendor B for scheduling software at $18,500/year, chosen over Vendor A ($24,000/yr) because B has the hospital integrations we need. Wen flagged concerns about B's support hours. Priya owns the rollout, with go-live by Nov 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software at $18,500/yr over Vendor A at $24,000, mainly because B has the hospital integrations needed. Wen flagged concerns about B's support hours. Priya owns the rollout, with a go-live deadline of Nov 22. Tom may still ask whether A can match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software at $18,500/year over Vendor A ($24,000/yr), mainly because B has the hospital integrations you need. Wen raised concerns about B's support hours. Priya owns the rollout, with go-live by Nov 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software at $18,500/yr over Vendor A at $24,000/yr, mainly because B has the hospital integrations you need. Wen raised concerns about B's support hours. Priya owns the rollout, with a go-live deadline of Nov 22. Tom may ask whether A can match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: The team chose Vendor B for scheduling software at $18,500/yr over Vendor A ($24,000/yr), mainly because B has the hospital integrations we need. Wen flagged concerns about B's support hours. Budget is approved, Priya owns rollout, and go-live is Nov 22. Tom may ask whether A can match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: Vendor B selected for scheduling software ($18,500/yr, year-one budget approved) over Vendor A ($24,000/yr), mainly due to its hospital integrations. Wen flagged B's limited support hours as a concern. Priya owns rollout, with go-live by Nov 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software at $18,500/yr over Vendor A ($24,000/yr), mainly because it has the hospital integrations needed, though Wen flagged concerns about its support hours. Priya owns the rollout, with go-live by Nov 22. Year-one budget is approved at $18,500.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software at $18,500/year over Vendor A ($24,000/year), mainly because B has the hospital integrations you need. Wen raised concerns about B's support hours. Priya owns the rollout, with a go-live deadline of Nov 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software at $18,500/year over Vendor A ($24,000/yr), mainly because B has the hospital integrations you need; Wen flagged its limited support hours as a concern. Priya owns the rollout, with go-live by Nov 22. Year-one budget is approved at $18,500.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: The team chose Vendor B for scheduling software at $18,500/yr over Vendor A ($24,000/yr), mainly because B has the hospital integrations we need. Wen flagged concerns about B's support hours. Priya owns the rollout, with go-live by Nov 22. Tom may ask whether A can match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: The team chose Vendor B for scheduling software at $18,500/yr over Vendor A ($24,000/yr), mainly because B has the hospital integrations we need. Wen flagged concerns about B's support hours. Priya owns the rollout, with go-live by Nov 22. Tom may ask whether A can match the price.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "My manager wasn't at this morning's meeting and needs the outcome fast. From the attached notes, write a quick summary of the vendor decision that names the vendor, the budget, and the deadline.",
+   "runs": [
+    {
+     "answer": "**Vendor decision: scheduling software**\n\n- **Vendor:** Vendor B\n- **Budget:** $18,500 for year one (approved)\n- **Deadline:** Go-live by November 22\n- **Owner:** Priya runs the rollout\n\nVendor B was chosen over Vendor A ($24,000/yr) because it has the hospital integrations we need. Wen raised concerns about B's support hours. Tom may ask whether A can match the price, but that's not expected to change the decision.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.95,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision:** Go with Vendor B for the scheduling software.\n\n- **Vendor:** Vendor B\n- **Budget:** $18,500 for year one (approved)\n- **Deadline:** Go-live by November 22\n- **Owner:** Priya runs the rollout\n\nVendor B was chosen over Vendor A ($24,000/yr) mainly because it includes the hospital integrations we need. Wen raised a concern about Vendor B's support hours, which is still open. Tom may ask whether Vendor A will match the price, but the team doesn't expect that to change the decision.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.6833333333333333,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.8944444444444445
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision (Ops sync):** The team chose **Vendor B** for the scheduling software. It was selected over Vendor A ($24,000/yr) mainly because it has the hospital integrations we need, despite Wen's concern about its support hours.\n\n- **Budget:** $18,500 approved for year one\n- **Owner:** Priya runs the rollout\n- **Deadline:** Go-live by **November 22**\n\nTom may still ask whether Vendor A can match the price, but the decision stands.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.8833333333333333,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9611111111111111
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision: scheduling software**\n\n- **Vendor:** Vendor B, chosen over Vendor A because it has the hospital integrations we need.\n- **Budget:** $18,500 for year one, approved.\n- **Deadline:** Go-live is November 22. Priya owns the rollout.\n- **Open item:** Wen raised concerns about Vendor B's support hours. Tom will ask whether Vendor A can match the price, though this is unlikely to change the decision.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.9666666666666667,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9888888888888889
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision: scheduling software**\n\n- **Vendor:** Vendor B (chosen over Vendor A, which was $24,000/yr). Vendor B was selected for its hospital integrations, despite Wen's concerns about its support hours.\n- **Budget:** $18,500 approved for year one.\n- **Owner:** Priya is leading the rollout.\n- **Deadline:** Go-live is November 22.\n\nTom may ask whether Vendor A can match the price, but the team expects that won't change the decision.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.9166666666666666,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9722222222222222
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Subject: Ops sync summary: scheduling software vendor decision**\n\nThe team chose **Vendor B** for the scheduling software. It costs $18,500/yr, versus $24,000/yr for Vendor A. Vendor B was picked because it has the hospital integrations we need, though Wen raised concerns about its support hours. The year-one budget of $18,500 is approved. Priya owns the rollout, with a go-live deadline of **November 22**. Tom may ask whether Vendor A will match the price, but that's unlikely to change the decision. The next sync has moved to Thursday.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.55,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.85
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision: scheduling software**\n\n- **Vendor:** Vendor B (chosen over Vendor A, $24,000/yr), mainly because it has the hospital integrations we need. Wen raised concerns about its support hours.\n- **Budget:** $18,500 approved for year one.\n- **Owner and deadline:** Priya leads the rollout, with go-live by Nov 22.\n\nTom may ask whether Vendor A can match the price, but the decision is already made.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.9666666666666667,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9888888888888889
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision: scheduling software**\n\n- **Vendor:** Vendor B (chosen over Vendor A), selected mainly for its hospital integrations, which we need.\n- **Budget:** $18,500 approved for year one.\n- **Owner:** Priya leads the rollout.\n- **Deadline:** Go-live by November 22.\n\nOpen note: Wen raised concerns about Vendor B's support hours. Tom may ask whether Vendor A can match the price, but the decision is already made.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.9666666666666667,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9888888888888889
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision: scheduling software**\n\nThe team chose **Vendor B** over Vendor A. B costs **$18,500 for year one**, which is the approved budget, and it has the hospital integrations we need. Wen raised a concern about B's support hours, but the integrations outweighed it. **Priya owns the rollout**, with a **go-live deadline of November 22**.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision (Ops sync):** We're going with **Vendor B** for scheduling software. It has the hospital integrations we need, though Wen has raised concerns about its support hours.\n\n- **Budget:** $18,500 approved for year one (Vendor A was quoted at $24,000/yr, so B is the lower-cost option)\n- **Owner:** Priya runs the rollout\n- **Deadline:** Go-live by **November 22**\n\nTom may check whether Vendor A can match the price, but the team expects that won't change the decision.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.75,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9166666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision (Ops sync):** The team chose **Vendor B** for the scheduling software. It was selected over Vendor A because it offers the hospital integrations we need, though Wen has raised concerns about its support hours.\n\n- **Budget:** $18,500 approved for year one\n- **Deadline:** Go-live by November 22\n- **Owner:** Priya is leading the rollout\n\nTom may check whether Vendor A will match the price, but this is not expected to change the decision.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.8,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9333333333333332
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor decision: scheduling software**\n\nThe team chose **Vendor B** over Vendor A. Vendor B costs **$18,500 for year one** (budget approved) and is the only option with the hospital integrations we need. Wen raised concerns about Vendor B's support hours. Priya owns the rollout, with a **go-live deadline of November 22**.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9564814814814815,
+    "on_task": 1.0,
+    "length": 0.8694444444444445,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "length": 0.0,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "length": 0.0,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "length": 0.0,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  },
+  {
+   "overall": 0.04351851851851851,
+   "on_task": 0.0,
+   "length": 0.13055555555555554,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "length": true,
+   "key_facts": true,
+   "no_noise": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "length": true,
+   "key_facts": true,
+   "no_noise": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "length": true,
+   "key_facts": true,
+   "no_noise": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "length": false,
+   "key_facts": true,
+   "no_noise": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "baseline": 12,
+  "ablation": 48
+ },
+ "calls": 60,
+ "input_tokens": 18324,
+ "output_tokens": 6091,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": false,
+  "judge_max_tokens": 600,
+  "baseline_runs": 12,
+  "ablation_runs": 12,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 500,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:23:51.738947+00:00"
+}

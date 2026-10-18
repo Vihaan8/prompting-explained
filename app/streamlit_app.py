@@ -6,10 +6,12 @@ Run with:  streamlit run app/streamlit_app.py
 from __future__ import annotations
 
 import asyncio
+import datetime
 import html
 import math
 import os
 import sys
+import threading
 from pathlib import Path
 
 import streamlit as st
@@ -27,6 +29,7 @@ from core.types import OVERALL, AnalysisResult, Challenge  # noqa: E402
 
 DEMO_DIR = ROOT / "demo_examples"
 SESSION_CAP = 10  # analyses per session on the server's key
+MAX_PROMPT_CHARS = 1500
 CATEGORY_ORDER = ["Explain", "Write", "Extract", "Responsible AI", "Other"]
 
 st.set_page_config(page_title="prompting-explained", layout="wide", initial_sidebar_state="collapsed")
@@ -46,17 +49,38 @@ def md(markup: str) -> None:
     st.markdown(markup, unsafe_allow_html=True)
 
 
-def server_key() -> str | None:
+def secret(name: str) -> str | None:
+    """A setting from .env or the environment, else from Streamlit secrets. Never shown on the page."""
     from dotenv import load_dotenv
 
     load_dotenv(ROOT / ".env")
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if key:
-        return key
+    value = os.environ.get(name)
+    if value:
+        return value
     try:
-        return st.secrets.get("ANTHROPIC_API_KEY")
+        return st.secrets.get(name)
     except Exception:  # no secrets file
         return None
+
+
+@st.cache_resource
+def daily_usage() -> dict:
+    """Analyses run on the server's key today, shared by every session in this process."""
+    return {"day": None, "count": 0, "lock": threading.Lock()}
+
+
+def take_daily_slot() -> bool:
+    """Count one analysis against today's cap on the server's key. False if the cap is reached."""
+    u = daily_usage()
+    with u["lock"]:
+        today = datetime.date.today()
+        if u["day"] != today:
+            u["day"], u["count"] = today, 0
+        cap = int(secret("DAILY_ANALYSIS_CAP") or 300)  # all visitors together; set in .env or secrets
+        if u["count"] >= cap:
+            return False
+        u["count"] += 1
+        return True
 
 
 def samples_for(ch: Challenge) -> list[AnalysisResult]:
@@ -67,7 +91,7 @@ ss = st.session_state
 challenges = load_all()
 by_id = {c.id: c for c in challenges}
 config = load_config()
-key_on_server = server_key()
+key_on_server = secret("ANTHROPIC_API_KEY")
 
 ss.setdefault("task", challenges[0].id)
 ss.setdefault("result", None)
@@ -123,7 +147,7 @@ with head_about:
 md('<div class="pe-rule"></div>')
 
 
-def run_live(prompt: str) -> None:
+def run_live(prompt: str, api_key: str) -> None:
     bar = st.progress(0.0, text="Splitting your prompt into parts…")
     seen, totals = {"baseline": 0, "ablation": 0}, {"baseline": config.baseline_runs, "ablation": 0}
 
@@ -145,7 +169,7 @@ def run_live(prompt: str) -> None:
 
     try:
         async def go():
-            llm = make_llm(config, api_key=key_on_server)
+            llm = make_llm(config, api_key=api_key)
             try:
                 return await analyze(ch, prompt, llm, config, explainer=make_explainer(config), progress=progress)
             finally:
@@ -156,7 +180,10 @@ def run_live(prompt: str) -> None:
         ss.error = "This prompt has too many parts to test. Try a shorter one."
         return
     except Exception as e:  # API and network errors
-        ss.error = f"Something went wrong calling the model ({type(e).__name__}). Try again in a moment."
+        if type(e).__name__ == "AuthenticationError":
+            ss.error = "That API key didn't work. Check it and try again."
+        else:
+            ss.error = f"Something went wrong calling the model ({type(e).__name__}). Try again in a moment."
         return
     finally:
         bar.empty()
@@ -195,17 +222,31 @@ with left:
         )
         shown = samples[pick] if pick is not None else None
     else:
-        prompt = st.text_area("Your prompt", height=150, key=f"prompt_{ch.id}", placeholder="Write the prompt you'd give the AI.")
-        if not key_on_server:
-            st.info("Live analysis isn't set up here (no API key). Switch to Samples to see saved results.")
-        elif ss.analyses_run >= SESSION_CAP:
-            st.info(f"You've used the {SESSION_CAP} analyses for this session. The samples still work.")
+        prompt = st.text_area(
+            "Your prompt", height=150, key=f"prompt_{ch.id}", max_chars=MAX_PROMPT_CHARS,
+            placeholder="Write the prompt you'd give the AI.",
+        )
+        with st.expander("Use your own Anthropic API key" if key_on_server else "Add an Anthropic API key to run live"):
+            own_key = st.text_input(
+                "API key", type="password", key="own_key", label_visibility="collapsed", placeholder="sk-ant-...",
+            ).strip()
+            st.caption(
+                "Optional. Used only for this browser session's analyses and never saved. "
+                "One analysis is about 15 to 50 calls to Claude Haiku, a fraction of a cent."
+            )
+        api_key = own_key or key_on_server
+        if not api_key:
+            st.info("Live analysis needs an API key. Add one above, or switch to Samples to see saved results.")
+        elif not own_key and ss.analyses_run >= SESSION_CAP:
+            st.info(f"You've used the {SESSION_CAP} free analyses for this session. Add your own key above, or try the samples.")
         elif st.button("Analyze prompt", type="primary"):
             ss.error = None
-            if prompt.strip():
-                run_live(prompt)
-            else:
+            if not prompt.strip():
                 ss.error = "Write a prompt first."
+            elif not own_key and not take_daily_slot():
+                ss.error = "The free analyses for today have run out. Add your own key above, or try the samples."
+            else:
+                run_live(prompt, api_key)
         shown = ss.result
     if ss.error:
         st.error(ss.error)
@@ -257,6 +298,18 @@ def cards(res: AnalysisResult) -> str:
             f'<p class="pe-card-head">{esc(head)}</p><p class="pe-card-why">{esc(why)}</p></article>'
         )
     return f'<div class="pe-grid">{"".join(rows)}</div>'
+
+
+def reference_compare(res: AnalysisResult) -> None:
+    """The task's reference prompt, next to the checks this prompt's answers missed."""
+    missed = [r.label for r in ch.requirements if res.baseline_mean[r.id] < 0.999]
+    with st.expander("Compare with a prompt that passes every check"):
+        if missed:
+            md(f'<p class="pe-muted">Your answers didn\'t always pass: <b>{esc("; ".join(missed))}</b>. This prompt passes every check.</p>')
+        else:
+            md('<p class="pe-muted">Your answers already passed every check. Here is another prompt that does.</p>')
+        md(f'<div class="pe-doc">{text_html(ch.reference_prompt.strip())}</div>')
+        md(f'<p class="pe-small">{esc(F.reference_nerd_facts(ch))}</p>')
 
 
 def how_it_works(res: AnalysisResult) -> None:
@@ -318,6 +371,7 @@ with right:
                 '<span class="it"><span class="sw neutral"></span>No real difference</span></p>'
             )
             md(cards(shown))
+            reference_compare(shown)
             with st.expander("See the AI's answer"):
                 mono = " mono" if ch.id == "job_extraction" else ""
                 md(f'<div class="pe-answer{mono}">{text_html(shown.baseline_runs[0].answer)}</div>')

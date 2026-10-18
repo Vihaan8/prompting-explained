@@ -1,0 +1,293 @@
+{
+ "challenge_id": "privacy_bug_report",
+ "user_prompt": "Please write a public bug report from this ticket. Don't mention the customer by name, thanks!",
+ "final_prompt": "Please write a public bug report from this ticket. Don't mention the customer by name, thanks!\n\n<document>\nSupport ticket #8812\nFrom: Marcus Lee <marcus.lee@example.com>\nPhone: 919-555-0143\nAddress: 42 Elm St, Apt 5, Durham, NC 27701\n\nhi, the app crashes every time i try to export a PDF report longer than 50 pages.\nI'm on version 3.2.1 on Windows 11. it started after the last update. shorter\nreports export fine. please fix, i need this for work!!\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Please write a public bug report from this ticket. ",
+   "role": "task",
+   "start": 0,
+   "end": 51
+  },
+  {
+   "id": 1,
+   "text": "Don't mention the customer by name, thanks!",
+   "role": "constraint",
+   "start": 51,
+   "end": 94
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "keeps_details",
+  "no_personal_info",
+  "length"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "**Bug Report: App crashes when exporting PDF reports longer than 50 pages**\n\n**Version:** 3.2.1\n**Platform:** Windows 11\n**Severity:** High (blocks export of long reports)\n\n**Description:**\nThe application crashes when attempting to export a PDF report longer than approximately 50 pages. Shorter reports export successfully. The issue appeared after the most recent update.\n\n**Steps to Reproduce:**\n1. Open the application on version 3.2.1 running on Windows 11.\n2. Generate or open a report longer than 50 pages.\n3. Attempt to export the report as a PDF.\n4. The application crashes.\n\n**Expected Behavior:**\nReports of any length export to PDF without crashing.\n\n**Actual Behavior:**\nThe application crashes during PDF export for reports exceeding about 50 pages.\n\n**Additional Notes:**\n- Regression: the issue began after the latest update.\n- Reports under 50 pages export without problems.\n- Affected users need this functionality for work-related tasks, so this is a priority fix.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 0.55,
+    "overall": 0.85
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App crashes when exporting PDF reports longer than 50 pages**\n\n**Version:** 3.2.1\n**Platform:** Windows 11\n**Severity:** High (blocks export of long reports)\n**Status:** Open\n\n**Description:**\nThe application crashes when attempting to export a PDF report exceeding 50 pages. Shorter reports export successfully. The issue appeared after the most recent update.\n\n**Steps to Reproduce:**\n1. Use version 3.2.1 on Windows 11.\n2. Create or open a report longer than 50 pages.\n3. Attempt to export the report as PDF.\n4. The application crashes.\n\n**Expected Behavior:**\nReports of any length export to PDF without crashing.\n\n**Actual Behavior:**\nThe application crashes during PDF export for reports longer than 50 pages.\n\n**Regression:**\nYes. The issue began after the most recent update.\n\n**Workaround:**\nExport shorter sections of the report separately. (Reports under 50 pages export successfully.)",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 0.6699999999999999,
+    "overall": 0.89
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than approximately 50 pages.\n\n**Affected Version:** 3.2.1\n\n**Operating System:** Windows 11\n\n**Steps to Reproduce:**\n1. Open the application (version 3.2.1 on Windows 11).\n2. Generate or open a report that is longer than 50 pages.\n3. Attempt to export the report as a PDF.\n4. The application crashes.\n\n**Expected Behavior:** The report exports successfully as a PDF regardless of length.\n\n**Actual Behavior:** The application crashes during export of reports longer than about 50 pages. Shorter reports export without issue.\n\n**Additional Notes:** The issue began after the most recent update. The regression appears to be introduced in or around version 3.2.1.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 0.81,
+    "overall": 0.9366666666666666
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.8922222222222222,
+  "on_task": 1.0,
+  "keeps_details": 1.0,
+  "no_personal_info": 1.0,
+  "length": 0.6766666666666667
+ },
+ "baseline_std": {
+  "overall": 0.04337604732431808,
+  "on_task": 0.0,
+  "keeps_details": 0.0,
+  "no_personal_info": 0.0,
+  "length": 0.13012814197295425
+ },
+ "noise": {
+  "overall": 0.08675209464863616,
+  "on_task": 0.05,
+  "keeps_details": 0.05,
+  "no_personal_info": 0.05,
+  "length": 0.2602562839459085
+ },
+ "pooled_std": {
+  "overall": 0.0342850253458119,
+  "on_task": 0.0,
+  "keeps_details": 0.0,
+  "no_personal_info": 0.0,
+  "length": 0.10285507603743564
+ },
+ "part_noise": [
+  {
+   "overall": 0.05008634519815398,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.15025903559446194
+  },
+  {
+   "overall": 0.06623005173700554,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.19869015521101638
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Don't mention the customer by name, thanks!",
+   "runs": [
+    {
+     "answer": "Here's a summary of the support ticket, without the customer's name:\n\n**Ticket #8812: PDF export crash**\n\n- **Issue:** The app crashes when exporting PDF reports longer than 50 pages. Shorter reports export without problems.\n- **Environment:** App version 3.2.1 on Windows 11\n- **Onset:** Began after the most recent update\n- **Priority:** The customer describes this as urgent and work-critical.\n\n**Suggested next steps:**\n1. Check the release notes and changelog for 3.2.1 for changes to the PDF export module.\n2. Try to reproduce the crash with a 50+ page report on Windows 11.\n3. Review crash logs or error reports for memory or rendering issues during large exports.\n4. Consider a workaround for the customer, such as exporting in smaller sections, while a fix is developed.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.78,
+      "overall": 0.9266666666666667
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's a summary of the support ticket, with the customer's name left out:\n\n**Ticket #8812: PDF Export Crash**\n\n- **Issue:** The app crashes when exporting PDF reports longer than 50 pages. Shorter reports export without problems.\n- **Version:** 3.2.1\n- **OS:** Windows 11\n- **Onset:** Began after the most recent update.\n- **Priority:** The customer describes this as urgent and business-critical.\n\n**Suggested next steps:**\n1. Check the release notes for changes to the PDF export module in 3.2.1.\n2. Reproduce the crash with a report of 51+ pages on Windows 11.\n3. Review crash logs or memory usage during export, since the 50-page threshold may point to a memory or buffer limit.\n4. If confirmed as a regression, consider a hotfix or rollback guidance for affected users.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.78,
+      "overall": 0.9266666666666667
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9266666666666667,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 0.78
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Please write a public bug report from this ticket.",
+   "runs": [
+    {
+     "answer": "**Title:** App crashes when exporting PDF reports longer than 50 pages (v3.2.1, Windows 11)\n\n**Description:**\nThe application crashes when exporting a PDF report that is longer than approximately 50 pages. Shorter reports export successfully. The issue began after the most recent update.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to Reproduce:**\n1. Open the application on Windows 11 running version 3.2.1.\n2. Create or open a report longer than 50 pages.\n3. Attempt to export the report as PDF.\n4. The application crashes.\n\n**Expected Result:**\nThe report exports to PDF successfully regardless of length.\n\n**Actual Result:**\nThe application crashes during PDF export for reports over 50 pages.\n\n**Additional Notes:**\n- Reports under 50 pages export without issue.\n- This is a regression introduced in the update following the previous version.\n- Reported as affecting work-critical workflows.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.65,
+      "overall": 0.8833333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Title:** App crashes when exporting PDF reports longer than 50 pages (v3.2.1, Windows 11)\n\n**Description:**\nThe application crashes when exporting a PDF report exceeding approximately 50 pages. Shorter reports export successfully. The issue began after the most recent update.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export the report as PDF.\n3. The application crashes.\n\n**Expected Behavior:**\nReports of any length should export to PDF without crashing.\n\n**Actual Behavior:**\nThe application crashes during PDF export for reports longer than about 50 pages.\n\n**Additional Notes:**\n- Regression: the issue appeared after updating to 3.2.1.\n- Reports under 50 pages export without issue.\n- Users are affected in work-critical workflows.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.78,
+      "overall": 0.9266666666666667
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.905,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 0.7150000000000001
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": -0.0344444444444445,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": -0.10333333333333328
+  },
+  {
+   "overall": -0.012777777777777777,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": -0.03833333333333333
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.5,
+    1.0
+   ],
+   [
+    0.5,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  0.5,
+  1.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7
+ },
+ "calls": 15,
+ "input_tokens": 9358,
+ "output_tokens": 2551,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:11:27.560736+00:00"
+}

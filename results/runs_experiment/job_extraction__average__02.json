@@ -1,0 +1,570 @@
+{
+ "challenge_id": "job_extraction",
+ "user_prompt": "Can you turn this job posting into JSON? I need the title, company, location, work mode, and salary.",
+ "final_prompt": "Can you turn this job posting into JSON? I need the title, company, location, work mode, and salary.\n\n<document>\nok so we're finally hiring!!  Brightline Health is looking for a Data Analyst\nto join our care-ops team. you'd be working w/ claims + scheduling data, building\ndashboards (Tableau, some SQL), and helping clinic managers figure out where\npatients are falling through the cracks.\n\nwhere: our Raleigh, NC office — it's hybrid, so 3 days in, 2 from home\nwho: 2+ yrs w/ SQL, comfortable explaining numbers to non-data people\nperks: $2,000 sign-on bonus!! plus good coffee, flexible hours, health/dental/vision,\n401k match up to 5%, and a team that actually likes each other lol\n\ninterested? send your resume + a short note to careers@brightlinehealth.example\nby end of month. no recruiters pls\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Can you turn this job posting into JSON? ",
+   "role": "task",
+   "start": 0,
+   "end": 41
+  },
+  {
+   "id": 1,
+   "text": "I need the title, company, location, work mode, and salary.",
+   "role": "constraint",
+   "start": 41,
+   "end": 100
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "json_only",
+  "fields",
+  "accuracy",
+  "no_invented_salary"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in-office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It does mention a $2,000 sign-on bonus, which I left out of the `salary` field since it isn't a salary. If you want to capture it, you could add a field like `\"sign_on_bonus\": \"$2,000\"`.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in-office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It does mention a $2,000 sign-on bonus, which I left out of the salary field since it isn't a base salary. If you want it captured, I can add a `\"sign_on_bonus\": \"$2,000\"` field.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in-office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It does mention a $2,000 sign-on bonus, which I left out of the `salary` field since it isn't a salary. If you want to capture it, you could add something like `\"sign_on_bonus\": \"$2,000\"`.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It does mention a $2,000 sign-on bonus, which I left out of the `salary` field since it isn't a salary. If you want to capture it, I can add a `sign_on_bonus` field.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in-office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It mentions a $2,000 sign-on bonus and a 401k match of up to 5%, but neither is a salary figure, so I've left that field as `null`.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in-office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It mentions a $2,000 sign-on bonus and a 401k match of up to 5%, but neither is a salary figure, so I've left that field as null.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It does mention a $2,000 sign-on bonus, which I left out of the `salary` field since it isn't a salary. If you want it captured, I can add a `sign_on_bonus` field.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It does mention a $2,000 sign-on bonus, which you may want to note separately if you're comparing offers.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It does mention a $2,000 sign-on bonus, which I left out of the `salary` field since it isn't a salary figure. If you want it captured, I can add a `sign_on_bonus` field.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It mentions a $2,000 sign-on bonus and a 401k match of up to 5%, but neither is a salary figure, so I've set it to null.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It does mention a $2,000 sign-on bonus, which you may want to record in a separate field if you're tracking compensation.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "```json\n{\n  \"title\": \"Data Analyst\",\n  \"company\": \"Brightline Health\",\n  \"location\": \"Raleigh, NC\",\n  \"work_mode\": \"Hybrid (3 days in office, 2 days remote)\",\n  \"salary\": null\n}\n```\n\nThe posting doesn't list a base salary. It does mention a $2,000 sign-on bonus, which I left out of the `salary` field since it isn't a salary figure. If you want it captured, I can add a `sign_on_bonus` field.",
+   "scores": {
+    "json_only": 0.5,
+    "fields": 1.0,
+    "accuracy": 0.75,
+    "no_invented_salary": 1.0,
+    "overall": 0.8125
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.8125,
+  "json_only": 0.5,
+  "fields": 1.0,
+  "accuracy": 0.75,
+  "no_invented_salary": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "json_only": 0.05,
+  "fields": 0.05,
+  "accuracy": 0.05,
+  "no_invented_salary": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.0,
+  "json_only": 0.0,
+  "fields": 0.0,
+  "accuracy": 0.0,
+  "no_invented_salary": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "json_only": 0.05,
+   "fields": 0.05,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  },
+  {
+   "overall": 0.05,
+   "json_only": 0.05,
+   "fields": 0.05,
+   "accuracy": 0.05,
+   "no_invented_salary": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "I need the title, company, location, work mode, and salary.",
+   "runs": [
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 days remote)\n- **Salary:** Not stated in the posting (it mentions a $2,000 sign-on bonus and a 401k match up to 5%, but no base salary)",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not stated. The posting lists a $2,000 sign-on bonus, plus health/dental/vision, a 401(k) match up to 5%, and flexible hours, but no base salary.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 remote)\n- **Salary:** Not stated. The posting only mentions a $2,000 sign-on bonus and a 401k match of up to 5%.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not stated in the posting (it lists a $2,000 sign-on bonus, plus benefits and a 401k match up to 5%)",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not stated in the posting (it lists a $2,000 sign-on bonus, plus benefits and a 401k match up to 5%)",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not stated in the posting (it lists a $2,000 sign-on bonus, plus health/dental/vision and a 401k match up to 5%)",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not stated in the posting (it mentions a $2,000 sign-on bonus and a 401k match up to 5%, but no base salary)",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not stated in the posting (it does mention a $2,000 sign-on bonus and a 401k match up to 5%)",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not listed. The posting mentions a $2,000 sign-on bonus and a 401k match up to 5%, but no base salary.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not listed. The posting mentions a $2,000 sign-on bonus and a 401k match up to 5%, but no base salary.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not stated. The posting lists a $2,000 sign-on bonus, but no base salary.",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Title:** Data Analyst\n- **Company:** Brightline Health (care-ops team)\n- **Location:** Raleigh, NC\n- **Work mode:** Hybrid (3 days in office, 2 from home)\n- **Salary:** Not stated in the posting (it lists a $2,000 sign-on bonus, plus benefits and a 401k match up to 5%)",
+     "scores": {
+      "json_only": 0.0,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "json_only": 0.0,
+    "fields": 0.0,
+    "accuracy": 0.0,
+    "no_invented_salary": 0.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Can you turn this job posting into JSON?",
+   "runs": [
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"city\": \"Raleigh\",\n      \"state\": \"NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days_per_week\": 3,\n      \"remote_days_per_week\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"minimum_experience\": \"2+ years with SQL\",\n      \"other\": [\n        \"Comfortable explaining numbers to non-data audiences\"\n      ]\n    },\n    \"tools\": [\"Tableau\", \"SQL\"],\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"health_insurance\": [\"Medical\", \"Dental\", \"Vision\"],\n      \"retirement\": {\n        \"type\": \"401(k)\",\n        \"employer_match\": \"Up to 5%\"\n      },\n      \"other_perks\": [\n        \"Flexible hours\",\n        \"Good coffee\",\n        \"Collaborative team culture\"\n      ]\n    },\n    \"application\": {\n      \"method\": \"Email\",\n      \"email\": \"careers@brightlinehealth.example\",\n      \"required_materials\": [\"Resume\", \"Short cover note\"],\n      \"deadline\": \"End of current month\",\n      \"notes\": \"No recruiters, please\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"city\": \"Raleigh\",\n      \"state\": \"NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days_per_week\": 3,\n      \"remote_days_per_week\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"required\": [\n        \"2+ years of experience with SQL\",\n        \"Ability to explain data and numbers to non-technical audiences\"\n      ],\n      \"preferred\": []\n    },\n    \"tools\": [\"SQL\", \"Tableau\"],\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"health_insurance\": [\"Medical\", \"Dental\", \"Vision\"],\n      \"retirement\": \"401(k) with employer match up to 5%\",\n      \"other\": [\"Flexible hours\", \"Free coffee\"]\n    },\n    \"application\": {\n      \"method\": \"Email\",\n      \"email\": \"careers@brightlinehealth.example\",\n      \"materials\": [\"Resume\", \"Short cover note\"],\n      \"deadline\": \"End of current month\",\n      \"notes\": \"No recruiters, please\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"city\": \"Raleigh\",\n      \"state\": \"NC\",\n      \"office_type\": \"Hybrid\",\n      \"in_office_days_per_week\": 3,\n      \"remote_days_per_week\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"required\": [\n        \"2+ years of experience with SQL\",\n        \"Ability to explain numbers to non-technical audiences\"\n      ],\n      \"tools\": [\"SQL\", \"Tableau\"]\n    },\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"health_insurance\": [\"Medical\", \"Dental\", \"Vision\"],\n      \"retirement\": {\n        \"type\": \"401(k)\",\n        \"employer_match\": \"Up to 5%\"\n      },\n      \"other_perks\": [\n        \"Flexible hours\",\n        \"Good coffee\",\n        \"Collaborative team culture\"\n      ]\n    },\n    \"application\": {\n      \"how_to_apply\": \"Send resume and a short note\",\n      \"email\": \"careers@brightlinehealth.example\",\n      \"deadline\": \"End of current month\",\n      \"notes\": \"No recruiters\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"city\": \"Raleigh\",\n      \"state\": \"NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days_per_week\": 3,\n      \"remote_days_per_week\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"required\": [\n        \"2+ years of experience with SQL\",\n        \"Ability to explain numbers clearly to non-technical audiences\"\n      ],\n      \"preferred\": []\n    },\n    \"tools\": [\"SQL\", \"Tableau\"],\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"health_insurance\": [\"Medical\", \"Dental\", \"Vision\"],\n      \"retirement\": {\n        \"type\": \"401(k)\",\n        \"employer_match\": \"Up to 5%\"\n      },\n      \"other_perks\": [\n        \"Flexible hours\",\n        \"Good coffee\",\n        \"Collaborative team culture\"\n      ]\n    },\n    \"application\": {\n      \"deadline\": \"End of the current month\",\n      \"method\": \"Email\",\n      \"contact_email\": \"careers@brightlinehealth.example\",\n      \"required_materials\": [\"Resume\", \"Short cover note\"],\n      \"notes\": \"Recruiter inquiries are not accepted\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"city\": \"Raleigh\",\n      \"state\": \"NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days_per_week\": 3,\n      \"remote_days_per_week\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"required\": [\n        \"2+ years of experience with SQL\",\n        \"Ability to explain numbers to non-data audiences\"\n      ],\n      \"preferred\": [],\n      \"tools\": [\"SQL\", \"Tableau\"]\n    },\n    \"benefits\": [\n      \"$2,000 sign-on bonus\",\n      \"Flexible hours\",\n      \"Health insurance\",\n      \"Dental insurance\",\n      \"Vision insurance\",\n      \"401(k) with up to 5% match\"\n    ],\n    \"perks\": [\n      \"Good coffee\",\n      \"Collaborative team culture\"\n    ],\n    \"application\": {\n      \"method\": \"Email\",\n      \"email\": \"careers@brightlinehealth.example\",\n      \"materials_required\": [\"Resume\", \"Short cover note\"],\n      \"deadline\": \"End of current month\",\n      \"notes\": \"No recruiters\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"office\": \"Raleigh, NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days_per_week\": 3,\n      \"remote_days_per_week\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"required\": [\n        \"2+ years of experience with SQL\",\n        \"Ability to explain numbers to non-data audiences\"\n      ],\n      \"tools\": [\"SQL\", \"Tableau\"]\n    },\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"health_insurance\": [\"Medical\", \"Dental\", \"Vision\"],\n      \"retirement\": \"401(k) with up to 5% company match\",\n      \"other\": [\"Flexible hours\", \"Good coffee\", \"Collaborative team culture\"]\n    },\n    \"application\": {\n      \"method\": \"Email\",\n      \"email\": \"careers@brightlinehealth.example\",\n      \"required_materials\": [\"Resume\", \"Short cover note\"],\n      \"deadline\": \"End of current month\",\n      \"notes\": \"No recruiters, please\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"city\": \"Raleigh\",\n      \"state\": \"NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days_per_week\": 3,\n      \"remote_days_per_week\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"minimum_experience\": \"2+ years\",\n      \"required_skills\": [\n        \"SQL\",\n        \"Ability to explain data and numbers to non-technical audiences\"\n      ],\n      \"preferred_skills\": [\n        \"Tableau\"\n      ]\n    },\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"health_insurance\": [\"Medical\", \"Dental\", \"Vision\"],\n      \"retirement\": \"401(k) with up to 5% company match\",\n      \"other_perks\": [\n        \"Flexible hours\",\n        \"Good coffee\",\n        \"Collaborative team culture\"\n      ]\n    },\n    \"application\": {\n      \"method\": \"Email\",\n      \"email\": \"careers@brightlinehealth.example\",\n      \"materials_required\": [\"Resume\", \"Short cover note\"],\n      \"deadline\": \"End of month\",\n      \"notes\": \"No recruiters, please\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"office\": \"Raleigh, NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days\": 3,\n      \"remote_days\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"required\": [\n        \"2+ years of experience with SQL\",\n        \"Ability to explain data and numbers to non-technical audiences\"\n      ],\n      \"preferred\": [],\n      \"tools\": [\"SQL\", \"Tableau\"]\n    },\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"health_insurance\": [\"Medical\", \"Dental\", \"Vision\"],\n      \"retirement\": {\n        \"401k_match\": \"Up to 5%\"\n      },\n      \"other\": [\n        \"Flexible hours\",\n        \"Good coffee\",\n        \"Collaborative team culture\"\n      ]\n    },\n    \"application\": {\n      \"method\": \"Email\",\n      \"email\": \"careers@brightlinehealth.example\",\n      \"materials_required\": [\"Resume\", \"Short cover note\"],\n      \"deadline\": \"End of current month\",\n      \"notes\": \"No recruiters, please\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"title\": \"Data Analyst\",\n    \"company\": \"Brightline Health\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"city\": \"Raleigh\",\n      \"state\": \"NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days_per_week\": 3,\n      \"remote_days_per_week\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"required\": [\n        \"2+ years of experience with SQL\",\n        \"Ability to explain numbers to non-technical audiences\"\n      ],\n      \"preferred\": []\n    },\n    \"tools\": [\"SQL\", \"Tableau\"],\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"benefits\": [\n        \"Health insurance\",\n        \"Dental insurance\",\n        \"Vision insurance\",\n        \"401(k) with up to 5% company match\",\n        \"Flexible hours\"\n      ],\n      \"other_perks\": [\n        \"Good coffee\"\n      ]\n    },\n    \"how_to_apply\": {\n      \"email\": \"careers@brightlinehealth.example\",\n      \"materials_required\": [\"Resume\", \"Short cover note\"],\n      \"deadline\": \"End of month\",\n      \"notes\": \"No recruiters\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations (care-ops)\",\n    \"location\": {\n      \"office\": \"Raleigh, NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days\": 3,\n      \"remote_days\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"required\": [\n        \"2+ years of experience with SQL\",\n        \"Ability to explain numbers clearly to non-data audiences\"\n      ],\n      \"preferred\": []\n    },\n    \"tools\": [\"SQL\", \"Tableau\"],\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"health_insurance\": [\"Medical\", \"Dental\", \"Vision\"],\n      \"retirement\": {\n        \"type\": \"401k\",\n        \"employer_match\": \"Up to 5%\"\n      },\n      \"other_perks\": [\"Flexible hours\", \"Good coffee\", \"Collaborative team culture\"]\n    },\n    \"application\": {\n      \"method\": \"Email\",\n      \"send_to\": \"careers@brightlinehealth.example\",\n      \"required_materials\": [\"Resume\", \"Short cover note\"],\n      \"deadline\": \"End of current month\",\n      \"notes\": \"No recruiters, please\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"office\": \"Raleigh, NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days\": 3,\n      \"remote_days\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"required\": [\n        \"2+ years of experience with SQL\",\n        \"Ability to explain data and numbers to non-technical audiences\"\n      ],\n      \"preferred\": []\n    },\n    \"tools\": [\"SQL\", \"Tableau\"],\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"health_insurance\": [\"Medical\", \"Dental\", \"Vision\"],\n      \"retirement\": {\n        \"type\": \"401(k)\",\n        \"employer_match\": \"Up to 5%\"\n      },\n      \"other_perks\": [\n        \"Flexible hours\",\n        \"Good coffee\",\n        \"Collaborative team culture\"\n      ]\n    },\n    \"application\": {\n      \"method\": \"Email\",\n      \"email\": \"careers@brightlinehealth.example\",\n      \"materials_required\": [\"Resume\", \"Short cover note\"],\n      \"deadline\": \"End of month\",\n      \"notes\": \"No recruiters, please\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "```json\n{\n  \"job_posting\": {\n    \"company\": \"Brightline Health\",\n    \"title\": \"Data Analyst\",\n    \"team\": \"Care Operations\",\n    \"location\": {\n      \"office\": \"Raleigh, NC\",\n      \"work_arrangement\": \"Hybrid\",\n      \"in_office_days\": 3,\n      \"remote_days\": 2\n    },\n    \"responsibilities\": [\n      \"Work with claims and scheduling data\",\n      \"Build dashboards using Tableau and SQL\",\n      \"Help clinic managers identify where patients are falling through the cracks\"\n    ],\n    \"qualifications\": {\n      \"minimum_experience\": \"2+ years\",\n      \"required_skills\": [\n        \"SQL\",\n        \"Ability to explain numbers to non-technical audiences\"\n      ]\n    },\n    \"compensation_and_benefits\": {\n      \"sign_on_bonus\": \"$2,000\",\n      \"other_benefits\": [\n        \"Flexible hours\",\n        \"Health insurance\",\n        \"Dental insurance\",\n        \"Vision insurance\",\n        \"401(k) with up to 5% match\"\n      ],\n      \"perks\": [\n        \"Good coffee\",\n        \"Collaborative team culture\"\n      ]\n    },\n    \"application\": {\n      \"deadline\": \"End of month\",\n      \"how_to_apply\": \"Send resume and a short note to careers@brightlinehealth.example\",\n      \"recruiter_policy\": \"No recruiters\"\n    }\n  }\n}\n```",
+     "scores": {
+      "json_only": 0.5,
+      "fields": 0.0,
+      "accuracy": 0.0,
+      "no_invented_salary": 1.0,
+      "overall": 0.375
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.375,
+    "json_only": 0.5,
+    "fields": 0.0,
+    "accuracy": 0.0,
+    "no_invented_salary": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.8125,
+   "json_only": 0.5,
+   "fields": 1.0,
+   "accuracy": 0.75,
+   "no_invented_salary": 1.0
+  },
+  {
+   "overall": 0.4375,
+   "json_only": 0.0,
+   "fields": 1.0,
+   "accuracy": 0.75,
+   "no_invented_salary": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "json_only": false,
+   "fields": false,
+   "accuracy": false,
+   "no_invented_salary": false
+  },
+  {
+   "overall": false,
+   "json_only": true,
+   "fields": false,
+   "accuracy": false,
+   "no_invented_salary": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "baseline": 12,
+  "ablation": 24
+ },
+ "calls": 36,
+ "input_tokens": 10716,
+ "output_tokens": 9428,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": false,
+  "judge_max_tokens": 600,
+  "baseline_runs": 12,
+  "ablation_runs": 12,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 500,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:22:15.061143+00:00"
+}

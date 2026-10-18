@@ -1,0 +1,313 @@
+{
+ "challenge_id": "shopping_list",
+ "user_prompt": "I want to cook the chicken thing from the recipe I sent, what do I need to buy?",
+ "final_prompt": "I want to cook the chicken thing from the recipe I sent, what do I need to buy?\n\n<document>\nWeeknight lemon chicken (serves 4)\n\nIngredients\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt\n\nSteps\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "I want to cook the chicken thing from the recipe I sent, ",
+   "role": "task",
+   "start": 0,
+   "end": 57
+  },
+  {
+   "id": 1,
+   "text": "what do I need to buy?",
+   "role": "task",
+   "start": 57,
+   "end": 79
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "needed_items",
+  "skips_pantry",
+  "one_per_line",
+  "no_steps"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Here's your shopping list for the lemon chicken, based on the recipe:\n\n**Proteins and produce**\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic (or a head of garlic, if you need more)\n- 1 lb baby potatoes\n\n**Pantry items**\n- Olive oil (you may already have this)\n- Dried oregano\n- Salt (likely already on hand)\n\nSince you didn't mention what you already have, check your pantry for olive oil, oregano, and salt first. Everything else is a quick grocery run.",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.5,
+    "no_steps": 1.0,
+    "overall": 0.625
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here's your shopping list for the lemon chicken, based on the recipe:\n\n**Proteins & produce**\n- 4 chicken thighs (bone-in or boneless, depending on what you prefer)\n- 2 lemons\n- 3 cloves garlic (or one small head, if you want extra)\n- 1 lb baby potatoes\n\n**Pantry items** (check if you already have them)\n- Olive oil (you'll need 1 tbsp)\n- Dried oregano (1 tsp)\n- Salt\n\nSince you're roasting everything at 425°F for 35 minutes, you'll also want a sheet pan or baking dish large enough to hold the chicken and potatoes without crowding.",
+   "scores": {
+    "on_task": 0.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.75,
+    "no_steps": 0.25,
+    "overall": 0.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here's your shopping list for the lemon chicken, based on the recipe:\n\n**Protein**\n- 4 chicken thighs\n\n**Produce**\n- 2 lemons\n- 3 cloves garlic (or a head of garlic)\n- 1 lb baby potatoes\n\n**Pantry**\n- Olive oil (you may need to buy this if you don't already have it, though the recipe only calls for 1 tbsp)\n- Dried oregano\n- Salt (probably already on hand)\n\nIf you're starting from scratch, the main items to pick up are the chicken, lemons, garlic, potatoes, and oregano. Olive oil and salt are staples most kitchens already have.",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.5,
+    "no_steps": 1.0,
+    "overall": 0.625
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.4166666666666667,
+  "on_task": 0.6666666666666666,
+  "needed_items": 1.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.5833333333333334,
+  "no_steps": 0.75
+ },
+ "baseline_std": {
+  "overall": 0.3608439182435161,
+  "on_task": 0.5773502691896257,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.14433756729740643,
+  "no_steps": 0.4330127018922193
+ },
+ "noise": {
+  "overall": 0.7216878364870322,
+  "on_task": 1.1547005383792515,
+  "needed_items": 0.05,
+  "skips_pantry": 0.05,
+  "one_per_line": 0.28867513459481287,
+  "no_steps": 0.8660254037844386
+ },
+ "pooled_std": {
+  "overall": 0.2561102261071718,
+  "on_task": 0.408248290463863,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.1350154312168304,
+  "no_steps": 0.30618621784789724
+ },
+ "part_noise": [
+  {
+   "overall": 0.42132809200326427,
+   "on_task": 0.6666666666666666,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.3004626062886658,
+   "no_steps": 0.5
+  },
+  {
+   "overall": 0.4166666666666667,
+   "on_task": 0.6666666666666666,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.16666666666666666,
+   "no_steps": 0.5
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "what do I need to buy?",
+   "runs": [
+    {
+     "answer": "Based on the recipe, here's what you need to buy:\n\n- **4 chicken thighs**\n- **2 lemons**\n- **3 cloves garlic** (or a whole head, if you don't already have it)\n- **1 lb baby potatoes**\n- **Dried oregano**, if you don't have it\n- **Olive oil**, if you don't have it\n- **Salt**, if you don't have it",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.5,
+      "no_steps": 1.0,
+      "overall": 0.625
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Based on the recipe, here's what you need to buy:\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic (or a head of garlic)\n- 1 lb baby potatoes\n- Olive oil (1 tbsp, if you don't already have it)\n- Dried oregano (1 tsp, if you don't already have it)\n- Salt (if you don't already have it)",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.75,
+      "no_steps": 1.0,
+      "overall": 0.6875
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.65625,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.625,
+    "no_steps": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "I want to cook the chicken thing from the recipe I sent,",
+   "runs": [
+    {
+     "answer": "Here's your weeknight lemon chicken, ready to cook:\n\n**Ingredients (serves 4)**\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- 1 tbsp olive oil\n- 1 tsp dried oregano\n- 1 lb baby potatoes\n- Salt\n\n**Steps**\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and a pinch of salt, and spread them on a baking sheet.\n3. Mince or crush the garlic, then mix it with the oregano and the zest of one lemon. Rub this over the chicken thighs and season them with salt.\n4. Nestle the chicken among the potatoes and roast for 35 minutes, until the chicken is cooked through (165°F internal temperature) and the potatoes are tender.\n5. Squeeze the juice of both lemons over everything and serve.\n\n**Tips**\n- Halve any large potatoes so they cook in the same time as the chicken.\n- Skin-on, bone-in thighs will be juicier and crisper; if you use boneless, check them at 25 minutes, since they cook faster.\n- Zest the lemons before juicing them, since zest is much easier to grate when the fruit is whole.",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.0,
+      "no_steps": 0.0,
+      "overall": 0.25
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's the recipe you sent, ready to cook:\n\n**Weeknight Lemon Chicken (serves 4)**\n\n**Ingredients**\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic, minced\n- 1 tbsp olive oil\n- 1 tsp dried oregano\n- 1 lb baby potatoes\n- Salt\n\n**Steps**\n1. Preheat the oven to 425°F.\n2. Halve the baby potatoes if they're large, then toss them with about half the olive oil and a pinch of salt. Spread them on a baking sheet.\n3. Zest one lemon. Mix the zest with the minced garlic, oregano, remaining olive oil, and a good pinch of salt. Rub this mixture all over the chicken thighs, including under the skin if you can.\n4. Nestle the chicken among the potatoes on the sheet pan. Roast for 35 minutes, until the chicken is cooked through (165°F internal) and the skin is golden.\n5. Cut the lemons in half and squeeze the juice over everything right before serving.\n\n**Tips**\n- Pat the chicken dry before seasoning for crispier skin.\n- If the potatoes aren't tender after 35 minutes, give them another 5 to 10 minutes while the chicken rests.\n- Serve with a green salad or steamed green beans if you want something on the side.",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.0,
+      "no_steps": 0.0,
+      "overall": 0.25
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.25,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.0,
+    "no_steps": 0.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": -0.23958333333333331,
+   "on_task": -0.33333333333333337,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": -0.04166666666666663,
+   "no_steps": -0.25
+  },
+  {
+   "overall": 0.16666666666666669,
+   "on_task": -0.33333333333333337,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.5833333333333334,
+   "no_steps": 0.75
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": false,
+   "no_steps": false
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.5,
+    1.0
+   ],
+   [
+    null,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    0.5
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  0.5,
+  0.75
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7
+ },
+ "calls": 15,
+ "input_tokens": 9423,
+ "output_tokens": 2102,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:10:40.787219+00:00"
+}

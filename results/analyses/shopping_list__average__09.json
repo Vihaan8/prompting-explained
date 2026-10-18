@@ -1,0 +1,313 @@
+{
+ "challenge_id": "shopping_list",
+ "user_prompt": "Look at this recipe and tell me the groceries I need, and also walk me through how to cook it.",
+ "final_prompt": "Look at this recipe and tell me the groceries I need, and also walk me through how to cook it.\n\n<document>\nWeeknight lemon chicken (serves 4)\n\nIngredients\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt\n\nSteps\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Look at this recipe and tell me the groceries I need, ",
+   "role": "task",
+   "start": 0,
+   "end": 54
+  },
+  {
+   "id": 1,
+   "text": "and also walk me through how to cook it.",
+   "role": "task",
+   "start": 54,
+   "end": 94
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "needed_items",
+  "skips_pantry",
+  "one_per_line",
+  "no_steps"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "**Grocery list**\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- Olive oil (you probably have this; the recipe needs 1 tbsp)\n- Dried oregano (you probably have this; the recipe needs 1 tsp)\n- 1 lb baby potatoes\n- Salt (pantry staple)\n\n**How to cook it**\n\n1. **Preheat** your oven to 425°F.\n2. **Prep the potatoes.** Put the baby potatoes in a bowl or on the baking sheet, add the olive oil and a pinch of salt, and toss to coat.\n3. **Season the chicken.** Mince or crush the 3 garlic cloves. Zest one lemon (you'll need the zest from one lemon, and you'll juice both later). Rub the chicken thighs with the garlic, oregano, lemon zest, and a little salt.\n4. **Roast.** Arrange the potatoes and chicken on a baking sheet, leaving some space between pieces so they brown rather than steam. Roast for 35 minutes, until the chicken is cooked through (165°F internal temperature) and the potatoes are tender and golden.\n5. **Finish and serve.** Cut the second lemon in half. Squeeze the juice from both lemons over the chicken and potatoes right out of the oven, then serve.",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.75,
+    "no_steps": 0.0,
+    "overall": 0.4375
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Grocery list**\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- Olive oil (you probably have this; the recipe uses 1 tbsp)\n- Dried oregano (you probably have this; the recipe uses 1 tsp)\n- 1 lb baby potatoes\n- Salt (you probably have this)\n\n**Cooking instructions**\n\n1. **Preheat the oven** to 425°F.\n2. **Prep the potatoes:** Toss the baby potatoes with the olive oil and a pinch of salt, then spread them on a baking sheet.\n3. **Season the chicken:** Mince or crush the 3 garlic cloves. Zest one lemon (you'll only need the zest, not the juice yet). Rub the chicken thighs with the garlic, oregano, lemon zest, and a little salt.\n4. **Roast:** Put the chicken on the baking sheet with the potatoes, skin side up, and roast for 35 minutes, until the chicken is cooked through (165°F internal temperature) and the potatoes are tender and golden.\n5. **Finish:** Cut both lemons in half and squeeze the juice over the chicken and potatoes just before serving.\n\nTip: If you want crispier skin, you can broil the chicken for 1–2 minutes at the end, but keep an eye on it so it doesn't burn.",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.75,
+    "no_steps": 0.0,
+    "overall": 0.4375
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Grocery list**\n\n- 4 chicken thighs\n- 2 lemons\n- 1 head of garlic (you need 3 cloves)\n- Olive oil (you need 1 tbsp; check that you have some on hand)\n- Dried oregano (you need 1 tsp)\n- 1 lb baby potatoes\n- Salt (check your pantry)\n\n**How to cook it**\n\n1. **Preheat** the oven to 425°F.\n2. **Toss the potatoes.** Put the baby potatoes in a roasting pan or sheet pan with the olive oil and a pinch of salt, and toss until coated.\n3. **Season the chicken.** Mince or crush the 3 garlic cloves. Zest one of the lemons (you'll only need the zest here). Rub the chicken thighs with the garlic, the oregano, the lemon zest, and a bit of salt.\n4. **Roast.** Nestle the chicken among the potatoes, skin side up. Roast for about 35 minutes, until the chicken is cooked through (165°F at the thickest part) and the potatoes are tender and golden.\n5. **Finish.** Cut the lemons in half and squeeze the juice over everything right out of the oven. Serve hot.",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.5,
+    "no_steps": 0.0,
+    "overall": 0.375
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.4166666666666667,
+  "on_task": 1.0,
+  "needed_items": 1.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.6666666666666666,
+  "no_steps": 0.0
+ },
+ "baseline_std": {
+  "overall": 0.03608439182435161,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.14433756729740643,
+  "no_steps": 0.0
+ },
+ "noise": {
+  "overall": 0.07216878364870322,
+  "on_task": 0.05,
+  "needed_items": 0.05,
+  "skips_pantry": 0.05,
+  "one_per_line": 0.28867513459481287,
+  "no_steps": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.0337538578042076,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.1613743060919757,
+  "no_steps": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.3004626062886658,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.07511565157216644,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.3004626062886658,
+   "no_steps": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "and also walk me through how to cook it.",
+   "runs": [
+    {
+     "answer": "Here's how to cook the lemon chicken, based on the recipe:\n\n**Prep**\n1. Preheat your oven to 425°F.\n2. Toss the baby potatoes with 1 tablespoon of olive oil and a pinch of salt.\n3. Mince or crush the 3 garlic cloves. Zest one of the lemons, then mix the zest with the garlic, 1 teaspoon of dried oregano, and a bit of salt. Rub this mixture over the chicken thighs.\n\n**Cook**\n4. Spread the potatoes on a baking sheet, nestle the seasoned chicken thighs among them, and roast for 35 minutes. Chicken thighs are done at an internal temperature of 165°F.\n5. Halve the lemons (the zested one included) and squeeze the juice over the chicken and potatoes just before serving.\n\n**Serve**\nLet it rest a few minutes, then serve hot.",
+     "scores": {
+      "on_task": 0.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.0,
+      "no_steps": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's how to cook the lemon chicken from the recipe:\n\n**Prep**\n1. Preheat the oven to 425°F.\n2. Toss the baby potatoes with 1 tablespoon olive oil and a pinch of salt. Spread them on a baking sheet or in a roasting pan.\n3. Mince or crush the 3 garlic cloves. Zest one of the lemons, then cut both lemons in half for squeezing later.\n4. In a small bowl, combine the garlic, 1 teaspoon dried oregano, and the lemon zest. Rub this mixture over the 4 chicken thighs and season them with salt.\n\n**Cook**\n5. Arrange the chicken thighs on the pan with the potatoes, skin side up if they have skin.\n6. Roast for 35 minutes, until the chicken reaches 175°F or higher in the thickest part (thighs are more tender at this temperature than the usual 165°F) and the potatoes are golden and tender.\n7. Squeeze the lemon halves over everything, then serve.\n\n**Tip:** If the skin isn't browning by the end, run the pan under the broiler for 1–2 minutes, watching closely.",
+     "scores": {
+      "on_task": 0.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.25,
+      "no_steps": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.125,
+    "no_steps": 0.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Look at this recipe and tell me the groceries I need,",
+   "runs": [
+    {
+     "answer": "Here's your grocery list for the weeknight lemon chicken:\n\n**Meat & Produce**\n- 4 chicken thighs\n- 2 lemons\n- 1 head of garlic (you need 3 cloves)\n- 1 lb baby potatoes\n\n**Pantry**\n- Olive oil (you may already have this; you need 1 tbsp)\n- Dried oregano (you may already have this; you need 1 tsp)\n- Salt (you may already have this)",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.75,
+      "no_steps": 1.0,
+      "overall": 0.6875
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's your grocery list for the weeknight lemon chicken:\n\n**Meat & Produce**\n- 4 chicken thighs\n- 1 lb baby potatoes\n- 2 lemons\n- 1 head of garlic (you'll need 3 cloves)\n\n**Pantry**\n- Olive oil (you'll need 1 tbsp, so check whether you already have some)\n- Dried oregano\n- Salt (check whether you already have some)",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.5,
+      "no_steps": 1.0,
+      "overall": 0.625
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.65625,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.625,
+    "no_steps": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.4166666666666667,
+   "on_task": 1.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.5416666666666666,
+   "no_steps": 0.0
+  },
+  {
+   "overall": -0.23958333333333331,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.04166666666666663,
+   "no_steps": -1.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": false,
+   "no_steps": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": false
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    1.0
+   ],
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.0
+   ],
+   [
+    1.0,
+    0.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  0.0,
+  0.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7
+ },
+ "calls": 15,
+ "input_tokens": 9978,
+ "output_tokens": 2628,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:10:55.890254+00:00"
+}

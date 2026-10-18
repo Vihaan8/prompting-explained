@@ -1,0 +1,653 @@
+{
+ "challenge_id": "subject_line",
+ "user_prompt": "Give me one subject line for this client invoice email. Requirements: mention the invoice number, 9 words max, nothing salesy, no exclamation points, and it should clearly signal that it concerns an invoice.",
+ "final_prompt": "Give me one subject line for this client invoice email. Requirements: mention the invoice number, 9 words max, nothing salesy, no exclamation points, and it should clearly signal that it concerns an invoice.\n\n<document>\nHi Sam,\n\nAttached is invoice #4471 for the October design work ($2,350). Payment is due by\nNovember 15. Let me know if you have any questions.\n\nThanks,\nAlex\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Give me one subject line for this client invoice email. Requirements: ",
+   "role": "task",
+   "start": 0,
+   "end": 70
+  },
+  {
+   "id": 1,
+   "text": "mention the invoice number, ",
+   "role": "constraint",
+   "start": 70,
+   "end": 98
+  },
+  {
+   "id": 2,
+   "text": "9 words max, ",
+   "role": "constraint",
+   "start": 98,
+   "end": 111
+  },
+  {
+   "id": 3,
+   "text": "nothing salesy, ",
+   "role": "constraint",
+   "start": 111,
+   "end": 127
+  },
+  {
+   "id": 4,
+   "text": "no exclamation points, ",
+   "role": "constraint",
+   "start": 127,
+   "end": 150
+  },
+  {
+   "id": 5,
+   "text": "and it should clearly signal that it concerns an invoice.",
+   "role": "constraint",
+   "start": 150,
+   "end": 207
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "one_short_line",
+  "has_number",
+  "not_salesy"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Invoice #4471 for October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Invoice #4471 for October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Invoice #4471 for October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "one_short_line": 1.0,
+  "has_number": 1.0,
+  "not_salesy": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "one_short_line": 0.0,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "one_short_line": 0.05,
+  "has_number": 0.05,
+  "not_salesy": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "one_short_line": 0.0,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "mention the invoice number, 9 words max, nothing salesy, no exclamation points, and it should clearly signal that it concerns an invoice.",
+   "runs": [
+    {
+     "answer": "Invoice #4471 attached: October design work, due November 15.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 for October design work attached.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Give me one subject line for this client invoice email. Requirements: 9 words max, nothing salesy, no exclamation points, and it should clearly signal that it concerns an invoice.",
+   "runs": [
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Give me one subject line for this client invoice email. Requirements: mention the invoice number, nothing salesy, no exclamation points, and it should clearly signal that it concerns an invoice.",
+   "runs": [
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Give me one subject line for this client invoice email. Requirements: mention the invoice number, 9 words max, no exclamation points, and it should clearly signal that it concerns an invoice.",
+   "runs": [
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "Give me one subject line for this client invoice email. Requirements: mention the invoice number, 9 words max, nothing salesy, and it should clearly signal that it concerns an invoice.",
+   "runs": [
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 5,
+   "prompt": "Give me one subject line for this client invoice email. Requirements: mention the invoice number, 9 words max, nothing salesy, no exclamation points,",
+   "runs": [
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 12,
+  "judge": 15
+ },
+ "calls": 31,
+ "input_tokens": 13589,
+ "output_tokens": 1915,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:12:23.376381+00:00"
+}

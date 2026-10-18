@@ -1,0 +1,313 @@
+{
+ "challenge_id": "shopping_list",
+ "user_prompt": "Write me a quick list of what to buy for this recipe. Don't include things I already have like salt.",
+ "final_prompt": "Write me a quick list of what to buy for this recipe. Don't include things I already have like salt.\n\n<document>\nWeeknight lemon chicken (serves 4)\n\nIngredients\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt\n\nSteps\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Write me a quick list of what to buy for this recipe. ",
+   "role": "task",
+   "start": 0,
+   "end": 54
+  },
+  {
+   "id": 1,
+   "text": "Don't include things I already have like salt.",
+   "role": "constraint",
+   "start": 54,
+   "end": 100
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "needed_items",
+  "skips_pantry",
+  "one_per_line",
+  "no_steps"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Here's your shopping list, leaving out salt and olive oil since you have those:\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic (or a head of garlic)\n- 1 tsp dried oregano\n- 1 lb baby potatoes",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.75,
+    "no_steps": 1.0,
+    "overall": 0.6875
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here's your shopping list, excluding salt and olive oil since you likely have those:\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic (or a garlic bulb)\n- 1 tsp dried oregano\n- 1 lb baby potatoes",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.75,
+    "no_steps": 1.0,
+    "overall": 0.6875
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here's your shopping list for the lemon chicken, leaving out salt:\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic (or a fresh head of garlic)\n- Olive oil (1 tbsp needed, so only if you're out)\n- Dried oregano\n- 1 lb baby potatoes",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0,
+    "overall": 0.75
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.7083333333333334,
+  "on_task": 1.0,
+  "needed_items": 1.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.8333333333333334,
+  "no_steps": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.03608439182435161,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.14433756729740643,
+  "no_steps": 0.0
+ },
+ "noise": {
+  "overall": 0.07216878364870322,
+  "on_task": 0.05,
+  "needed_items": 0.05,
+  "skips_pantry": 0.05,
+  "one_per_line": 0.28867513459481287,
+  "no_steps": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.05103103630798288,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.2041241452319315,
+  "no_steps": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.16666666666666666,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.13176156917368248,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.5270462766947299,
+   "no_steps": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Don't include things I already have like salt.",
+   "runs": [
+    {
+     "answer": "Here's your shopping list for the weeknight lemon chicken, leaving out the salt:\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- 1 tbsp olive oil\n- 1 tsp dried oregano\n- 1 lb baby potatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.5,
+      "no_steps": 1.0,
+      "overall": 0.625
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's your shopping list for the weeknight lemon chicken, leaving out the salt:\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- 1 tbsp olive oil\n- 1 tsp dried oregano\n- 1 lb baby potatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.5,
+      "no_steps": 1.0,
+      "overall": 0.625
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.625,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.5,
+    "no_steps": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Write me a quick list of what to buy for this recipe.",
+   "runs": [
+    {
+     "answer": "Here's your shopping list for the weeknight lemon chicken:\n\n- 4 chicken thighs\n- 2 lemons\n- 1 head of garlic (you'll need 3 cloves)\n- 1 lb baby potatoes\n- Olive oil (1 tbsp needed, you may already have it)\n- Dried oregano (1 tsp needed, you may already have it)\n- Salt (you may already have it)",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.75,
+      "no_steps": 1.0,
+      "overall": 0.6875
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's your shopping list for the lemon chicken:\n\n**Meat & Produce**\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic (or 1 head)\n- 1 lb baby potatoes\n\n**Pantry**\n- Olive oil (you'll need 1 tbsp, so check that you have some)\n- Dried oregano\n- Salt",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.25,
+      "no_steps": 1.0,
+      "overall": 0.5625
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.625,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.5,
+    "no_steps": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.08333333333333337,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.33333333333333337,
+   "no_steps": 0.0
+  },
+  {
+   "overall": 0.08333333333333337,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.33333333333333337,
+   "no_steps": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": false,
+   "no_steps": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.0
+   ],
+   [
+    1.0,
+    0.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  0.6666666666666666
+ ],
+ "follow_without": [
+  1.0,
+  0.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7
+ },
+ "calls": 15,
+ "input_tokens": 8448,
+ "output_tokens": 1103,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:10:57.214133+00:00"
+}

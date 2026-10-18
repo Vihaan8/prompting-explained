@@ -1,0 +1,1188 @@
+id,challenge_id,check,part,judge,code_pass
+explain_to_kid__average__02,explain_to_kid,bullets,Use 3 bullet points.,1.0,True
+explain_to_kid__average__02,explain_to_kid,bullets,Use 3 bullet points.,1.0,True
+explain_to_kid__average__02,explain_to_kid,bullets,Use 3 bullet points.,1.0,True
+explain_to_kid__average__02,explain_to_kid,bullets,Use 3 bullet points.,0.5,False
+explain_to_kid__average__02,explain_to_kid,bullets,Use 3 bullet points.,0.0,False
+explain_to_kid__average__02,explain_to_kid,bullets,Use 3 bullet points.,1.0,True
+explain_to_kid__average__02,explain_to_kid,bullets,Use 3 bullet points.,1.0,True
+explain_to_kid__average__02,explain_to_kid,bullets,Use 3 bullet points.,0.0,False
+explain_to_kid__average__02,explain_to_kid,bullets,Use 3 bullet points.,0.0,False
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,1.0,True
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,1.0,True
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,1.0,True
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,0.0,True
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,1.0,True
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,1.0,True
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,1.0,True
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,1.0,True
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,0.0,False
+explain_to_kid__average__05,explain_to_kid,length,Under 60 words if possible.,0.0,False
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,1.0,True
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,0.0,True
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,1.0,True
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,0.0,False
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,0.0,False
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,1.0,True
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,1.0,True
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,0.0,False
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,0.0,False
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,1.0,True
+explain_to_kid__average__10,explain_to_kid,bullets,keep it to three bullet points,1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",0.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,bullets,"Use exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,False
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,False
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",0.0,False
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__01,explain_to_kid,length,"keep the whole answer to 60 words or fewer,",1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,0.0,False
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,0.0,False
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,bullets,in exactly three bullet points?,1.0,True
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,True
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,True
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,True
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,True
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,True
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,True
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,True
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,False
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,True
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,False
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,False
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,0.0,False
+explain_to_kid__expert__02,explain_to_kid,length,Keep it under 60 words,1.0,True
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",0.0,True
+explain_to_kid__expert__03,explain_to_kid,bullets,"Give me exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",0.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,True
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,False
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,False
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,False
+explain_to_kid__expert__03,explain_to_kid,length,"no more than 60 words total,",1.0,False
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",0.0,False
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",0.0,False
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",0.0,False
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",0.0,False
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,bullets,"Format it as exactly three bullets,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",0.0,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",0.5,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",1.0,False
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",1.0,True
+explain_to_kid__expert__04,explain_to_kid,length,"60 words max,",1.0,False
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",0.0,True
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,bullets,"It should be exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,False
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",0.0,True
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,True
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,False
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,False
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,False
+explain_to_kid__expert__05,explain_to_kid,length,"60 words or fewer,",1.0,False
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",0.0,False
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",0.0,False
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",0.0,False
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",0.0,False
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,bullets,"answer in three bullet points only,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,False
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__06,explain_to_kid,length,"stay under 60 words,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",0.0,False
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",0.0,False
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",0.0,False
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",0.0,False
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",0.0,True
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,bullets,"exactly 3 bullets,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",0.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",0.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,False
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,False
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,True
+explain_to_kid__expert__07,explain_to_kid,length,"60 words or less,",1.0,False
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",0.0,False
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",0.0,False
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",0.0,False
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",0.0,False
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,bullets,"Three bullet points exactly,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,True
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,False
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,False
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,False
+explain_to_kid__expert__08,explain_to_kid,length,"under 60 words,",1.0,False
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",0.0,False
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",0.0,False
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",0.0,False
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",0.0,False
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",0.0,True
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,bullets,"Use exactly three bullet points,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,False
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,False
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",0.0,True
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,True
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,False
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,False
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,False
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,False
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,False
+explain_to_kid__expert__09,explain_to_kid,length,"no more than 60 words,",1.0,False
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",0.0,False
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,bullets,"It needs exactly 3 bullet points,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",0.0,False
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",0.0,True
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,True
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,False
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,False
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,False
+explain_to_kid__expert__10,explain_to_kid,length,"a 60-word limit,",1.0,True
+faq_only__average__05,faq_only,length,Under 50 words please.,1.0,True
+faq_only__average__05,faq_only,length,Under 50 words please.,1.0,True
+faq_only__average__05,faq_only,length,Under 50 words please.,1.0,True
+faq_only__average__05,faq_only,length,Under 50 words please.,0.0,False
+faq_only__average__05,faq_only,length,Under 50 words please.,0.0,False
+faq_only__average__05,faq_only,length,Under 50 words please.,1.0,False
+faq_only__average__05,faq_only,length,Under 50 words please.,1.0,False
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,False
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,True
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,False
+faq_only__expert__01,faq_only,length,Keep the whole answer to 50 words or fewer.,1.0,False
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,True
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,True
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,True
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,True
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,True
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,True
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,True
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,True
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,True
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,False
+faq_only__expert__02,faq_only,length,Stay under 50 words.,1.0,False
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,True
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,True
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,True
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,True
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,True
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,True
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,True
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,True
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,True
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,False
+faq_only__expert__03,faq_only,length,Max 50 words.,1.0,False
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,False
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,False
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,False
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,False
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,False
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,False
+faq_only__expert__04,faq_only,length,(50 words or less),1.0,True
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,1.0,True
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,1.0,True
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,1.0,True
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,1.0,True
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,1.0,True
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,1.0,True
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,0.0,True
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,0.0,False
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,1.0,True
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,1.0,False
+faq_only__expert__05,faq_only,length,Please keep it to 50 words or fewer.,1.0,True
+faq_only__expert__06,faq_only,length,"Under 50 words, please.",1.0,False
+faq_only__expert__06,faq_only,length,"Under 50 words, please.",1.0,True
+faq_only__expert__06,faq_only,length,"Under 50 words, please.",1.0,False
+faq_only__expert__06,faq_only,length,"Under 50 words, please.",1.0,True
+faq_only__expert__06,faq_only,length,"Under 50 words, please.",1.0,True
+faq_only__expert__06,faq_only,length,"Under 50 words, please.",1.0,True
+faq_only__expert__06,faq_only,length,"Under 50 words, please.",1.0,True
+faq_only__expert__06,faq_only,length,"Under 50 words, please.",1.0,False
+faq_only__expert__06,faq_only,length,"Under 50 words, please.",0.0,False
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__07,faq_only,length,Limit yourself to 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,True
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,False
+faq_only__expert__08,faq_only,length,Response must be 50 words or fewer.,1.0,False
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,True
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,True
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,False
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,True
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,True
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,True
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,True
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,True
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,False
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,False
+faq_only__expert__09,faq_only,length,Keep it at 50 words max.,1.0,True
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,False
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,False
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,True
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,True
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,True
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,False
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,False
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,True
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,True
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,False
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,False
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,True
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,True
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,False
+faq_only__expert__10,faq_only,length,"in 50 words or fewer,",1.0,False
+job_extraction__average__08,job_extraction,json_only,Output JSON only.,0.0,False
+job_extraction__average__08,job_extraction,json_only,Output JSON only.,0.0,False
+job_extraction__average__08,job_extraction,json_only,Output JSON only.,0.0,False
+job_extraction__average__08,job_extraction,json_only,Output JSON only.,0.0,False
+job_extraction__average__08,job_extraction,json_only,Output JSON only.,0.0,False
+job_extraction__average__08,job_extraction,json_only,Output JSON only.,0.0,False
+job_extraction__average__08,job_extraction,json_only,Output JSON only.,0.0,False
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,0.0,False
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,0.5,False
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,0.5,True
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,and return only a JSON object with those keys plus a salary field.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,0.0,False
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,0.0,False
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,0.0,True
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,1.0,True
+job_extraction__expert__01,job_extraction,json_only,No text outside the JSON.,1.0,True
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.0,True
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.5,True
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.0,True
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.5,True
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,1.0,True
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.0,False
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.0,False
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,1.0,True
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,1.0,True
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.0,False
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.5,True
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.0,False
+job_extraction__expert__02,job_extraction,json_only,Nothing but the JSON.,0.0,False
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",1.0,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",1.0,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",1.0,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",1.0,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",1.0,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",0.0,False
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",0.0,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",1.0,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",0.5,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",0.5,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",0.5,True
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",0.5,False
+job_extraction__expert__03,job_extraction,json_only,"Output the raw JSON only, no commentary.",0.5,False
+job_extraction__expert__04,job_extraction,json_only,Return them as clean JSON with no extra text.,0.0,False
+job_extraction__expert__04,job_extraction,json_only,Return them as clean JSON with no extra text.,0.0,False
+job_extraction__expert__04,job_extraction,json_only,Return them as clean JSON with no extra text.,0.0,False
+job_extraction__expert__04,job_extraction,json_only,Return them as clean JSON with no extra text.,0.0,False
+job_extraction__expert__04,job_extraction,json_only,Return them as clean JSON with no extra text.,0.0,False
+job_extraction__expert__04,job_extraction,json_only,Return them as clean JSON with no extra text.,0.0,False
+job_extraction__expert__04,job_extraction,json_only,Return them as clean JSON with no extra text.,0.0,False
+job_extraction__expert__04,job_extraction,json_only,Return them as clean JSON with no extra text.,0.5,True
+job_extraction__expert__04,job_extraction,json_only,Return them as clean JSON with no extra text.,0.0,False
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",1.0,True
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",1.0,True
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",1.0,True
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",0.5,False
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",0.5,False
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",1.0,True
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",1.0,True
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",1.0,True
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",1.0,True
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",1.0,True
+job_extraction__expert__05,job_extraction,json_only,"Give me just a JSON object (no prose, no code fences) for this posting with title, company, location, work_mode, and salary.",1.0,True
+job_extraction__expert__07,job_extraction,json_only,Only JSON in your reply.,1.0,True
+job_extraction__expert__07,job_extraction,json_only,Only JSON in your reply.,1.0,True
+job_extraction__expert__07,job_extraction,json_only,Only JSON in your reply.,1.0,True
+job_extraction__expert__07,job_extraction,json_only,Only JSON in your reply.,0.0,False
+job_extraction__expert__07,job_extraction,json_only,Only JSON in your reply.,0.0,False
+job_extraction__expert__07,job_extraction,json_only,Only JSON in your reply.,0.0,False
+job_extraction__expert__07,job_extraction,json_only,Only JSON in your reply.,0.0,False
+job_extraction__expert__07,job_extraction,json_only,Only JSON in your reply.,1.0,True
+job_extraction__expert__07,job_extraction,json_only,Only JSON in your reply.,0.0,True
+job_extraction__expert__08,job_extraction,json_only,"Output JSON only, with keys title, company, location, work_mode, salary.",0.0,False
+job_extraction__expert__08,job_extraction,json_only,"Output JSON only, with keys title, company, location, work_mode, salary.",0.0,False
+job_extraction__expert__08,job_extraction,json_only,"Output JSON only, with keys title, company, location, work_mode, salary.",0.0,False
+job_extraction__expert__08,job_extraction,json_only,"Output JSON only, with keys title, company, location, work_mode, salary.",1.0,True
+job_extraction__expert__08,job_extraction,json_only,"Output JSON only, with keys title, company, location, work_mode, salary.",1.0,True
+job_extraction__expert__08,job_extraction,json_only,"Output JSON only, with keys title, company, location, work_mode, salary.",0.5,False
+job_extraction__expert__08,job_extraction,json_only,"Output JSON only, with keys title, company, location, work_mode, salary.",0.0,False
+job_extraction__expert__08,job_extraction,json_only,"Output JSON only, with keys title, company, location, work_mode, salary.",0.0,False
+job_extraction__expert__08,job_extraction,json_only,"Output JSON only, with keys title, company, location, work_mode, salary.",0.5,False
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,1.0,True
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,1.0,True
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,1.0,True
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,0.0,True
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,0.0,False
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,0.0,False
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,0.0,False
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,0.0,False
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,0.0,False
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,0.0,False
+job_extraction__expert__09,job_extraction,json_only,Nothing else should appear in your response besides the JSON.,0.0,False
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,False
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,length,Keep it under 120 words,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__01,landlord_reply,no_apology,and don't apologize.,1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",0.5,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",1.0,True
+landlord_reply__expert__02,landlord_reply,no_apology,"Firm, polite, no apologies,",0.5,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,True
+landlord_reply__expert__02,landlord_reply,length,120 words max.,1.0,False
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,True
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,True
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,True
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,True
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,False
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,True
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,True
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,True
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,True
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,0.0,False
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,False
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,True
+landlord_reply__expert__04,landlord_reply,length,and make sure the whole reply stays at 120 words or fewer,1.0,False
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__04,landlord_reply,no_apology,without saying sorry.,1.0,True
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",1.0,True
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",1.0,True
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",0.5,True
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",0.0,True
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",1.0,True
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",1.0,False
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",1.0,True
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",1.0,True
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",1.0,True
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",0.5,False
+landlord_reply__expert__05,landlord_reply,length,"Max 120 words, zero apologies.",0.5,False
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",0.5,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",0.5,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",0.5,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",0.5,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",0.5,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,no_apology,"Keep it professional, no apology,",1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__06,landlord_reply,length,under 120 words.,1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,False
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,length,"120 words or less,",1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__07,landlord_reply,no_apology,and please don't apologize.,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,no_apology,Don't open with an apology,1.0,True
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,False
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,True
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,True
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,True
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,True
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,True
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,False
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,True
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,True
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,False
+landlord_reply__expert__09,landlord_reply,length,and keep the message to 120 words or fewer.,1.0,False
+meeting_summary__average__02,meeting_summary,length,Under 60 words please.,1.0,True
+meeting_summary__average__02,meeting_summary,length,Under 60 words please.,1.0,True
+meeting_summary__average__02,meeting_summary,length,Under 60 words please.,1.0,True
+meeting_summary__average__02,meeting_summary,length,Under 60 words please.,1.0,True
+meeting_summary__average__02,meeting_summary,length,Under 60 words please.,1.0,True
+meeting_summary__average__02,meeting_summary,length,Under 60 words please.,1.0,True
+meeting_summary__average__02,meeting_summary,length,Under 60 words please.,1.0,True
+meeting_summary__average__02,meeting_summary,length,Under 60 words please.,1.0,True
+meeting_summary__average__02,meeting_summary,length,Under 60 words please.,0.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__01,meeting_summary,length,Keep it under 60 words,1.0,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,1.0,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,1.0,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,1.0,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,1.0,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,1.0,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,1.0,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,0.5,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,0.5,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,1.0,True
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,0.5,False
+meeting_summary__expert__02,meeting_summary,length,Stay under 60 words and skip any tangents.,0.0,False
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,True
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,True
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,True
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,True
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,True
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,True
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,True
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,False
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",0.0,True
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,True
+meeting_summary__expert__03,meeting_summary,length,"No more than 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",0.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",0.5,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",0.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__04,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__05,meeting_summary,length,"stay at 60 words or fewer,",1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__06,meeting_summary,length,Keep it to 60 words max,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__07,meeting_summary,length,Maximum 60 words.,1.0,True
+meeting_summary__expert__08,meeting_summary,length,It should be 60 words or fewer and exclude side topics.,1.0,True
+meeting_summary__expert__08,meeting_summary,length,It should be 60 words or fewer and exclude side topics.,1.0,True
+meeting_summary__expert__08,meeting_summary,length,It should be 60 words or fewer and exclude side topics.,1.0,True
+meeting_summary__expert__08,meeting_summary,length,It should be 60 words or fewer and exclude side topics.,1.0,True
+meeting_summary__expert__08,meeting_summary,length,It should be 60 words or fewer and exclude side topics.,1.0,True
+meeting_summary__expert__08,meeting_summary,length,It should be 60 words or fewer and exclude side topics.,0.5,True
+meeting_summary__expert__08,meeting_summary,length,It should be 60 words or fewer and exclude side topics.,0.5,True
+meeting_summary__expert__08,meeting_summary,length,It should be 60 words or fewer and exclude side topics.,0.0,False
+meeting_summary__expert__08,meeting_summary,length,It should be 60 words or fewer and exclude side topics.,0.5,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__09,meeting_summary,length,"Under 60 words,",1.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,1.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,1.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,1.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,1.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,1.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,0.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,0.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,1.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,1.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,1.0,True
+meeting_summary__expert__10,meeting_summary,length,Write it as a short paragraph of no more than 60 words,1.0,True
+privacy_bug_report__average__02,privacy_bug_report,no_personal_info,Don't include the customer's personal info like name or email.,1.0,True
+privacy_bug_report__average__02,privacy_bug_report,no_personal_info,Don't include the customer's personal info like name or email.,1.0,True
+privacy_bug_report__average__02,privacy_bug_report,no_personal_info,Don't include the customer's personal info like name or email.,1.0,True
+privacy_bug_report__average__02,privacy_bug_report,no_personal_info,Don't include the customer's personal info like name or email.,1.0,True
+privacy_bug_report__average__02,privacy_bug_report,no_personal_info,Don't include the customer's personal info like name or email.,1.0,True
+privacy_bug_report__average__02,privacy_bug_report,no_personal_info,Don't include the customer's personal info like name or email.,1.0,True
+privacy_bug_report__average__02,privacy_bug_report,no_personal_info,Don't include the customer's personal info like name or email.,1.0,True
+privacy_bug_report__average__03,privacy_bug_report,length,Keep it under 100 words.,1.0,True
+privacy_bug_report__average__03,privacy_bug_report,length,Keep it under 100 words.,1.0,True
+privacy_bug_report__average__03,privacy_bug_report,length,Keep it under 100 words.,1.0,True
+privacy_bug_report__average__03,privacy_bug_report,length,Keep it under 100 words.,1.0,True
+privacy_bug_report__average__03,privacy_bug_report,length,Keep it under 100 words.,1.0,True
+privacy_bug_report__average__03,privacy_bug_report,length,Keep it under 100 words.,1.0,True
+privacy_bug_report__average__03,privacy_bug_report,length,Keep it under 100 words.,1.0,True
+privacy_bug_report__average__03,privacy_bug_report,length,Keep it under 100 words.,0.0,False
+privacy_bug_report__average__03,privacy_bug_report,length,Keep it under 100 words.,0.5,True
+privacy_bug_report__average__06,privacy_bug_report,no_personal_info,Remove anything that identifies the person.,1.0,True
+privacy_bug_report__average__06,privacy_bug_report,no_personal_info,Remove anything that identifies the person.,1.0,True
+privacy_bug_report__average__06,privacy_bug_report,no_personal_info,Remove anything that identifies the person.,1.0,True
+privacy_bug_report__average__06,privacy_bug_report,no_personal_info,Remove anything that identifies the person.,0.5,True
+privacy_bug_report__average__06,privacy_bug_report,no_personal_info,Remove anything that identifies the person.,0.5,True
+privacy_bug_report__average__06,privacy_bug_report,no_personal_info,Remove anything that identifies the person.,1.0,True
+privacy_bug_report__average__06,privacy_bug_report,no_personal_info,Remove anything that identifies the person.,1.0,True
+privacy_bug_report__average__07,privacy_bug_report,no_personal_info,"Include the PDF size and version, nothing private.",1.0,True
+privacy_bug_report__average__07,privacy_bug_report,no_personal_info,"Include the PDF size and version, nothing private.",1.0,True
+privacy_bug_report__average__07,privacy_bug_report,no_personal_info,"Include the PDF size and version, nothing private.",0.5,True
+privacy_bug_report__average__07,privacy_bug_report,no_personal_info,"Include the PDF size and version, nothing private.",0.5,True
+privacy_bug_report__average__07,privacy_bug_report,no_personal_info,"Include the PDF size and version, nothing private.",0.5,True
+privacy_bug_report__average__07,privacy_bug_report,no_personal_info,"Include the PDF size and version, nothing private.",1.0,True
+privacy_bug_report__average__07,privacy_bug_report,no_personal_info,"Include the PDF size and version, nothing private.",1.0,True
+privacy_bug_report__average__09,privacy_bug_report,length,"under 100 words,",1.0,True
+privacy_bug_report__average__09,privacy_bug_report,length,"under 100 words,",1.0,True
+privacy_bug_report__average__09,privacy_bug_report,length,"under 100 words,",1.0,True
+privacy_bug_report__average__09,privacy_bug_report,length,"under 100 words,",1.0,True
+privacy_bug_report__average__09,privacy_bug_report,length,"under 100 words,",1.0,True
+privacy_bug_report__average__09,privacy_bug_report,length,"under 100 words,",1.0,False
+privacy_bug_report__average__09,privacy_bug_report,length,"under 100 words,",1.0,True
+privacy_bug_report__average__09,privacy_bug_report,length,"under 100 words,",1.0,True
+privacy_bug_report__average__09,privacy_bug_report,length,"under 100 words,",1.0,True
+privacy_bug_report__average__09,privacy_bug_report,no_personal_info,with no customer identifying details.,1.0,True
+privacy_bug_report__average__09,privacy_bug_report,no_personal_info,with no customer identifying details.,1.0,True
+privacy_bug_report__average__09,privacy_bug_report,no_personal_info,with no customer identifying details.,1.0,True
+privacy_bug_report__average__09,privacy_bug_report,no_personal_info,with no customer identifying details.,1.0,True
+privacy_bug_report__average__09,privacy_bug_report,no_personal_info,with no customer identifying details.,0.5,True
+privacy_bug_report__average__09,privacy_bug_report,no_personal_info,with no customer identifying details.,1.0,True
+privacy_bug_report__average__09,privacy_bug_report,no_personal_info,with no customer identifying details.,1.0,True
+privacy_bug_report__average__09,privacy_bug_report,no_personal_info,with no customer identifying details.,1.0,True
+privacy_bug_report__average__09,privacy_bug_report,no_personal_info,with no customer identifying details.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,no_personal_info,"Remove any name, email, phone number, or address so the customer cannot be identified.",1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,False
+privacy_bug_report__expert__01,privacy_bug_report,length,Keep the whole report to 100 words or fewer.,1.0,False
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,no_personal_info,"Strip all personal details (name, email, phone, address).",1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,1.0,True
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,0.0,False
+privacy_bug_report__expert__02,privacy_bug_report,length,Stay under 100 words.,0.0,False
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,no_personal_info,"Do not include any customer identifiers such as name, email, phone, or address.",1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,True
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,0.0,False
+privacy_bug_report__expert__03,privacy_bug_report,length,Maximum 100 words.,1.0,False
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",0.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,no_personal_info,"Anonymize fully: no name, email, phone, or address anywhere.",1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,0.0,False
+privacy_bug_report__expert__04,privacy_bug_report,length,Limit to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,no_personal_info,Make sure no personal information of the customer appears.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,True
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,False
+privacy_bug_report__expert__05,privacy_bug_report,length,Please keep it at 100 words max.,1.0,False
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,True
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,True
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,True
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,True
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,True
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,True
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,True
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,True
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,True
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,False
+privacy_bug_report__expert__06,privacy_bug_report,length,The report must be 100 words or fewer.,1.0,False
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,0.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,0.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,no_personal_info,Scrub every identifying detail from the customer.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__07,privacy_bug_report,length,No more than 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,True
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,False
+privacy_bug_report__expert__08,privacy_bug_report,length,Cap it at 100 words.,1.0,False
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,no_personal_info,"Remove customer name, email, phone, and address.",1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,True
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,False
+privacy_bug_report__expert__09,privacy_bug_report,length,Keep it to 100 words or fewer.,1.0,False
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,no_personal_info,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,True
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,False
+privacy_bug_report__expert__10,privacy_bug_report,length,"100 words or fewer, please.",1.0,False
+privacy_bug_report__novice__02,privacy_bug_report,no_personal_info,Please keep the customer private.,1.0,True
+privacy_bug_report__novice__02,privacy_bug_report,no_personal_info,Please keep the customer private.,1.0,True
+privacy_bug_report__novice__02,privacy_bug_report,no_personal_info,Please keep the customer private.,1.0,True
+privacy_bug_report__novice__02,privacy_bug_report,no_personal_info,Please keep the customer private.,1.0,True
+privacy_bug_report__novice__02,privacy_bug_report,no_personal_info,Please keep the customer private.,1.0,True
+privacy_bug_report__novice__02,privacy_bug_report,no_personal_info,Please keep the customer private.,1.0,False
+privacy_bug_report__novice__02,privacy_bug_report,no_personal_info,Please keep the customer private.,1.0,False
+privacy_bug_report__novice__04,privacy_bug_report,no_personal_info,Don't include the customer's info if you can.,1.0,True
+privacy_bug_report__novice__04,privacy_bug_report,no_personal_info,Don't include the customer's info if you can.,1.0,True
+privacy_bug_report__novice__04,privacy_bug_report,no_personal_info,Don't include the customer's info if you can.,1.0,True
+privacy_bug_report__novice__04,privacy_bug_report,no_personal_info,Don't include the customer's info if you can.,1.0,True
+privacy_bug_report__novice__04,privacy_bug_report,no_personal_info,Don't include the customer's info if you can.,1.0,True
+privacy_bug_report__novice__04,privacy_bug_report,no_personal_info,Don't include the customer's info if you can.,0.5,False
+privacy_bug_report__novice__04,privacy_bug_report,no_personal_info,Don't include the customer's info if you can.,1.0,False
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,False
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__06,privacy_bug_report,no_personal_info,summarize this customer email,1.0,True
+privacy_bug_report__novice__07,privacy_bug_report,no_personal_info,Please leave out personal stuff.,1.0,True
+privacy_bug_report__novice__07,privacy_bug_report,no_personal_info,Please leave out personal stuff.,1.0,True
+privacy_bug_report__novice__07,privacy_bug_report,no_personal_info,Please leave out personal stuff.,1.0,True
+privacy_bug_report__novice__07,privacy_bug_report,no_personal_info,Please leave out personal stuff.,1.0,True
+privacy_bug_report__novice__07,privacy_bug_report,no_personal_info,Please leave out personal stuff.,1.0,True
+privacy_bug_report__novice__07,privacy_bug_report,no_personal_info,Please leave out personal stuff.,1.0,False
+privacy_bug_report__novice__07,privacy_bug_report,no_personal_info,Please leave out personal stuff.,1.0,False
+subject_line__average__02,subject_line,one_short_line,Make it under 9 words,1.0,True
+subject_line__average__02,subject_line,one_short_line,Make it under 9 words,1.0,True
+subject_line__average__02,subject_line,one_short_line,Make it under 9 words,1.0,True
+subject_line__average__02,subject_line,one_short_line,Make it under 9 words,1.0,False
+subject_line__average__02,subject_line,one_short_line,Make it under 9 words,1.0,True
+subject_line__average__02,subject_line,one_short_line,Make it under 9 words,0.5,False
+subject_line__average__02,subject_line,one_short_line,Make it under 9 words,1.0,False
+subject_line__average__02,subject_line,one_short_line,Make it under 9 words,1.0,True
+subject_line__average__02,subject_line,one_short_line,Make it under 9 words,1.0,True
+subject_line__average__07,subject_line,one_short_line,and under 9 words.,0.5,False
+subject_line__average__07,subject_line,one_short_line,and under 9 words.,1.0,True
+subject_line__average__07,subject_line,one_short_line,and under 9 words.,1.0,True
+subject_line__average__07,subject_line,one_short_line,and under 9 words.,1.0,True
+subject_line__average__07,subject_line,one_short_line,and under 9 words.,1.0,False
+subject_line__average__07,subject_line,one_short_line,and under 9 words.,1.0,True
+subject_line__average__07,subject_line,one_short_line,and under 9 words.,1.0,True
+subject_line__average__07,subject_line,one_short_line,and under 9 words.,0.5,False
+subject_line__average__07,subject_line,one_short_line,and under 9 words.,0.5,False
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__01,subject_line,one_short_line,"be 9 words or fewer,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,False
+subject_line__expert__04,subject_line,one_short_line,"be no more than 9 words,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__05,subject_line,one_short_line,"9 words max,",1.0,True
+subject_line__expert__07,subject_line,one_short_line,"One line only, 9 words or less, including the invoice number.",1.0,True
+subject_line__expert__07,subject_line,one_short_line,"One line only, 9 words or less, including the invoice number.",1.0,True
+subject_line__expert__07,subject_line,one_short_line,"One line only, 9 words or less, including the invoice number.",1.0,True
+subject_line__expert__07,subject_line,one_short_line,"One line only, 9 words or less, including the invoice number.",1.0,False
+subject_line__expert__07,subject_line,one_short_line,"One line only, 9 words or less, including the invoice number.",1.0,False
+subject_line__expert__07,subject_line,one_short_line,"One line only, 9 words or less, including the invoice number.",1.0,True
+subject_line__expert__07,subject_line,one_short_line,"One line only, 9 words or less, including the invoice number.",1.0,True
+subject_line__expert__07,subject_line,one_short_line,"One line only, 9 words or less, including the invoice number.",1.0,True
+subject_line__expert__07,subject_line,one_short_line,"One line only, 9 words or less, including the invoice number.",1.0,True
+subject_line__expert__08,subject_line,one_short_line,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",1.0,True
+subject_line__expert__08,subject_line,one_short_line,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",1.0,True
+subject_line__expert__08,subject_line,one_short_line,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",1.0,True
+subject_line__expert__08,subject_line,one_short_line,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",0.5,False
+subject_line__expert__08,subject_line,one_short_line,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",0.5,False
+subject_line__expert__08,subject_line,one_short_line,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",1.0,True
+subject_line__expert__08,subject_line,one_short_line,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",0.0,False
+subject_line__expert__08,subject_line,one_short_line,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",1.0,True
+subject_line__expert__08,subject_line,one_short_line,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,False
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,False
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True
+subject_line__expert__10,subject_line,one_short_line,"use 9 words or fewer,",1.0,True

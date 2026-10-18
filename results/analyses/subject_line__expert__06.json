@@ -1,0 +1,465 @@
+{
+ "challenge_id": "subject_line",
+ "user_prompt": "Can you suggest a subject line for my email about invoice details going to a client? Make sure the invoice number appears, keep it to nine words or fewer, and keep it calm and professional with no pushy phrasing or exclamation marks.",
+ "final_prompt": "Can you suggest a subject line for my email about invoice details going to a client? Make sure the invoice number appears, keep it to nine words or fewer, and keep it calm and professional with no pushy phrasing or exclamation marks.\n\n<document>\nHi Sam,\n\nAttached is invoice #4471 for the October design work ($2,350). Payment is due by\nNovember 15. Let me know if you have any questions.\n\nThanks,\nAlex\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Can you suggest a subject line for my email about invoice details going to a client? ",
+   "role": "task",
+   "start": 0,
+   "end": 85
+  },
+  {
+   "id": 1,
+   "text": "Make sure the invoice number appears, ",
+   "role": "constraint",
+   "start": 85,
+   "end": 123
+  },
+  {
+   "id": 2,
+   "text": "keep it to nine words or fewer, ",
+   "role": "constraint",
+   "start": 123,
+   "end": 155
+  },
+  {
+   "id": 3,
+   "text": "and keep it calm and professional with no pushy phrasing or exclamation marks.",
+   "role": "tone",
+   "start": 155,
+   "end": 233
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "one_short_line",
+  "has_number",
+  "not_salesy"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Invoice #4471 for October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Invoice #4471 for October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Invoice #4471 for October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "one_short_line": 1.0,
+  "has_number": 1.0,
+  "not_salesy": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "one_short_line": 0.0,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "one_short_line": 0.05,
+  "has_number": 0.05,
+  "not_salesy": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.010691671651659752,
+  "on_task": 0.0,
+  "one_short_line": 0.03207501495497923,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.11111111111111116,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Make sure the invoice number appears, keep it to nine words or fewer, and keep it calm and professional with no pushy phrasing or exclamation marks.",
+   "runs": [
+    {
+     "answer": "Hi Sam, please find invoice #4471 for October design work ($2,350) attached. Payment is due by November 15.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's a calm, professional reminder under nine words:\n\n\"Following up on invoice #4471 for October design work.\"",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.11111111111111116,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.7037037037037037
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6851851851851851,
+    "on_task": 1.0,
+    "one_short_line": 0.05555555555555558,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Can you suggest a subject line for my email about invoice details going to a client? keep it to nine words or fewer, and keep it calm and professional with no pushy phrasing or exclamation marks.",
+   "runs": [
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Can you suggest a subject line for my email about invoice details going to a client? Make sure the invoice number appears, and keep it calm and professional with no pushy phrasing or exclamation marks.",
+   "runs": [
+    {
+     "answer": "Here are a few options that include the invoice number and keep a calm, professional tone:\n\n- Invoice #4471 for October Design Work\n- Invoice #4471: October Design Services\n- October Design Work Invoice (#4471)\n- Invoice #4471 Attached for Your Review\n\nThe first option is a good all-around choice if you want something clear and simple.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options that include the invoice number and keep a calm, professional tone:\n\n1. Invoice #4471 for October Design Work\n2. Invoice #4471: October Design Services\n3. Invoice #4471 Attached, Due November 15\n4. Invoice #4471 for Your Review\n\nIf you'd like the due date reflected in the subject line, option 3 works well; otherwise, option 1 or 2 keeps it simple.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6666666666666666,
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Can you suggest a subject line for my email about invoice details going to a client? Make sure the invoice number appears, keep it to nine words or fewer,",
+   "runs": [
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 for October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.3148148148148149,
+   "on_task": 0.0,
+   "one_short_line": 0.9444444444444444,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.33333333333333337,
+   "on_task": 0.0,
+   "one_short_line": 1.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": true,
+   "one_short_line": false,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "one_short_line": false,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    1.0,
+    0.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  0.5,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 8,
+  "judge": 11
+ },
+ "calls": 23,
+ "input_tokens": 10484,
+ "output_tokens": 1348,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:12:24.397267+00:00"
+}

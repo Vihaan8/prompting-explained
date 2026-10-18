@@ -1,0 +1,465 @@
+{
+ "challenge_id": "privacy_bug_report",
+ "user_prompt": "Write up the export crash from the attached support ticket as a public bug report. Mention the PDF size, the software version, and the operating system. Make sure nothing that identifies the customer (name, email, phone, address) is included. 100 words or fewer, please.",
+ "final_prompt": "Write up the export crash from the attached support ticket as a public bug report. Mention the PDF size, the software version, and the operating system. Make sure nothing that identifies the customer (name, email, phone, address) is included. 100 words or fewer, please.\n\n<document>\nSupport ticket #8812\nFrom: Marcus Lee <marcus.lee@example.com>\nPhone: 919-555-0143\nAddress: 42 Elm St, Apt 5, Durham, NC 27701\n\nhi, the app crashes every time i try to export a PDF report longer than 50 pages.\nI'm on version 3.2.1 on Windows 11. it started after the last update. shorter\nreports export fine. please fix, i need this for work!!\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Write up the export crash from the attached support ticket as a public bug report. ",
+   "role": "task",
+   "start": 0,
+   "end": 83
+  },
+  {
+   "id": 1,
+   "text": "Mention the PDF size, the software version, and the operating system. ",
+   "role": "constraint",
+   "start": 83,
+   "end": 153
+  },
+  {
+   "id": 2,
+   "text": "Make sure nothing that identifies the customer (name, email, phone, address) is included. ",
+   "role": "constraint",
+   "start": 153,
+   "end": 243
+  },
+  {
+   "id": 3,
+   "text": "100 words or fewer, please.",
+   "role": "constraint",
+   "start": 243,
+   "end": 270
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "keeps_details",
+  "no_personal_info",
+  "length"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The application crashes during PDF export of reports longer than 50 pages.\n\n**Environment:**\n- Software version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:**\n1. Create a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Notes:** Shorter reports export successfully. The issue began after the most recent update.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:**\n- Software version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports longer than 50 pages\n\n**Details:** Shorter reports export successfully. The issue began after a recent update.\n\n**Expected behavior:** Reports of any length should export to PDF without crashing.\n\n**Actual behavior:** The application crashes during export of reports over 50 pages.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:**\n- Software version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Details:** Shorter reports export successfully. The issue began after the most recent update.\n\n**Expected behavior:** Long PDF reports should export without crashing.\n\n**Actual behavior:** The application crashes during export of reports over 50 pages.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "keeps_details": 1.0,
+  "no_personal_info": 1.0,
+  "length": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "keeps_details": 0.0,
+  "no_personal_info": 0.0,
+  "length": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "keeps_details": 0.05,
+  "no_personal_info": 0.05,
+  "length": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.004811252243246897,
+  "on_task": 0.0,
+  "keeps_details": 0.0,
+  "no_personal_info": 0.0,
+  "length": 0.014433756729740658
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.050000000000000044
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Mention the PDF size, the software version, and the operating system. Make sure nothing that identifies the customer (name, email, phone, address) is included. 100 words or fewer, please.",
+   "runs": [
+    {
+     "answer": "The support ticket reports that the app crashes when exporting PDF reports longer than 50 pages. The PDF size involved is over 50 pages, with shorter reports exporting without issue. The software version is 3.2.1, and the operating system is Windows 11. The problem began after a recent update. The customer has requested a fix urgently because the reports are needed for work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The support ticket reports a crash when exporting a PDF report longer than 50 pages. The customer is running software version 3.2.1 on Windows 11. The crash began after the most recent update, and shorter reports export without issue.\n\nNote: The ticket doesn't specify the PDF file size, so that detail cannot be provided. Only the page count (over 50 pages) is mentioned.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Write up the export crash from the attached support ticket as a public bug report. Make sure nothing that identifies the customer (name, email, phone, address) is included. 100 words or fewer, please.",
+   "runs": [
+    {
+     "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports as a PDF.\n\n**Actual Behavior:** The application crashes. Shorter reports export successfully.\n\n**Notes:** The issue began after the most recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The app crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as a PDF.\n\n**Actual Behavior:** The application crashes. Shorter reports export without issue.\n\n**Notes:** The issue began after the most recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Write up the export crash from the attached support ticket as a public bug report. Mention the PDF size, the software version, and the operating system. 100 words or fewer, please.",
+   "runs": [
+    {
+     "answer": "**Bug: Application crashes when exporting PDF reports longer than 50 pages**\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Description:** The application crashes consistently when exporting PDF reports exceeding 50 pages. Shorter reports export successfully. The issue appeared after the most recent update.\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Result:** The report exports as a PDF.\n\n**Actual Result:** The application crashes.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting PDF reports longer than 50 pages**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:**\n- Software version: 3.2.1\n- Operating system: Windows 11\n\n**Details:** The crash began after a recent update. Shorter reports export successfully.\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export it as a PDF.\n3. The application crashes.\n\n**Expected result:** The PDF exports successfully.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Write up the export crash from the attached support ticket as a public bug report. Mention the PDF size, the software version, and the operating system. Make sure nothing that identifies the customer (name, email, phone, address) is included.",
+   "runs": [
+    {
+     "answer": "**Bug Report: Application crashes when exporting PDF reports longer than 50 pages**\n\n**Summary:** The application crashes during PDF export when the report exceeds approximately 50 pages. Shorter reports export successfully.\n\n**Affected Version:** 3.2.1\n\n**Operating System:** Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report that is longer than 50 pages.\n2. Attempt to export the report as PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports to PDF successfully regardless of length.\n\n**Actual Behavior:** The application crashes when exporting reports longer than 50 pages.\n\n**Additional Notes:** The issue first appeared after an update to version 3.2.1. Reports under 50 pages export without problems.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.94,
+      "overall": 0.98
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting PDF reports longer than 50 pages**\n\n**Summary:** The application crashes during PDF export when the report exceeds approximately 50 pages. Shorter reports export successfully.\n\n**Affected Version:** 3.2.1\n\n**Operating System:** Windows 11\n\n**Steps to Reproduce:**\n1. Open a report that is longer than 50 pages.\n2. Export the report as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports to PDF successfully regardless of length.\n\n**Actual Behavior:** The application crashes during export when the PDF exceeds about 50 pages.\n\n**Additional Notes:** The issue began after a recent update. Reports under 50 pages are unaffected.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.99,
+      "overall": 0.9966666666666667
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9883333333333333,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 0.965
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": 0.0
+  },
+  {
+   "overall": 0.011666666666666714,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": 0.03500000000000003
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    0.5,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  0.75,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 8,
+  "judge": 11
+ },
+ "calls": 23,
+ "input_tokens": 14086,
+ "output_tokens": 3001,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:12:34.340716+00:00"
+}

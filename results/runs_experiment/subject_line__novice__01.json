@@ -1,0 +1,397 @@
+{
+ "challenge_id": "subject_line",
+ "user_prompt": "Hi, could you please write a subject line for this email? Thanks!",
+ "final_prompt": "Hi, could you please write a subject line for this email? Thanks!\n\n<document>\nHi Sam,\n\nAttached is invoice #4471 for the October design work ($2,350). Payment is due by\nNovember 15. Let me know if you have any questions.\n\nThanks,\nAlex\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Hi, could you please write a subject line for this email? Thanks!",
+   "role": "task",
+   "start": 0,
+   "end": 65
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "one_short_line",
+  "has_number",
+  "not_salesy"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Here are a few options:\n\n- **Invoice #4471 – October Design Work (Due Nov 15)**\n- **Invoice #4471 for October Design Services**\n- **Payment Due: Invoice #4471 ($2,350)**\n\nThe first one is probably the most useful, since it flags the invoice number, the work it covers, and the deadline at a glance.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work (Due Nov 15)**\n2. **Invoice #4471 for October Design Services**\n3. **Payment Due: Invoice #4471 ($2,350)**\n\nThe first one is probably the most useful, since it includes the invoice number, the work it covers, and the deadline.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work (Due Nov 15)**\n2. **Invoice #4471 for October Design Services**\n3. **Payment Due: Invoice #4471 ($2,350)**\n\nThe first one is probably the best choice, since it includes the invoice number, the work covered, and the due date.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work – Due Nov 15**\n2. **Invoice #4471 for October Design Services**\n3. **Payment Due: Invoice #4471 ($2,350)**\n\nOption 1 is a good choice if you want the due date visible at a glance.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n- **Invoice #4471 – October Design Work (Due Nov 15)**\n- **Invoice #4471 for October Design Services**\n- **Payment Due: Invoice #4471 ($2,350)**\n\nThe first one is probably the most useful, since it includes the invoice number, the work covered, and the deadline.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work – Payment Due Nov 15**\n2. **Invoice #4471 for October Design Services ($2,350)**\n3. **Your October Design Invoice (#4471)**\n\nThe first one is the most informative if you want the due date visible at a glance.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work (Payment Due Nov 15)**\n2. **Invoice #4471 for October Design Services**\n3. **Invoice #4471 – $2,350 Due November 15**\n\nThe first option is the most informative, since it covers the invoice number, the work, and the deadline.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work – Due Nov 15**\n2. **Invoice #4471 for October Design Services**\n3. **Payment Due: Invoice #4471 ($2,350)**\n\nThe first option is the most informative, since it covers the invoice number, the work, and the deadline.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work – Due Nov 15**\n2. **Invoice #4471 for October Design Services**\n3. **Payment Due: Invoice #4471 ($2,350)**\n\nOption 1 is probably the best fit, since it includes the key details (invoice number, service, and due date) at a glance.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work (Due Nov 15)**\n2. **Invoice #4471 for October Design Services**\n3. **Payment Due: Invoice #4471 ($2,350)**\n\nThe first one is probably the best choice, since it includes the invoice number, the work covered, and the deadline.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work (Due Nov 15)**\n2. **Invoice #4471 for October Design Services**\n3. **Payment Due: Invoice #4471 ($2,350)**\n\nThe first option is a good all-around choice since it includes the invoice number, the work covered, and the due date.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work – Due Nov 15**\n2. **Invoice #4471 for October Design Services ($2,350)**\n3. **Payment Due: Invoice #4471 (October Design Work)**\n\nI'd recommend the first one, since it puts the invoice number, the work, and the deadline up front.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.6666666666666666,
+  "on_task": 1.0,
+  "one_short_line": 0.0,
+  "has_number": 1.0,
+  "not_salesy": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "one_short_line": 0.0,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "one_short_line": 0.05,
+  "has_number": 0.05,
+  "not_salesy": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.18349396085439343,
+  "on_task": 0.27524094128159016,
+  "one_short_line": 0.0,
+  "has_number": 0.2041241452319315,
+  "not_salesy": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.14982219165849825,
+   "on_task": 0.22473328748774735,
+   "one_short_line": 0.05,
+   "has_number": 0.16666666666666666,
+   "not_salesy": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "",
+   "runs": [
+    {
+     "answer": "It looks like you've shared an email, but I'm not sure what you'd like me to do with it. Here's a quick summary of what it contains:\n\n- **From:** Alex\n- **To:** Sam\n- **Subject:** Not specified\n- **Content:** Invoice #4471 for October design work, totaling $2,350, payment due November 15. Attachment referenced (the invoice itself).\n\nWhat would you like help with? For example, I could:\n\n- Draft a reply (e.g., confirming receipt or asking a question)\n- Summarize or reformat the details\n- Create a reminder or calendar entry for the due date\n- Write a payment confirmation or follow-up\n- Check it for anything unusual, if you're concerned it might be fraudulent\n\nLet me know what you need.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but I'm not sure what you'd like me to do with it. Here's a quick summary of what it contains:\n\n- **From:** Alex, to Sam\n- **Subject matter:** Invoice #4471 for October design work\n- **Amount:** $2,350\n- **Due date:** November 15\n- **Attachment:** The invoice (referenced but not included in the text)\n\nWhat would you like help with? For example, I could:\n- Draft a reply (e.g., confirming receipt or asking a question)\n- Write a payment confirmation or follow-up\n- Summarize or reformat the information\n- Create a reminder or task entry\n- Check it for anything unusual, if you're concerned about its legitimacy\n\nLet me know what you need.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but I'm not sure what you'd like me to do with it. Here's a quick summary of what it contains:\n\n- **From:** Alex, to Sam\n- **Subject matter:** Invoice #4471 for October design work\n- **Amount:** $2,350\n- **Due date:** November 15\n- **Attachment:** The invoice (referenced, but not included in the text)\n\nWhat would you like help with? For example, I could:\n\n- Draft a reply (confirming receipt, asking a question, or noting a payment date)\n- Summarize or reformat the details\n- Create a payment reminder or calendar entry\n- Check whether the information looks complete or unusual for an invoice\n\nLet me know what you need.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but your message doesn't include a question or request. What would you like me to do with it? For example, I could:\n\n- **Summarize** the key details (amount, due date, invoice number)\n- **Draft a reply**, such as confirming receipt or asking a question about the invoice\n- **Create a reminder** or task for the November 15 payment deadline\n- **Translate or reformat** it\n- **Check it for issues**, if you're reviewing it before sending\n\nLet me know which you need.",
+     "scores": {
+      "on_task": 0.0,
+      "one_short_line": 0.0,
+      "has_number": 0.0,
+      "not_salesy": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but I'm not sure what you'd like me to do with it. Here's a quick summary of what it contains:\n\n- **From:** Alex\n- **To:** Sam\n- **Subject matter:** Invoice #4471 for October design work\n- **Amount:** $2,350\n- **Due date:** November 15\n- **Attachment:** The invoice (referenced but not visible to me)\n\nWhat would you like help with? For example, I could:\n\n- Draft a reply (e.g., confirming receipt or asking a question)\n- Summarize or extract key details into a table or reminder\n- Write a payment confirmation or follow-up\n- Check it for tone or clarity if you're the sender\n\nLet me know what you need.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but I'm not sure what you'd like me to do with it. Here's a quick summary of what it contains:\n\n- **From:** Alex, to Sam\n- **Subject matter:** Invoice #4471 for October design work\n- **Amount:** $2,350\n- **Due date:** November 15\n- **Action requested:** Payment by the due date, with questions welcome\n\nWhat would you like to do with this? For example, I could:\n\n- Draft a reply (e.g., confirming payment, asking for clarification, or requesting an extension)\n- Create a reminder or calendar entry for the November 15 deadline\n- Summarize it further or extract the key details into a table\n- Help with a payment tracking note or record\n\nLet me know which one fits.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but I'm not sure what you'd like me to do with it. Here's a quick summary of what it contains:\n\n- **From:** Alex (apparently a designer or vendor)\n- **To:** Sam\n- **Subject:** Invoice #4471 for October design work\n- **Amount:** $2,350\n- **Due date:** November 15\n- **Attachment:** The invoice (not included in the text)\n\nWhat would you like help with? For example, I could:\n- Draft a reply (e.g., confirming receipt or asking a question about the invoice)\n- Create a payment reminder or tracking note\n- Summarize or reformat the information\n- Help you set up a calendar reminder or checklist for the payment",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but I'm not sure what you'd like me to do with it. Here's a quick summary of what it contains:\n\n- **From:** Alex\n- **To:** Sam\n- **Subject:** Not included in the text\n- **Content:** Invoice #4471 for October design work, totaling $2,350, due November 15. Alex is offering to answer any questions.\n- **Attachment:** The invoice (referenced, but not included here)\n\nWhat would you like to do with it? For example, I can:\n\n- Draft a reply to Alex\n- Summarize or reformat the details\n- Create a payment reminder or calendar note\n- Help you write a message asking for clarification on the invoice\n- Something else\n\nLet me know what you need.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but I'm not sure what you'd like me to do with it. Here's a quick summary of what it contains:\n\n- **From:** Alex\n- **To:** Sam\n- **Subject matter:** Invoice #4471 for October design work\n- **Amount:** $2,350\n- **Due date:** November 15\n- **Attachment:** The invoice (referenced, not included in the text)\n\nWhat would you like help with? For example, I could:\n\n- Draft a reply (e.g., confirming receipt or asking a question)\n- Summarize or reformat the details\n- Create a reminder or payment tracking note\n- Write a message to Alex about payment timing\n- Something else",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but your message doesn't include a specific question or request. Here's what the email contains:\n\n- **From:** Alex\n- **To:** Sam\n- **Subject matter:** Invoice #4471 for October design work\n- **Amount:** $2,350\n- **Payment due:** November 15\n- **Attachment:** The invoice file (not visible to me)\n\nWhat would you like me to do with it? For example, I could:\n\n- Draft a reply (confirming receipt, asking a question, or noting a payment date)\n- Summarize or reformat the details into a note or reminder\n- Check whether the details look complete or consistent\n- Help you write a payment confirmation or follow-up\n\nLet me know what you need.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but your message didn't include a question or request. What would you like me to do with it? For example, I could:\n\n- **Summarize** it\n- **Draft a reply** (e.g., confirming receipt, asking about the invoice, or requesting an extension)\n- **Extract key details** like the amount ($2,350), due date (November 15), and invoice number (#4471)\n- **Check or respond to** something specific in it\n\nLet me know what you need.",
+     "scores": {
+      "on_task": 0.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "It looks like you've shared an email, but I'm not sure what you'd like me to do with it. Here's a quick summary of what it contains:\n\n- **From:** Alex\n- **To:** Sam\n- **Subject matter:** Invoice #4471 for October design work\n- **Amount:** $2,350\n- **Due date:** November 15\n- **Attachment:** The invoice (referenced but not visible to me)\n\nLet me know what you need, for example:\n- A reply to Alex (confirming receipt, asking a question, or noting a payment plan)\n- A reminder or calendar note for the November 15 deadline\n- A summary or translation of the message\n- Help organizing or tracking this invoice",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.5555555555555555,
+    "on_task": 0.8333333333333334,
+    "one_short_line": 0.0,
+    "has_number": 0.9166666666666666,
+    "not_salesy": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.11111111111111116,
+   "on_task": 0.16666666666666663,
+   "one_short_line": 0.0,
+   "has_number": 0.08333333333333337,
+   "not_salesy": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "baseline": 12,
+  "ablation": 12
+ },
+ "calls": 24,
+ "input_tokens": 2100,
+ "output_tokens": 3979,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": false,
+  "judge_max_tokens": 600,
+  "baseline_runs": 12,
+  "ablation_runs": 12,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 500,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:20:14.147709+00:00"
+}

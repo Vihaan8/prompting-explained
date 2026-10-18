@@ -1,0 +1,1089 @@
+{
+ "challenge_id": "privacy_bug_report",
+ "user_prompt": "Rewrite the attached support ticket as a bug report anyone can read. Focus on the export crash and mention the PDF size, app version, and operating system. Do not include any customer identifiers such as name, email, phone, or address. Maximum 100 words.",
+ "final_prompt": "Rewrite the attached support ticket as a bug report anyone can read. Focus on the export crash and mention the PDF size, app version, and operating system. Do not include any customer identifiers such as name, email, phone, or address. Maximum 100 words.\n\n<document>\nSupport ticket #8812\nFrom: Marcus Lee <marcus.lee@example.com>\nPhone: 919-555-0143\nAddress: 42 Elm St, Apt 5, Durham, NC 27701\n\nhi, the app crashes every time i try to export a PDF report longer than 50 pages.\nI'm on version 3.2.1 on Windows 11. it started after the last update. shorter\nreports export fine. please fix, i need this for work!!\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Rewrite the attached support ticket as a bug report anyone can read. ",
+   "role": "task",
+   "start": 0,
+   "end": 69
+  },
+  {
+   "id": 1,
+   "text": "Focus on the export crash ",
+   "role": "task",
+   "start": 69,
+   "end": 95
+  },
+  {
+   "id": 2,
+   "text": "and mention the PDF size, app version, and operating system. ",
+   "role": "constraint",
+   "start": 95,
+   "end": 156
+  },
+  {
+   "id": 3,
+   "text": "Do not include any customer identifiers such as name, email, phone, or address. ",
+   "role": "constraint",
+   "start": 156,
+   "end": 236
+  },
+  {
+   "id": 4,
+   "text": "Maximum 100 words.",
+   "role": "format",
+   "start": 236,
+   "end": 254
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "keeps_details",
+  "no_personal_info",
+  "length"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The app crashes during PDF export for reports longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as a PDF.\n3. The app crashes.\n\n**Expected behavior:** The report exports successfully.\n\n**Actual behavior:** The app crashes. Shorter reports export without issues.\n\n**Notes:** The problem began after a recent update.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App Crashes When Exporting Long PDF Reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** Long reports export to PDF successfully.\n\n**Actual Behavior:** The application crashes. Shorter reports export without issue.\n\n**Additional Notes:** The issue began after the most recent update.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as PDF.\n3. The application crashes.\n\n**Expected behavior:** The report exports successfully as a PDF.\n\n**Actual behavior:** The application crashes. Shorter reports export without issues.\n\n**Additional notes:** The problem began after the most recent update.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App crashes on PDF export for reports over 50 pages**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Over 50 pages\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Notes:** The issue began after a recent update. Reports under 50 pages export without problems.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App Crashes When Exporting Long PDF Reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as a PDF.\n\n**Additional Notes:** Shorter reports export without issues. The problem began after a recent update.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App Crashes When Exporting Long PDF Reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as a PDF.\n\n**Actual Behavior:** The application crashes. Shorter reports export without issue.\n\n**Additional Notes:** The issue began after a recent update. Reported as high priority.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App crashes on PDF export for reports longer than 50 pages**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Details:** The crash began after the most recent update. Reproduction requires only a report exceeding 50 pages.\n\n**Impact:** Users cannot export long reports, which blocks work-related tasks.\n\n**Requested action:** Investigate and fix the export crash for large PDF reports.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App Crash When Exporting Long PDF Reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as a PDF.\n\n**Additional Notes:** Shorter reports export without issue. The problem began after the most recent update.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Result:** The report exports successfully as a PDF.\n\n**Actual Result:** The application crashes. Shorter reports export without issues.\n\n**Additional Notes:** The issue began after a recent update.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The app crashes during PDF export when the report exceeds 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports longer than 50 pages\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as a PDF.\n\n**Actual Behavior:** The application crashes. Shorter reports export without issue.\n\n**Notes:** The issue began after a recent update.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: App Crashes on PDF Export for Reports Over 50 Pages**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as PDF.\n3. The application crashes.\n\n**Notes:** The issue began after the most recent update. Reports under 50 pages export without problems.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The app crashes during PDF export for reports longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as PDF.\n3. The app crashes.\n\n**Expected behavior:** The PDF exports successfully.\n\n**Notes:** Shorter reports export without issue. The problem began after the most recent update.",
+   "scores": {
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "keeps_details": 1.0,
+  "no_personal_info": 1.0,
+  "length": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "keeps_details": 0.0,
+  "no_personal_info": 0.0,
+  "length": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "keeps_details": 0.05,
+  "no_personal_info": 0.05,
+  "length": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.015357231413177644,
+  "on_task": 0.0,
+  "keeps_details": 0.0,
+  "no_personal_info": 0.0,
+  "length": 0.04607169423953291
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "keeps_details": 0.05,
+   "no_personal_info": 0.05,
+   "length": 0.06515521483505383
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Focus on the export crash and mention the PDF size, app version, and operating system. Do not include any customer identifiers such as name, email, phone, or address. Maximum 100 words.",
+   "runs": [
+    {
+     "answer": "Support ticket #8812: The app crashes whenever the user tries to export a PDF report longer than 50 pages. Shorter reports export without issue. The problem began after the most recent update. Environment: app version 3.2.1 on Windows 11. The PDF size threshold is reports over 50 pages; exact file size was not provided. The user has requested a fix as the issue is blocking work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Support Ticket #8812: Export Crash**\n\nThe app crashes whenever the user attempts to export a PDF report longer than 50 pages. Shorter reports export without issue. The problem began after the most recent update.\n\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Reports over 50 pages\n\nThe user has requested an urgent fix, as the export is needed for work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Export Crash Summary (Ticket #8812)**\n\nThe app crashes whenever a user attempts to export a PDF report longer than 50 pages. Shorter reports export without issue. The problem began after the most recent update.\n\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Reports over 50 pages\n\nThe user has indicated this is urgent for their work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Support Ticket #8812: Export Crash**\n\nThe app crashes whenever a user tries to export a PDF report longer than 50 pages. Shorter reports export without problems. The issue began after the most recent update.\n\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Reports over 50 pages\n\nThe user has described this as urgent because it is blocking their work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Support Ticket #8812: Export Crash**\n\nThe app crashes whenever the user tries to export a PDF report longer than 50 pages. Shorter reports export without issue. The problem began after the most recent update.\n\n- **Report size that triggers crash:** PDF longer than 50 pages\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n\nThe customer reports urgency, as the export is needed for work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Support Ticket #8812: Export Crash**\n\nThe app crashes whenever a PDF report longer than 50 pages is exported. Shorter reports export without issue. The problem began after the most recent update.\n\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Over 50 pages (shorter reports unaffected)\n\nThe customer reports this is blocking urgent work and requests a fix.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Support Ticket #8812: Export Crash**\n\nThe app crashes whenever the user exports a PDF report longer than 50 pages. Shorter reports export without problems. The issue began after the most recent update.\n\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Reports over 50 pages\n\nThe customer has reported this as urgent because it affects their work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Support ticket #8812: The app crashes whenever the user attempts to export a PDF report longer than 50 pages. Shorter reports export without issue. The problem began after the most recent update. Environment details: app version 3.2.1 on Windows 11. The PDF size threshold is reportedly around 50 pages; the exact file size was not provided. The user has requested a fix as the export is needed for work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Support Ticket #8812: Export Crash**\n\nThe app crashes whenever a user tries to export a PDF report longer than 50 pages. Shorter reports export without problems. The issue began after a recent update.\n\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Reports over 50 pages\n\nThe customer reports that this is urgent for their work and requests a fix.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Support Ticket #8812: Export Crash**\n\nThe app crashes whenever a PDF report longer than 50 pages is exported. Shorter reports export without issue. The problem began after the most recent update.\n\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Reports over 50 pages\n\nThe customer reports this is blocking urgent work and requests a fix.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Support Ticket #8812: Export Crash**\n\nThe app crashes whenever the user attempts to export a PDF report longer than 50 pages. Shorter reports export successfully. The issue began after the most recent update.\n\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Reports over 50 pages\n\nThe user has reported this as urgent, as they need the export for work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Support ticket #8812: The app crashes whenever the user tries to export a PDF report longer than 50 pages. Shorter reports export without problems. The issue began after the most recent update. The user is running app version 3.2.1 on Windows 11. The PDF size threshold is reports exceeding 50 pages. The user has requested a fix as the export is needed for work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Rewrite the attached support ticket as a bug report anyone can read. and mention the PDF size, app version, and operating system. Do not include any customer identifiers such as name, email, phone, or address. Maximum 100 words.",
+   "runs": [
+    {
+     "answer": "**Bug Report: App Crashes When Exporting Long PDF Reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Steps to Reproduce:**\n1. Generate a PDF report longer than 50 pages.\n2. Attempt to export the report as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully.\n\n**Actual Behavior:** The application crashes during export.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Over 50 pages (exact file size not provided)\n\n**Notes:** Shorter reports export without issues. The problem began after the most recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crashes on Export of Long PDF Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Steps to Reproduce:**\n1. Create or open a report exceeding 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Result:** The PDF exports successfully.\n\n**Actual Result:** The application crashes during export.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Over 50 pages (exact file size not reported)\n\n**Notes:** Shorter reports export without issues. The problem began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crash on Exporting Long PDF Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Over 50 pages (exact file size not provided)\n\n**Steps to Reproduce:**\n1. Generate a PDF report longer than 50 pages.\n2. Attempt to export the report.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully.\n\n**Notes:** Shorter reports export without issue. The problem began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages (exact file size not provided)\n\n**Steps to reproduce:**\n1. Generate a PDF report longer than 50 pages.\n2. Attempt to export it.\n3. The application crashes.\n\n**Additional notes:** The issue began after a recent update. Reports under 50 pages export without problems.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Crash on Export of Long PDF Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages (exact file size not provided)\n\n**Steps to Reproduce:**\n1. Generate a PDF report longer than 50 pages.\n2. Attempt to export the report.\n3. The application crashes.\n\n**Additional Notes:** The issue began after the most recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crash When Exporting Long PDF Reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: More than 50 pages (exact file size not provided)\n\n**Steps to Reproduce:**\n1. Generate a PDF report longer than 50 pages.\n2. Attempt to export the report.\n3. The application crashes.\n\n**Expected Result:** The report exports successfully.\n\n**Actual Result:** The application crashes.\n\n**Notes:** Shorter reports export without issue. The problem began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application Crash When Exporting Long PDF Reports**\n\n**Summary:** The app crashes when exporting a PDF report longer than 50 pages.\n\n**Details:**\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Longer than 50 pages (exact file size not provided)\n- **Reproduction:** Attempt to export a PDF report over 50 pages. The crash occurs consistently.\n- **Scope:** Shorter reports export successfully.\n- **Onset:** Began after the most recent update.\n\n**Impact:** Users cannot export long reports, which blocks work-related tasks.\n\n**Priority:** High",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crash on Exporting Long PDF Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Over 50 pages (exact file size not provided)\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as a PDF.\n3. The application crashes.\n\n**Expected Result:** The PDF exports successfully.\n\n**Actual Result:** The application crashes.\n\n**Additional Notes:** Shorter reports export without issues. The problem began after the most recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crash on Export of Long PDF Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Details:**\n- **PDF size:** Reports over 50 pages\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **Trigger:** Began after the most recent update\n- **Workaround:** Reports under 50 pages export successfully\n\n**Expected behavior:** Long PDF reports export without crashing.\n\n**Actual behavior:** The app crashes during export of reports exceeding 50 pages.\n\n**Priority:** High; affects users who need full-length report exports for work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crash During Export of Long PDF Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Longer than 50 pages (exact file size not provided)\n\n**Steps to Reproduce:**\n1. Open the application.\n2. Attempt to export a PDF report longer than 50 pages.\n3. The application crashes.\n\n**Expected Result:** The report exports successfully.\n\n**Actual Result:** The application crashes.\n\n**Notes:** Shorter reports export without issue. The problem began after a recent update. The reporter describes this as urgent and business-critical.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages (exact size not provided)\n\n**Regression:** The issue began after the most recent update.\n\n**Impact:** The user needs this functionality for work and considers the issue urgent.\n\n**Steps to reproduce:**\n1. Generate a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The app crashes.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crash on Export of Long PDF Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Steps to Reproduce:**\n1. Create or open a report exceeding 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as a PDF.\n\n**Actual Behavior:** The application crashes during export. Shorter reports export without issue.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Over 50 pages (exact file size not reported)\n\n**Notes:** The issue began after the most recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Rewrite the attached support ticket as a bug report anyone can read. Focus on the export crash Do not include any customer identifiers such as name, email, phone, or address. Maximum 100 words.",
+   "runs": [
+    {
+     "answer": "**Bug Report: Application Crash on PDF Export of Long Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as PDF.\n\n**Actual Behavior:** The application crashes during export.\n\n**Notes:** Shorter reports export without issue. The problem began after a recent update.\n\n**Priority:** High",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application Crash on PDF Report Export**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as PDF.\n3. The application crashes.\n\n**Expected Result:** The report exports as a PDF.\n\n**Actual Result:** The application crashes during export.\n\n**Additional Notes:** Shorter reports export successfully. The issue began after a recent update. Priority: High, as it blocks users from completing work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: PDF Export Crash for Long Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports as a PDF.\n\n**Actual Behavior:** The application crashes during export.\n\n**Notes:** Shorter reports export successfully. The issue appeared after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as a PDF.\n\n**Actual Behavior:** The application crashes during export.\n\n**Notes:** Shorter reports export without issue. The problem began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application Crash on PDF Export of Long Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Result:** The report exports as a PDF.\n\n**Actual Result:** The application crashes.\n\n**Notes:** Shorter reports export successfully. The issue began after a recent update.\n\n**Priority:** High, as it blocks work-related use.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application Crash on PDF Export of Long Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Generate a PDF report longer than 50 pages.\n2. Attempt to export the report as PDF.\n3. The application crashes.\n\n**Expected Result:** The report exports successfully as a PDF.\n\n**Actual Result:** The application crashes.\n\n**Notes:** Shorter reports export without issue. The problem began after the most recent update.\n\n**Priority:** High, as it blocks work-related use.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crash on PDF export of long reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as PDF.\n3. The application crashes.\n\n**Expected Result:** The report exports as a PDF.\n\n**Actual Result:** The application crashes.\n\n**Notes:** Shorter reports export successfully. The issue began after the most recent update.\n\n**Priority:** High, as it blocks work for affected users.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application Crash on PDF Export**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Generate a PDF report longer than 50 pages.\n2. Attempt to export it as PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully.\n\n**Actual Behavior:** The application crashes. Shorter reports export without issue.\n\n**Notes:** The issue began after the most recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Crash on PDF Export for Reports Over 50 Pages**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages. Shorter reports export successfully.\n\n**Environment:** Application version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as PDF.\n3. The application crashes.\n\n**Expected Result:** The report exports as a PDF.\n\n**Actual Result:** The application crashes.\n\n**Additional Notes:** The issue began after a recent update. Reports under 50 pages are unaffected. This is high priority for users who rely on exporting long reports.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application Crash on PDF Export of Long Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as PDF.\n\n**Actual Behavior:** The application crashes during export.\n\n**Notes:** Shorter reports export without issue. The problem appeared after a recent update.\n\n**Priority:** High (affects work-critical use)",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application Crash on PDF Export of Long Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to Reproduce:**\n1. Generate a PDF report longer than 50 pages.\n2. Attempt to export the report as PDF.\n3. The application crashes.\n\n**Expected Result:** The report exports successfully.\n\n**Actual Result:** The application crashes.\n\n**Notes:** Shorter reports export without issue. The problem began after the most recent update, which suggests a regression in version 3.2.1.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crash on PDF report export**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:** Version 3.2.1, Windows 11\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as PDF.\n3. The application crashes.\n\n**Expected behavior:** The report exports successfully as a PDF.\n\n**Actual behavior:** The application crashes during export. Shorter reports export without issue.\n\n**Notes:** The problem began after the most recent update. Reported as high priority.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Rewrite the attached support ticket as a bug report anyone can read. Focus on the export crash and mention the PDF size, app version, and operating system. Maximum 100 words.",
+   "runs": [
+    {
+     "answer": "**Bug Report: App crashes when exporting PDF reports over 50 pages**\n\n**Summary:** The app crashes during PDF export for reports longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- Trigger: Began after the most recent update\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The app crashes.\n\n**Expected Result:** The PDF exports successfully.\n**Actual Result:** The app crashes.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The app crashes when exporting a PDF report longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- Reported PDF size: longer than 50 pages\n\n**Notes:** The issue began after the most recent update. Reproduce by generating a PDF report over 50 pages and attempting export.\n\n**Impact:** The user needs this functionality for work and is blocked.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crashes on PDF Export for Reports Over 50 Pages**\n\n**Summary:** The app crashes when exporting PDF reports longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The app crashes.\n\n**Additional Notes:** The issue began after a recent update. Reports under 50 pages export normally.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The app crashes when exporting a PDF report longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as a PDF.\n3. The app crashes.\n\n**Expected behavior:** The PDF exports successfully.\n\n**Actual behavior:** The app crashes. Shorter reports export without issue.\n\n**Notes:** The problem began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The app crashes during PDF export for reports longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as a PDF.\n3. The app crashes.\n\n**Expected behavior:** The PDF exports successfully.\n\n**Actual behavior:** The app crashes. Shorter reports export without issues.\n\n**Notes:** The issue began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes when exporting PDF reports over 50 pages**\n\n**Summary:** The application crashes whenever a PDF report longer than 50 pages is exported. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export it as a PDF.\n3. The application crashes.\n\n**Notes:** The issue began after the most recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes when exporting PDF reports over 50 pages**\n\n**Summary:** The application crashes during PDF export for reports longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export it as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports successfully as a PDF.\n\n**Actual Behavior:** The application crashes. Shorter reports export without issue.\n\n**Additional Notes:** First observed after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crashes When Exporting Long PDF Reports**\n\n**Summary:** The app crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as a PDF.\n3. The app crashes.\n\n**Expected Result:** The PDF exports successfully.\n\n**Actual Result:** The app crashes during export.\n\n**Additional Notes:** Shorter reports export without issues. The problem began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crashes When Exporting Long PDF Reports**\n\n**Summary:** The app crashes when exporting a PDF report longer than 50 pages.\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as a PDF.\n3. The app crashes.\n\n**Expected Result:** The PDF exports successfully.\n\n**Actual Result:** The app crashes during export. Shorter reports export without issues.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Additional Notes:** The issue began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes on PDF export for reports over 50 pages**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as PDF.\n3. The application crashes.\n\n**Impact:** Users cannot export long reports. The issue began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crashes When Exporting Long PDF Reports**\n\n**Summary:** The application crashes when exporting PDF reports longer than 50 pages.\n\n**Details:**\n- **App version:** 3.2.1\n- **Operating system:** Windows 11\n- **PDF size:** Reports over 50 pages\n- **Steps to reproduce:** Attempt to export a PDF report longer than 50 pages.\n- **Expected result:** The report exports successfully.\n- **Actual result:** The application crashes.\n- **Additional notes:** Shorter reports export without issue. The problem began after the most recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App Crashes When Exporting Long PDF Reports**\n\n**Summary:** The app crashes when exporting PDF reports longer than 50 pages.\n\n**Environment:**\n- App version: 3.2.1\n- Operating system: Windows 11\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as a PDF.\n3. The app crashes.\n\n**Expected Result:** The PDF exports successfully.\n\n**Actual Result:** The app crashes during export.\n\n**Additional Notes:** Shorter reports export without issues. The problem began after a recent update.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "Rewrite the attached support ticket as a bug report anyone can read. Focus on the export crash and mention the PDF size, app version, and operating system. Do not include any customer identifiers such as name, email, phone, or address.",
+   "runs": [
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Steps to Reproduce:**\n1. Create or open a report that is longer than 50 pages.\n2. Attempt to export the report as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports to PDF successfully.\n\n**Actual Behavior:** The application crashes during export.\n\n**Affected Conditions:**\n- PDF size: reports longer than 50 pages. Shorter reports export without issue.\n- Application version: 3.2.1\n- Operating system: Windows 11\n\n**Additional Notes:** The issue began after the most recent update. The reporter describes it as blocking their work and requests a fix.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.92,
+      "overall": 0.9733333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes during PDF export when the report exceeds 50 pages.\n\n**Steps to Reproduce:**\n1. Generate a report longer than 50 pages.\n2. Attempt to export the report as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports to PDF successfully regardless of length.\n\n**Actual Behavior:** The application crashes during export when the PDF is longer than 50 pages. Shorter reports export without issue.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports longer than 50 pages\n\n**Additional Notes:** The issue began after the most recent update, which suggests a regression introduced in that release.\n\n**Priority:** High. The user reports this affects work-related tasks.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.81,
+      "overall": 0.9366666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes during PDF export when the report exceeds 50 pages.\n\n**Steps to reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Attempt to export the report as a PDF.\n3. The application crashes.\n\n**Expected behavior:** The report exports as a PDF.\n\n**Actual behavior:** The application crashes during export. Shorter reports (under 50 pages) export successfully.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Additional notes:** The issue began after the most recent update. The reporter has indicated this is time-sensitive for their work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.96,
+      "overall": 0.9866666666666667
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports to PDF successfully.\n\n**Actual Behavior:** The application crashes during export.\n\n**Affected Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports longer than 50 pages (shorter reports export without issue)\n\n**Additional Notes:** The issue began after the most recent update. The reporter has indicated it is blocking their work and requests a fix as soon as possible.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.91,
+      "overall": 0.9700000000000001
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The application crashes during PDF export when the report is longer than 50 pages. Shorter reports export successfully.\n\n**Steps to Reproduce:**\n1. Create or open a report longer than 50 pages.\n2. Export the report as a PDF.\n3. The application crashes.\n\n**Expected Result:** The report exports as a PDF.\n\n**Actual Result:** The application crashes during export.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Additional Notes:** The issue began after a recent update. Reports under 50 pages export without problems. The reporter has indicated this issue is blocking their work and requires prompt attention.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.89,
+      "overall": 0.9633333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when a user attempts to export a PDF report longer than 50 pages.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- Affected file type: PDF export\n- Report size: Over 50 pages\n\n**Steps to Reproduce:**\n1. Open a report that is longer than 50 pages.\n2. Attempt to export the report as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports as a PDF successfully, regardless of length.\n\n**Actual Behavior:** The application crashes during export. Reports of 50 pages or fewer export successfully.\n\n**Additional Notes:** The issue began after the most recent update. Reports under 50 pages are not affected.\n\n**Priority:** High. The user reports that this blocks their work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.76,
+      "overall": 0.9199999999999999
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes when exporting a PDF report longer than 50 pages.\n\n**Steps to Reproduce:**\n1. Create or open a report that is longer than 50 pages.\n2. Attempt to export the report as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports to PDF successfully.\n\n**Actual Behavior:** The application crashes during export.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- Affected PDF size: Reports longer than 50 pages\n\n**Additional Notes:**\n- Shorter reports (50 pages or fewer) export without issue.\n- The problem began after the most recent update, which suggests a regression introduced in that release.\n\n**Priority:** High. The user needs this functionality for work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.83,
+      "overall": 0.9433333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes during PDF export when the report exceeds 50 pages.\n\n**Steps to Reproduce:**\n1. Generate a report longer than 50 pages.\n2. Attempt to export the report as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports as a PDF without error, regardless of length.\n\n**Actual Behavior:** The application crashes during export of reports longer than 50 pages. Shorter reports export successfully.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Additional Notes:** The issue began after the most recent update, which suggests a regression introduced in that release. The reporter has described this as blocking their work.\n\n**Priority:** High (blocks user workflow)",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.78,
+      "overall": 0.9266666666666667
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes whenever a user attempts to export a PDF report longer than 50 pages.\n\n**Affected version:** 3.2.1\n**Operating system:** Windows 11\n**PDF size that triggers the issue:** Reports longer than 50 pages\n**Scope:** Shorter reports export successfully.\n**Regression:** The issue began after the most recent update.\n\n**Steps to reproduce:**\n1. Run the application on Windows 11 with version 3.2.1.\n2. Create or open a report longer than 50 pages.\n3. Attempt to export the report as a PDF.\n4. Observe that the application crashes.\n\n**Expected behavior:** Reports of any length export to PDF without crashing.\n\n**Actual behavior:** The application crashes during export of reports longer than 50 pages.\n\n**Priority note:** The reporter describes this as blocking their work, so this may warrant elevated priority.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.64,
+      "overall": 0.88
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes during PDF export when the report exceeds 50 pages.\n\n**Steps to Reproduce:**\n1. Generate a report longer than 50 pages.\n2. Attempt to export the report as a PDF.\n3. The application crashes.\n\n**Expected Behavior:** The report exports to PDF successfully.\n\n**Actual Behavior:** The application crashes during export.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports longer than 50 pages cause the crash; shorter reports export successfully.\n\n**Additional Notes:** The issue began after the most recent update. The reporter describes it as blocking their work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.99,
+      "overall": 0.9966666666666667
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: App crashes when exporting long PDF reports**\n\n**Summary:** The application crashes whenever a user exports a PDF report longer than 50 pages.\n\n**Steps to Reproduce:**\n1. Open the application (version 3.2.1).\n2. Generate a PDF report that is longer than 50 pages.\n3. Attempt to export the report as a PDF.\n4. The application crashes.\n\n**Expected Behavior:** Reports of any length export to PDF successfully.\n\n**Actual Behavior:** The application crashes during export of reports longer than 50 pages. Shorter reports export without issue.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- PDF size threshold: Reports over 50 pages\n\n**Additional Notes:** The issue began after the most recent update. It is reported as blocking for at least one user's work, so it should be treated as high priority.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.71,
+      "overall": 0.9033333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Bug Report: Application crashes when exporting long PDF reports**\n\n**Summary:** The application crashes during PDF export when the report exceeds 50 pages.\n\n**Steps to reproduce:**\n1. Generate a report longer than 50 pages.\n2. Attempt to export the report as a PDF.\n3. The application crashes.\n\n**Expected behavior:** The report exports successfully as a PDF.\n\n**Actual behavior:** The application crashes during export. Shorter reports (under 50 pages) export without issues.\n\n**Environment:**\n- Application version: 3.2.1\n- Operating system: Windows 11\n- PDF size: Reports over 50 pages\n\n**Additional notes:** The issue began after a recent update. The reporter describes this as blocking their work.",
+     "scores": {
+      "on_task": 1.0,
+      "keeps_details": 1.0,
+      "no_personal_info": 1.0,
+      "length": 0.99,
+      "overall": 0.9966666666666667
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9497222222222222,
+    "on_task": 1.0,
+    "keeps_details": 1.0,
+    "no_personal_info": 1.0,
+    "length": 0.8491666666666666
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": 0.0
+  },
+  {
+   "overall": 0.050277777777777755,
+   "on_task": 0.0,
+   "keeps_details": 0.0,
+   "no_personal_info": 0.0,
+   "length": 0.15083333333333337
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "keeps_details": true,
+   "no_personal_info": true,
+   "length": false
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "baseline": 12,
+  "ablation": 60
+ },
+ "calls": 72,
+ "input_tokens": 16392,
+ "output_tokens": 15087,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": false,
+  "judge_max_tokens": 600,
+  "baseline_runs": 12,
+  "ablation_runs": 12,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 500,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:24:09.523126+00:00"
+}

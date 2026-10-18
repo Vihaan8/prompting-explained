@@ -1,0 +1,595 @@
+{
+ "challenge_id": "shopping_list",
+ "user_prompt": "Shopping list please: lemon garlic chicken with potatoes for dinner tonight. Leave off salt, olive oil, and oregano because I have them. Exactly four lines, one item per line, chicken, lemons, garlic, potatoes. Don't tell me how to cook it.",
+ "final_prompt": "Shopping list please: lemon garlic chicken with potatoes for dinner tonight. Leave off salt, olive oil, and oregano because I have them. Exactly four lines, one item per line, chicken, lemons, garlic, potatoes. Don't tell me how to cook it.\n\n<document>\nWeeknight lemon chicken (serves 4)\n\nIngredients\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt\n\nSteps\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Shopping list please: ",
+   "role": "politeness_filler",
+   "start": 0,
+   "end": 22
+  },
+  {
+   "id": 1,
+   "text": "lemon garlic chicken with potatoes for dinner tonight. ",
+   "role": "task",
+   "start": 22,
+   "end": 77
+  },
+  {
+   "id": 2,
+   "text": "Leave off salt, olive oil, and oregano because I have them. ",
+   "role": "constraint",
+   "start": 77,
+   "end": 137
+  },
+  {
+   "id": 3,
+   "text": "Exactly four lines, one item per line, chicken, lemons, garlic, potatoes. ",
+   "role": "format",
+   "start": 137,
+   "end": 211
+  },
+  {
+   "id": 4,
+   "text": "Don't tell me how to cook it.",
+   "role": "constraint",
+   "start": 211,
+   "end": 240
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "needed_items",
+  "skips_pantry",
+  "one_per_line",
+  "no_steps"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Chicken\nLemons\nGarlic\nPotatoes",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 1.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "chicken\nlemons\ngarlic\npotatoes",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 1.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Chicken\nLemons\nGarlic\nPotatoes",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 1.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "needed_items": 1.0,
+  "skips_pantry": 1.0,
+  "one_per_line": 1.0,
+  "no_steps": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.0,
+  "no_steps": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "needed_items": 0.05,
+  "skips_pantry": 0.05,
+  "one_per_line": 0.05,
+  "no_steps": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.0,
+  "no_steps": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.05,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.05,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.05,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.05,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.05,
+   "no_steps": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "lemon garlic chicken with potatoes for dinner tonight. Leave off salt, olive oil, and oregano because I have them. Exactly four lines, one item per line, chicken, lemons, garlic, potatoes. Don't tell me how to cook it.",
+   "runs": [
+    {
+     "answer": "Chicken\nLemons\nGarlic\nPotatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 1.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Chicken\nLemons\nGarlic\nPotatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 1.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 1.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Shopping list please: Leave off salt, olive oil, and oregano because I have them. Exactly four lines, one item per line, chicken, lemons, garlic, potatoes. Don't tell me how to cook it.",
+   "runs": [
+    {
+     "answer": "Chicken\nLemons\nGarlic\nPotatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 1.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Chicken\nLemons\nGarlic\nPotatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 1.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 1.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Shopping list please: lemon garlic chicken with potatoes for dinner tonight. Exactly four lines, one item per line, chicken, lemons, garlic, potatoes. Don't tell me how to cook it.",
+   "runs": [
+    {
+     "answer": "Chicken\nLemons\nGarlic\nPotatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 1.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Chicken\nLemons\nGarlic\nPotatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 1.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 1.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Shopping list please: lemon garlic chicken with potatoes for dinner tonight. Leave off salt, olive oil, and oregano because I have them. Don't tell me how to cook it.",
+   "runs": [
+    {
+     "answer": "Here's your shopping list for lemon garlic chicken with potatoes (serves 4), leaving off the salt, olive oil, and oregano:\n\n**Produce**\n- 2 lemons\n- 1 head garlic (you'll need 3 cloves)\n- 1 lb baby potatoes\n\n**Meat**\n- 4 chicken thighs",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 0.75
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's your shopping list for lemon garlic chicken with potatoes (serves 4), leaving off the salt, olive oil, and oregano:\n\n**Proteins**\n- 4 chicken thighs\n\n**Produce**\n- 2 lemons\n- 1 head garlic (you need 3 cloves)\n- 1 lb baby potatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 0.75
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.75,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "Shopping list please: lemon garlic chicken with potatoes for dinner tonight. Leave off salt, olive oil, and oregano because I have them. Exactly four lines, one item per line, chicken, lemons, garlic, potatoes.",
+   "runs": [
+    {
+     "answer": "chicken\nlemons\ngarlic\npotatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 1.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Chicken\nLemons\nGarlic\nPotatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 1.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 1.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.0,
+   "no_steps": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.0,
+   "no_steps": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.0,
+   "no_steps": 0.0
+  },
+  {
+   "overall": 0.25,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 1.0,
+   "one_per_line": 0.0,
+   "no_steps": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.0,
+   "no_steps": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": false,
+   "one_per_line": true,
+   "no_steps": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   null,
+   null,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   null,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   null,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    null,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    null,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    null,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    1.0,
+    1.0,
+    0.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    0.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  null,
+  1.0,
+  1.0,
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  null,
+  1.0,
+  1.0,
+  0.0,
+  1.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 10,
+  "judge": 13
+ },
+ "calls": 27,
+ "input_tokens": 15816,
+ "output_tokens": 1750,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:12:19.165338+00:00"
+}

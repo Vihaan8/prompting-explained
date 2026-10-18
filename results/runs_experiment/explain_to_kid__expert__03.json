@@ -1,0 +1,1089 @@
+{
+ "challenge_id": "explain_to_kid",
+ "user_prompt": "Help me explain inflation to a 10-year-old. Give me exactly 3 bullet points, no more than 60 words total, and use simple words a fifth grader would understand.",
+ "final_prompt": "Help me explain inflation to a 10-year-old. Give me exactly 3 bullet points, no more than 60 words total, and use simple words a fifth grader would understand.",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Help me explain inflation ",
+   "role": "task",
+   "start": 0,
+   "end": 26
+  },
+  {
+   "id": 1,
+   "text": "to a 10-year-old. ",
+   "role": "audience",
+   "start": 26,
+   "end": 44
+  },
+  {
+   "id": 2,
+   "text": "Give me exactly 3 bullet points, ",
+   "role": "format",
+   "start": 44,
+   "end": 77
+  },
+  {
+   "id": 3,
+   "text": "no more than 60 words total, ",
+   "role": "constraint",
+   "start": 77,
+   "end": 106
+  },
+  {
+   "id": 4,
+   "text": "and use simple words a fifth grader would understand.",
+   "role": "constraint",
+   "start": 106,
+   "end": 159
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "bullets",
+  "length",
+  "reading_level"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "- Inflation means prices go up over time, so the same amount of money buys less stuff than it used to.\n- Imagine a candy bar that cost $1 last year but costs $1.10 now. Your dollar got a little weaker.\n- Usually prices rise slowly, but if they rise too fast, it gets harder for families to buy the things they need.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.8013333333333328,
+    "overall": 0.9337777777777777
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys less stuff than it used to.\n- Imagine a candy bar that cost $1 last year now costs $1.25. Your dollar can't buy as much candy anymore.\n- Grown-ups watch inflation closely because when prices rise too fast, families have a harder time paying for things they need.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.7318275862068958,
+    "overall": 0.9106091954022987
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means things cost more money over time. A candy bar that cost 50 cents might cost 75 cents years later.\n- Your dollars buy less than they used to. The same money gets you fewer toys, snacks, and treats.\n- Grown-ups watch it closely, because if prices rise too fast, families have a harder time paying for what they need.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means things cost more money over time. A candy bar that cost 50 cents years ago might cost a dollar now.\n- Your money buys a little less than it used to, because prices went up while your money stayed the same.\n- Grown-ups watch inflation closely so prices don't rise too fast or too slowly.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.9131363636363631,
+    "overall": 0.9710454545454543
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same toy or candy that cost $1 last year might cost $1.10 now.\n- Your money buys a little less than it used to, because each dollar can get fewer things.\n- Grown-ups and banks watch inflation closely, so prices don't climb too fast and everyone can still afford what they need.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.5039999999999992,
+    "overall": 0.8346666666666663
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time. A toy that cost $5 last year might cost $6 this year.\n- Your money buys less when that happens. The same $10 gets you fewer snacks than it used to.\n- Grown-ups watch inflation closely so prices don't rise too fast, which keeps everyone's money worth something.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same $5 buys less candy than it used to.\n- Things cost more because people want to buy lots of stuff, or because making things costs more money.\n- When prices rise a little each year, your savings can buy less, so grown-ups try to keep prices rising slowly.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.5855714285714277,
+    "overall": 0.8618571428571427
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time. A candy bar that cost 50 cents last year might cost 75 cents now.\n- When prices rise, each dollar buys less. Your money doesn't stretch as far as it used to.\n- Grown-ups watch inflation closely because it changes how much families can afford to buy.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same toy or candy that cost $1 might cost $2 later.\n- That means your money buys less than it used to, even though you still have the same amount.\n- Usually prices rise a little each year, but if they rise too fast, it can make everyone's money feel like it shrinks.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.529333333333333,
+    "overall": 0.8431111111111109
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices slowly go up over time, so the same money buys less stuff than it used to.\n- Imagine a candy bar that cost $1 last year now costs $1.25. Your dollar doesn't stretch as far.\n- Grown-ups watch inflation closely because when prices rise too fast, it gets hard for families to pay for food and rent.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.8538965517241373,
+    "overall": 0.9512988505747124
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same $1 buys a little less candy than it used to.\n- It happens when lots of people want to buy things, but there isn't quite enough to go around.\n- Grown-ups watch it closely, because if prices rise too fast, it gets hard for families to afford what they need.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.5175862068965514,
+    "overall": 0.8391954022988505
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys fewer things than it used to.\n- Imagine a candy bar that cost $1 last year but costs $1.10 now. Your dollar got a little weaker.\n- Most of the time, prices rise slowly, like a balloon getting a tiny bit bigger each year.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.918333333333333,
+    "overall": 0.9727777777777776
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.926528281584316,
+  "on_task": 1.0,
+  "bullets": 1.0,
+  "length": 1.0,
+  "reading_level": 0.7795848447529478
+ },
+ "baseline_std": {
+  "overall": 0.06636058318630558,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.0,
+  "reading_level": 0.19908174955891672
+ },
+ "noise": {
+  "overall": 0.13272116637261117,
+  "on_task": 0.05,
+  "bullets": 0.05,
+  "length": 0.05,
+  "reading_level": 0.39816349911783344
+ },
+ "pooled_std": {
+  "overall": 0.06452216282928391,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.08054902446530317,
+  "reading_level": 0.22664425936844673
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.25078582572313396
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.12881112627007574
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.11544056574206454
+  },
+  {
+   "overall": 0.07784224507222637,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.10904647430247448,
+   "reading_level": 0.1847937997721498
+  },
+  {
+   "overall": 0.05784648976933137,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.1691710830242145
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "to a 10-year-old. Give me exactly 3 bullet points, no more than 60 words total, and use simple words a fifth grader would understand.",
+   "runs": [
+    {
+     "answer": "You haven't told me the topic yet! What would you like me to explain? Once you share it, I'll give you exactly 3 bullet points, under 60 words total, using simple words a fifth grader can understand.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.9668108108108108,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I'm happy to help, but I need to know what you'd like explained! Could you tell me the topic? For example, it could be how plants grow, why the sky is blue, or how the internet works. Once I know, I'll write exactly 3 short bullet points under 60 words, using simple words for a 10-year-old.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Your request is missing the topic! Could you tell me what you'd like me to explain? Once you do, I'll write exactly 3 bullet points, under 60 words total, using simple words a 10-year-old can understand.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.9697777777777773,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You didn't say what topic to explain, so I don't know what to write about yet. Tell me the topic (like volcanoes, the water cycle, or how computers work), and I'll give you exactly 3 bullet points, under 60 words, in simple language a 10-year-old can follow.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.021170212765957097,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Your request is missing the topic, so I'm not sure what to explain yet. What would you like the three bullet points to be about? Once you tell me, I'll keep them to 60 words or fewer, using simple words a fifth grader can understand.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.9586666666666666,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I don't have a topic yet! What would you like me to explain to a 10-year-old? Tell me the subject, and I'll give you exactly 3 bullet points in 60 words or fewer, using simple words.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You didn't say what topic you'd like the bullet points about. Tell me the subject, and I'll write exactly 3 bullet points in 60 words or fewer, using simple words a 10-year-old can understand.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.5296470588235295,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Your request seems to be missing the topic! What would you like me to explain to a 10-year-old? Once you tell me, I'll write three short bullet points, under 60 words total, in simple words.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You haven't said what the topic is yet. What would you like me to explain to a 10-year-old? Once you tell me, I'll write three short bullet points, under 60 words total, in simple words.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You haven't said what topic you'd like explained, so I'm not sure what to write about yet. Tell me the subject (for example, how plants grow, why the sky is blue, or how a bill becomes a law), and I'll give you exactly 3 bullet points, under 60 words, in simple words a 10-year-old can follow.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I'm happy to help, but I need to know the topic first! What would you like me to explain to a 10-year-old? Once you tell me, I'll write exactly 3 bullet points in 60 words or fewer, using simple words.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You asked me to explain something, but I don't see a topic yet. What would you like me to explain to a 10-year-old? Once you tell me, I'll write exactly 3 bullet points, under 60 words, using simple words.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "bullets": 0.0,
+    "length": 1.0,
+    "reading_level": 0.7871727105703951
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Help me explain inflation Give me exactly 3 bullet points, no more than 60 words total, and use simple words a fifth grader would understand.",
+   "runs": [
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- For example, a toy that cost $10 last year might cost $11 this year.\n- Things like food, gas, and clothes can all get more expensive when inflation happens.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.9917142857142857,
+      "overall": 0.9972380952380951
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- Imagine a candy bar that cost $1 last year and costs $1.10 now. Your dollar got weaker.\n- Governments and banks watch inflation closely to keep prices from rising too fast or falling too far.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.9369999999999997,
+      "overall": 0.979
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- Imagine a candy bar that cost $1 last year now costs $1.10. Your dollar is worth less.\n- When prices rise too fast, families and stores have a harder time planning and saving.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- Imagine a candy bar that cost $1 last year now costs $1.25. Your dollar got smaller.\n- Governments and banks try to keep inflation slow and steady so prices don't jump too fast.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so your money buys less than it used to.\n- Imagine a candy bar that cost $1 last year and now costs $1.10. That's inflation.\n- It happens when lots of people want to buy things, or when making things costs more.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.883234042553191,
+      "overall": 0.961078014184397
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- For example, a candy bar that cost $1 last year might cost $1.10 now.\n- Stores raise prices when things cost them more to make, or when lots of people want to buy the same things.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so your money buys less than it used to.\n- Imagine a candy bar that cost $1 last year and costs $1.10 now. That's inflation.\n- Common causes are more people wanting things than there are things to buy, or the cost of making things going up.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.6798461538461538,
+      "overall": 0.8932820512820513
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- For example, a toy that cost $10 last year might cost $11 now.\n- Governments and banks try to keep inflation slow and steady so everyone can plan ahead.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.8231428571428566,
+      "overall": 0.9410476190476188
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- For example, a candy bar that cost $1 last year might cost $1.20 this year.\n- Governments and banks try to keep inflation slow and steady so everyone can plan and save.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less.\n- For example, a candy bar that cost $1 last year might cost $1.10 this year.\n- When prices rise a little each year, your savings can't buy as much as before.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- Imagine a candy bar that cost $1 last year now costs $1.20. Your dollar got smaller.\n- Some reasons prices rise: things get more popular, it costs more to make them, or there's more money floating around.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.9805999999999997,
+      "overall": 0.9935333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- For example, a candy bar that cost $1 last year might cost $1.25 now.\n- Governments and banks try to keep inflation slow and steady so prices don't jump too fast.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.8630909090909092,
+      "overall": 0.9543636363636364
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9766285624540944,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.929885687362283
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Help me explain inflation to a 10-year-old. no more than 60 words total, and use simple words a fifth grader would understand.",
+   "runs": [
+    {
+     "answer": "Inflation means things slowly cost more money over time. Imagine a candy bar that cost $1 last year but costs $1.25 now. Your dollar buys less candy than it used to. That's inflation! It happens when prices rise across the whole store, so the same money gets you less stuff.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Imagine you buy a candy bar for one dollar. Next year, the same candy bar costs two dollars. Your dollar can't buy as much as it used to. That's inflation: when prices go up over time, each dollar buys less stuff.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Imagine your favorite snack costs $1 today. Next year, the same snack costs $1.10. That's inflation: things get a little more expensive over time. So the money in your piggy bank buys a little less each year. Grown-ups watch prices closely to keep this change slow and steady.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Imagine a candy bar that costs one dollar today. Next year, the same candy bar costs one dollar and ten cents. Your dollar now buys less candy than it did before. That's inflation: prices slowly going up, so the money in your pocket buys a little less each year.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.9355612244897955,
+      "overall": 0.6451870748299319
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Imagine your favorite snack costs $1 today. Next year, the same snack costs $1.10. That's inflation: things slowly get more expensive over time. Your dollar buys a little less than it used to. Grown-ups watch prices closely so that money keeps being worth about the same.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices go up over time. Imagine a candy bar that cost $1 last year but costs $1.10 now. Your money buys a little less candy than it used to. When prices rise like this a lot, it's called inflation.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means things cost more over time. Imagine a candy bar that cost $1 last year but costs $1.10 now. Your money buys less candy than it used to, even though you still have the same amount. That's inflation.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means things slowly cost more money over time. Imagine a candy bar that cost $1 last year but costs $1.10 this year. Your money buys a little less candy than it used to. Grown-ups watch inflation closely so prices don't rise too fast.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Imagine you buy a candy bar for one dollar. Next year, the same candy bar costs two dollars. Your dollar can't buy as much as it used to. That's inflation: when things cost more money over time, your money buys less stuff.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices go up over time. Imagine a candy bar that cost $1 last year but costs $1.20 now. Your money can buy less candy than it could before. So the same dollars don't go as far anymore.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation is when prices go up over time. Imagine a candy bar that cost $1 last year but costs $1.20 now. Your money can buy less candy than it used to. That's inflation! Grown-ups watch it closely to keep prices from rising too fast.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means things cost more money over time. Imagine a candy bar that cost $1 last year but costs $1.10 now. Your money buys a little less candy than it used to. That's inflation: prices going up, so each dollar goes a little less far.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.664876700680272,
+    "on_task": 1.0,
+    "bullets": 0.0,
+    "length": 1.0,
+    "reading_level": 0.9946301020408163
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Help me explain inflation to a 10-year-old. Give me exactly 3 bullet points, and use simple words a fifth grader would understand.",
+   "runs": [
+    {
+     "answer": "- Inflation means things cost more money over time. A toy that cost $10 last year might cost $11 this year.\n\n- Your money buys less than it used to. With the same $10, you can get fewer candy bars or toys than you could before.\n\n- Grown-ups watch inflation closely because when prices rise too fast, it's hard for families to afford what they need.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.95,
+      "reading_level": 1.0,
+      "overall": 0.9833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means that things cost more money over time. A candy bar that cost 50 cents when your grandparents were kids might cost a dollar today.\n\n- It happens because money doesn't buy as much as it used to. Your dollar is still a dollar, but it can get you less candy, less pizza, and fewer toys than before.\n\n- Grown-ups watch inflation closely. If prices go up too fast, it can hurt families, so the people in charge of money try to keep prices rising slowly and steadily.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.55,
+      "reading_level": 0.7318275862068958,
+      "overall": 0.7606091954022985
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time. A candy bar that cost 50 cents when your grandparents were kids might cost a dollar today.\n\n- Money buys less when prices rise. If you have $5 and the price of a toy goes from $5 to $6, your $5 can't buy that toy anymore.\n\n- Some inflation is normal. A little price growth each year helps businesses and keeps money moving, but too much, too fast makes everyday things hard to afford.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.6833333333333333,
+      "reading_level": 1.0,
+      "overall": 0.8944444444444445
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same toy or sandwich that cost $1 last year might cost $1.10 this year.\n- That means your money can buy less than it used to, even though you still have the same number of dollars in your pocket.\n- Grown-ups keep an eye on inflation because when prices rise too fast, it gets hard for families to afford the things they need.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8333333333333334,
+      "reading_level": 0.7861428571428568,
+      "overall": 0.87315873015873
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time. A candy bar that cost 50 cents when your parents were kids might cost a dollar now.\n\n- Money buys less when inflation happens. With the same $5, you can get fewer things than you could last year.\n\n- Grown-ups keep an eye on it. When prices rise too fast, the people in charge of money try to slow things down so everything stays steady.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8333333333333334,
+      "reading_level": 1.0,
+      "overall": 0.9444444444444445
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means that things cost more money over time. A candy bar that cost 50 cents when your parents were kids might cost a dollar today.\n\n- It happens when people have lots of money to spend, or when making things gets more expensive, so stores raise their prices to keep up.\n\n- That means each dollar you have buys a little less than it used to, so money slowly loses some of its power to buy stuff.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.7333333333333334,
+      "reading_level": 0.6238947368421044,
+      "overall": 0.7857426900584793
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation is when things we buy, like candy, toys, and sandwiches, slowly get more expensive over time.\n- That means your allowance buys less than it used to, even though you still get the same number of dollars.\n- Grown-ups watch inflation closely, because when prices rise too fast, it's harder for families to afford what they need.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.29057142857142826,
+      "overall": 0.7635238095238094
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time. A candy bar that cost 50 cents when your parents were kids might cost $1.50 now.\n\n- Money loses some of its buying power. With the same dollar, you can buy less than you could before, because things cost more.\n\n- Grown-ups and banks try to keep inflation slow and steady, because if prices jump up too fast, it gets hard for families to afford everyday things.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8,
+      "reading_level": 0.8481333333333332,
+      "overall": 0.882711111111111
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time. A candy bar that cost 50 cents when your parents were kids might cost a dollar now.\n\n- Money buys less when inflation happens. With the same five dollars, you can get fewer things than you could last year.\n\n- Grown-ups watch inflation closely. When prices rise too fast, the people in charge of money try to slow it down, like a car putting on the brakes.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8,
+      "reading_level": 1.0,
+      "overall": 0.9333333333333332
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means things slowly cost more money over time. A candy bar that cost 50 cents when your parents were little might cost a dollar today.\n\n- Your money buys a little less than it used to. If you saved $10, it could buy a bit less stuff a few years later.\n\n- Inflation usually happens a little bit each year, because the people who make things pay more for their supplies, and stores raise prices to keep up.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.7166666666666667,
+      "reading_level": 0.8212155844155837,
+      "overall": 0.8459607503607501
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same amount of money buys less stuff than it used to. A candy bar that cost 50 cents might cost 75 cents years later.\n\n- Things cost more when lots of people want to buy them, or when it costs more money to make them, like when the price of gas or wood goes up.\n\n- Your money isn't worth as much when prices rise, so grown-ups try to keep inflation slow and steady, because if prices jumped up too fast, it would be hard for families to afford food and rent.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.35,
+      "reading_level": 0.3030555555555552,
+      "overall": 0.5510185185185184
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means that over time, things cost more money. A candy bar that cost 50 cents when your grandparents were kids might cost a dollar today.\n\n- Your money buys a little less than it used to. If you had $10 last year, it might buy fewer toys or snacks this year, even though the dollar bills look exactly the same.\n\n- Grown-ups watch inflation closely because when prices rise too fast, it gets hard for families to buy what they need. Banks and governments try to keep prices rising slowly and steadily.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.4833333333333333,
+      "reading_level": 0.771043956043956,
+      "overall": 0.7514590964590964
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.830811621429029,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.7277777777777779,
+    "reading_level": 0.7646570865093095
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "Help me explain inflation to a 10-year-old. Give me exactly 3 bullet points, no more than 60 words total,",
+   "runs": [
+    {
+     "answer": "- Inflation means prices slowly go up over time, so the same $5 buys a little less candy than it did before.\n- It happens when lots of people want to buy things, but there isn't quite enough stuff to go around.\n- Your money doesn't disappear, but each dollar can buy fewer toys, snacks, and books than it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.4768965517241377,
+      "overall": 0.8256321839080458
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same $1 buys a little less candy than it used to.\n- Imagine a candy bar that cost 50 cents last year and costs 60 cents now: that's inflation at work.\n- Grown-ups watch it closely because when prices rise too fast, families have a harder time affording everyday things.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.3651228070175435,
+      "overall": 0.7883742690058478
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same $5 buys fewer candy bars than it used to.\n- It happens when more people want to buy things than there are things to sell, or when money gets easier to come by, so stores raise prices.\n- Your money doesn't lose its numbers, but it can buy less, which is why grown-ups watch it closely.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9333333333333333,
+      "reading_level": 0.46712499999999935,
+      "overall": 0.8001527777777776
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means things cost more over time. A candy bar that cost 50 cents when your grandparents were kids might cost a dollar today.\n- Money buys less than it used to. If prices go up and your allowance stays the same, you can afford fewer things.\n- Prices usually rise a little each year, and economists try to keep that rise small and steady so everyone can plan ahead.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8666666666666667,
+      "reading_level": 0.7948470588235288,
+      "overall": 0.8871712418300651
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same $5 buys fewer candy bars than it used to.\n- Think of it like a balloon: the money is spread out more, so each dollar is worth a little less.\n- Grown-ups watch inflation closely because when it gets too high, it's harder for families to afford groceries and other things.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.34399999999999975,
+      "overall": 0.7813333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices slowly go up over time, so the same amount of money buys a little less than it used to.\n- Imagine your favorite candy costs $1 today but $1.10 next year. Your dollar didn't change, but it can buy less candy.\n- Governments and banks watch inflation closely so that prices rise at a steady, gentle pace instead of too fast.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9666666666666667,
+      "reading_level": 0.8011225806451613,
+      "overall": 0.9225964157706094
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same $5 buys a little less candy than it used to.\n- Think of it like a bigger and bigger pile of money chasing the same toys: sellers raise prices because more people have money to spend.\n- Grown-ups watch inflation closely, because when prices rise too fast, families and businesses have to be careful with their money.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9166666666666666,
+      "reading_level": 0.08769230769230707,
+      "overall": 0.6681196581196579
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices slowly go up over time, so the same toy or candy that cost $1 last year might cost $1.10 now.\n- That means your money buys a little less than it used to, even though you still have the same number of dollars.\n- Governments and stores try to keep inflation small, because a little bit is normal but too much makes everyday things hard to afford.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8666666666666667,
+      "reading_level": 0.26117647058823434,
+      "overall": 0.7092810457516338
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices slowly go up over time, so the same \\$5 buys a little less candy than it used to.\n- It happens when people want to buy more things than stores can make, or when making things costs more, like flour or gas.\n- Grown-ups watch it closely, because if prices rise too fast, it gets harder for families to afford the things they need.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9166666666666666,
+      "reading_level": 0.3781538461538453,
+      "overall": 0.7649401709401706
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices slowly go up over time, so the same $5 buys a little less candy than it used to.\n- It happens when people want to buy more stuff than there is, or when making things costs more, so stores raise their prices.\n- Your money doesn't disappear, but each dollar can buy less, which is why saving money in a jar can become less powerful over the years.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.85,
+      "reading_level": 0.21153623188405746,
+      "overall": 0.6871787439613525
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same $5 buys fewer candy bars than it used to.\n- Think of it like a bigger, puffier balloon: money gets spread thinner, so each dollar is worth a little less.\n- Grown-ups watch inflation closely because if prices rise too fast, it's harder for families to afford what they need.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.3141379310344824,
+      "overall": 0.7713793103448275
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same $5 buys fewer candy bars than it did before.\n- It happens when lots of people want to buy things, but there isn't quite enough stuff to go around, like too many people chasing the last few toys.\n- Your money slowly loses its power, so saving it and spending it wisely matters more.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9666666666666667,
+      "reading_level": 0.27051612903225863,
+      "overall": 0.7457275985663084
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.7793238957758025,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.9402777777777778,
+    "reading_level": 0.39769390954962963
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.926528281584316,
+   "on_task": 1.0,
+   "bullets": 1.0,
+   "length": 0.0,
+   "reading_level": -0.0075878658174473035
+  },
+  {
+   "overall": -0.05010028086977836,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": -0.1503008426093353
+  },
+  {
+   "overall": 0.26165158090404395,
+   "on_task": 0.0,
+   "bullets": 1.0,
+   "length": 0.0,
+   "reading_level": -0.2150452572878685
+  },
+  {
+   "overall": 0.09571666015528701,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.27222222222222214,
+   "reading_level": 0.014927758243638234
+  },
+  {
+   "overall": 0.14720438580851347,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.05972222222222223,
+   "reading_level": 0.3818909352033181
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "bullets": false,
+   "length": true,
+   "reading_level": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": false,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": false
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "baseline": 12,
+  "ablation": 60
+ },
+ "calls": 72,
+ "input_tokens": 3732,
+ "output_tokens": 7172,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": false,
+  "judge_max_tokens": 600,
+  "baseline_runs": 12,
+  "ablation_runs": 12,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 500,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:24:01.585456+00:00"
+}

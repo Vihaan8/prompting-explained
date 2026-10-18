@@ -1,0 +1,377 @@
+{
+ "challenge_id": "meeting_summary",
+ "user_prompt": "Based on the attached notes, write a concise vendor decision summary for an absent executive. Include the chosen vendor, the budget figure, and the deadline. It should be 60 words or fewer and exclude side topics.",
+ "final_prompt": "Based on the attached notes, write a concise vendor decision summary for an absent executive. Include the chosen vendor, the budget figure, and the deadline. It should be 60 words or fewer and exclude side topics.\n\n<document>\nOps sync, notes (rough)\nattendees: priya, tom, wen, me\n\n- tom recapped the Q3 numbers again, nothing new\n- long tangent about the office coffee machine (broken again)\n- scheduling software: we compared Vendor A ($24,000/yr) and Vendor B ($18,500/yr).\n  wen is worried about B's support hours but B has the hospital integrations we need.\n  DECISION: go with Vendor B\n- budget approved at $18,500 for year one\n- priya owns the rollout. go-live deadline is Nov 22\n- tom will ask if A can match the price, probably won't matter\n- next sync moved to thursday\n- reminder: submit timesheets\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Based on the attached notes, write a concise vendor decision summary for an absent executive. ",
+   "role": "task",
+   "start": 0,
+   "end": 94
+  },
+  {
+   "id": 1,
+   "text": "Include the chosen vendor, the budget figure, and the deadline. ",
+   "role": "constraint",
+   "start": 94,
+   "end": 158
+  },
+  {
+   "id": 2,
+   "text": "It should be 60 words or fewer and exclude side topics.",
+   "role": "constraint",
+   "start": 158,
+   "end": 213
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "length",
+  "key_facts",
+  "no_noise"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Decision: Vendor B selected for scheduling software, chosen over Vendor A ($24,000/yr) for its hospital integrations, despite support-hour concerns. Year-one budget: $18,500. Priya owns rollout; go-live deadline is November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: Vendor B selected for scheduling software, chosen for its hospital integrations despite support-hour concerns. Year-one budget: $18,500. Priya owns rollout; go-live deadline is November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Decision: The team chose Vendor B for scheduling software, citing its hospital integrations despite concerns about its support hours. Approved year-one budget: $18,500. Priya owns the rollout, with go-live set for November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "length": 1.0,
+  "key_facts": 1.0,
+  "no_noise": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "length": 0.0,
+  "key_facts": 0.0,
+  "no_noise": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "length": 0.05,
+  "key_facts": 0.05,
+  "no_noise": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.026352313834736508,
+  "on_task": 0.0,
+  "length": 0.07905694150420949,
+  "key_facts": 0.0,
+  "no_noise": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.05,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.05,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  },
+  {
+   "overall": 0.08333333333333337,
+   "on_task": 0.05,
+   "length": 0.25,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Include the chosen vendor, the budget figure, and the deadline. It should be 60 words or fewer and exclude side topics.",
+   "runs": [
+    {
+     "answer": "Decision: Vendor B was chosen for scheduling software because it offers the hospital integrations the team needs. Year-one budget: $18,500. Priya owns the rollout, with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: Go with Vendor B for scheduling software, chosen for its hospital integrations despite concerns about its support hours. Year-one budget: $18,500. Priya owns the rollout, with go-live by November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Based on the attached notes, write a concise vendor decision summary for an absent executive. It should be 60 words or fewer and exclude side topics.",
+   "runs": [
+    {
+     "answer": "Decision: Scheduling software will be Vendor B at $18,500 for year one, chosen over Vendor A ($24,000/yr) because B includes the hospital integrations we need. Wen flagged concerns about B's support hours. Priya owns rollout, with go-live by Nov 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Decision: Vendor B selected for scheduling software at $18,500/year (Vendor A was $24,000/year). B was chosen for its hospital integrations, despite Wen's concern about its support hours. Budget is approved for year one. Priya leads rollout, with go-live by November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Based on the attached notes, write a concise vendor decision summary for an absent executive. Include the chosen vendor, the budget figure, and the deadline.",
+   "runs": [
+    {
+     "answer": "**Vendor Decision Summary: Scheduling Software**\n\n**Decision:** Vendor B selected over Vendor A. B's hospital integrations are required, outweighing A's higher price ($24,000/yr vs. $18,500/yr). Wen raised a concern about B's support hours, which remains an open risk to monitor.\n\n**Budget:** $18,500 approved for year one.\n\n**Owner:** Priya leads the rollout.\n\n**Deadline:** Go-live by November 22.\n\n**Open item:** Tom will ask whether Vendor A can match B's price. This is not expected to change the decision.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.75,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9166666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Vendor Decision Summary: Scheduling Software**\n\n**Decision:** Vendor B has been selected over Vendor A. Vendor B offers the hospital integrations we require, though support hours were a concern raised by Wen.\n\n**Budget:** $18,500 per year, approved for year one.\n\n**Owner:** Priya will lead the rollout.\n\n**Deadline:** Go-live is November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9583333333333333,
+    "on_task": 1.0,
+    "length": 0.875,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "length": 0.0,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "length": 0.0,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  },
+  {
+   "overall": 0.04166666666666674,
+   "on_task": 0.0,
+   "length": 0.125,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "length": true,
+   "key_facts": true,
+   "no_noise": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "length": true,
+   "key_facts": true,
+   "no_noise": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "length": true,
+   "key_facts": true,
+   "no_noise": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    0.5,
+    1.0,
+    0.0
+   ],
+   [
+    1.0,
+    1.0,
+    0.5
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  1.0,
+  1.0,
+  0.25
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 6,
+  "judge": 9
+ },
+ "calls": 19,
+ "input_tokens": 12115,
+ "output_tokens": 1519,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:12:12.799461+00:00"
+}

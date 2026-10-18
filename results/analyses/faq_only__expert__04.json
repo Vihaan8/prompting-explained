@@ -1,0 +1,857 @@
+{
+ "challenge_id": "faq_only",
+ "user_prompt": "My friend wants to know about a pool at Northside Fitness. Using just the attached FAQ, give a short reply (50 words or less) that answers the pool question. If the FAQ says nothing about a pool, tell them that directly and don't speculate.",
+ "final_prompt": "My friend wants to know about a pool at Northside Fitness. Using just the attached FAQ, give a short reply (50 words or less) that answers the pool question. If the FAQ says nothing about a pool, tell them that directly and don't speculate.\n\n<document>\nNorthside Fitness FAQ\n\nHours: Mon-Fri 5am-11pm, Sat-Sun 7am-9pm.\nMembership: $39/month, or $29/month on a 12-month contract. Students get 20% off with ID.\nGuests: members can bring one guest per visit for $10.\nAmenities: free weights, cardio machines, sauna, lockers.\nClasses: yoga, spin, and aqua aerobics (Tue/Thu 6pm). Towels provided for all classes.\nParking: free lot behind the building.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "My friend wants to know about a pool at Northside Fitness. ",
+   "role": "context",
+   "start": 0,
+   "end": 59
+  },
+  {
+   "id": 1,
+   "text": "Using just the attached FAQ, ",
+   "role": "constraint",
+   "start": 59,
+   "end": 88
+  },
+  {
+   "id": 2,
+   "text": "give a short reply ",
+   "role": "task",
+   "start": 88,
+   "end": 107
+  },
+  {
+   "id": 3,
+   "text": "(50 words or less) ",
+   "role": "constraint",
+   "start": 107,
+   "end": 126
+  },
+  {
+   "id": 4,
+   "text": "that answers the pool question. ",
+   "role": "task",
+   "start": 126,
+   "end": 158
+  },
+  {
+   "id": 5,
+   "text": "If the FAQ says nothing about a pool, ",
+   "role": "constraint",
+   "start": 158,
+   "end": 196
+  },
+  {
+   "id": 6,
+   "text": "tell them that directly ",
+   "role": "task",
+   "start": 196,
+   "end": 220
+  },
+  {
+   "id": 7,
+   "text": "and don't speculate.",
+   "role": "constraint",
+   "start": 220,
+   "end": 240
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "admits_gap",
+  "no_guessing",
+  "length"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "The FAQ doesn't mention a pool, so I can't confirm whether Northside Fitness has one. It lists amenities like free weights, cardio machines, a sauna, and lockers, and it mentions aqua aerobics classes on Tue/Thu at 6pm, but nothing about a pool itself. Your friend should contact the gym directly to ask.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 0.96,
+    "overall": 0.9866666666666667
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "The FAQ doesn't mention a pool. Its listed amenities are free weights, cardio machines, a sauna, and lockers. There is an aqua aerobics class on Tuesdays and Thursdays at 6pm, but the document doesn't say whether that takes place in a pool, so I can't confirm one.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "The FAQ doesn't mention a swimming pool. It lists free weights, cardio machines, a sauna, lockers, and classes including yoga, spin, and aqua aerobics (Tue/Thu 6pm), but it doesn't say whether there's a pool itself. Your friend would need to contact Northside Fitness directly to confirm.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.9955555555555556,
+  "on_task": 1.0,
+  "admits_gap": 1.0,
+  "no_guessing": 1.0,
+  "length": 0.9866666666666667
+ },
+ "baseline_std": {
+  "overall": 0.007698003589194996,
+  "on_task": 0.0,
+  "admits_gap": 0.0,
+  "no_guessing": 0.0,
+  "length": 0.023094010767585053
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "admits_gap": 0.05,
+  "no_guessing": 0.05,
+  "length": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.09404884467756733,
+  "on_task": 0.0,
+  "admits_gap": 0.0,
+  "no_guessing": 0.31622776601683794,
+  "length": 0.04008324670815309
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.05,
+   "length": 0.06565905201197408
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.28680444578746817,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 1.0,
+   "length": 0.14251705550954624
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.05,
+   "length": 0.05
+  },
+  {
+   "overall": 0.30679546409639674,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 1.0,
+   "length": 0.08432740427115676
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Using just the attached FAQ, give a short reply (50 words or less) that answers the pool question. If the FAQ says nothing about a pool, tell them that directly and don't speculate.",
+   "runs": [
+    {
+     "answer": "The FAQ doesn't mention a pool, so I can't confirm whether Northside Fitness has one. Aqua aerobics is listed as a class (Tue/Thu at 6pm), but the document doesn't say where it takes place or whether there's a pool available outside of class times. For details, you'd need to contact the gym directly.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.94,
+      "overall": 0.98
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The FAQ doesn't mention a pool. Aqua aerobics classes run Tuesdays and Thursdays at 6pm, but the document doesn't say whether those take place in a pool or whether the facility has one. For that, please contact Northside Fitness directly.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.99,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 0.97
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "My friend wants to know about a pool at Northside Fitness. give a short reply (50 words or less) that answers the pool question. If the FAQ says nothing about a pool, tell them that directly and don't speculate.",
+   "runs": [
+    {
+     "answer": "The FAQ doesn't mention a swimming pool. It does list aqua aerobics classes on Tuesdays and Thursdays at 6pm, but I can't confirm whether those are held in a pool, so it's best to call Northside Fitness directly to ask about pool access.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The FAQ doesn't mention a pool. It lists free weights, cardio machines, a sauna, and lockers as amenities, plus yoga, spin, and aqua aerobics classes on Tuesdays and Thursdays at 6pm. For pool details, your friend should contact Northside Fitness directly.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "My friend wants to know about a pool at Northside Fitness. Using just the attached FAQ, (50 words or less) that answers the pool question. If the FAQ says nothing about a pool, tell them that directly and don't speculate.",
+   "runs": [
+    {
+     "answer": "The FAQ doesn't mention a swimming pool. It does list aqua aerobics classes on Tuesdays and Thursdays at 6pm, but it doesn't say whether those take place in a pool or whether general pool access is available. Your friend should contact Northside Fitness directly to confirm.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Yes, Northside Fitness offers aqua aerobics classes on Tuesdays and Thursdays at 6pm, but the FAQ doesn't list a swimming pool among the amenities, so I can't confirm whether there's one for general use.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "My friend wants to know about a pool at Northside Fitness. Using just the attached FAQ, give a short reply that answers the pool question. If the FAQ says nothing about a pool, tell them that directly and don't speculate.",
+   "runs": [
+    {
+     "answer": "I'm sorry, but the Northside Fitness FAQ doesn't mention a pool. It does list \"aqua aerobics\" classes on Tuesdays and Thursdays at 6pm, but it doesn't say whether those take place in a pool or whether the facility has one. For a definite answer, your friend could contact Northside Fitness directly.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.98,
+      "overall": 0.9933333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The FAQ doesn't mention a pool, so I can't confirm whether Northside Fitness has one. You may want to check with the gym directly. The FAQ does list a sauna and aqua aerobics classes (Tue/Thu at 6pm), which might be what your friend is thinking of.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9966666666666666,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 0.99
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "My friend wants to know about a pool at Northside Fitness. Using just the attached FAQ, give a short reply (50 words or less) If the FAQ says nothing about a pool, tell them that directly and don't speculate.",
+   "runs": [
+    {
+     "answer": "The Northside Fitness FAQ doesn't mention a pool. It does list a sauna, free weights, cardio machines, lockers, and classes including aqua aerobics on Tue/Thu at 6pm, but I can't confirm whether there's a swimming pool. Your friend may want to contact the gym directly.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The FAQ doesn't mention a pool. It lists free weights, cardio machines, a sauna, and lockers as amenities, and it mentions aqua aerobics classes on Tue/Thu at 6pm, but it doesn't say whether there's a pool available for general use. Your friend should contact Northside Fitness directly to confirm.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 5,
+   "prompt": "My friend wants to know about a pool at Northside Fitness. Using just the attached FAQ, give a short reply (50 words or less) that answers the pool question. tell them that directly and don't speculate.",
+   "runs": [
+    {
+     "answer": "The FAQ doesn't mention a pool. The listed amenities are free weights, cardio machines, sauna, and lockers. There is an aqua aerobics class on Tuesdays and Thursdays at 6pm, but the document doesn't say whether that takes place in a pool, so I can't confirm one exists. Checking directly with Northside Fitness would be the best way to find out.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.8,
+      "overall": 0.9333333333333332
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The FAQ doesn't mention a pool at Northside Fitness. The listed amenities are free weights, cardio machines, a sauna, and lockers, and the classes include aqua aerobics on Tuesday and Thursday at 6pm, which suggests water-based activity but doesn't confirm a pool. Your friend would need to contact the gym directly to confirm.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 0.0,
+      "length": 0.94,
+      "overall": 0.6466666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.7899999999999999,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 0.5,
+    "length": 0.87
+   }
+  },
+  {
+   "segment_id": 6,
+   "prompt": "My friend wants to know about a pool at Northside Fitness. Using just the attached FAQ, give a short reply (50 words or less) that answers the pool question. If the FAQ says nothing about a pool, and don't speculate.",
+   "runs": [
+    {
+     "answer": "The FAQ doesn't mention a pool. It lists free weights, cardio machines, a sauna, lockers, and classes including aqua aerobics on Tuesdays and Thursdays at 6pm, but it doesn't say whether there's a pool. You may want to contact Northside Fitness directly to confirm.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The Northside Fitness FAQ doesn't mention a pool. It does list an aqua aerobics class on Tuesdays and Thursdays at 6pm, but it doesn't say whether that class uses a pool or whether a general pool is available. Your friend may want to contact the gym directly to confirm.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 7,
+   "prompt": "My friend wants to know about a pool at Northside Fitness. Using just the attached FAQ, give a short reply (50 words or less) that answers the pool question. If the FAQ says nothing about a pool, tell them that directly",
+   "runs": [
+    {
+     "answer": "The FAQ doesn't mention a pool at Northside Fitness. It lists the amenities as free weights, cardio machines, a sauna, and lockers. There is an aqua aerobics class on Tuesdays and Thursdays at 6pm, but that doesn't confirm whether the gym has a pool, so you may want to check with the gym directly.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.92,
+      "overall": 0.9733333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The FAQ mentions aqua aerobics classes on Tuesdays and Thursdays at 6pm, but it doesn't say whether Northside Fitness has a pool. Since aqua aerobics typically takes place in water, a pool may exist, but I'd recommend checking directly with the gym to confirm.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 0.0,
+      "length": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.82,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 0.5,
+    "length": 0.96
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.005555555555555647,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": 0.0,
+   "length": 0.01666666666666672
+  },
+  {
+   "overall": -0.004444444444444362,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": 0.0,
+   "length": -0.013333333333333308
+  },
+  {
+   "overall": -0.004444444444444362,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": 0.0,
+   "length": -0.013333333333333308
+  },
+  {
+   "overall": -0.0011111111111109517,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": 0.0,
+   "length": -0.0033333333333332993
+  },
+  {
+   "overall": -0.004444444444444362,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": 0.0,
+   "length": -0.013333333333333308
+  },
+  {
+   "overall": 0.2055555555555557,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": 0.5,
+   "length": 0.1166666666666667
+  },
+  {
+   "overall": -0.004444444444444362,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": 0.0,
+   "length": -0.013333333333333308
+  },
+  {
+   "overall": 0.1755555555555557,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": 0.5,
+   "length": 0.026666666666666727
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": true,
+   "length": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.5,
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.5
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    0.5,
+    0.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.8333333333333334,
+  1.0,
+  1.0,
+  0.5
+ ],
+ "follow_without": [
+  1.0,
+  1.0,
+  1.0,
+  1.0,
+  0.5,
+  1.0,
+  1.0,
+  0.25
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 16,
+  "judge": 19
+ },
+ "calls": 39,
+ "input_tokens": 23803,
+ "output_tokens": 4659,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:13:15.447601+00:00"
+}

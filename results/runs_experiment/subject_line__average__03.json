@@ -1,0 +1,743 @@
+{
+ "challenge_id": "subject_line",
+ "user_prompt": "I need a subject line for my client email, nothing pushy or salesy please. It should mention the invoice number.",
+ "final_prompt": "I need a subject line for my client email, nothing pushy or salesy please. It should mention the invoice number.\n\n<document>\nHi Sam,\n\nAttached is invoice #4471 for the October design work ($2,350). Payment is due by\nNovember 15. Let me know if you have any questions.\n\nThanks,\nAlex\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "I need a subject line for my client email, ",
+   "role": "task",
+   "start": 0,
+   "end": 43
+  },
+  {
+   "id": 1,
+   "text": "nothing pushy or salesy please. ",
+   "role": "tone",
+   "start": 43,
+   "end": 75
+  },
+  {
+   "id": 2,
+   "text": "It should mention the invoice number.",
+   "role": "constraint",
+   "start": 75,
+   "end": 112
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "one_short_line",
+  "has_number",
+  "not_salesy"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Here are a few low-key options that mention the invoice number:\n\n- Invoice #4471 for October Design Work\n- October Design Work – Invoice #4471\n- Invoice #4471 Attached\n- Following Up on Invoice #4471 (if they've already seen an earlier version)\n\nThe first or second option would work best for a straightforward, friendly send.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options that are low-key and include the invoice number:\n\n- Invoice #4471 for October Design Work\n- October Design Work – Invoice #4471\n- Invoice #4471 Attached\n- Invoice #4471: October Design Services\n\nMy suggestion would be **\"Invoice #4471 for October Design Work\"**. It's clear, specific, and reads as routine.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options that are low-key and include the invoice number:\n\n- Invoice #4471 for October Design Work\n- Invoice #4471 – October Design Services\n- October Design Work – Invoice #4471\n- Invoice #4471 Attached\n\nMy pick would be **\"Invoice #4471 for October Design Work\"**. It's clear, specific, and reads as routine rather than pushy.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options that are low-key and include the invoice number:\n\n- Invoice #4471 for October Design Work\n- Invoice #4471 – October Design Services\n- Your October Invoice (#4471)\n- Invoice #4471 from Alex\n\nThe first one is probably the best fit: it's clear, neutral, and tells Sam exactly what the email is about.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options, all low-key and including the invoice number:\n\n- Invoice #4471 for October Design Work\n- Invoice #4471 Attached\n- Following Up: Invoice #4471 for October Design Work\n- October Design Work: Invoice #4471\n\nThe first one is probably the best fit: it's clear, specific, and neutral in tone.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options that are low-key and include the invoice number:\n\n- Invoice #4471 for October Design Work\n- Invoice #4471 – October Design Services\n- Your October Invoice (#4471)\n- Invoice #4471 Attached\n\nMy pick would be **\"Invoice #4471 for October Design Work\"**: it's clear, neutral, and easy for Sam to find later.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options that are low-key and include the invoice number:\n\n- Invoice #4471 for October Design Work\n- Invoice #4471 Attached\n- October Design Work – Invoice #4471\n- Following Up: Invoice #4471 (Due Nov 15)\n- Invoice #4471 for Your Records\n\nMy pick would be **\"October Design Work – Invoice #4471\"**: it's clear, specific, and reads as routine.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few low-key options that mention the invoice number:\n\n- Invoice #4471 for October Design Work\n- Invoice #4471 Attached\n- October Design Work, Invoice #4471\n- Invoice #4471 for Your Records\n- Following Up: Invoice #4471\n\nThe first or third option works well if you want something clear and neutral.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options that are straightforward and not pushy:\n\n- Invoice #4471 for October Design Work\n- Invoice #4471 – October Design Services\n- Your October Invoice (#4471)\n- Invoice #4471 Attached\n\nMy top pick would be **\"Invoice #4471 for October Design Work\"**: it's clear, includes the invoice number, and reads as a simple, professional notice.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options that are straightforward and low-pressure:\n\n- Invoice #4471 for October Design Work\n- October Design Work – Invoice #4471 Attached\n- Invoice #4471 – October Design Services\n- Your October Invoice (#4471)\n\nIf you want something that feels a bit warmer, try: **Invoice #4471 for October, Let Me Know if You Have Questions**",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n- Invoice #4471 for October Design Work\n- October Design Invoice (#4471)\n- Invoice #4471 Attached, Due November 15\n- Following Up: Invoice #4471 for October Work\n\nThe first or second would work best for a low-key, professional tone.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options that are low-key and include the invoice number:\n\n- Invoice #4471 for October Design Work\n- October Design Work – Invoice #4471\n- Invoice #4471 Attached\n- Following Up: Invoice #4471 for October Services\n\nI'd suggest \"Invoice #4471 for October Design Work\" as it's clear, neutral, and easy for Sam to find later.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.6666666666666666,
+  "on_task": 1.0,
+  "one_short_line": 0.0,
+  "has_number": 1.0,
+  "not_salesy": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "one_short_line": 0.0,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "one_short_line": 0.05,
+  "has_number": 0.05,
+  "not_salesy": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "one_short_line": 0.0,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "nothing pushy or salesy please. It should mention the invoice number.",
+   "runs": [
+    {
+     "answer": "Hi Sam,\n\nI hope you're doing well. I'm following up on invoice #4471 for the October design work ($2,350), which is due November 15. If you need a copy or have any questions about the charges, just let me know.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Hi Sam,\n\nHope you're doing well. I'm following up on invoice #4471 for the October design work ($2,350). The payment is due by November 15.\n\nPlease let me know if anything in the invoice needs clarifying or if you have any questions.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Hi Sam,\n\nI hope you're doing well. I'm following up on invoice #4471 for the October design work ($2,350), which is due by November 15. If anything about the invoice needs clarifying, just let me know.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Subject: Invoice #4471 – October Design Work\n\nHi Sam,\n\nI hope you're doing well. Attached is invoice #4471 for the October design work, totaling $2,350. Payment is due by November 15.\n\nPlease let me know if you have any questions or need anything from me.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Hi Sam,\n\nI hope you're doing well. Just a quick follow-up on invoice #4471 for the October design work ($2,350). Payment is due by November 15.\n\nIf anything in the invoice needs clarifying, or if you'd like to go over any details, just let me know.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Hi Sam,\n\nI hope you're doing well. I'm following up on invoice #4471 for the October design work, which comes to $2,350. The payment is due by November 15.\n\nIf anything in the invoice needs clarifying, or if you'd like to go over any of the details, just let me know and I'll be glad to help.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Subject: Invoice #4471, October design work\n\nHi Sam,\n\nI hope you're doing well. I wanted to follow up on invoice #4471 for the October design work, totaling $2,350. Payment is due by November 15.\n\nPlease let me know if you have any questions or need anything from me to process it.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's a low-key reminder you could send:\n\nHi Sam,\n\nJust a friendly reminder that invoice #4471 for the October design work ($2,350) is due by November 15. You can find it attached to my earlier email. Please reach out if anything's unclear or if you need anything from me.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Hi Sam,\n\nI hope you're doing well. I wanted to follow up on invoice #4471 for the October design work ($2,350), which is due by November 15. Please let me know if you have any questions or need anything from me to process it.\n\nThanks so much,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Subject: Invoice #4471 – October Design Work\n\nHi Sam,\n\nI hope you're doing well. Just a quick note that invoice #4471 for the October design work ($2,350) is attached. Payment is due by November 15.\n\nPlease let me know if you have any questions or need anything else from me.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Subject: Invoice #4471 for October design work\n\nHi Sam,\n\nI hope you're doing well. I've attached invoice #4471 for the October design work, totaling $2,350. Payment is due by November 15.\n\nPlease let me know if you have any questions or need anything from me.\n\nThanks,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's a gentle follow-up you could send:\n\nHi Sam,\n\nI hope you're doing well. I wanted to check in on invoice #4471 for the October design work ($2,350), which was due November 15. If it's already on its way, please disregard this note. Otherwise, I'd be grateful for an update when you have a moment. And if anything about the invoice needs clarifying, I'm happy to help.\n\nThanks so much,\nAlex",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6666666666666666,
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "I need a subject line for my client email, It should mention the invoice number.",
+   "runs": [
+    {
+     "answer": "Here are a few options:\n\n1. Invoice #4471 - October Design Work\n2. Invoice #4471 Attached - Payment Due November 15\n3. October Design Work Invoice (#4471)\n4. Invoice #4471 for October Design Services\n\nThe first one is a safe, clear choice for most clients. If you want to emphasize the deadline, option 2 works well.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 for October Design Services – Due November 15**\n3. **Your October Invoice (#4471) from Alex**\n\nThe first one is the most concise and professional, while the second includes the due date, which can help prompt timely payment.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 for October Design Services – Payment Due Nov 15**\n3. **Invoice #4471 Attached – October Design Work**\n\nThe first one is clean and professional; the second adds the due date, which can help prompt timely payment.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 for October Design Services – Payment Due Nov 15**\n3. **Invoice #4471 Attached – October Design Work**\n\nThe first is clean and professional; the second adds the due date, which can prompt faster payment.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 for October Design Services – Payment Due Nov 15**\n3. **Invoice #4471 Attached – October Design Work**\n\nThe first one is the simplest and works well for most client emails. If you want to flag the deadline, option 2 does that.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. Invoice #4471 – October Design Work\n2. Invoice #4471 for October Design Services – Due Nov 15\n3. October Design Work Invoice (#4471)\n4. Invoice #4471: October Design Work, Payment Due November 15\n\nOption 1 or 3 works well for a clean, professional tone. Option 4 is useful if you want the due date visible at a glance.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n- Invoice #4471 – October Design Work\n- Invoice #4471 for October Design Services – Due Nov 15\n- Invoice #4471: October Design Work ($2,350)\n\nThe first is clean and professional. The second adds the due date, which can prompt faster payment. The third includes the amount, which is helpful if your client files emails by value.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 for October Design Services – Payment Due Nov 15**\n3. **Invoice #4471 Attached – October Design Work**\n\nThe first is clean and professional, and the second adds the due date, which can prompt faster payment.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 for October Design Services – Payment Due Nov 15**\n3. **Invoice #4471 Attached – October Design Work**\n\nThe first one is a clean, professional default. The second is useful if you want the due date to stand out in the inbox.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 for October Design Services – Due Nov 15**\n3. **Your Invoice #4471 – October Design Work ($2,350)**\n\nThe first is the simplest and cleanest. The second adds the due date, which can prompt a faster payment, and the third is a good choice if you want the amount visible at a glance.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 for October Design Services – Payment Due Nov 15**\n3. **Invoice #4471 Attached – October Design Work**\n\nThe first one is clean and professional. The second adds the due date, which can help prompt timely payment.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 for October Design Services – Due Nov 15**\n3. **Invoice #4471 Attached – Payment Due November 15**\n\nThe first is the most concise and works well for most clients. The second adds the due date, which can help prompt timely payment.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6666666666666666,
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "I need a subject line for my client email, nothing pushy or salesy please.",
+   "runs": [
+    {
+     "answer": "Here are a few low-key options:\n\n- Invoice #4471 for October Design Work\n- October Design Invoice (#4471)\n- Invoice #4471 Attached\n- Following Up: October Design Work Invoice\n- Your October Design Invoice\n\nMy pick would be **\"Invoice #4471 for October Design Work\"**. It's clear, specific, and reads as routine paperwork rather than a payment demand.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options, all low-key:\n\n- Invoice #4471 for October Design Work\n- October Design Invoice (#4471)\n- Your October Invoice from Alex\n- Invoice #4471, Due November 15\n\nIf you want something warmer, try \"October Design Work: Invoice Attached.\"",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options, all low-key:\n\n- Invoice #4471 for October Design Work\n- October Design Invoice (#4471)\n- Your October Invoice from Alex\n- Invoice #4471 Attached\n\nMy pick would be **\"Invoice #4471 for October Design Work\"**. It's clear, specific, and reads as routine.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few low-key options:\n\n- Invoice #4471 for October Design Work\n- October Design Invoice Attached\n- Invoice #4471 – October Design Services\n- Your October Invoice (#4471)\n\nThe first or last one is the most straightforward if you want something clean and neutral.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few low-key options:\n\n- Invoice #4471 for October Design Work\n- October Design Work – Invoice Attached\n- Invoice #4471 – Attached for Your Records\n- Your October Design Invoice (#4471)\n\nThe first one is the most straightforward and works well if you want to keep it simple and clear.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options, all low-key:\n\n- Invoice #4471 for October Design Work\n- October Design Invoice, #4471\n- Invoice #4471, Due November 15\n- Your October Design Invoice (#4471)\n\nFor a warm, friendly tone, I'd go with **\"October Design Invoice, #4471\"**. It's clear, includes the reference number for their records, and doesn't create any pressure.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few low-key options:\n\n- Invoice #4471 for October Design Work\n- October Design Work – Invoice Attached\n- Invoice #4471 – Due November 15\n- Your October Invoice (#4471)\n\nI'd go with \"Invoice #4471 for October Design Work\" since it's clear and neutral, and it makes the document easy to find later.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few low-key options:\n\n- Invoice #4471 for October Design Work\n- October Design Invoice (#4471)\n- Invoice #4471, Due November 15\n- Your October Design Invoice\n\nThe first or second would work well for a neutral, professional tone.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options that are straightforward and low-pressure:\n\n- Invoice #4471 for October Design Work\n- October Design Work – Invoice Attached\n- Invoice #4471 – October Design Services\n- Your October Invoice (#4471)\n\nI'd lean toward \"Invoice #4471 for October Design Work\" since it's clear about what's attached without any urgency.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options that stay low-key:\n\n- Invoice #4471 for October Design Work\n- October Design Invoice Attached\n- Your October Invoice (#4471)\n- Invoice #4471, Due November 15\n\nThe last one is the most direct if you want the due date visible in the inbox preview.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options that stay low-key:\n\n- Invoice #4471 for October Design Work\n- October Design Invoice (#4471)\n- Your October Invoice from Alex\n- Invoice #4471 Attached\n\nThe first one is probably the safest choice: it's clear, specific, and reads as routine.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options, all low-key:\n\n- Invoice #4471 for October Design Work\n- October Design Work – Invoice Attached\n- Invoice #4471 (Due Nov 15)\n- Your October Invoice from Alex\n\nI'd go with \"Invoice #4471 for October Design Work,\" since it's clear and matter-of-fact without any pressure.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6666666666666666,
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "baseline": 12,
+  "ablation": 36
+ },
+ "calls": 48,
+ "input_tokens": 4884,
+ "output_tokens": 5388,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": false,
+  "judge_max_tokens": 600,
+  "baseline_runs": 12,
+  "ablation_runs": 12,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 500,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:23:20.594067+00:00"
+}

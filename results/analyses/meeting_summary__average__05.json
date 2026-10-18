@@ -1,0 +1,293 @@
+{
+ "challenge_id": "meeting_summary",
+ "user_prompt": "Turn these notes into a short summary of what was decided. Leave out the side stuff, just the main decision.",
+ "final_prompt": "Turn these notes into a short summary of what was decided. Leave out the side stuff, just the main decision.\n\n<document>\nOps sync, notes (rough)\nattendees: priya, tom, wen, me\n\n- tom recapped the Q3 numbers again, nothing new\n- long tangent about the office coffee machine (broken again)\n- scheduling software: we compared Vendor A ($24,000/yr) and Vendor B ($18,500/yr).\n  wen is worried about B's support hours but B has the hospital integrations we need.\n  DECISION: go with Vendor B\n- budget approved at $18,500 for year one\n- priya owns the rollout. go-live deadline is Nov 22\n- tom will ask if A can match the price, probably won't matter\n- next sync moved to thursday\n- reminder: submit timesheets\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Turn these notes into a short summary of what was decided. ",
+   "role": "task",
+   "start": 0,
+   "end": 59
+  },
+  {
+   "id": 1,
+   "text": "Leave out the side stuff, just the main decision.",
+   "role": "constraint",
+   "start": 59,
+   "end": 108
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "length",
+  "key_facts",
+  "no_noise"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "**Decision:** The team chose Vendor B for the new scheduling software at $18,500 for year one, over Vendor A at $24,000/yr. B was selected because it includes the hospital integrations the team needs, despite Wen's concern about its support hours. Priya owns the rollout, with a go-live deadline of November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Decision:** The team chose Vendor B for the scheduling software at $18,500/year, over Vendor A at $24,000/year. Vendor B was selected because it includes the hospital integrations the team needs, despite concerns about its support hours. The budget of $18,500 for year one was approved. Priya owns the rollout, with a go-live deadline of November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Decision:** The team chose Vendor B for the scheduling software at $18,500/year, over Vendor A at $24,000/year, because B includes the hospital integrations the team needs. Budget for year one is approved at $18,500, and Priya owns the rollout with a go-live deadline of November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "length": 1.0,
+  "key_facts": 1.0,
+  "no_noise": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "length": 0.0,
+  "key_facts": 0.0,
+  "no_noise": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "length": 0.05,
+  "key_facts": 0.05,
+  "no_noise": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.005892556509887875,
+  "on_task": 0.0,
+  "length": 0.017677669529663705,
+  "key_facts": 0.0,
+  "no_noise": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.05,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.050000000000000044,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Leave out the side stuff, just the main decision.",
+   "runs": [
+    {
+     "answer": "The main decision: the team chose Vendor B for scheduling software at $18,500/yr over Vendor A at $24,000/yr, mainly because B has the hospital integrations they need. Wen raised concerns about B's support hours. Budget is approved at $18,500 for year one, and Priya owns the rollout with a go-live deadline of Nov 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team decided to go with Vendor B for scheduling software at $18,500/year, chosen because it has the hospital integrations they need, despite Wen's concerns about its support hours. Priya owns the rollout, with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Turn these notes into a short summary of what was decided.",
+   "runs": [
+    {
+     "answer": "**Decision:** The team will go with Vendor B for the scheduling software at $18,500/year, approved as the year-one budget. Vendor B was chosen over Vendor A ($24,000/year) because it offers the hospital integrations the team needs, though Wen raised concerns about its support hours.\n\n**Next steps:**\n- Priya owns the rollout, with a go-live deadline of Nov 22.\n- Tom will ask whether Vendor A can match Vendor B's price, though this is not expected to change the decision.\n- The next sync has moved to Thursday.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.6,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.8666666666666667
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Decisions from the Ops sync:**\n\n- **Scheduling software:** Vendor B was selected over Vendor A. B costs $18,500/year versus A's $24,000, and it includes the hospital integrations the team needs. Wen raised concerns about B's support hours.\n- **Budget:** $18,500 approved for year one.\n- **Rollout:** Priya owns the rollout, with a go-live deadline of Nov 22.\n\n**Follow-up:** Tom will ask whether Vendor A can match the price, though this is not expected to change the decision. The next sync has moved to Thursday.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.65,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.8833333333333333
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.875,
+    "on_task": 1.0,
+    "length": 0.625,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "length": 0.0,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  },
+  {
+   "overall": 0.125,
+   "on_task": 0.0,
+   "length": 0.375,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "length": true,
+   "key_facts": true,
+   "no_noise": true
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "length": false,
+   "key_facts": true,
+   "no_noise": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.5
+   ],
+   [
+    1.0,
+    0.5
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  1.0,
+  0.5
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7
+ },
+ "calls": 15,
+ "input_tokens": 9291,
+ "output_tokens": 1254,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:10:28.950468+00:00"
+}

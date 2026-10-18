@@ -1,0 +1,227 @@
+{
+ "challenge_id": "shopping_list",
+ "user_prompt": "Could you list the ingredients I still need to buy for this recipe please",
+ "final_prompt": "Could you list the ingredients I still need to buy for this recipe please\n\n<document>\nWeeknight lemon chicken (serves 4)\n\nIngredients\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt\n\nSteps\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Could you list the ingredients I still need to buy for this recipe please",
+   "role": "task",
+   "start": 0,
+   "end": 73
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "needed_items",
+  "skips_pantry",
+  "one_per_line",
+  "no_steps"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "I can't see your pantry, so I'll list everything the recipe calls for. Check off what you already have:\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- 1 tbsp olive oil\n- 1 tsp dried oregano\n- 1 lb baby potatoes\n- Salt",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.25,
+    "no_steps": 1.0,
+    "overall": 0.5625
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "I can't see your pantry, so I don't know what you already have. Here's the full ingredient list for you to check against:\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- 1 tbsp olive oil\n- 1 tsp dried oregano\n- 1 lb baby potatoes\n- Salt\n\nIf you tell me what's already in your kitchen, I can narrow this down to just the items you need to buy.",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.25,
+    "no_steps": 1.0,
+    "overall": 0.5625
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "I can't tell what you already have, so here's the full ingredient list to check against your kitchen:\n\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic\n- 1 tbsp olive oil\n- 1 tsp dried oregano\n- 1 lb baby potatoes\n- Salt\n\nIf you tell me what's already in your pantry or fridge, I can narrow it down to just what you need to buy.",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.25,
+    "no_steps": 1.0,
+    "overall": 0.5625
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.5625,
+  "on_task": 1.0,
+  "needed_items": 1.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.25,
+  "no_steps": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.0,
+  "no_steps": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "needed_items": 0.05,
+  "skips_pantry": 0.05,
+  "one_per_line": 0.05,
+  "no_steps": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "needed_items": 0.30618621784789724,
+  "skips_pantry": 0.408248290463863,
+  "one_per_line": 0.10206207261596575,
+  "no_steps": 0.2041241452319315
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "needed_items": 0.75,
+   "skips_pantry": 1.0,
+   "one_per_line": 0.25,
+   "no_steps": 0.5
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "",
+   "runs": [
+    {
+     "answer": "This is a simple sheet-pan dinner. Here's a quick summary:\n\n**Weeknight Lemon Chicken (serves 4)**\n\n**Ingredients:** 4 chicken thighs, 2 lemons, 3 garlic cloves, 1 tbsp olive oil, 1 tsp dried oregano, 1 lb baby potatoes, salt\n\n**Steps:**\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano, and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n\nNote that the recipe calls for lemon zest but doesn't specify how much, and it doesn't say whether to roast the chicken and potatoes on the same pan. Both are fine to do together, but the chicken should reach an internal temperature of 165°F.",
+     "scores": {
+      "on_task": 0.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.25,
+      "no_steps": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "This is a simple sheet-pan dinner. The document you've shared is a recipe, but it doesn't say what you'd like me to do with it. Some things I can help with:\n\n- **Summarize** it in a sentence or two.\n- **Scale** it up or down (for example, to 2 servings).\n- **Convert** the temperature to Celsius (425°F is about 220°C).\n- **Suggest substitutions**, such as swapping chicken breasts for thighs (which would need less cooking time) or dried herbs for fresh.\n- **Add a side or a vegetable** that would roast alongside the chicken.\n- **Turn it into a shopping list** or a step-by-step checklist.\n\nLet me know which one you'd like, or ask something else about the recipe.",
+     "scores": {
+      "on_task": 0.0,
+      "needed_items": 0.25,
+      "skips_pantry": 1.0,
+      "one_per_line": 0.0,
+      "no_steps": 0.5,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "needed_items": 0.625,
+    "skips_pantry": 0.5,
+    "one_per_line": 0.125,
+    "no_steps": 0.25
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.5625,
+   "on_task": 1.0,
+   "needed_items": 0.375,
+   "skips_pantry": -0.5,
+   "one_per_line": 0.125,
+   "no_steps": 0.75
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": false
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   0.5
+  ],
+  [
+   0.5
+  ],
+  [
+   0.5
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.5
+   ],
+   [
+    0.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  0.5
+ ],
+ "follow_without": [
+  0.25
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 2,
+  "judge": 5
+ },
+ "calls": 11,
+ "input_tokens": 6534,
+ "output_tokens": 1125,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:10:46.503596+00:00"
+}

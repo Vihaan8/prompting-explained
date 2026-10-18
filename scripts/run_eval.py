@@ -20,6 +20,7 @@ import argparse
 import asyncio
 import json
 import random
+import re
 import statistics
 import sys
 from collections import defaultdict
@@ -28,7 +29,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from core.attribution import ablate_many, analyze, run_prompt  # noqa: E402
-from core.challenges import get_challenge  # noqa: E402
+from core.challenges import get_challenge, load_all  # noqa: E402
 from core.config import ROOT, Config, load_config  # noqa: E402
 from core.findings import verdict  # noqa: E402
 from core.llm import BudgetedLLM, make_llm  # noqa: E402
@@ -326,6 +327,73 @@ def bootstrap_ci(xs: list[float], n: int = 5000, seed: int = 0) -> tuple[float, 
     return means[int(0.025 * n)], means[int(0.975 * n) - 1]
 
 
+# Judge vs code: parts that ask for exactly what a code check measures
+
+NUMBER_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten"}
+NEGATION = re.compile(r"\b(no|not|don'?t|do not|never|without|avoid|skip)\b")
+JSON_ONLY = re.compile(
+    r"only (output |return |give |reply with |respond with )?(the |valid |a )?json|json only|just (the |valid )?json"
+    r"|no (other |extra )?(text|explanation|prose|commentary|markdown)|nothing (else|but)"
+)
+PRIVATE = re.compile(
+    r"personal|private|privacy|pii|identif|redact|anonymi|confidential"
+    r"|(customer|user)'?s? (name|email|phone|address|info|details|contact)"
+)
+
+
+def matching_check(ch, text: str):
+    """The one requirement a prompt part asks for directly, or None if no check (or more than one) matches."""
+    t = text.lower()
+    hits = []
+    for r in ch.requirements:
+        if r.scorer == "word_count_max":
+            ok = "word" in t and re.search(rf"\b{r.params['max']}\b", t)
+        elif r.scorer == "bullet_count":
+            n = r.params["target"]
+            ok = "bullet" in t and re.search(rf"\b({n}|{NUMBER_WORDS.get(n, n)})\b", t)
+        elif r.scorer == "json_only":
+            ok = JSON_ONLY.search(t)
+        elif r.id == "no_apology":
+            ok = re.search(r"apolog|sorry", t) and NEGATION.search(t)
+        elif r.id == "no_personal_info":
+            ok = PRIVATE.search(t)
+        else:
+            ok = False
+        if ok:
+            hits.append(r)
+    return hits[0] if len(hits) == 1 else None
+
+
+def judge_code_pairs(results: dict[str, AnalysisResult]) -> list[dict]:
+    """(judge rating, code pass) for every saved answer, for parts that map onto one code check."""
+    rows = []
+    for aid, r in results.items():
+        if not r.judge_baseline:
+            continue
+        ch = get_challenge(r.challenge_id)
+        groups = [(r.baseline_runs, r.judge_baseline)] + [(a.runs, j) for a, j in zip(r.ablations, r.judge_ablation)]
+        for s_ in r.segments:
+            req = matching_check(ch, s_.text)
+            if req is None:
+                continue
+            for runs, judged in groups:
+                for run, ratings in zip(runs, judged):
+                    if ratings is None or ratings[s_.id] is None:
+                        continue
+                    rows.append({"id": aid, "challenge_id": r.challenge_id, "check": req.id, "part": s_.display,
+                                 "judge": ratings[s_.id], "code_pass": run.scores[req.id] >= 0.999})
+    return rows
+
+
+def kappa(a: list[bool], b: list[bool]) -> float:
+    """Cohen's kappa for two binary raters."""
+    n = len(a)
+    po = sum(x == y for x, y in zip(a, b)) / n
+    pa, pb = sum(a) / n, sum(b) / n
+    pe = pa * pb + (1 - pa) * (1 - pb)
+    return float("nan") if pe == 1 else (po - pe) / (1 - pe)
+
+
 def report(config: Config) -> None:
     import pandas as pd
     from scipy import stats
@@ -342,7 +410,9 @@ def report(config: Config) -> None:
     out("# Evaluation summary\n")
     out(f"Model: {config.model}. Settings: {config.baseline_runs} baseline runs, {config.ablation_runs} runs per removed part, "
         f"each part's noise floor = max({config.noise_floor_k:g} × standard error of its with/without difference, {config.min_noise_floor}).")
-    out(f"Attempts: {len(attempts)} synthetic prompts (3 challenges × 3 personas × 10). Analyses completed: {len(results)}.")
+    order = [c.id for c in load_all() if any(a["challenge_id"] == c.id for a in attempts.values())]
+    n_personas = len({a["persona"] for a in attempts.values()})
+    out(f"Attempts: {len(attempts)} synthetic prompts ({len(order)} challenges × {n_personas} personas × 10). Analyses completed: {len(results)}.")
     out(f"Parts per prompt: median {statistics.median(n_seg):g}, range {min(n_seg)}–{max(n_seg)}. "
         f"Segmentation: {methods.get('llm', 0)} by the model, {methods.get('fallback', 0)} by the regex fallback.")
     errs = ERRORS.read_text().splitlines() if ERRORS.exists() else []
@@ -353,9 +423,11 @@ def report(config: Config) -> None:
         by_persona[(r.challenge_id, attempts[aid]["persona"])].append(r.baseline_mean[OVERALL])
     out("Mean overall score of the full prompt, by persona (sanity check on the synthetic prompts):\n")
     out("| Challenge | Novice | Average | Expert |\n|---|---|---|---|")
-    for cid in ("explain_to_kid", "landlord_reply", "job_extraction"):
+    for cid in order:
         cells = [f"{statistics.fmean(by_persona[(cid, p)]):.2f}" if by_persona[(cid, p)] else "–" for p in ("novice", "average", "expert")]
         out(f"| {cid} | " + " | ".join(cells) + " |")
+    pooled = [[s for (c, q), xs in by_persona.items() if q == p for s in xs] for p in ("novice", "average", "expert")]
+    out("| **all** | " + " | ".join(f"**{statistics.fmean(xs):.2f}**" if xs else "–" for xs in pooled) + " |")
     out("")
 
     # A. Noise floor
@@ -425,7 +497,7 @@ def report(config: Config) -> None:
                 f"[{rci[0]:.3f}, {rci[1]:.3f}] | {wins}/{len(diffs)} | {p:.2g} |")
             bars.append((k, statistics.fmean(t), tci, statistics.fmean(r), rci))
         out("")
-        for cid in ("explain_to_kid", "landlord_reply", "job_extraction"):
+        for cid in order:
             sub = faith[(faith.challenge_id == cid) & (faith.k == 2)]
             if len(sub):
                 out(f"- {cid}, k = 2: top-k drop {sub.top_drop.mean():.3f}, random drop {sub.random_drop.mean():.3f} (n = {len(sub)})")
@@ -588,6 +660,27 @@ def report(config: Config) -> None:
     else:
         out("Not run.\n")
 
+    # F. Judge vs code
+    out("## F. Judge vs code checks\n")
+    jc = pd.DataFrame(judge_code_pairs(results))
+    if len(jc):
+        jc.to_csv(RESULTS / "judge_vs_code.csv", index=False)
+        decided = jc[jc.judge != 0.5]
+        out(f"Some prompt parts ask for exactly what a code check measures (\"under 60 words\", \"exactly 3 bullets\", "
+            f"\"only JSON\", \"don't apologize\", \"keep the customer's details out\"). For those parts, the judge's rating of every "
+            f"saved answer can be compared with the code check on the same answer. {jc.part.nunique()} parts in "
+            f"{jc.id.nunique()} analyses, {len(jc)} rated answers; the judge said \"partly\" on {100 * (jc.judge == 0.5).mean():.0f}% of them.\n")
+        out("| Check | Answers | Judge yes / code pass | Judge no / code fail | Judge yes / code fail | Judge no / code pass | Agreement | Kappa |\n|---|---|---|---|---|---|---|---|")
+        for name, g in [*decided.groupby("check"), ("**all**", decided)]:
+            j, c = (g.judge == 1.0).tolist(), g.code_pass.tolist()
+            cells = [sum(x and y for x, y in zip(j, c)), sum(not x and not y for x, y in zip(j, c)),
+                     sum(x and not y for x, y in zip(j, c)), sum(not x and y for x, y in zip(j, c))]
+            out(f"| {name} | {len(g)} | " + " | ".join(map(str, cells)) + f" | {100 * sum(x == y for x, y in zip(j, c)) / len(g):.0f}% | {kappa(j, c):.2f} |")
+        out("\nAgreement and kappa leave out \"partly\". The code check is the reference here, so a disagreement is usually the "
+            "judge's mistake, though a few are wording mismatches (a part that says \"short\" next to a number, for example).\n")
+    else:
+        out("Not run.\n")
+
     tin = sum(r.input_tokens for r in results.values())
     tout = sum(r.output_tokens for r in results.values())
     out("## Cost\n")
@@ -604,8 +697,8 @@ async def run_stages(stages: set[str], config: Config) -> None:
     cost = json.loads(cost_path.read_text()) if cost_path.exists() else {}
 
     def record(name: str, m: Meter) -> None:
-        prev = cost.get(name, {"calls": 0, "input_tokens": 0, "output_tokens": 0})
-        cost[name] = {k: prev[k] + getattr(m, k) for k in prev}
+        prev = cost.get(name, {})
+        cost[name] = {k: prev.get(k, 0) + getattr(m, k) for k in ("calls", "input_tokens", "output_tokens")}
         cost[name]["usd"] = config.cost_usd(cost[name]["input_tokens"], cost[name]["output_tokens"])
         cost_path.write_text(json.dumps(cost, indent=2))
         print(f"  {name}: +{m.calls} calls, ~${config.cost_usd(m.input_tokens, m.output_tokens):.4f}")

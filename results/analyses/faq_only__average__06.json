@@ -1,0 +1,293 @@
+{
+ "challenge_id": "faq_only",
+ "user_prompt": "I need a quick reply for my friend about the pool at Northside Fitness. Use only the attached FAQ.",
+ "final_prompt": "I need a quick reply for my friend about the pool at Northside Fitness. Use only the attached FAQ.\n\n<document>\nNorthside Fitness FAQ\n\nHours: Mon-Fri 5am-11pm, Sat-Sun 7am-9pm.\nMembership: $39/month, or $29/month on a 12-month contract. Students get 20% off with ID.\nGuests: members can bring one guest per visit for $10.\nAmenities: free weights, cardio machines, sauna, lockers.\nClasses: yoga, spin, and aqua aerobics (Tue/Thu 6pm). Towels provided for all classes.\nParking: free lot behind the building.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "I need a quick reply for my friend about the pool at Northside Fitness. ",
+   "role": "task",
+   "start": 0,
+   "end": 72
+  },
+  {
+   "id": 1,
+   "text": "Use only the attached FAQ.",
+   "role": "constraint",
+   "start": 72,
+   "end": 98
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "admits_gap",
+  "no_guessing",
+  "length"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Based on the FAQ, the pool isn't mentioned at all, so I can't confirm whether Northside Fitness has one. The listed amenities are free weights, cardio machines, sauna, and lockers, plus classes including aqua aerobics on Tuesday and Thursday at 6pm, which takes place in water and suggests a pool may exist, but that's an inference rather than a confirmed fact. For a definite answer, you'd want to contact the gym directly.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 0.0,
+    "length": 0.56,
+    "overall": 0.52
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Based on the Northside Fitness FAQ, the pool isn't listed among the amenities. The listed amenities are free weights, cardio machines, sauna, and lockers. The only water-related offering is aqua aerobics classes on Tuesday and Thursday at 6pm, so I can't confirm whether there's a pool for general use. Your friend should contact Northside Fitness directly to ask.",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 0.0,
+    "length": 0.84,
+    "overall": 0.6133333333333333
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Based on the Northside Fitness FAQ, the only pool-related information is that aqua aerobics classes are held Tuesdays and Thursdays at 6pm, and towels are provided for all classes. The FAQ doesn't say whether the pool is open for general swimming outside of those classes, so I can't confirm that.\n\nA quick reply to your friend could be:\n\n\"Hey! Northside Fitness has aqua aerobics on Tuesdays and Thursdays at 6pm, and they provide towels for classes. I don't see info about general pool access in their FAQ, so you'd want to call or check with them about that.\"",
+   "scores": {
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 0.040000000000000036,
+    "overall": 0.68
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.6044444444444445,
+  "on_task": 1.0,
+  "admits_gap": 1.0,
+  "no_guessing": 0.3333333333333333,
+  "length": 0.48
+ },
+ "baseline_std": {
+  "overall": 0.08036951697788945,
+  "on_task": 0.0,
+  "admits_gap": 0.0,
+  "no_guessing": 0.5773502691896257,
+  "length": 0.40595566260368876
+ },
+ "noise": {
+  "overall": 0.1607390339557789,
+  "on_task": 0.05,
+  "admits_gap": 0.05,
+  "no_guessing": 1.1547005383792515,
+  "length": 0.8119113252073775
+ },
+ "pooled_std": {
+  "overall": 0.07091988176547977,
+  "on_task": 0.0,
+  "admits_gap": 0.0,
+  "no_guessing": 0.408248290463863,
+  "length": 0.31400636936215165
+ },
+ "part_noise": [
+  {
+   "overall": 0.09280272452364935,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.6666666666666666,
+   "length": 0.4687572221665852
+  },
+  {
+   "overall": 0.1516982059188979,
+   "on_task": 0.05,
+   "admits_gap": 0.05,
+   "no_guessing": 0.6666666666666666,
+   "length": 0.5910442735813733
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Use only the attached FAQ.",
+   "runs": [
+    {
+     "answer": "I can help with questions about Northside Fitness using the FAQ. What would you like to know? For example, I can cover hours, membership pricing, guest policy, amenities, classes, or parking.",
+     "scores": {
+      "on_task": 0.0,
+      "admits_gap": 0.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I'm ready to help with questions about Northside Fitness using only the FAQ above. What would you like to know?",
+     "scores": {
+      "on_task": 0.0,
+      "admits_gap": 0.0,
+      "no_guessing": 1.0,
+      "length": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "admits_gap": 0.0,
+    "no_guessing": 1.0,
+    "length": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "I need a quick reply for my friend about the pool at Northside Fitness.",
+   "runs": [
+    {
+     "answer": "Sure, but the FAQ you shared doesn't mention the pool beyond the aqua aerobics class on Tuesdays and Thursdays at 6pm, so I can't say whether there's general lap swim or open pool access. Here's a reply you could send:\n\n\"Hey! From what I can see, Northside Fitness has aqua aerobics on Tue/Thu at 6pm, but I'm not sure about general pool access. Could you check with them before we go? Let me know what you find out!\"\n\nIf you tell me what you want to find out or your friend asked, I can tailor it.",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.07999999999999996,
+      "overall": 0.6933333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here's a quick reply you could send:\n\n\"Hey! The pool at Northside Fitness is part of the aqua aerobics classes, which run Tuesdays and Thursdays at 6pm. Towels are provided for all classes. Otherwise, the FAQ I have doesn't list open swim hours, so you'd want to check with the front desk. Membership is $39/month, or $29/month on a 12-month contract, and students get 20% off with ID.\"\n\nWant me to shorten it or make it more casual?",
+     "scores": {
+      "on_task": 1.0,
+      "admits_gap": 1.0,
+      "no_guessing": 1.0,
+      "length": 0.43999999999999995,
+      "overall": 0.8133333333333334
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.7533333333333334,
+    "on_task": 1.0,
+    "admits_gap": 1.0,
+    "no_guessing": 1.0,
+    "length": 0.25999999999999995
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.6044444444444445,
+   "on_task": 1.0,
+   "admits_gap": 1.0,
+   "no_guessing": -0.6666666666666667,
+   "length": -0.52
+  },
+  {
+   "overall": -0.14888888888888896,
+   "on_task": 0.0,
+   "admits_gap": 0.0,
+   "no_guessing": -0.6666666666666667,
+   "length": 0.22000000000000003
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "admits_gap": false,
+   "no_guessing": false,
+   "length": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "admits_gap": true,
+   "no_guessing": false,
+   "length": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   0.5,
+   1.0
+  ],
+  [
+   0.5,
+   1.0
+  ],
+  [
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.5,
+    1.0
+   ],
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0
+   ],
+   [
+    1.0,
+    0.5
+   ]
+  ]
+ ],
+ "follow_with": [
+  0.6666666666666666,
+  1.0
+ ],
+ "follow_without": [
+  0.25,
+  0.75
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7
+ },
+ "calls": 15,
+ "input_tokens": 8666,
+ "output_tokens": 1276,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:11:55.361559+00:00"
+}

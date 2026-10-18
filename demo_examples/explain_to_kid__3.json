@@ -1,0 +1,658 @@
+{
+ "challenge_id": "explain_to_kid",
+ "user_prompt": "Hi there! Explain inflation to my 10-year-old cousin. Use exactly 3 bullet points. Mention a candy bar in one of them. Use proper technical terms.",
+ "final_prompt": "Hi there! Explain inflation to my 10-year-old cousin. Use exactly 3 bullet points. Mention a candy bar in one of them. Use proper technical terms.",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Hi there! ",
+   "role": "politeness_filler",
+   "start": 0,
+   "end": 10
+  },
+  {
+   "id": 1,
+   "text": "Explain inflation ",
+   "role": "task",
+   "start": 10,
+   "end": 28
+  },
+  {
+   "id": 2,
+   "text": "to my 10-year-old cousin. ",
+   "role": "audience",
+   "start": 28,
+   "end": 54
+  },
+  {
+   "id": 3,
+   "text": "Use exactly 3 bullet points. ",
+   "role": "format",
+   "start": 54,
+   "end": 83
+  },
+  {
+   "id": 4,
+   "text": "Mention a candy bar in one of them. ",
+   "role": "constraint",
+   "start": 83,
+   "end": 119
+  },
+  {
+   "id": 5,
+   "text": "Use proper technical terms.",
+   "role": "constraint",
+   "start": 119,
+   "end": 146
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "bullets",
+  "length",
+  "reading_level"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "- **Inflation** means the general level of prices rises over time, so your money buys less than it used to. Economists measure this with the Consumer Price Index (CPI), which tracks the cost of a basket of everyday goods and services.\n- **Purchasing power** is what your money can actually buy. If a candy bar costs $1.00 this year and $1.05 next year, your dollar's purchasing power has fallen by about 5% for that item, even though the candy bar itself hasn't changed.\n- **Causes** include demand-pull inflation, where too many buyers chase too few goods, and cost-push inflation, where production costs such as wages or raw materials rise. Central banks usually respond by adjusting interest rates to keep inflation near a target, often around 2% per year.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.0,
+    "reading_level": 0.21764999999999968,
+    "overall": 0.4058833333333332
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- **Inflation** is when the general price level of goods and services rises over time, so each dollar buys fewer things than it did before. Economists measure it with indexes like the Consumer Price Index (CPI).\n- **Purchasing power** is what your money can actually buy. If a candy bar costs $1.00 this year and $1.10 next year, your $1 bill now buys less candy than it did before, even though the bill looks exactly the same.\n- **Causes** include demand-pull inflation, where too many buyers chase too few goods, and cost-push inflation, where rising production costs such as wages or raw materials get passed on to consumers. Central banks usually try to keep inflation at a modest target, often around 2% per year, to keep prices stable.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.0,
+    "reading_level": 0.29316999999999993,
+    "overall": 0.43105666666666664
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- **Inflation** means the general price level of goods and services rises over time, so each dollar buys a little less than it did before. Economists measure this with indices like the Consumer Price Index (CPI), which tracks the cost of a standard basket of goods.\n- **Purchasing power** is what your money can actually buy. If a candy bar costs $1.00 today and $1.10 next year because of inflation, your dollar's purchasing power has fallen by about 9%, since the same dollar now covers less candy.\n- **Causes** include demand-pull inflation, where people want to buy more than the economy produces, and cost-push inflation, where production costs such as wages or materials rise and push prices up. Central banks usually respond by adjusting interest rates to keep inflation near a target, often around 2% per year.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.0,
+    "reading_level": 0.06015671641790943,
+    "overall": 0.35338557213930316
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.396775190713101,
+  "on_task": 1.0,
+  "bullets": 1.0,
+  "length": 0.0,
+  "reading_level": 0.190325572139303
+ },
+ "baseline_std": {
+  "overall": 0.039628505242596854,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.0,
+  "reading_level": 0.11888551572779059
+ },
+ "noise": {
+  "overall": 0.07925701048519371,
+  "on_task": 0.05,
+  "bullets": 0.05,
+  "length": 0.05,
+  "reading_level": 0.23777103145558118
+ },
+ "pooled_std": {
+  "overall": 0.0377550651080231,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.047689679759414995,
+  "reading_level": 0.0976878019585415
+ },
+ "part_noise": [
+  {
+   "overall": 0.08215154672795656,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.24645464018386964
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.15000000000000002,
+   "reading_level": 0.13727716901637477
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.13727716901637477
+  },
+  {
+   "overall": 0.07118762350546837,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.21356287051640518
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.13727716901637477
+  },
+  {
+   "overall": 0.10468858817127205,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.1166666666666667,
+   "reading_level": 0.21526150861798787
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Explain inflation to my 10-year-old cousin. Use exactly 3 bullet points. Mention a candy bar in one of them. Use proper technical terms.",
+   "runs": [
+    {
+     "answer": "- **Inflation is a general rise in prices over time.** When inflation happens, the same amount of money buys less than it used to. For example, if a candy bar costs $1.00 this year and inflation is 5%, next year that same candy bar might cost about $1.05, so your dollar stretches a little less far.\n- **Inflation is measured with a price index, such as the Consumer Price Index (CPI).** Economists track the prices of a large \"basket\" of goods and services, like food, rent, and gas, and see how the total changes from month to month and year to year.\n- **Moderate inflation is normal, but high or unstable inflation causes problems.** Central banks, like the Federal Reserve in the United States, usually aim for about 2% inflation each year, because a little price growth encourages people to spend and invest, while large swings make it hard to plan and save.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.0,
+      "reading_level": 0.4038666666666664,
+      "overall": 0.46795555555555546
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Inflation** is when the *general price level* of goods and services rises over time, so your money buys less than it used to. Economists measure this with indices like the Consumer Price Index (CPI), which tracks the cost of a typical basket of goods.\n- Imagine a candy bar that cost $1.00 last year and costs $1.10 this year. That 10% increase in price means your dollar has lost purchasing power: the same dollar now buys a smaller share of goods than before.\n- Inflation happens for a few main reasons: **demand-pull** inflation occurs when spending outpaces what the economy can produce, and **cost-push** inflation occurs when production costs, such as wages or raw materials, rise and push prices up. Central banks typically try to keep inflation low and stable, often around 2% per year, by adjusting interest rates.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.0,
+      "reading_level": 0.19918430656934305,
+      "overall": 0.399728102189781
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.4338418288726682,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.0,
+    "reading_level": 0.3015254866180047
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Hi there! to my 10-year-old cousin. Use exactly 3 bullet points. Mention a candy bar in one of them. Use proper technical terms.",
+   "runs": [
+    {
+     "answer": "Hi there! Here are three bullet points about how your body uses food for energy:\n\n- **Digestion:** Your stomach and small intestine break food down into glucose, the simple sugar your cells use as fuel.\n- **Cellular respiration:** Inside your mitochondria, glucose is oxidized in a process that produces adenosine triphosphate (ATP), the molecule that powers muscle contraction and nerve signaling.\n- **Candy bars:** A typical candy bar contains sucrose, which your body splits into glucose and fructose, so it gives you a quick burst of energy that is absorbed rapidly into the bloodstream.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 1.0,
+      "length": 0.4833333333333333,
+      "reading_level": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are three things about how the body makes energy:\n\n- **Glycolysis** is the metabolic pathway that breaks glucose down into pyruvate, releasing a small amount of ATP in the cytoplasm.\n- **Cellular respiration** takes that pyruvate into the mitochondria, where the citric acid cycle and oxidative phosphorylation produce far more ATP using oxygen.\n- **Glucose** is the simple sugar your body uses for fuel, and a candy bar contains plenty of it, so eating one gives your cells raw material to start this process.",
+     "scores": {
+      "on_task": 0.0,
+      "bullets": 1.0,
+      "length": 0.6333333333333333,
+      "reading_level": 0.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "bullets": 1.0,
+    "length": 0.5583333333333333,
+    "reading_level": 0.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Hi there! Explain inflation Use exactly 3 bullet points. Mention a candy bar in one of them. Use proper technical terms.",
+   "runs": [
+    {
+     "answer": "- **Definition and measurement:** Inflation is a sustained increase in the general price level of goods and services in an economy over time, typically quantified by the Consumer Price Index (CPI) or the Personal Consumption Expenditures (PCE) price index, with a loss of purchasing power as the corollary.\n\n- **Causes:** Demand-pull inflation arises when aggregate demand outpaces aggregate supply, while cost-push inflation stems from rising input costs, such as wages or commodity prices; a candy bar that rises from $1.00 to $1.10 because cocoa and sugar input costs have risen exemplifies cost-push pressure at the microeconomic level.\n\n- **Economic effects and policy response:** Inflation erodes the real value of fixed nominal incomes and savings, redistributes wealth between debtors and creditors, and distorts price signals, prompting central banks to adjust the policy interest rate, manage the money supply, and anchor inflation expectations toward a target, commonly 2 percent.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.0,
+      "reading_level": 0.0,
+      "overall": 0.3333333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Definition and measurement:** Inflation is the sustained rise in the general price level of goods and services in an economy over time, typically measured as a percentage change in a price index such as the Consumer Price Index (CPI) or the GDP deflator, which reflects a decline in the purchasing power of money.\n\n- **Causes:** Demand-pull inflation arises when aggregate demand exceeds aggregate supply, while cost-push inflation stems from rising input costs, such as wages or commodity prices; for example, if the cost of cocoa and sugar rises, a candy bar's wholesale price may increase, passing through to consumers via higher retail prices.\n\n- **Economic effects and policy response:** Inflation redistributes purchasing power from creditors to debtors and erodes the real value of fixed nominal incomes, and central banks typically respond by adjusting the policy interest rate, tightening monetary policy to anchor inflation expectations near their target, commonly 2 percent.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.0,
+      "reading_level": 0.0,
+      "overall": 0.3333333333333333
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.3333333333333333,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.0,
+    "reading_level": 0.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "Hi there! Explain inflation to my 10-year-old cousin. Mention a candy bar in one of them. Use proper technical terms.",
+   "runs": [
+    {
+     "answer": "Hi! Here's how you could explain inflation to a 10-year-old, using a candy bar and a few real economics terms:\n\n---\n\n**What Is Inflation?**\n\nImagine you have $1.00 in your pocket, and a candy bar costs exactly $1.00. You can buy it today. Now imagine that next year, the same candy bar costs $1.05. Your dollar still looks the same, but it can't buy as much candy anymore. That gradual rise in the general level of prices across the economy is called **inflation**.\n\nEconomists measure it with something called the **Consumer Price Index (CPI)**, which tracks the average price of a \"basket\" of everyday goods like food, gas, clothes, and yes, candy bars. If the basket costs more this year than last year, inflation happened.\n\n**The opposite**, when prices fall, is called **deflation**, and it's pretty rare.\n\n**Why does it happen?** Economists usually point to two main causes:\n\n- **Demand-pull inflation:** Lots of people want to buy candy bars, but there aren't enough to go around. Sellers notice and raise prices.\n- **Cost-push inflation:** If the cost of cocoa, sugar, or the factory machines goes up, the candy company may raise the price of the bar to keep making a profit.\n\n**Why does it matter?** A little inflation is considered normal and healthy. Central banks, like the Federal Reserve in the United States, often aim for about **2% inflation per year**. But if prices rise too fast, that's called **hyperinflation** in extreme cases, and savings lose value quickly. That's why grown-ups sometimes talk about \"keeping prices stable.\"\n\n**A fun way to remember it:** Inflation is like the candy bar getting a little bit \"bigger\" in price, while your money gets a little bit \"smaller\" in what it can buy!\n\n---\n\nWant me to make a simpler version or add a quick quiz at the end?",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.6666666666666667,
+      "length": 0.0,
+      "reading_level": 0.5344850498338864,
+      "overall": 0.4003839055001844
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Hi! Here's a way to explain inflation to your cousin, with a candy bar example and the proper terms included:\n\n---\n\n**What is Inflation?**\n\nImagine you have $1, and a candy bar costs $1. You can buy one candy bar. Now imagine that next year, the same candy bar costs $1.10. Your dollar didn't change, but it now buys *less* candy. That's **inflation**: a general increase in prices over time, which means each unit of money buys fewer goods and services than before. Economists call this a fall in **purchasing power**.\n\nWhy do prices go up? Economists usually point to a couple of main causes:\n\n- **Demand-pull inflation:** Lots of people want to buy things, but there aren't enough to go around. Imagine a new candy bar becomes super popular, everyone wants one, and the shop raises the price because they know people will still pay.\n- **Cost-push inflation:** It becomes more expensive to make things. If the sugar, cocoa, and wrappers all cost more, the candy company may raise the price of the bar to cover its costs.\n\nEconomists measure inflation with a **price index**, like the **Consumer Price Index (CPI)**, which tracks the average prices of a basket of everyday goods, including candy bars, over time. The percentage change in that index is the **inflation rate**.\n\nInflation is normal in small amounts. Many central banks, like the U.S. Federal Reserve, aim for about **2% inflation per year** because it encourages spending and investing. When inflation gets too high, it's called **hyperinflation**, and prices can rise so fast that money loses value very quickly.\n\n**The big idea:** Inflation means your money doesn't stretch as far as it used to, so the same candy bar costs more over time!",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.6666666666666667,
+      "length": 0.0,
+      "reading_level": 0.37088774383511236,
+      "overall": 0.3458514701672597
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.373117687833722,
+    "on_task": 1.0,
+    "bullets": 0.6666666666666667,
+    "length": 0.0,
+    "reading_level": 0.4526863968344994
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "Hi there! Explain inflation to my 10-year-old cousin. Use exactly 3 bullet points. Use proper technical terms.",
+   "runs": [
+    {
+     "answer": "- **Inflation** is when prices for things like food, toys, and gas slowly go up over time, so the same amount of money buys a little less than it did before.\n\n- **Purchasing power** is the amount of goods and services your money can buy; when inflation rises, your purchasing power falls, which is why a candy bar that cost one dollar years ago might cost two dollars today.\n\n- **Central banks** like the Federal Reserve try to keep inflation at a steady, modest rate (usually around 2% per year) by adjusting interest rates, since keeping prices stable helps families and businesses plan ahead.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.31666666666666665,
+      "reading_level": 0.0,
+      "overall": 0.4388888888888889
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Inflation** means prices for everyday things, like snacks, toys, and haircuts, slowly go up over time, so the same amount of money buys a little less than it used to.\n- **Purchasing power** is how much stuff your money can buy. When inflation rises, purchasing power falls, which is why a dollar today might only get you what 90 cents got you a few years ago.\n- **Central banks**, like the Federal Reserve in the United States, try to keep inflation at a steady, moderate rate, usually around 2% per year, by adjusting interest rates and the amount of money in circulation.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.33333333333333337,
+      "reading_level": 0.0,
+      "overall": 0.4444444444444445
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.44166666666666665,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.325,
+    "reading_level": 0.0
+   }
+  },
+  {
+   "segment_id": 5,
+   "prompt": "Hi there! Explain inflation to my 10-year-old cousin. Use exactly 3 bullet points. Mention a candy bar in one of them.",
+   "runs": [
+    {
+     "answer": "- Inflation means that over time, things get more expensive. A candy bar that cost 50 cents when your parents were kids might cost $1.50 today, so the same money buys fewer candy bars than it used to.\n\n- Think of money like a pile of toy tokens. When prices go up, each token can buy less, so you need more tokens for the same stuff.\n\n- Grown-ups watch inflation closely because when prices rise too fast, it gets hard for families to afford things they need, like food and rent.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.5333333333333333,
+      "reading_level": 0.943545454545454,
+      "overall": 0.8256262626262624
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices slowly go up over time, so the same thing costs more money than it used to. If a candy bar cost 50 cents when your parents were kids and costs $1.50 now, that's inflation at work.\n\n- Money loses some of its buying power when prices rise. With the same $5 bill, you can buy fewer candy bars than you could before prices went up.\n\n- Grown-ups and governments try to keep inflation slow and steady, because if prices jump up too fast, it gets hard for families to afford the things they need.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.41666666666666663,
+      "reading_level": 0.7777368421052622,
+      "overall": 0.7314678362573096
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.778547049441786,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.475,
+    "reading_level": 0.8606411483253581
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": -0.03706663815956718,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": -0.1111999144787017
+  },
+  {
+   "overall": 0.396775190713101,
+   "on_task": 1.0,
+   "bullets": 0.0,
+   "length": -0.5583333333333333,
+   "reading_level": 0.190325572139303
+  },
+  {
+   "overall": 0.06344185737976771,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": 0.190325572139303
+  },
+  {
+   "overall": 0.02365750287937901,
+   "on_task": 0.0,
+   "bullets": 0.33333333333333326,
+   "length": 0.0,
+   "reading_level": -0.2623608246951964
+  },
+  {
+   "overall": -0.04489147595356563,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": -0.325,
+   "reading_level": 0.190325572139303
+  },
+  {
+   "overall": -0.38177185872868497,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": -0.475,
+   "reading_level": -0.6703155761860551
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": true
+  },
+  {
+   "overall": false,
+   "on_task": false,
+   "bullets": true,
+   "length": false,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": false,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": false
+  }
+ ],
+ "explanations": {
+  "1": "Without this part, the answer shifts from explaining inflation and purchasing power to a biology explanation of how the body uses food for energy, with a friendly greeting added.",
+  "5": "Without this part, the answer drops the technical vocabulary and economic causes, swapping them for simple analogies and a kid-friendly tone.",
+  "2": "Without this part, the answer shifts from plain, conversational bullets with simple examples to dense, technical prose with formal economic terminology."
+ },
+ "judge_baseline": [
+  [
+   null,
+   1.0,
+   0.5,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   null,
+   1.0,
+   0.5,
+   0.0,
+   1.0,
+   1.0
+  ],
+  [
+   null,
+   1.0,
+   0.5,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    null,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    1.0,
+    0.5,
+    0.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    0.5,
+    0.0,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    0.5,
+    1.0,
+    0.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    1.0,
+    0.5,
+    1.0,
+    1.0,
+    0.0
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ]
+ ],
+ "follow_with": [
+  null,
+  1.0,
+  0.5,
+  0.6666666666666666,
+  1.0,
+  1.0
+ ],
+ "follow_without": [
+  null,
+  0.0,
+  0.5,
+  0.0,
+  0.5,
+  0.25
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 12,
+  "judge": 15,
+  "explain": 3
+ },
+ "calls": 34,
+ "input_tokens": 16907,
+ "output_tokens": 6002,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-16T10:36:35.168117+00:00"
+}

@@ -1,0 +1,497 @@
+{
+ "challenge_id": "shopping_list",
+ "user_prompt": "I'm making this tonight. Give me a list of ingredients to get at the store, one per line, leaving out the pantry staples I have.",
+ "final_prompt": "I'm making this tonight. Give me a list of ingredients to get at the store, one per line, leaving out the pantry staples I have.\n\n<document>\nWeeknight lemon chicken (serves 4)\n\nIngredients\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt\n\nSteps\n1. Preheat the oven to 425°F.\n2. Toss the potatoes with the olive oil and salt.\n3. Rub the chicken with garlic, oregano and lemon zest.\n4. Roast everything for 35 minutes, squeeze the lemons over the top, and serve.\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "I'm making this tonight. ",
+   "role": "context",
+   "start": 0,
+   "end": 25
+  },
+  {
+   "id": 1,
+   "text": "Give me a list of ingredients to get at the store, ",
+   "role": "task",
+   "start": 25,
+   "end": 76
+  },
+  {
+   "id": 2,
+   "text": "one per line, ",
+   "role": "format",
+   "start": 76,
+   "end": 90
+  },
+  {
+   "id": 3,
+   "text": "leaving out the pantry staples I have.",
+   "role": "constraint",
+   "start": 90,
+   "end": 128
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "needed_items",
+  "skips_pantry",
+  "one_per_line",
+  "no_steps"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "The user says to leave out pantry staples they have, but doesn't say which ones. Common staples here would be olive oil, dried oregano, salt, and possibly garlic. I'll list everything that isn't a typical pantry item and flag the rest.\n\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 lb baby potatoes\n\nIf you're out of any of olive oil, dried oregano, or salt, tell me and I'll add them.",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0,
+    "overall": 0.75
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "You didn't say which pantry staples you have, so I'm assuming you have salt and olive oil and will leave those off. Here's the shopping list:\n\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tsp dried oregano\n1 lb baby potatoes",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.75,
+    "no_steps": 1.0,
+    "overall": 0.6875
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "I don't know which pantry staples you have, so I can't tell you what to leave out. Here's the full list from the recipe, one per line:\n\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt\n\nTell me which of these you already have and I'll trim the list to just what you need to buy.",
+   "scores": {
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.25,
+    "no_steps": 1.0,
+    "overall": 0.5625
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.6666666666666666,
+  "on_task": 1.0,
+  "needed_items": 1.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.6666666666666666,
+  "no_steps": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.09547032697824667,
+  "on_task": 0.0,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.3818813079129867,
+  "no_steps": 0.0
+ },
+ "noise": {
+  "overall": 0.19094065395649334,
+  "on_task": 0.05,
+  "needed_items": 0.05,
+  "skips_pantry": 0.05,
+  "one_per_line": 0.7637626158259734,
+  "no_steps": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.22341261030757517,
+  "on_task": 0.28867513459481287,
+  "needed_items": 0.0,
+  "skips_pantry": 0.0,
+  "one_per_line": 0.36324157862838946,
+  "no_steps": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.11023963796102461,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.44095855184409843,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.11023963796102461,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.44095855184409843,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.7580585582775105,
+   "on_task": 1.0,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 1.092906420717,
+   "no_steps": 0.05
+  },
+  {
+   "overall": 0.11023963796102461,
+   "on_task": 0.05,
+   "needed_items": 0.05,
+   "skips_pantry": 0.05,
+   "one_per_line": 0.44095855184409843,
+   "no_steps": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Give me a list of ingredients to get at the store, one per line, leaving out the pantry staples I have.",
+   "runs": [
+    {
+     "answer": "I don't have a record of which pantry staples you already have, so I've listed the full ingredient list. Tell me what you have and I'll trim it down.\n\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.25,
+      "no_steps": 1.0,
+      "overall": 0.5625
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I don't know which pantry staples you already have, so I can't tell you which items to leave off. Here's the full ingredient list, one per line:\n\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 tbsp olive oil\n1 tsp dried oregano\n1 lb baby potatoes\nsalt\n\nIf you tell me what you have on hand, I can trim the list to just what you need to buy.",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.25,
+      "no_steps": 1.0,
+      "overall": 0.5625
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.5625,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.25,
+    "no_steps": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "I'm making this tonight. one per line, leaving out the pantry staples I have.",
+   "runs": [
+    {
+     "answer": "I'll assume salt, olive oil, and dried oregano are the pantry staples you already have, so here's the list without those:\n\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 lb baby potatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 0.75
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I'll assume salt, olive oil, and dried oregano are pantry staples you already have, so here's the shopping list:\n\n4 chicken thighs\n2 lemons\n3 cloves garlic\n1 lb baby potatoes",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 0.75
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.75,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 1.0,
+    "no_steps": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "I'm making this tonight. Give me a list of ingredients to get at the store, leaving out the pantry staples I have.",
+   "runs": [
+    {
+     "answer": "You didn't mention which pantry staples you have, so I'll assume you have olive oil, salt, and dried oregano and list only what you'd likely need to buy:\n\n**Shopping list**\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic (or a head of garlic)\n- 1 lb baby potatoes\n\nIf you're out of olive oil, oregano, or salt, let me know and I'll add those.",
+     "scores": {
+      "on_task": 0.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.0,
+      "no_steps": 1.0,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You didn't list your pantry staples, so I'll assume the usual ones (olive oil, salt, and dried oregano are commonly on hand). Here's what to pick up:\n\n**Shopping list**\n- 4 chicken thighs\n- 2 lemons\n- 3 cloves garlic (or a head of garlic)\n- 1 lb baby potatoes\n\nIf you're short on oil, salt, or oregano, tell me and I'll add those too.",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 1.0,
+      "no_steps": 1.0,
+      "overall": 0.75
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.375,
+    "on_task": 0.5,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.5,
+    "no_steps": 1.0
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "I'm making this tonight. Give me a list of ingredients to get at the store, one per line,",
+   "runs": [
+    {
+     "answer": "4 chicken thighs\n2 lemons\n3 cloves garlic\nolive oil\ndried oregano\n1 lb baby potatoes\nsalt",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.25,
+      "no_steps": 1.0,
+      "overall": 0.5625
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "4 chicken thighs\n2 lemons\n3 cloves garlic\nolive oil\ndried oregano\n1 lb baby potatoes\nsalt",
+     "scores": {
+      "on_task": 1.0,
+      "needed_items": 1.0,
+      "skips_pantry": 0.0,
+      "one_per_line": 0.25,
+      "no_steps": 1.0,
+      "overall": 0.5625
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.5625,
+    "on_task": 1.0,
+    "needed_items": 1.0,
+    "skips_pantry": 0.0,
+    "one_per_line": 0.25,
+    "no_steps": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.10416666666666663,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.41666666666666663,
+   "no_steps": 0.0
+  },
+  {
+   "overall": -0.08333333333333337,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": -0.33333333333333337,
+   "no_steps": 0.0
+  },
+  {
+   "overall": 0.29166666666666663,
+   "on_task": 0.5,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.16666666666666663,
+   "no_steps": 0.0
+  },
+  {
+   "overall": 0.10416666666666663,
+   "on_task": 0.0,
+   "needed_items": 0.0,
+   "skips_pantry": 0.0,
+   "one_per_line": 0.41666666666666663,
+   "no_steps": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "needed_items": true,
+   "skips_pantry": true,
+   "one_per_line": true,
+   "no_steps": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   null,
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   null,
+   1.0,
+   1.0,
+   0.5
+  ],
+  [
+   null,
+   1.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    null,
+    1.0,
+    0.0,
+    0.0
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    0.0
+   ]
+  ],
+  [
+   [
+    null,
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    null,
+    1.0,
+    0.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    null,
+    1.0,
+    0.0,
+    0.5
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ],
+  [
+   [
+    null,
+    1.0,
+    1.0,
+    0.5
+   ],
+   [
+    null,
+    1.0,
+    1.0,
+    0.5
+   ]
+  ]
+ ],
+ "follow_with": [
+  null,
+  1.0,
+  0.6666666666666666,
+  0.3333333333333333
+ ],
+ "follow_without": [
+  null,
+  1.0,
+  0.5,
+  0.5
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 8,
+  "judge": 11
+ },
+ "calls": 23,
+ "input_tokens": 13158,
+ "output_tokens": 2027,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:12:16.623337+00:00"
+}

@@ -1,0 +1,1089 @@
+{
+ "challenge_id": "explain_to_kid",
+ "user_prompt": "My little cousin wants to know why stuff at the store keeps getting more expensive. Can you explain inflation in exactly three bullet points? Keep it under 60 words and make sure a 10-year-old can read it easily.",
+ "final_prompt": "My little cousin wants to know why stuff at the store keeps getting more expensive. Can you explain inflation in exactly three bullet points? Keep it under 60 words and make sure a 10-year-old can read it easily.",
+ "segments": [
+  {
+   "id": 0,
+   "text": "My little cousin wants to know why stuff at the store keeps getting more expensive. ",
+   "role": "context",
+   "start": 0,
+   "end": 84
+  },
+  {
+   "id": 1,
+   "text": "Can you explain inflation ",
+   "role": "task",
+   "start": 84,
+   "end": 110
+  },
+  {
+   "id": 2,
+   "text": "in exactly three bullet points? ",
+   "role": "format",
+   "start": 110,
+   "end": 142
+  },
+  {
+   "id": 3,
+   "text": "Keep it under 60 words ",
+   "role": "constraint",
+   "start": 142,
+   "end": 165
+  },
+  {
+   "id": 4,
+   "text": "and make sure a 10-year-old can read it easily.",
+   "role": "audience",
+   "start": 165,
+   "end": 212
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "bullets",
+  "length",
+  "reading_level"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys a little less.\n- It often happens when lots of people want to buy things, or when it costs more to make them, like paying workers more or buying materials.\n- Stores raise prices to keep up, and then people ask for more pay, which can push prices up again.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.45066666666666677,
+    "overall": 0.8168888888888889
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys a little less.\n- It often happens when lots of people want to buy things, or when making things costs companies more, like fuel or wages.\n- Stores pass those higher costs on to shoppers, so your snacks and toys end up costing more.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.6110370370370368,
+    "overall": 0.8703456790123457
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means money buys less than it used to, so prices at the store slowly go up.\n- It often happens when lots of people want to buy things, or when making and shipping stuff costs more.\n- Stores raise prices to keep up, so the same toy or snack can cost more each year.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.8901886792452828,
+    "overall": 0.9633962264150943
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys fewer things.\n- It happens when people want to buy more stuff than stores have, or when making things costs more, like farm or factory costs.\n- Stores pass those higher costs on to you, so your money doesn't stretch as far.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.7706153846153846,
+    "overall": 0.9235384615384615
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same toy or snack costs more than it used to.\n- It often happens when lots of people have money to spend, or when it costs more to make things, like fuel or ingredients.\n- When prices rise, each dollar buys a little less than it did before.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.6414545454545454,
+    "overall": 0.8804848484848485
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys a little less.\n- Things get pricier when lots of people want to buy something, or when it costs more to make it, like gas or wages.\n- Stores raise prices to cover their own higher costs, and that adds up across everything at the store.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.5855714285714277,
+    "overall": 0.8618571428571427
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys fewer things.\n- It happens when lots of people want to buy stuff, or when making things costs more, like wages, fuel, or materials.\n- Companies pass those extra costs on to shoppers, so your snacks and toys cost more than they used to.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.5673333333333332,
+    "overall": 0.8557777777777776
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys a little less.\n- It can happen when lots of people want to buy things, or when making and shipping things costs more.\n- Stores raise prices to cover those costs, and workers may ask for more pay, which can push prices up even more.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.6843636363636364,
+    "overall": 0.8947878787878788
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same toy or snack costs more than it used to.\n- It often happens when lots of people want to buy things, or when it costs stores more to make and ship them.\n- Money also loses some of its power, so you need more of it to buy the same things.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.7839999999999996,
+    "overall": 0.9279999999999999
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys a little less.\n- It often happens when lots of people want to buy things, or when making and shipping things costs more.\n- Stores raise prices to cover those higher costs, and it can keep happening for a while.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.7027999999999992,
+    "overall": 0.900933333333333
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys a little less.\n- It often happens when lots of people want to buy things, or when making things costs companies more, like gas or wages.\n- Companies raise prices to keep up, and then everyone's paychecks may need to grow too.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.5436923076923073,
+    "overall": 0.8478974358974357
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "- Inflation means prices go up over time, so the same money buys less stuff.\n- It happens when lots of people want to buy things, or when making and shipping things costs more.\n- Stores raise prices to keep up, so your allowance doesn't stretch as far as it used to.",
+   "scores": {
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.8578775510204075,
+    "overall": 0.9526258503401358
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.8913777936111119,
+  "on_task": 1.0,
+  "bullets": 1.0,
+  "length": 1.0,
+  "reading_level": 0.6741333808333355
+ },
+ "baseline_std": {
+  "overall": 0.04426714888981067,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.0,
+  "reading_level": 0.13280144666943197
+ },
+ "noise": {
+  "overall": 0.08853429777962134,
+  "on_task": 0.05,
+  "bullets": 0.05,
+  "length": 0.05,
+  "reading_level": 0.26560289333886394
+ },
+ "pooled_std": {
+  "overall": 0.0576437919243286,
+  "on_task": 0.0,
+  "bullets": 0.0,
+  "length": 0.10117158808524375,
+  "reading_level": 0.18793810555516843
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.11899858445947203
+  },
+  {
+   "overall": 0.051544191892058604,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.1546325756761758
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.08625762893396499
+  },
+  {
+   "overall": 0.05419991818914128,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.13705864785463054,
+   "reading_level": 0.20018412055186383
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "bullets": 0.05,
+   "length": 0.05,
+   "reading_level": 0.09257684081499083
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Can you explain inflation in exactly three bullet points? Keep it under 60 words and make sure a 10-year-old can read it easily.",
+   "runs": [
+    {
+     "answer": "- Inflation means prices go up over time, so your money buys less stuff.\n- For example, a candy bar that cost $1 last year might cost $1.10 now.\n- Governments and banks try to keep inflation small so prices rise slowly and steadily.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.7710243902439025,
+      "overall": 0.9236747967479676
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices for things we buy go up over time.\n- So the same amount of money buys less than it used to.\n- It usually happens slowly, like a little more each year.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices for things we buy go up over time.\n- So, your money buys a little less than it used to.\n- Governments and banks try to keep it slow and steady.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time.\n- So each dollar buys a little less stuff than before.\n- Growing slowly is normal, but fast growth makes life harder for families.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.946068965517241,
+      "overall": 0.9820229885057469
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices for things we buy go up over time.\n- So the same amount of money buys fewer toys, snacks, or other things than before.\n- It usually happens slowly, and it's why grown-ups often say money doesn't go as far as it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.6439999999999998,
+      "overall": 0.8813333333333332
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices for things we buy go up over time.\n- So each dollar can buy a little less than it could before.\n- It usually happens slowly, and it's something grown-ups watch closely.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.8272727272727274,
+      "overall": 0.9424242424242424
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so your money buys less stuff than it used to.\n- It usually happens when lots of people want to buy things, or when making things costs more.\n- A little inflation is normal, but too much makes everyday life harder for families.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.5266666666666658,
+      "overall": 0.842222222222222
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices for things we buy go up over time.\n- So your money buys a little less than it used to.\n- It usually happens slowly, like a toy costing a bit more each year.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices for everyday things, like snacks and toys, go up over time.\n- That means your money buys a little less than it used to.\n- It usually happens slowly, and grown-ups keep an eye on it to keep prices steady.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.7710243902439025,
+      "overall": 0.9236747967479676
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices for things we buy go up over time.\n- So the same amount of money buys less than it used to.\n- It usually happens slowly, like a little bit each year.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices for things we buy go up over time.\n- So the same amount of money buys fewer things than it used to.\n- It usually happens slowly, like candy costing a little more each year.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.8386666666666663,
+      "overall": 0.9462222222222221
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices for things we buy go up over time.\n- So the same amount of money buys less than it used to.\n- It usually happens slowly, like candy costing a bit more each year.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.9714285714285709,
+      "overall": 0.9904761904761902
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9526708993899909,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.8580126981699729
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "My little cousin wants to know why stuff at the store keeps getting more expensive. in exactly three bullet points? Keep it under 60 words and make sure a 10-year-old can read it easily.",
+   "runs": [
+    {
+     "answer": "- Making things costs more. Farmers, factories, and workers need more money for fuel, wages, and materials.\n- Things cost more to ship. Trucks and ships use expensive fuel to bring food and toys to the store.\n- Money is worth less over time. When prices rise, it takes more dollars to buy the same thing.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Making things costs more. Farmers, factories, and truck drivers need more money for fuel, workers, and supplies.\n\n- Money is worth less over time. When prices rise, each dollar buys a little less than it did before.\n\n- Demand can outrun supply. When lots of people want something and there isn't quite enough, stores can charge more for it.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Things cost more to make and ship, like gas for trucks and the wages for workers.\n- Sometimes there's less of an item to go around, so stores can charge more.\n- Over time, money loses some of its buying power, so prices slowly creep up.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.9703636363636363,
+      "overall": 0.9901212121212121
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Making things costs more. Farmers, workers, and factories need more money for fuel, wages, and materials.\n- Shipping things costs more. Trucks and boats need expensive gas to bring food and toys to the store.\n- Money gets weaker. When lots of money is printed, each dollar buys a little less, so prices go up.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Making things costs more. Workers need higher pay, and farms, factories, and trucks need more fuel and materials.\n- Demand is high. When lots of people want the same things, stores can charge more.\n- Money loses value. When the government prints more money, each dollar buys a little less.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Making things costs more. Farmers, factories, and workers need more money for fuel, wages, and materials.\n- Prices go up over time. This is called inflation, and it happens when money loses some of its buying power.\n- Stores pay more to get things. Shipping and rent cost more too, so stores raise prices to cover them.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Stuff costs more to make and ship, like gas for trucks and the metal, wood, and food that go into things.\n- Workers get paid more over time, so the people who make and sell things need more money too.\n- Sometimes there is a lot of demand, like everyone wanting the same thing, and stores charge more when they can.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.7839999999999996,
+      "overall": 0.9279999999999999
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Making things costs more: workers want higher pay, and farms, factories, and trucks need more fuel and supplies.\n- Money loses value: when lots of money is printed or spent, each dollar buys a little less, so prices go up.\n- Demand can outpace supply: when many people want the same things and there isn't enough to go around, stores raise prices.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.2539999999999999,
+      "overall": 0.7513333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Making things costs more: workers want higher pay, and farms, factories, and trucks need more fuel and materials.\n- Money loses some value over time, so stores raise prices to keep up.\n- When lots of people want the same things, but there isn't enough to go around, stores can charge more.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.6083999999999996,
+      "overall": 0.8694666666666665
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Making things costs more. Farmers, factories, and workers need more money for fuel, wages, and materials than they used to.\n- Shipping costs more. Trucks, ships, and planes use fuel, and drivers and workers need to be paid.\n- Money is worth less. Over time, a dollar buys less, so stores raise prices to keep up.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Making things costs more. Farmers, factories, and truck drivers pay more for fuel, workers, and supplies.\n- Money loses some value over time. When lots of money is printed or borrowed, each dollar buys a little less.\n- Stores pay more to rent space and hire workers, so they charge more to cover it.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Making things costs more. Workers need higher pay, and farmers, factories, and shippers pay more for fuel, materials, and electricity.\n- Stores pay more too. Rent, wages, and the goods they buy all go up.\n- Money loses some value over time, so it takes more dollars to buy the same things.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.9868000000000002,
+      "overall": 0.9956
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.961210101010101,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 1.0,
+    "reading_level": 0.8836303030303029
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "My little cousin wants to know why stuff at the store keeps getting more expensive. Can you explain inflation Keep it under 60 words and make sure a 10-year-old can read it easily.",
+   "runs": [
+    {
+     "answer": "Inflation means prices slowly go up over time. Think of it like this: if a candy bar costs $1 today, next year it might cost $1.05. That happens because things like farming, factories, and shipping can cost more to run, and when lots of people want to buy things, stores can charge more. So your money buys a little less than it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 0.9333333333333333,
+      "reading_level": 0.9199999999999996,
+      "overall": 0.6177777777777776
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices slowly go up over time. That means your money buys a little less than it used to. Why does it happen? Sometimes lots of people want to buy things, or it costs more to make them, like when the price of gas or wages goes up. Stores then raise their prices to keep up.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices slowly go up over time. Think of it like this: if a candy bar costs $1 today, next year it might cost $1.05. That happens because things like farming, factories, and shipping can get more expensive, and stores pass those costs on to us. So the same money buys a little less than it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.9274999999999999,
+      "overall": 0.6425
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices slowly go up over time. Your money buys a little less than it used to. Sometimes things cost more because it's harder to make them, or because lots of people want to buy the same things. Stores raise prices to keep up with their own costs, and then those costs spread through the whole economy.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.9759655172413787,
+      "overall": 0.6586551724137929
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices go up over time. Imagine a candy bar that cost $1 last year now costs $1.25. Your money buys a little less than it used to. This happens when lots of people want to buy things, or when it costs more to make them, like paying workers and buying materials.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.9675188679245281,
+      "overall": 0.6558396226415094
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices go up over time. Money slowly buys less than it used to. Why? Sometimes lots of people want to buy things, but there isn't enough to go around. Sometimes it costs more to make things, like wages, fuel, or materials. When that happens, stores charge more, so your allowance buys fewer candy bars than before.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.917337931034482,
+      "overall": 0.6391126436781607
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices slowly go up over time. Money buys a little less than it used to. Why? Sometimes it costs more to make things, like wheat or gas. Sometimes lots of people want to buy the same things, so stores raise prices. Governments and banks try to keep it from going up too fast.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices slowly go up over time. Your allowance buys less candy than it used to! It happens when there's more money around, or when it costs companies more to make things, like wages, gas, or materials. Companies then raise their prices to cover those costs.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.7870319148936169,
+      "overall": 0.595677304964539
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices go up over time. Imagine a candy bar that cost $1 last year now costs $1.20. That happens when lots of people want to buy things, or when making things costs more, like gas or wages. So your money buys a little less than it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices slowly go up over time. Each dollar buys a little less than it used to. Things like food, toys, and gas cost more because it costs businesses more to make and ship them, and people often have more money to spend, so stores raise prices. It's like your allowance buying fewer candy bars each year.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 1.0,
+      "reading_level": 0.8538965517241373,
+      "overall": 0.617965517241379
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices go up over time, so the same amount of money buys less stuff. Think of it like this: if a candy bar cost $1 last year and $1.10 now, your dollar isn't stretching as far. Lots of things push prices up, like higher costs to make and ship things, and people wanting to buy more than there is.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 0.9833333333333333,
+      "reading_level": 1.0,
+      "overall": 0.6611111111111111
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Inflation means prices go up over time. Think of it like this: if a candy bar costs $1 this year and $1.10 next year, that's inflation. Things get more expensive when lots of people want to buy stuff, when it costs more to make things, or when there's more money floating around. So your money buys a little less than it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 0.0,
+      "length": 0.95,
+      "reading_level": 1.0,
+      "overall": 0.65
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6448865958190225,
+    "on_task": 1.0,
+    "bullets": 0.0,
+    "length": 0.9888888888888889,
+    "reading_level": 0.9457708985681785
+   }
+  },
+  {
+   "segment_id": 3,
+   "prompt": "My little cousin wants to know why stuff at the store keeps getting more expensive. Can you explain inflation in exactly three bullet points? and make sure a 10-year-old can read it easily.",
+   "runs": [
+    {
+     "answer": "- Inflation means prices go up over time, so the same amount of money buys fewer things than it used to.\n- It often happens when lots of people want to buy things, but there isn't enough stuff to go around, so stores can charge more.\n- It can also happen when making things costs more, like when the gas, metal, or wages that factories and stores pay go up, and they pass that cost on to you.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.75,
+      "reading_level": 0.17866666666666686,
+      "overall": 0.642888888888889
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same bag of groceries costs more money than it used to.\n- It happens when lots of people want to buy things, but there isn't quite enough stuff to go around, so stores can charge more and still sell out.\n- Things can also cost more when it gets more expensive for stores to make and bring their products, like when fuel or materials cost more, and those extra costs get passed on to shoppers.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.6333333333333333,
+      "reading_level": 0.0,
+      "overall": 0.5444444444444444
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same amount of money buys fewer things than it used to.\n- It often happens when lots of people want to buy things, but there isn't enough of the stuff to go around, so stores can charge more.\n- It can also happen when making things costs more, like food, gas, or wages for workers, and the stores pass those costs on to shoppers.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8166666666666667,
+      "reading_level": 0.28045070422535123,
+      "overall": 0.6990391236306727
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Inflation means prices go up over time.** Your money buys a little less than it used to, so the same snack that cost $1 might now cost $1.25.\n\n- **Lots of people want stuff, but there isn't always enough of it.** When everyone wants the same toys, cereal, or gas, stores can charge more, and sometimes the things they need to make those products cost more too.\n\n- **Most countries keep an eye on prices so they don't rise too fast.** Banks and government leaders try to slow inflation down, like a driver tapping the brakes, so things get more expensive slowly instead of all at once.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.25,
+      "reading_level": 0.7411904761904765,
+      "overall": 0.6637301587301588
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same amount of money buys less stuff than it used to.\n- It often happens when lots of people want to buy things, but there isn't quite enough to go around, so stores can charge more.\n- It can also happen when things cost more to make, like food, gas, or materials, and stores pass those costs on to shoppers.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8833333333333333,
+      "reading_level": 0.3819701492537313,
+      "overall": 0.7551011608623549
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Inflation means prices go up over time.** Your money buys a little less than it used to, so the same snack that cost $1 last year might cost $1.10 now.\n\n- **It usually happens when lots of people want to buy things, but there isn't enough stuff to go around.** When everyone wants the same toys or groceries, stores can charge more and still sell them.\n\n- **Things like fuel, workers' wages, and the cost of making things can also push prices up.** When it costs a company more to make or ship something, it often passes that cost on to the people buying it.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.2833333333333333,
+      "reading_level": 0.7087087378640767,
+      "overall": 0.66401402373247
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means that over time, prices go up a little bit, so the same toy or snack costs more money than it used to.\n- It happens partly because lots of people want to buy things, and sometimes there isn't enough of a product to go around, so stores can charge more.\n- It also happens when it costs more for companies to make things, like paying workers more or buying materials, so they pass that cost on to shoppers.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.7,
+      "reading_level": 0.0,
+      "overall": 0.5666666666666667
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same money buys a little less stuff than it used to.\n- Sometimes it's because lots of people want to buy things, but there aren't enough to go around, so stores charge more.\n- Sometimes it's because it costs more to make things, like food, gas, or wages for workers, and stores pass that cost on to you.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9166666666666666,
+      "reading_level": 0.48707692307692274,
+      "overall": 0.8012478632478631
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- **Inflation means prices go up over time.** Your dollar buys a little less stuff than it used to, so the same candy bar that cost a quarter might now cost a dollar.\n\n- **It happens when lots of people want to buy things, but there isn't quite enough to go around.** When everyone wants the same toys or food, stores can charge more and still sell them.\n\n- **Things like gas, farming, and shipping can also cost more to make or move.** When the trucks and farms pay more for their fuel and workers, the stores often pass that cost on to you.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.31666666666666665,
+      "reading_level": 0.9309405940594054,
+      "overall": 0.7492024202420241
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same amount of money buys a little less than it used to.\n- It often happens when lots of people want to buy things, but there isn't quite enough stuff to go around, so stores can charge more.\n- It can also happen when making things costs more, like gas, food, or wages for workers, and stores pass those costs on to shoppers.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8333333333333334,
+      "reading_level": 0.2974285714285714,
+      "overall": 0.7102539682539682
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same amount of money buys a little less than it used to.\n- Things cost more when lots of people want to buy them, or when it costs companies more money to make them, like when gas, wheat, or wages get more expensive.\n- When prices rise, companies and people often ask for more money, which can push prices up even more, and that's why it can keep going for a while.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.6833333333333333,
+      "reading_level": 0.016911392405062786,
+      "overall": 0.5667482419127987
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means prices go up over time, so the same bag of groceries costs more money than it did before.\n- It often happens when lots of people want to buy things, or when it costs businesses more to make and ship them, like when gas or materials get pricier.\n- When prices rise, each dollar buys a little less, which is why your allowance or savings can't get as much candy as it used to.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.7666666666666666,
+      "reading_level": 0.03670270270270204,
+      "overall": 0.6011231231231229
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6637050069779528,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.6527777777777778,
+    "reading_level": 0.33833724315608055
+   }
+  },
+  {
+   "segment_id": 4,
+   "prompt": "My little cousin wants to know why stuff at the store keeps getting more expensive. Can you explain inflation in exactly three bullet points? Keep it under 60 words",
+   "runs": [
+    {
+     "answer": "- Inflation means money buys less over time: when the general level of prices rises, each dollar covers less stuff.\n- Common causes include more people wanting things than stores can supply, and businesses paying more for materials, shipping, or workers, then passing those costs on.\n- Governments and central banks try to keep inflation slow and steady, since rapid price increases hurt families' savings and paychecks.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9333333333333333,
+      "reading_level": 0.0,
+      "overall": 0.6444444444444445
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: when prices rise across the board, each dollar gets you less stuff.\n- It often happens when demand for goods grows faster than supply, or when producers pay more for materials and wages and pass those costs on.\n- Governments and central banks try to keep it low and steady, because too much inflation makes everyday life harder to plan for.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9,
+      "reading_level": 0.04078787878787793,
+      "overall": 0.6469292929292926
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: the same amount of money gets you less stuff than it used to.\n- It often happens when demand for goods grows faster than supply, or when producing things costs more, so stores raise prices.\n- Central banks usually try to keep it gentle, since too much or too little inflation both cause problems.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.30399999999999916,
+      "overall": 0.7679999999999998
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: when prices rise across the economy, each dollar gets you fewer groceries.\n- Too much money chasing too few goods pushes prices up, especially when demand grows faster than supply.\n- Higher costs for businesses, like wages, fuel, and materials, often get passed on to shoppers as higher prices.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: when prices rise across the board, each dollar gets you fewer groceries and toys.\n- It often happens when lots of people want to buy things at once, or when making things gets more expensive, so stores raise prices to keep up.\n- Governments and banks try to keep it gentle, since too much spending or too much money printed can push prices up faster than usual.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8,
+      "reading_level": 0.0009999999999997788,
+      "overall": 0.6003333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: when demand for goods rises faster than supply, sellers raise prices.\n- Costs for businesses, like ingredients, fuel, and wages, can also go up, and companies often pass those costs to shoppers.\n- Governments and central banks sometimes print or spend more money, so each dollar is worth a bit less.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.12199999999999922,
+      "overall": 0.707333333333333
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means the same money buys less over time, usually because prices rise across the board.\n- A common cause is too much money chasing too few goods, so stores raise prices when customers are eager to buy.\n- Higher costs for businesses, like wages, materials, and shipping, often get passed on to shoppers as higher prices.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.08363636363636362,
+      "overall": 0.6945454545454545
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: the same dollar gets you fewer groceries than it used to.\n- It usually happens when demand for goods grows faster than supply, or when the money supply expands faster than the economy, so sellers raise prices.\n- Higher costs for workers, materials, and transportation can also push stores to charge more.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: when prices rise across the economy, each dollar gets you fewer groceries and goods.\n- It often happens when people have more money to spend than there are goods to buy, so sellers raise prices.\n- Higher costs for businesses, like fuel, wages, and materials, also get passed on to shoppers as higher prices.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 1.0,
+      "reading_level": 0.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: the same amount of money gets you fewer goods than before.\n- Prices rise when demand for things grows faster than the supply of them, or when making things costs more, like wages, fuel, or materials.\n- Governments and central banks try to keep inflation slow and steady, because prices rising a little each year is normal.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9666666666666667,
+      "reading_level": 0.04212903225806386,
+      "overall": 0.6695985663082435
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: when demand for goods rises faster than supply, or the cost of making them goes up, stores raise prices.\n- Making things costs more when materials, fuel, or wages increase, and businesses pass those costs on to shoppers.\n- Governments and banks often print or lend more money, so each dollar is worth a bit less and prices climb to match.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.9,
+      "reading_level": 0.1123030303030298,
+      "overall": 0.6707676767676766
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "- Inflation means money buys less over time: when demand for goods grows faster than supply, or the cost of making them rises, stores raise prices.\n- Making things costs more when workers want higher pay, and when materials, fuel, or shipping get pricier, companies pass those costs along.\n- Governments and banks sometimes print or lend out more money, and when there's more money chasing the same stuff, prices climb.",
+     "scores": {
+      "on_task": 1.0,
+      "bullets": 1.0,
+      "length": 0.8666666666666667,
+      "reading_level": 0.0,
+      "overall": 0.6222222222222222
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.668681193657,
+    "on_task": 1.0,
+    "bullets": 1.0,
+    "length": 0.9472222222222223,
+    "reading_level": 0.05882135874877778
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": -0.06129310577887903,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": -0.18387931733663743
+  },
+  {
+   "overall": -0.06983230739898905,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0,
+   "reading_level": -0.20949692219696736
+  },
+  {
+   "overall": 0.2464911977920894,
+   "on_task": 0.0,
+   "bullets": 1.0,
+   "length": 0.011111111111111072,
+   "reading_level": -0.271637517734843
+  },
+  {
+   "overall": 0.22767278663315915,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.3472222222222222,
+   "reading_level": 0.33579613767725497
+  },
+  {
+   "overall": 0.22269659995411195,
+   "on_task": 0.0,
+   "bullets": 0.0,
+   "length": 0.0527777777777777,
+   "reading_level": 0.6153120220845577
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": false,
+   "length": true,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": false
+  },
+  {
+   "overall": false,
+   "on_task": true,
+   "bullets": true,
+   "length": false,
+   "reading_level": false
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "baseline": 12,
+  "ablation": 60
+ },
+ "calls": 72,
+ "input_tokens": 4632,
+ "output_tokens": 7222,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": false,
+  "judge_max_tokens": 600,
+  "baseline_runs": 12,
+  "ablation_runs": 12,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 500,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:24:00.964521+00:00"
+}

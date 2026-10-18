@@ -1,0 +1,292 @@
+{
+ "challenge_id": "subject_line",
+ "user_prompt": "Could you come up with a short title for this email? Thanks so much",
+ "final_prompt": "Could you come up with a short title for this email? Thanks so much\n\n<document>\nHi Sam,\n\nAttached is invoice #4471 for the October design work ($2,350). Payment is due by\nNovember 15. Let me know if you have any questions.\n\nThanks,\nAlex\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Could you come up with a short title for this email? ",
+   "role": "task",
+   "start": 0,
+   "end": 53
+  },
+  {
+   "id": 1,
+   "text": "Thanks so much",
+   "role": "politeness_filler",
+   "start": 53,
+   "end": 67
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "one_short_line",
+  "has_number",
+  "not_salesy"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Invoice #4471 – October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n- **Invoice #4471: October Design Work**\n- **October Design Invoice (Due Nov 15)**\n- **Payment Due: Invoice #4471**",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Invoice #4471 – October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.8888888888888888,
+  "on_task": 1.0,
+  "one_short_line": 0.6666666666666666,
+  "has_number": 1.0,
+  "not_salesy": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.1924500897298753,
+  "on_task": 0.0,
+  "one_short_line": 0.5773502691896257,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "noise": {
+  "overall": 0.3849001794597506,
+  "on_task": 0.05,
+  "one_short_line": 1.1547005383792515,
+  "has_number": 0.05,
+  "not_salesy": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.13608276348795434,
+  "on_task": 0.0,
+  "one_short_line": 0.408248290463863,
+  "has_number": 0.3535533905932738,
+  "not_salesy": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.22222222222222224,
+   "on_task": 0.05,
+   "one_short_line": 0.6666666666666666,
+   "has_number": 1.0,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.22222222222222224,
+   "on_task": 0.05,
+   "one_short_line": 0.6666666666666666,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Thanks so much",
+   "runs": [
+    {
+     "answer": "You're welcome! Just to note, your message came with a document rather than a question, so I'm not sure what you'd like help with. Here's a quick summary of what it contains:\n\n- **From:** Alex to Sam\n- **Subject:** Invoice #4471 for October design work\n- **Amount:** $2,350\n- **Due date:** November 15\n\nIf you'd like, I can draft a reply to Alex, check the invoice details against something else, or help with anything related to it. What would be useful?",
+     "scores": {
+      "on_task": 0.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! Just to note, your message came through with a document that appears to be an invoice email from Alex to Sam, but there wasn't a question or request attached. Is there something you'd like help with? For example, I could:\n\n- Draft a reply to Alex (e.g., confirming receipt or asking about payment details)\n- Summarize the key details (amount, due date, invoice number)\n- Set a reminder or draft a payment confirmation\n\nLet me know what would be useful.",
+     "scores": {
+      "on_task": 0.0,
+      "one_short_line": 0.0,
+      "has_number": 0.0,
+      "not_salesy": 0.75,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.0,
+    "on_task": 0.0,
+    "one_short_line": 0.0,
+    "has_number": 0.5,
+    "not_salesy": 0.75
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Could you come up with a short title for this email?",
+   "runs": [
+    {
+     "answer": "Here are a few options:\n\n- **Invoice #4471 – October Design Work**\n- **Payment Due: Invoice #4471 ($2,350)**\n- **October Design Invoice – Due November 15**",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n- **Invoice #4471 – October Design Work**\n- **Payment Due: Invoice #4471 ($2,350)**\n- **October Design Invoice – Due Nov 15**",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6666666666666666,
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.8888888888888888,
+   "on_task": 1.0,
+   "one_short_line": 0.6666666666666666,
+   "has_number": 0.5,
+   "not_salesy": 0.25
+  },
+  {
+   "overall": 0.2222222222222222,
+   "on_task": 0.0,
+   "one_short_line": 0.6666666666666666,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": false,
+   "one_short_line": false,
+   "has_number": true,
+   "not_salesy": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": false,
+   "has_number": true,
+   "not_salesy": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   null
+  ],
+  [
+   1.0,
+   null
+  ],
+  [
+   1.0,
+   null
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  [
+   [
+    1.0,
+    null
+   ],
+   [
+    1.0,
+    null
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  null
+ ],
+ "follow_without": [
+  0.0,
+  null
+ ],
+ "call_counts": {
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7
+ },
+ "calls": 14,
+ "input_tokens": 5679,
+ "output_tokens": 822,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:16:24.117826+00:00"
+}

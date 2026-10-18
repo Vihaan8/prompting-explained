@@ -26,6 +26,7 @@ EXAMPLES = {
     "01": [
         "Can you please explain what inflation is? My cousin is 10. Use simple words and exactly 3 bullets. Thanks so much!",
         "You are a friendly teacher. Explain why prices go up, for a kid, in under 60 words, with a candy example.",
+        "Hi there! Explain inflation to my 10-year-old cousin. Use exactly 3 bullet points. Mention a candy bar in one of them. Use proper technical terms.",
     ],
     "02": [
         "Please write a polite email to my landlord about the late fee. Cite the lease section. Thank you!",

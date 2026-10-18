@@ -1,32 +1,38 @@
 {
   "analyses": {
-    "calls": 927,
-    "input_tokens": 272202,
-    "output_tokens": 209061,
-    "usd": 0.1317507
+    "calls": 3805,
+    "input_tokens": 1930377,
+    "output_tokens": 497117,
+    "usd": 0.4415962
   },
   "faithfulness": {
-    "calls": 420,
-    "input_tokens": 88726,
-    "output_tokens": 89823,
-    "usd": 0.0537841
+    "calls": 1106,
+    "input_tokens": 232804,
+    "output_tokens": 175513,
+    "usd": 0.1110369
   },
   "stability_reruns": {
-    "calls": 264,
-    "input_tokens": 63955,
-    "output_tokens": 63000,
-    "usd": 0.0378955
+    "calls": 1148,
+    "input_tokens": 566931,
+    "output_tokens": 153396,
+    "usd": 0.1333911
   },
   "segmentation_stability": {
-    "calls": 93,
-    "input_tokens": 70959,
-    "output_tokens": 9055,
-    "usd": 0.0116234
+    "calls": 243,
+    "input_tokens": 185430,
+    "output_tokens": 23721,
+    "usd": 0.0304035
   },
   "judge": {
     "calls": 1100,
     "input_tokens": 1122606,
     "output_tokens": 67996,
     "usd": 0.14625860000000002
+  },
+  "runs_experiment": {
+    "calls": 3756,
+    "input_tokens": 844008,
+    "output_tokens": 673796,
+    "usd": 0.4212988
   }
 }

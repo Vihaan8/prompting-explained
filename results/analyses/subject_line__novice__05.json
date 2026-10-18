@@ -1,0 +1,293 @@
+{
+ "challenge_id": "subject_line",
+ "user_prompt": "I need a subject line for the email I'm sending to a client, can you help please?",
+ "final_prompt": "I need a subject line for the email I'm sending to a client, can you help please?\n\n<document>\nHi Sam,\n\nAttached is invoice #4471 for the October design work ($2,350). Payment is due by\nNovember 15. Let me know if you have any questions.\n\nThanks,\nAlex\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "I need a subject line for the email I'm sending to a client, ",
+   "role": "task",
+   "start": 0,
+   "end": 61
+  },
+  {
+   "id": 1,
+   "text": "can you help please?",
+   "role": "task",
+   "start": 61,
+   "end": 81
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "one_short_line",
+  "has_number",
+  "not_salesy"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "Here are a few options depending on your tone:\n\n- **Invoice #4471 – October Design Work**\n- **Invoice #4471 for October Design Services (Due Nov 15)**\n- **Your October Invoice – #4471**\n- **Invoice #4471 – $2,350 Due November 15**\n\nThe first is clean and professional. The second adds the due date, which helps it stand out in a busy inbox. The third is a bit warmer if you have a friendly relationship with Sam.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options, depending on tone:\n\n**Straightforward:**\n- Invoice #4471 – October Design Work\n\n**Friendly:**\n- Your October Design Invoice (#4471)\n\n**Clear on the deadline:**\n- Invoice #4471 – Payment Due November 15\n\nI'd lean toward the last one, since it puts the key action and date right in the subject line, which makes it easier for Sam to prioritize.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options, depending on tone:\n\n**Straightforward:**\n- Invoice #4471 – October Design Work\n\n**Friendly:**\n- Invoice #4471 for October Design Work, Due Nov 15\n\n**Concise:**\n- Invoice #4471 ($2,350) – Due November 15\n\nI'd recommend the first or third, since including the invoice number and due date makes it easy for the client to find and act on the email later.",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.6666666666666666,
+  "on_task": 1.0,
+  "one_short_line": 0.0,
+  "has_number": 1.0,
+  "not_salesy": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "one_short_line": 0.0,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "one_short_line": 0.05,
+  "has_number": 0.05,
+  "not_salesy": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.23570226039551584,
+  "on_task": 0.3535533905932738,
+  "one_short_line": 0.0,
+  "has_number": 0.3535533905932738,
+  "not_salesy": 0.08838834764831845
+ },
+ "part_noise": [
+  {
+   "overall": 0.6666666666666666,
+   "on_task": 1.0,
+   "one_short_line": 0.05,
+   "has_number": 1.0,
+   "not_salesy": 0.25
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "one_short_line": 0.05,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "can you help please?",
+   "runs": [
+    {
+     "answer": "I'd be glad to help. The message you've shared is a short invoice cover email from Alex to Sam. Here's what it says:\n\n- **Invoice number:** #4471\n- **Work:** October design work\n- **Amount due:** $2,350\n- **Payment deadline:** November 15\n- **Action requested:** Sam should reach out if there are any questions\n\nIt's a clear, professional email. If you're Sam, you'd want to note the due date and amount, and check whether the invoice matches the work you agreed to.\n\nWhat would you like help with? For example, I could:\n- Draft a reply (confirming receipt, asking a question, or requesting a payment extension)\n- Summarize or organize the details for your records\n- Write a reminder if you need to pay it\n- Something else you have in mind",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "I'd be glad to help! The document you've shared is a short email, but I'm not sure what you'd like done with it. Could you tell me what you need? For example, I could:\n\n- **Summarize** the key details (amount, due date, invoice number)\n- **Draft a reply** to Alex, such as confirming receipt, asking a question, or noting a payment timeline\n- **Check or reformat** something related to the invoice\n- **Write a reminder** for yourself about the payment deadline\n\nWhat would be most useful?",
+     "scores": {
+      "on_task": 0.0,
+      "one_short_line": 0.0,
+      "has_number": 0.0,
+      "not_salesy": 0.75,
+      "overall": 0.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.3333333333333333,
+    "on_task": 0.5,
+    "one_short_line": 0.0,
+    "has_number": 0.5,
+    "not_salesy": 0.875
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "I need a subject line for the email I'm sending to a client,",
+   "runs": [
+    {
+     "answer": "Here are some subject line options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Invoice #4471 Attached – Due November 15**\n3. **October Design Invoice (#4471) – $2,350**\n4. **Payment Reminder: Invoice #4471, Due Nov 15**\n5. **Your Invoice for October Design Services**\n\nFor a straightforward invoice, option 1 or 2 is usually the clearest choice, since it gives Sam the invoice number and key detail at a glance.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n1. Invoice #4471 – October Design Work\n2. Invoice #4471 for October Design Services ($2,350)\n3. Invoice #4471 – Payment Due November 15\n4. October Design Work – Invoice Attached\n5. Invoice #4471 – October Design Work, Due November 15\n\nThe first or second option works well for a clear, professional subject line. Option 3 is good if you want to highlight the deadline.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.6666666666666666,
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.3333333333333333,
+   "on_task": 0.5,
+   "one_short_line": 0.0,
+   "has_number": 0.5,
+   "not_salesy": 0.125
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "one_short_line": 0.0,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   null
+  ],
+  [
+   1.0,
+   null
+  ],
+  [
+   1.0,
+   null
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    0.0,
+    null
+   ],
+   [
+    0.0,
+    null
+   ]
+  ],
+  [
+   [
+    1.0,
+    null
+   ],
+   [
+    1.0,
+    null
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  null
+ ],
+ "follow_without": [
+  0.0,
+  null
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 4,
+  "judge": 7
+ },
+ "calls": 15,
+ "input_tokens": 7088,
+ "output_tokens": 1515,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:11:04.765174+00:00"
+}

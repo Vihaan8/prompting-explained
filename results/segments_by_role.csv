@@ -102,6 +102,98 @@ explain_to_kid__novice__09,explain_to_kid,novice,task,Could you help me answer h
 explain_to_kid__novice__09,explain_to_kid,novice,politeness_filler,Thank you!,0.2515360908592774,0.2515360908592774,0.20774257194740914,True
 explain_to_kid__novice__10,explain_to_kid,novice,task,Please help me explain why prices at stores keep rising.,0.5130953630796151,0.5130953630796151,0.12001475502032666,True
 explain_to_kid__novice__10,explain_to_kid,novice,audience,Keep it simple for a kid.,0.5126540625658509,0.5126540625658509,0.12001475502032666,True
+faq_only__average__01,faq_only,average,context,My friend wants to know if Northside Fitness has a pool.,0.4888888888888889,0.4888888888888889,0.1462620681947053,True
+faq_only__average__01,faq_only,average,task,Can you check the attached FAQ and tell me what it says about that?,-0.3511111111111112,0.3511111111111112,0.1462620681947053,True
+faq_only__average__02,faq_only,average,task,Look at this FAQ and answer whether Northside Fitness has a swimming pool.,0.5555555555555555,0.5555555555555555,0.38490017945975047,True
+faq_only__average__02,faq_only,average,constraint,Keep it short.,-0.02111111111111119,0.02111111111111119,0.38490017945975047,False
+faq_only__average__03,faq_only,average,task,Does Northside Fitness have a pool?,0.7244444444444444,0.7244444444444444,0.33047664791148995,True
+faq_only__average__03,faq_only,average,constraint,Use the attached doc only.,-0.2188888888888889,0.2188888888888889,0.33047664791148995,True
+faq_only__average__04,faq_only,average,politeness_filler,"Hey, can you tell my friend",-0.0033333333333332993,0.0033333333333332993,0.05,False
+faq_only__average__04,faq_only,average,task,if the gym has a swimming pool based on this FAQ?,0.6,0.6,0.05,True
+faq_only__average__04,faq_only,average,constraint,"If it's not in there just say so, don't make stuff up.",0.07666666666666666,0.07666666666666666,0.05,False
+faq_only__average__05,faq_only,average,task,Answer this question from the FAQ: is there a swimming pool at Northside Fitness?,1.0,1.0,0.05,True
+faq_only__average__05,faq_only,average,constraint,Under 50 words please.,0.2433333333333334,0.2433333333333334,0.05,False
+faq_only__average__06,faq_only,average,task,I need a quick reply for my friend about the pool at Northside Fitness.,0.6044444444444445,0.6044444444444445,0.1607390339557789,True
+faq_only__average__06,faq_only,average,constraint,Use only the attached FAQ.,-0.14888888888888896,0.14888888888888896,0.1607390339557789,False
+faq_only__average__07,faq_only,average,task,Read the FAQ,0.17333333333333334,0.17333333333333334,0.05,False
+faq_only__average__07,faq_only,average,task,and tell me about the pool situation at Northside Fitness,1.0,1.0,0.05,True
+faq_only__average__07,faq_only,average,format,in a couple sentences.,0.56,0.56,0.05,True
+faq_only__average__08,faq_only,average,context,"Based on the attached document,",0.00666666666666671,0.00666666666666671,0.10583005244258363,False
+faq_only__average__08,faq_only,average,task,does Northside Fitness offer swimming?,0.94,0.94,0.10583005244258363,True
+faq_only__average__08,faq_only,average,constraint,Don't guess if it isn't mentioned.,0.030000000000000027,0.030000000000000027,0.10583005244258363,False
+faq_only__average__09,faq_only,average,context,My buddy is asking about Northside's pool.,0.8555555555555555,0.8555555555555555,0.3326214620812028,True
+faq_only__average__09,faq_only,average,task,What does the FAQ say?,-0.1444444444444445,0.1444444444444445,0.3326214620812028,False
+faq_only__average__09,faq_only,average,constraint,Keep the answer brief,0.3122222222222222,0.3122222222222222,0.3326214620812028,True
+faq_only__average__09,faq_only,average,constraint,and say if it doesn't cover it.,0.022222222222222254,0.022222222222222254,0.3326214620812028,False
+faq_only__average__10,faq_only,average,task,"Summarize what the FAQ says about Northside Fitness amenities,",0.07222222222222213,0.07222222222222213,0.38490017945975047,False
+faq_only__average__10,faq_only,average,constraint,"especially the pool,",0.5555555555555555,0.5555555555555555,0.38490017945975047,True
+faq_only__average__10,faq_only,average,audience,for my friend who is thinking of joining.,-0.33444444444444454,0.33444444444444454,0.38490017945975047,True
+faq_only__expert__01,faq_only,expert,context,"Using only the attached FAQ for Northside Fitness,",0.0,0.0,0.05,False
+faq_only__expert__01,faq_only,expert,task,tell my friend whether the gym has a swimming pool.,0.0,0.0,0.05,False
+faq_only__expert__01,faq_only,expert,constraint,"If the FAQ doesn't mention a pool, say so plainly instead of guessing,",0.16666666666666674,0.16666666666666674,0.05,False
+faq_only__expert__01,faq_only,expert,constraint,and don't add any outside information.,0.33666666666666667,0.33666666666666667,0.05,True
+faq_only__expert__01,faq_only,expert,constraint,Keep the whole answer to 50 words or fewer.,0.050000000000000044,0.050000000000000044,0.05,False
+faq_only__expert__02,faq_only,expert,task,Answer my friend's question: does Northside Fitness have a swimming pool?,0.0,0.0,0.05,False
+faq_only__expert__02,faq_only,expert,constraint,Base your answer strictly on the attached FAQ.,0.0,0.0,0.05,False
+faq_only__expert__02,faq_only,expert,constraint,"If the FAQ doesn't cover pools, state that it doesn't cover it and avoid speculating about what the gym might or might not have.",0.0,0.0,0.05,False
+faq_only__expert__02,faq_only,expert,constraint,Stay under 50 words.,0.026666666666666616,0.026666666666666616,0.05,False
+faq_only__expert__03,faq_only,expert,task,Read the attached Northside Fitness FAQ and tell me if there's a swimming pool.,0.0,0.0,0.05,False
+faq_only__expert__03,faq_only,expert,constraint,Don't guess or fill in gaps from general knowledge about gyms.,0.16666666666666674,0.16666666666666674,0.05,False
+faq_only__expert__03,faq_only,expert,constraint,"If the document is silent on the pool, say the FAQ doesn't cover it.",0.16666666666666674,0.16666666666666674,0.05,False
+faq_only__expert__03,faq_only,expert,constraint,Max 50 words.,0.2566666666666666,0.2566666666666666,0.05,False
+faq_only__expert__04,faq_only,expert,context,My friend wants to know about a pool at Northside Fitness.,0.005555555555555647,0.005555555555555647,0.05,False
+faq_only__expert__04,faq_only,expert,constraint,"Using just the attached FAQ,",-0.004444444444444362,0.004444444444444362,0.05,False
+faq_only__expert__04,faq_only,expert,task,give a short reply,-0.004444444444444362,0.004444444444444362,0.05,False
+faq_only__expert__04,faq_only,expert,constraint,(50 words or less),-0.0011111111111109517,0.0011111111111109517,0.05,False
+faq_only__expert__04,faq_only,expert,task,that answers the pool question.,-0.004444444444444362,0.004444444444444362,0.05,False
+faq_only__expert__04,faq_only,expert,constraint,"If the FAQ says nothing about a pool,",0.2055555555555557,0.2055555555555557,0.05,False
+faq_only__expert__04,faq_only,expert,task,tell them that directly,-0.004444444444444362,0.004444444444444362,0.05,False
+faq_only__expert__04,faq_only,expert,constraint,and don't speculate.,0.1755555555555557,0.1755555555555557,0.05,False
+faq_only__expert__05,faq_only,expert,task,"Based solely on the attached FAQ, does Northside Fitness offer a pool?",-0.11111111111111116,0.11111111111111116,0.3849001794597506,False
+faq_only__expert__05,faq_only,expert,constraint,"Should the document not address it, make clear that the FAQ doesn't cover pools,",0.5555555555555556,0.5555555555555556,0.3849001794597506,True
+faq_only__expert__05,faq_only,expert,constraint,and do not infer or guess.,0.06555555555555559,0.06555555555555559,0.3849001794597506,False
+faq_only__expert__05,faq_only,expert,constraint,Please keep it to 50 words or fewer.,-0.10111111111111115,0.10111111111111115,0.3849001794597506,False
+faq_only__expert__06,faq_only,expert,task,Check the attached Northside Fitness FAQ for anything about a swimming pool and write a reply I can send my friend.,0.9155555555555557,0.9155555555555557,0.1462620681947051,True
+faq_only__expert__06,faq_only,expert,constraint,"If it isn't in the FAQ, say the FAQ doesn't cover it rather than assuming either way.",-0.08444444444444432,0.08444444444444432,0.1462620681947051,False
+faq_only__expert__06,faq_only,expert,constraint,"Under 50 words, please.",0.40555555555555567,0.40555555555555567,0.1462620681947051,True
+faq_only__expert__07,faq_only,expert,context,I need a quick answer for a friend:,0.0,0.0,0.05,False
+faq_only__expert__07,faq_only,expert,task,does the Northside Fitness FAQ mention a swimming pool?,0.5,0.5,0.05,False
+faq_only__expert__07,faq_only,expert,constraint,Stick to what the attached document says.,0.0,0.0,0.05,False
+faq_only__expert__07,faq_only,expert,constraint,"If there's no pool information, state that the FAQ doesn't cover it and don't speculate.",0.16666666666666674,0.16666666666666674,0.05,False
+faq_only__expert__07,faq_only,expert,constraint,Limit yourself to 50 words or fewer.,0.0,0.0,0.05,False
+faq_only__expert__08,faq_only,expert,task,"Using the attached FAQ as your only source, answer whether Northside Fitness has a swimming pool.",-0.11111111111111116,0.11111111111111116,0.3849001794597506,False
+faq_only__expert__08,faq_only,expert,constraint,"Do not guess, and do not go beyond what the FAQ states.",-0.11111111111111116,0.11111111111111116,0.3849001794597506,False
+faq_only__expert__08,faq_only,expert,constraint,"If the FAQ lacks pool details, say it doesn't cover that.",0.05555555555555558,0.05555555555555558,0.3849001794597506,False
+faq_only__expert__08,faq_only,expert,constraint,Response must be 50 words or fewer.,0.16222222222222227,0.16222222222222227,0.3849001794597506,False
+faq_only__expert__09,faq_only,expert,context,Here's a question from my friend about Northside Fitness: is there a pool?,-0.00666666666666671,0.00666666666666671,0.05,False
+faq_only__expert__09,faq_only,expert,constraint,Use only the attached FAQ to respond.,-0.00666666666666671,0.00666666666666671,0.05,False
+faq_only__expert__09,faq_only,expert,constraint,"If the FAQ doesn't address the pool, tell them the FAQ doesn't cover it and refrain from speculating beyond the document.",0.18000000000000005,0.18000000000000005,0.05,False
+faq_only__expert__09,faq_only,expert,constraint,Keep it at 50 words max.,0.0033333333333332993,0.0033333333333332993,0.05,False
+faq_only__expert__10,faq_only,expert,task,"Look at the attached Northside Fitness FAQ and tell me,",-0.14222222222222225,0.14222222222222225,0.3830482031362709,False
+faq_only__expert__10,faq_only,expert,constraint,"in 50 words or fewer,",0.15444444444444438,0.15444444444444438,0.3830482031362709,False
+faq_only__expert__10,faq_only,expert,task,whether the gym has a swimming pool.,-0.14222222222222225,0.14222222222222225,0.3830482031362709,False
+faq_only__expert__10,faq_only,expert,constraint,Only use what the FAQ says.,0.20111111111111102,0.20111111111111102,0.3830482031362709,False
+faq_only__expert__10,faq_only,expert,constraint,"If it doesn't cover pools, say so",-0.14222222222222225,0.14222222222222225,0.3830482031362709,False
+faq_only__expert__10,faq_only,expert,constraint,and don't make assumptions or guesses about the facilities.,0.22111111111111104,0.22111111111111104,0.3830482031362709,False
+faq_only__novice__01,faq_only,novice,task,"Hi, could you tell me if Northside Fitness has a swimming pool? Thanks!",0.48444444444444446,0.48444444444444446,0.21263775491387885,True
+faq_only__novice__02,faq_only,novice,task,Does Northside Fitness have a pool?,0.66,0.66,0.3458965805619426,True
+faq_only__novice__02,faq_only,novice,context,My friend asked me and I don't know.,-0.09333333333333327,0.09333333333333327,0.3458965805619426,False
+faq_only__novice__03,faq_only,novice,task,Please check the attached file,-0.06999999999999995,0.06999999999999995,0.1665332799572906,False
+faq_only__novice__03,faq_only,novice,task,and let me know if there's a pool at Northside Fitness.,0.52,0.52,0.1665332799572906,True
+faq_only__novice__04,faq_only,novice,task,"Quick question, is there a swimming pool at the gym?",0.5577777777777778,0.5577777777777778,0.6446130047756762,True
+faq_only__novice__04,faq_only,novice,politeness_filler,Thanks so much.,-0.18222222222222217,0.18222222222222217,0.6446130047756762,False
+faq_only__novice__05,faq_only,novice,task,Could you look at this and tell me about the pool at Northside Fitness please?,0.6933333333333334,0.6933333333333334,0.35276684147527876,True
+faq_only__novice__06,faq_only,novice,context,My buddy wants to know if Northside has a pool for swimming.,0.62,0.62,0.3235909626536426,True
+faq_only__novice__06,faq_only,novice,task,What should I tell him?,-0.10333333333333339,0.10333333333333339,0.3235909626536426,False
+faq_only__novice__07,faq_only,novice,task,"Hey, can you see if the Northside Fitness info mentions a pool?",0.5777777777777778,0.5777777777777778,0.0803695169778894,True
+faq_only__novice__07,faq_only,novice,politeness_filler,Thank you!,-0.18555555555555547,0.18555555555555547,0.0803695169778894,False
+faq_only__novice__08,faq_only,novice,task,"I need to answer my friend about whether Northside Fitness has a swimming pool,",0.5288888888888889,0.5288888888888889,0.05,True
+faq_only__novice__08,faq_only,novice,politeness_filler,could you help?,-0.08777777777777784,0.08777777777777784,0.05,True
+faq_only__novice__09,faq_only,novice,politeness_filler,Would you mind reading this,-0.1266666666666666,0.1266666666666666,0.35049171808253105,False
+faq_only__novice__09,faq_only,novice,task,and telling me if they have a pool?,0.68,0.68,0.35049171808253105,True
+faq_only__novice__10,faq_only,novice,task,Pool at Northside Fitness?,0.7777777777777777,0.7777777777777777,0.3849001794597506,True
+faq_only__novice__10,faq_only,novice,format,Yes or no?,0.02111111111111097,0.02111111111111097,0.3849001794597506,False
+faq_only__novice__10,faq_only,novice,politeness_filler,Please and thank you.,0.11111111111111105,0.11111111111111105,0.3849001794597506,False
 job_extraction__average__01,job_extraction,average,task,"Pull the job title, company, location, remote or onsite status, and salary out of this posting",-0.22499999999999992,0.22499999999999992,0.05,True
 job_extraction__average__01,job_extraction,average,format,and put it in JSON,0.4000000000000001,0.4000000000000001,0.05,True
 job_extraction__average__01,job_extraction,average,context,for my job tracker.,-0.24999999999999994,0.24999999999999994,0.05,True
@@ -283,3 +375,368 @@ landlord_reply__novice__09,landlord_reply,novice,task,Can you write an email say
 landlord_reply__novice__09,landlord_reply,novice,politeness_filler,Thanks in advance.,0.124537037037037,0.124537037037037,0.2734289203533464,False
 landlord_reply__novice__10,landlord_reply,novice,context,My landlord charged me for being late but I paid on time.,0.0893518518518519,0.0893518518518519,0.1325594827272096,False
 landlord_reply__novice__10,landlord_reply,novice,task,Could you please help me reply to them?,0.8185185185185185,0.8185185185185185,0.1325594827272096,True
+meeting_summary__average__01,meeting_summary,average,context,"Hey, my boss missed the meeting this morning.",-0.13333333333333341,0.13333333333333341,0.2119864892037656,True
+meeting_summary__average__01,meeting_summary,average,task,Can you summarize the notes so he knows what we decided?,0.04166666666666652,0.04166666666666652,0.2119864892037656,False
+meeting_summary__average__01,meeting_summary,average,constraint,Keep it short.,0.186111111111111,0.186111111111111,0.2119864892037656,True
+meeting_summary__average__02,meeting_summary,average,task,Summarize these meeting notes for my boss.,0.0,0.0,0.05,False
+meeting_summary__average__02,meeting_summary,average,constraint,"He just needs the vendor decision, the budget, and when it's due.",0.0,0.0,0.05,False
+meeting_summary__average__02,meeting_summary,average,constraint,Under 60 words please.,0.0,0.0,0.05,False
+meeting_summary__average__03,meeting_summary,average,task,Can you make a quick summary of this?,0.05833333333333335,0.05833333333333335,0.05,False
+meeting_summary__average__03,meeting_summary,average,context,My manager wants to know which vendor we picked.,0.23333333333333328,0.23333333333333328,0.05,True
+meeting_summary__average__04,meeting_summary,average,task,I need a summary of the meeting notes,0.03611111111111098,0.03611111111111098,0.05,False
+meeting_summary__average__04,meeting_summary,average,constraint,that he can read in like 20 seconds.,0.1527777777777778,0.1527777777777778,0.05,True
+meeting_summary__average__04,meeting_summary,average,constraint,Focus on the vendor and budget.,0.06666666666666665,0.06666666666666665,0.05,False
+meeting_summary__average__05,meeting_summary,average,task,Turn these notes into a short summary of what was decided.,0.0,0.0,0.05,False
+meeting_summary__average__05,meeting_summary,average,constraint,"Leave out the side stuff, just the main decision.",0.125,0.125,0.05,True
+meeting_summary__average__06,meeting_summary,average,context,Boss wasn't at the meeting.,-0.08981481481481479,0.08981481481481479,0.21839293315267494,False
+meeting_summary__average__06,meeting_summary,average,task,Write him a brief summary of the vendor choice and deadline.,0.30185185185185187,0.30185185185185187,0.21839293315267494,True
+meeting_summary__average__07,meeting_summary,average,task,Summarize the attached notes.,0.0,0.0,0.05,False
+meeting_summary__average__07,meeting_summary,average,constraint,"Include the vendor and the budget, nothing else.",0.2777777777777777,0.2777777777777777,0.05,True
+meeting_summary__average__08,meeting_summary,average,task,Give me a summary of what we decided this morning,0.05740740740740735,0.05740740740740735,0.08037975708966925,True
+meeting_summary__average__08,meeting_summary,average,audience,that I can send to my boss.,-0.11481481481481481,0.11481481481481481,0.08037975708966925,True
+meeting_summary__average__08,meeting_summary,average,constraint,Make it quick.,0.21851851851851856,0.21851851851851856,0.08037975708966925,True
+meeting_summary__average__09,meeting_summary,average,task,Please condense these notes into a few sentences,0.29166666666666674,0.29166666666666674,0.05,True
+meeting_summary__average__09,meeting_summary,average,audience,"for my boss,",0.0,0.0,0.05,False
+meeting_summary__average__09,meeting_summary,average,constraint,covering the decision and the timeline.,0.019444444444444375,0.019444444444444375,0.05,False
+meeting_summary__average__10,meeting_summary,average,task,What did we decide in the meeting?,0.015740740740740944,0.015740740740740944,0.057017793771631964,False
+meeting_summary__average__10,meeting_summary,average,task,Sum it up,0.0379629629629632,0.0379629629629632,0.057017793771631964,False
+meeting_summary__average__10,meeting_summary,average,audience,so my boss can get the gist fast.,0.024074074074074248,0.024074074074074248,0.057017793771631964,False
+meeting_summary__expert__01,meeting_summary,expert,task,Summarize the attached meeting notes,0.0,0.0,0.05,False
+meeting_summary__expert__01,meeting_summary,expert,audience,"for my boss, who missed the meeting.",0.0,0.0,0.05,False
+meeting_summary__expert__01,meeting_summary,expert,constraint,"Focus only on the vendor decision,",0.0,0.0,0.05,False
+meeting_summary__expert__01,meeting_summary,expert,constraint,"including which vendor was chosen, the approved budget, and the deadline.",0.0,0.0,0.05,False
+meeting_summary__expert__01,meeting_summary,expert,constraint,Keep it under 60 words,0.0,0.0,0.05,False
+meeting_summary__expert__01,meeting_summary,expert,constraint,and leave out side topics so it can be read in about 20 seconds.,0.0,0.0,0.05,False
+meeting_summary__expert__02,meeting_summary,expert,context,My manager wasn't at this morning's meeting and needs the outcome fast.,0.0,0.0,0.05,False
+meeting_summary__expert__02,meeting_summary,expert,task,"From the attached notes, write a quick summary of the vendor decision",0.0,0.0,0.05,False
+meeting_summary__expert__02,meeting_summary,expert,constraint,"that names the vendor, the budget, and the deadline.",0.0,0.0,0.05,False
+meeting_summary__expert__02,meeting_summary,expert,constraint,Stay under 60 words and skip any tangents.,0.0888888888888889,0.0888888888888889,0.05,True
+meeting_summary__expert__03,meeting_summary,expert,task,Turn the attached notes into a 20-second read for my boss.,0.0,0.0,0.05,False
+meeting_summary__expert__03,meeting_summary,expert,constraint,"Cover only the vendor decision: the vendor, the budget, and the deadline.",0.0,0.0,0.05,False
+meeting_summary__expert__03,meeting_summary,expert,constraint,"No more than 60 words,",0.019444444444444375,0.019444444444444375,0.05,False
+meeting_summary__expert__03,meeting_summary,expert,constraint,and don't mention the side discussions.,0.0,0.0,0.05,False
+meeting_summary__expert__04,meeting_summary,expert,context,Boss missed the morning meeting.,0.0,0.0,0.05,False
+meeting_summary__expert__04,meeting_summary,expert,task,"Pull out what matters from the attached document: the vendor we picked, the budget, and when the deadline is.",0.05555555555555558,0.05555555555555558,0.05,False
+meeting_summary__expert__04,meeting_summary,expert,constraint,"Under 60 words,",0.0,0.0,0.05,False
+meeting_summary__expert__04,meeting_summary,expert,constraint,"no side topics,",0.0,0.0,0.05,False
+meeting_summary__expert__04,meeting_summary,expert,tone,written so they can skim it quickly.,0.11111111111111116,0.11111111111111116,0.05,True
+meeting_summary__expert__05,meeting_summary,expert,task,Read the attached notes,0.0,0.0,0.05,False
+meeting_summary__expert__05,meeting_summary,expert,task,and give me a brief summary of what was decided about the vendor.,0.0,0.0,0.05,False
+meeting_summary__expert__05,meeting_summary,expert,constraint,"It needs to mention the vendor name, the budget, and the deadline,",0.0,0.0,0.05,False
+meeting_summary__expert__05,meeting_summary,expert,constraint,"stay at 60 words or fewer,",0.0,0.0,0.05,False
+meeting_summary__expert__05,meeting_summary,expert,constraint,and exclude anything off-topic.,0.0,0.0,0.05,False
+meeting_summary__expert__06,meeting_summary,expert,task,Can you condense the attached meeting document into a short update for someone who wasn't there?,0.0,0.0,0.05,False
+meeting_summary__expert__06,meeting_summary,expert,constraint,"Only the vendor decision matters: vendor, budget, deadline.",0.0,0.0,0.05,False
+meeting_summary__expert__06,meeting_summary,expert,constraint,Keep it to 60 words max,0.0,0.0,0.05,False
+meeting_summary__expert__06,meeting_summary,expert,constraint,and drop the side topics.,0.0,0.0,0.05,False
+meeting_summary__expert__07,meeting_summary,expert,task,I need a summary my boss can read in 20 seconds.,0.0,0.0,0.05,False
+meeting_summary__expert__07,meeting_summary,expert,task,"From the attached notes, state the vendor decision with the vendor, budget, and deadline included.",0.0,0.0,0.05,False
+meeting_summary__expert__07,meeting_summary,expert,constraint,Maximum 60 words.,0.0,0.0,0.05,False
+meeting_summary__expert__07,meeting_summary,expert,constraint,Leave out everything else discussed in the meeting.,0.0,0.0,0.05,False
+meeting_summary__expert__08,meeting_summary,expert,task,"Based on the attached notes, write a concise vendor decision summary for an absent executive.",0.0,0.0,0.05,False
+meeting_summary__expert__08,meeting_summary,expert,constraint,"Include the chosen vendor, the budget figure, and the deadline.",0.0,0.0,0.05,False
+meeting_summary__expert__08,meeting_summary,expert,constraint,It should be 60 words or fewer and exclude side topics.,0.04166666666666674,0.04166666666666674,0.05,False
+meeting_summary__expert__09,meeting_summary,expert,task,"Give me a tight summary of the vendor outcome from the attached meeting notes,",0.0,0.0,0.05,False
+meeting_summary__expert__09,meeting_summary,expert,audience,for my boss who missed it.,0.0,0.0,0.05,False
+meeting_summary__expert__09,meeting_summary,expert,constraint,"Must include vendor, budget, and deadline.",0.0,0.0,0.05,False
+meeting_summary__expert__09,meeting_summary,expert,constraint,"Under 60 words,",0.0,0.0,0.05,False
+meeting_summary__expert__09,meeting_summary,expert,constraint,"no side issues,",0.0,0.0,0.05,False
+meeting_summary__expert__09,meeting_summary,expert,format,scannable in 20 seconds.,0.0,0.0,0.05,False
+meeting_summary__expert__10,meeting_summary,expert,task,"From the attached document, extract the vendor decision only: which vendor, what budget, and what deadline.",0.0,0.0,0.05,False
+meeting_summary__expert__10,meeting_summary,expert,format,Write it as a short paragraph of no more than 60 words,0.0,0.0,0.05,False
+meeting_summary__expert__10,meeting_summary,expert,audience,"that my boss can read quickly,",0.0,0.0,0.05,False
+meeting_summary__expert__10,meeting_summary,expert,constraint,omitting all side topics.,0.0,0.0,0.05,False
+meeting_summary__novice__01,meeting_summary,novice,politeness_filler,"Hi, could you",-0.0018518518518518823,0.0018518518518518823,0.07804187965076108,False
+meeting_summary__novice__01,meeting_summary,novice,task,summarize the meeting notes,0.031481481481481444,0.031481481481481444,0.07804187965076108,False
+meeting_summary__novice__01,meeting_summary,novice,audience,for my boss? Thanks!,-0.021296296296296258,0.021296296296296258,0.07804187965076108,False
+meeting_summary__novice__02,meeting_summary,novice,task,Please make this shorter,0.016666666666666607,0.016666666666666607,0.06666666666666654,False
+meeting_summary__novice__02,meeting_summary,novice,audience,so my boss can read it quickly.,-0.09999999999999998,0.09999999999999998,0.06666666666666654,False
+meeting_summary__novice__03,meeting_summary,novice,task,Can you tell me what was decided about the vendor?,0.41574074074074074,0.41574074074074074,0.05,True
+meeting_summary__novice__03,meeting_summary,novice,politeness_filler,Thank you.,0.015740740740740722,0.015740740740740722,0.05,False
+meeting_summary__novice__04,meeting_summary,novice,context,"my boss missed the meeting,",-0.015740740740740833,0.015740740740740833,0.14330031201594887,False
+meeting_summary__novice__04,meeting_summary,novice,task,can u sum this up,0.1425925925925925,0.1425925925925925,0.14330031201594887,True
+meeting_summary__novice__05,meeting_summary,novice,task,Could you write a quick summary of these notes?,0.7166666666666667,0.7166666666666667,0.18358568490953667,True
+meeting_summary__novice__05,meeting_summary,novice,politeness_filler,Thanks so much.,-0.005555555555555536,0.005555555555555536,0.18358568490953667,False
+meeting_summary__novice__06,meeting_summary,novice,task,What did we decide in the meeting? Please,0.12222222222222223,0.12222222222222223,0.05,True
+meeting_summary__novice__06,meeting_summary,novice,constraint,keep it short.,0.29722222222222217,0.29722222222222217,0.05,True
+meeting_summary__novice__07,meeting_summary,novice,politeness_filler,"Hi there, would you mind",-0.09444444444444444,0.09444444444444444,0.05,False
+meeting_summary__novice__07,meeting_summary,novice,task,turning these notes into something my boss can skim? Thanks.,-0.047222222222222276,0.047222222222222276,0.05,False
+meeting_summary__novice__08,meeting_summary,novice,task,Summarize please.,0.0722222222222223,0.0722222222222223,0.21111111111111103,False
+meeting_summary__novice__08,meeting_summary,novice,context,My boss needs to know what happened.,0.0722222222222223,0.0722222222222223,0.21111111111111103,False
+meeting_summary__novice__09,meeting_summary,novice,task,Could you give me the main points from this?,0.3564814814814815,0.3564814814814815,0.05,False
+meeting_summary__novice__09,meeting_summary,novice,politeness_filler,Thank you!,0.00925925925925919,0.00925925925925919,0.05,False
+meeting_summary__novice__10,meeting_summary,novice,task,Please help me write a short update about the meeting decisions for my boss. Thanks.,0.3046296296296297,0.3046296296296297,0.05,True
+privacy_bug_report__average__01,privacy_bug_report,average,task,Turn this support ticket into a public bug report for our issue tracker.,0.0,0.0,0.05,False
+privacy_bug_report__average__01,privacy_bug_report,average,constraint,Make sure it's about the export crash,0.0,0.0,0.05,False
+privacy_bug_report__average__01,privacy_bug_report,average,constraint,"and include the PDF size, version, and OS.",0.0,0.0,0.05,False
+privacy_bug_report__average__01,privacy_bug_report,average,constraint,Keep it short.,0.10166666666666657,0.10166666666666657,0.05,True
+privacy_bug_report__average__02,privacy_bug_report,average,task,Write a bug report from this ticket that we can post publicly.,-0.09388888888888902,0.09388888888888902,0.05,True
+privacy_bug_report__average__02,privacy_bug_report,average,constraint,Don't include the customer's personal info like name or email.,0.0444444444444444,0.0444444444444444,0.05,False
+privacy_bug_report__average__03,privacy_bug_report,average,task,Can you summarize this support ticket as a bug report?,0.2222222222222222,0.2222222222222222,0.3849001794597506,False
+privacy_bug_report__average__03,privacy_bug_report,average,context,It's about PDF export crashing.,-0.11111111111111116,0.11111111111111116,0.3849001794597506,False
+privacy_bug_report__average__03,privacy_bug_report,average,constraint,Keep it under 100 words.,0.12222222222222223,0.12222222222222223,0.3849001794597506,False
+privacy_bug_report__average__04,privacy_bug_report,average,task,Make a public issue for the export crash from this ticket.,0.93,0.93,0.05,True
+privacy_bug_report__average__04,privacy_bug_report,average,constraint,"Mention the operating system and version,",0.04833333333333345,0.04833333333333345,0.05,False
+privacy_bug_report__average__04,privacy_bug_report,average,constraint,but leave out any names.,0.1000000000000002,0.1000000000000002,0.05,False
+privacy_bug_report__average__05,privacy_bug_report,average,task,I need a bug report for our tracker based on this email.,-0.16333333333333333,0.16333333333333333,0.05,False
+privacy_bug_report__average__05,privacy_bug_report,average,task,Describe the crash when exporting to PDF,0.32666666666666666,0.32666666666666666,0.05,True
+privacy_bug_report__average__05,privacy_bug_report,average,task,and the file size.,0.15000000000000002,0.15000000000000002,0.05,False
+privacy_bug_report__average__06,privacy_bug_report,average,task,Rewrite this customer complaint as a clean bug report for the public board.,-0.0022222222222222365,0.0022222222222222365,0.05,False
+privacy_bug_report__average__06,privacy_bug_report,average,constraint,Remove anything that identifies the person.,0.05777777777777782,0.05777777777777782,0.05,True
+privacy_bug_report__average__07,privacy_bug_report,average,task,Write up the export bug from this ticket for our public tracker.,-0.0011111111111110628,0.0011111111111110628,0.05456901847914967,False
+privacy_bug_report__average__07,privacy_bug_report,average,constraint,"Include the PDF size and version, nothing private.",0.02833333333333332,0.02833333333333332,0.05456901847914967,False
+privacy_bug_report__average__08,privacy_bug_report,average,task,Turn this into a bug report.,-0.08722222222222209,0.08722222222222209,0.18730051116182656,False
+privacy_bug_report__average__08,privacy_bug_report,average,context,It's the export crash.,-0.1038888888888887,0.1038888888888887,0.18730051116182656,False
+privacy_bug_report__average__08,privacy_bug_report,average,constraint,Don't put any contact details in it.,0.5044444444444445,0.5044444444444445,0.18730051116182656,True
+privacy_bug_report__average__09,privacy_bug_report,average,task,"Please write a short public bug report about the crash from this support ticket,",0.0,0.0,0.05,False
+privacy_bug_report__average__09,privacy_bug_report,average,constraint,"under 100 words,",0.008333333333333304,0.008333333333333304,0.05,False
+privacy_bug_report__average__09,privacy_bug_report,average,constraint,with no customer identifying details.,0.0,0.0,0.05,False
+privacy_bug_report__average__10,privacy_bug_report,average,task,Create an issue post from this ticket describing the PDF export crash.,-0.07111111111111112,0.07111111111111112,0.05,True
+privacy_bug_report__average__10,privacy_bug_report,average,constraint,"Note the OS and version,",0.010555555555555651,0.010555555555555651,0.05,False
+privacy_bug_report__average__10,privacy_bug_report,average,constraint,and keep the reporter anonymous.,0.057222222222222174,0.057222222222222174,0.05,True
+privacy_bug_report__expert__01,privacy_bug_report,expert,task,Turn the attached support ticket into a public bug report for our issue tracker about the export crash.,0.0,0.0,0.05,False
+privacy_bug_report__expert__01,privacy_bug_report,expert,constraint,"Keep the PDF size, the app version, and the operating system.",0.0,0.0,0.05,False
+privacy_bug_report__expert__01,privacy_bug_report,expert,constraint,"Remove any name, email, phone number, or address so the customer cannot be identified.",0.0,0.0,0.05,False
+privacy_bug_report__expert__01,privacy_bug_report,expert,constraint,Keep the whole report to 100 words or fewer.,0.04999999999999993,0.04999999999999993,0.05,False
+privacy_bug_report__expert__02,privacy_bug_report,expert,task,Write a public bug report for the export crash described in the attached ticket.,0.0,0.0,0.05,False
+privacy_bug_report__expert__02,privacy_bug_report,expert,constraint,"It must include the PDF size, version, and OS.",0.0,0.0,0.05,False
+privacy_bug_report__expert__02,privacy_bug_report,expert,constraint,"Strip all personal details (name, email, phone, address).",0.0,0.0,0.05,False
+privacy_bug_report__expert__02,privacy_bug_report,expert,constraint,Stay under 100 words.,0.17833333333333345,0.17833333333333345,0.05,False
+privacy_bug_report__expert__03,privacy_bug_report,expert,task,Rewrite the attached support ticket as a bug report anyone can read.,0.0,0.0,0.05,False
+privacy_bug_report__expert__03,privacy_bug_report,expert,task,Focus on the export crash,0.0,0.0,0.05,False
+privacy_bug_report__expert__03,privacy_bug_report,expert,constraint,"and mention the PDF size, app version, and operating system.",0.0,0.0,0.05,False
+privacy_bug_report__expert__03,privacy_bug_report,expert,constraint,"Do not include any customer identifiers such as name, email, phone, or address.",0.0,0.0,0.05,False
+privacy_bug_report__expert__03,privacy_bug_report,expert,format,Maximum 100 words.,0.07999999999999996,0.07999999999999996,0.05,True
+privacy_bug_report__expert__04,privacy_bug_report,expert,task,"From the attached ticket, draft a public-facing issue for the export crash.",0.0,0.0,0.05,False
+privacy_bug_report__expert__04,privacy_bug_report,expert,constraint,"Preserve PDF size, version, and operating system details.",0.0,0.0,0.05,False
+privacy_bug_report__expert__04,privacy_bug_report,expert,constraint,"Anonymize fully: no name, email, phone, or address anywhere.",0.0,0.0,0.05,False
+privacy_bug_report__expert__04,privacy_bug_report,expert,constraint,Limit to 100 words or fewer.,0.050000000000000044,0.050000000000000044,0.05,False
+privacy_bug_report__expert__05,privacy_bug_report,expert,task,I need a bug report for our public tracker,0.0,0.0,0.05,False
+privacy_bug_report__expert__05,privacy_bug_report,expert,context,based on the attached ticket about the export crash.,0.0,0.0,0.05,False
+privacy_bug_report__expert__05,privacy_bug_report,expert,constraint,"Include the PDF size, version number, and operating system.",0.0,0.0,0.05,False
+privacy_bug_report__expert__05,privacy_bug_report,expert,constraint,Make sure no personal information of the customer appears.,0.0,0.0,0.05,False
+privacy_bug_report__expert__05,privacy_bug_report,expert,constraint,Please keep it at 100 words max.,0.09833333333333338,0.09833333333333338,0.05,True
+privacy_bug_report__expert__06,privacy_bug_report,expert,task,Summarize the attached support ticket into a public bug report on the export crash.,0.0,0.0,0.05,False
+privacy_bug_report__expert__06,privacy_bug_report,expert,constraint,"Include the PDF size, the version, and the OS,",0.0,0.0,0.05,False
+privacy_bug_report__expert__06,privacy_bug_report,expert,constraint,"and leave out name, email, phone, and address.",0.0,0.0,0.05,False
+privacy_bug_report__expert__06,privacy_bug_report,expert,constraint,The report must be 100 words or fewer.,0.030000000000000027,0.030000000000000027,0.05,False
+privacy_bug_report__expert__07,privacy_bug_report,expert,task,"Using the attached ticket, write a short, anonymous public bug entry about the PDF export crash.",0.0,0.0,0.05,False
+privacy_bug_report__expert__07,privacy_bug_report,expert,constraint,"Keep PDF size, app version, and operating system.",0.0,0.0,0.05,False
+privacy_bug_report__expert__07,privacy_bug_report,expert,constraint,Scrub every identifying detail from the customer.,0.0,0.0,0.05,False
+privacy_bug_report__expert__07,privacy_bug_report,expert,constraint,No more than 100 words.,0.0,0.0,0.05,False
+privacy_bug_report__expert__08,privacy_bug_report,expert,task,Create a public issue report for the export crash from the attached support ticket.,0.0,0.0,0.05,False
+privacy_bug_report__expert__08,privacy_bug_report,expert,format,"It should state the PDF size, version, and operating system,",0.0,0.0,0.05,False
+privacy_bug_report__expert__08,privacy_bug_report,expert,constraint,"while excluding any name, email, phone number, or address.",0.0,0.0,0.05,False
+privacy_bug_report__expert__08,privacy_bug_report,expert,constraint,Cap it at 100 words.,0.08666666666666667,0.08666666666666667,0.05,True
+privacy_bug_report__expert__09,privacy_bug_report,expert,task,"Convert the attached ticket into a bug report suitable for a public issue tracker,",0.0,0.0,0.05,False
+privacy_bug_report__expert__09,privacy_bug_report,expert,constraint,focused on the export crash.,0.0,0.0,0.05,False
+privacy_bug_report__expert__09,privacy_bug_report,expert,constraint,"Include PDF size, version, and OS.",0.0,0.0,0.05,False
+privacy_bug_report__expert__09,privacy_bug_report,expert,constraint,"Remove customer name, email, phone, and address.",0.0,0.0,0.05,False
+privacy_bug_report__expert__09,privacy_bug_report,expert,constraint,Keep it to 100 words or fewer.,0.1383333333333332,0.1383333333333332,0.05,True
+privacy_bug_report__expert__10,privacy_bug_report,expert,task,Write up the export crash from the attached support ticket as a public bug report.,0.0,0.0,0.05,False
+privacy_bug_report__expert__10,privacy_bug_report,expert,constraint,"Mention the PDF size, the software version, and the operating system.",0.0,0.0,0.05,False
+privacy_bug_report__expert__10,privacy_bug_report,expert,constraint,"Make sure nothing that identifies the customer (name, email, phone, address) is included.",0.0,0.0,0.05,False
+privacy_bug_report__expert__10,privacy_bug_report,expert,constraint,"100 words or fewer, please.",0.011666666666666714,0.011666666666666714,0.05,False
+privacy_bug_report__novice__01,privacy_bug_report,novice,politeness_filler,"Hi, could you please",-0.06666666666666654,0.06666666666666654,0.1953913451967046,False
+privacy_bug_report__novice__01,privacy_bug_report,novice,task,make a public bug report from this support ticket? Thanks!,0.30666666666666664,0.30666666666666664,0.1953913451967046,True
+privacy_bug_report__novice__02,privacy_bug_report,novice,task,Can you write a bug report for our public issue tracker from the attached ticket?,0.18111111111111122,0.18111111111111122,0.05,True
+privacy_bug_report__novice__02,privacy_bug_report,novice,constraint,Please keep the customer private.,0.4994444444444446,0.4994444444444446,0.05,True
+privacy_bug_report__novice__03,privacy_bug_report,novice,task,please turn this support ticket into a bug post,0.41277777777777785,0.41277777777777785,0.15506271132817342,True
+privacy_bug_report__novice__03,privacy_bug_report,novice,context,i can put online. thanks,0.07500000000000007,0.07500000000000007,0.15506271132817342,False
+privacy_bug_report__novice__04,privacy_bug_report,novice,task,Could you help me write a bug report about the export crash?,-0.2222222222222222,0.2222222222222222,0.17705408255148522,True
+privacy_bug_report__novice__04,privacy_bug_report,novice,constraint,Don't include the customer's info if you can.,0.3844444444444444,0.3844444444444444,0.17705408255148522,True
+privacy_bug_report__novice__05,privacy_bug_report,novice,task,I need a public version of this ticket for our bug tracker.,0.33333333333333337,0.33333333333333337,0.05,True
+privacy_bug_report__novice__05,privacy_bug_report,novice,constraint,Could you make it short?,0.05833333333333335,0.05833333333333335,0.05,True
+privacy_bug_report__novice__06,privacy_bug_report,novice,politeness_filler,"Hey, can you",0.008333333333333415,0.008333333333333415,0.07688375063113857,False
+privacy_bug_report__novice__06,privacy_bug_report,novice,task,summarize this customer email,0.10999999999999999,0.10999999999999999,0.07688375063113857,True
+privacy_bug_report__novice__06,privacy_bug_report,novice,format,as a bug report,-0.043333333333333335,0.043333333333333335,0.07688375063113857,False
+privacy_bug_report__novice__06,privacy_bug_report,novice,audience,for the public tracker?,0.1233333333333334,0.1233333333333334,0.07688375063113857,False
+privacy_bug_report__novice__06,privacy_bug_report,novice,politeness_filler,Thank you!,0.07166666666666666,0.07166666666666666,0.07688375063113857,True
+privacy_bug_report__novice__07,privacy_bug_report,novice,task,Would you mind writing up the export problem from this ticket so anyone can read it?,0.053333333333333455,0.053333333333333455,0.12701705922171766,False
+privacy_bug_report__novice__07,privacy_bug_report,novice,constraint,Please leave out personal stuff.,0.45833333333333337,0.45833333333333337,0.12701705922171766,True
+privacy_bug_report__novice__08,privacy_bug_report,novice,task,"Make a bug report from the attached file, please.",0.1972222222222222,0.1972222222222222,0.06049181150584982,True
+privacy_bug_report__novice__08,privacy_bug_report,novice,context,It's going on our public board.,0.45555555555555555,0.45555555555555555,0.06049181150584982,True
+privacy_bug_report__novice__09,privacy_bug_report,novice,task,Could you write something for our public issue tracker about the PDF export crash?,0.4722222222222223,0.4722222222222223,0.07726817178094982,True
+privacy_bug_report__novice__09,privacy_bug_report,novice,politeness_filler,Thanks so much.,0.014444444444444593,0.014444444444444593,0.07726817178094982,False
+privacy_bug_report__novice__10,privacy_bug_report,novice,task,Please write a public bug report from this ticket.,-0.0344444444444445,0.0344444444444445,0.08675209464863616,False
+privacy_bug_report__novice__10,privacy_bug_report,novice,constraint,"Don't mention the customer by name, thanks!",-0.012777777777777777,0.012777777777777777,0.08675209464863616,False
+shopping_list__average__01,shopping_list,average,task,Hey can you make me a shopping list for the recipe in this document?,0.40625,0.40625,0.05,True
+shopping_list__average__01,shopping_list,average,constraint,"I already have salt, olive oil and oregano so don't put those on it.",0.125,0.125,0.05,True
+shopping_list__average__02,shopping_list,average,context,I want to make this dinner tonight.,0.0625,0.0625,0.125,False
+shopping_list__average__02,shopping_list,average,task,Can you tell me what to buy?,-0.03125,0.03125,0.125,False
+shopping_list__average__02,shopping_list,average,constraint,Skip the stuff I already have at home.,0.03125,0.03125,0.125,False
+shopping_list__average__03,shopping_list,average,task,Make a grocery list from this recipe.,-0.01041666666666663,0.01041666666666663,0.07216878364870322,False
+shopping_list__average__03,shopping_list,average,context,"I need chicken, lemons, garlic and potatoes,",0.08333333333333337,0.08333333333333337,0.07216878364870322,True
+shopping_list__average__03,shopping_list,average,constraint,plus whatever else I'm missing.,0.08333333333333337,0.08333333333333337,0.07216878364870322,True
+shopping_list__average__04,shopping_list,average,task,What do I need to pick up at the store for this?,0.1875,0.1875,0.05,False
+shopping_list__average__04,shopping_list,average,context,I've got the basic spices and oil already.,0.125,0.125,0.05,True
+shopping_list__average__05,shopping_list,average,task,"Turn this recipe into a shopping list please,",0.0,0.0,0.05,False
+shopping_list__average__05,shopping_list,average,constraint,just the things I don't own yet.,0.0625,0.0625,0.05,True
+shopping_list__average__06,shopping_list,average,task,Can you go through this recipe and list what I need to buy?,0.5625,0.5625,0.05,True
+shopping_list__average__06,shopping_list,average,constraint,Keep it short.,-0.03125,0.03125,0.05,False
+shopping_list__average__07,shopping_list,average,context,I'm making this tonight.,0.10416666666666663,0.10416666666666663,0.19094065395649334,False
+shopping_list__average__07,shopping_list,average,task,"Give me a list of ingredients to get at the store,",-0.08333333333333337,0.08333333333333337,0.19094065395649334,False
+shopping_list__average__07,shopping_list,average,format,"one per line,",0.29166666666666663,0.29166666666666663,0.19094065395649334,False
+shopping_list__average__07,shopping_list,average,constraint,leaving out the pantry staples I have.,0.10416666666666663,0.10416666666666663,0.19094065395649334,False
+shopping_list__average__08,shopping_list,average,task,Need a shopping list for this meal.,0.11458333333333326,0.11458333333333326,0.07216878364870322,True
+shopping_list__average__08,shopping_list,average,context,"I have oil, salt and oregano already.",0.16666666666666663,0.16666666666666663,0.07216878364870322,True
+shopping_list__average__08,shopping_list,average,constraint,Anything else on the list is fine.,-0.04166666666666674,0.04166666666666674,0.07216878364870322,False
+shopping_list__average__09,shopping_list,average,task,"Look at this recipe and tell me the groceries I need,",0.4166666666666667,0.4166666666666667,0.07216878364870322,True
+shopping_list__average__09,shopping_list,average,task,and also walk me through how to cook it.,-0.23958333333333331,0.23958333333333331,0.07216878364870322,True
+shopping_list__average__10,shopping_list,average,task,Write me a quick list of what to buy for this recipe.,0.08333333333333337,0.08333333333333337,0.07216878364870322,True
+shopping_list__average__10,shopping_list,average,constraint,Don't include things I already have like salt.,0.08333333333333337,0.08333333333333337,0.07216878364870322,False
+shopping_list__expert__01,shopping_list,expert,context,I want to make a lemon garlic chicken with roasted potatoes tonight.,0.0,0.0,0.05,False
+shopping_list__expert__01,shopping_list,expert,context,"I already have salt, olive oil, and oregano at home.",0.0,0.0,0.05,False
+shopping_list__expert__01,shopping_list,expert,task,"Give me a shopping list of only the ingredients I still need to buy: chicken, lemons, garlic, and potatoes.",0.0,0.0,0.05,False
+shopping_list__expert__01,shopping_list,expert,format,"Put one item per line, four lines total,",0.0,0.0,0.05,False
+shopping_list__expert__01,shopping_list,expert,constraint,and don't include any cooking steps.,0.0,0.0,0.05,False
+shopping_list__expert__02,shopping_list,expert,task,"Can you make me a shopping list for tonight's dinner, lemon garlic chicken with potatoes?",0.0,0.0,0.05,False
+shopping_list__expert__02,shopping_list,expert,context,"Skip anything I already have, which is salt, olive oil, and oregano.",0.0,0.0,0.05,False
+shopping_list__expert__02,shopping_list,expert,format,"The list should cover chicken, lemons, garlic, and potatoes, one per line, exactly four lines, with no instructions.",0.25,0.25,0.05,True
+shopping_list__expert__03,shopping_list,expert,context,"Tonight's meal is roasted chicken with lemon, garlic, and potatoes.",0.0,0.0,0.05,False
+shopping_list__expert__03,shopping_list,expert,constraint,"My pantry already has salt, olive oil and oregano, so leave those off.",0.0,0.0,0.05,False
+shopping_list__expert__03,shopping_list,expert,format,"Output a four-line shopping list, one item per line,",0.59375,0.59375,0.05,True
+shopping_list__expert__03,shopping_list,expert,constraint,"with the chicken, lemons, garlic, and potatoes,",0.0,0.0,0.05,False
+shopping_list__expert__03,shopping_list,expert,constraint,and nothing else.,0.0,0.0,0.05,False
+shopping_list__expert__04,shopping_list,expert,task,I need a quick grocery list for lemon garlic chicken and potatoes.,0.0,0.0,0.05,False
+shopping_list__expert__04,shopping_list,expert,constraint,"Don't list salt, olive oil, or oregano since I have them.",0.0,0.0,0.05,False
+shopping_list__expert__04,shopping_list,expert,format,"Four items only, one per line: chicken, lemons, garlic, potatoes.",0.0,0.0,0.05,False
+shopping_list__expert__04,shopping_list,expert,constraint,"No recipe steps, just the list.",0.0,0.0,0.05,False
+shopping_list__expert__05,shopping_list,expert,task,Help me shop for tonight.,0.0,0.0,0.05,False
+shopping_list__expert__05,shopping_list,expert,context,Recipe: lemon garlic chicken with potatoes.,0.0,0.0,0.05,False
+shopping_list__expert__05,shopping_list,expert,constraint,"Pantry staples I own are salt, olive oil, and oregano, so exclude those.",0.0,0.0,0.05,False
+shopping_list__expert__05,shopping_list,expert,format,"Format it as a shopping list, one item per line, four lines in total,",0.625,0.625,0.05,False
+shopping_list__expert__05,shopping_list,expert,constraint,"covering chicken, lemons, garlic, and potatoes.",0.0,0.0,0.05,False
+shopping_list__expert__06,shopping_list,expert,task,Make a buy-list for a lemon garlic chicken dinner with potatoes.,0.0,0.0,0.05,False
+shopping_list__expert__06,shopping_list,expert,context,"I've got salt, olive oil and oregano already.",0.0,0.0,0.05,False
+shopping_list__expert__06,shopping_list,expert,constraint,"Only include what I still have to purchase, which should be chicken, lemons, garlic and potatoes.",0.0,0.0,0.05,False
+shopping_list__expert__06,shopping_list,expert,format,"One per line, four lines, no cooking directions.",0.15625,0.15625,0.05,False
+shopping_list__expert__07,shopping_list,expert,task,"Write me a short shopping list for tonight's chicken dinner with lemons, garlic, and potatoes.",0.0,0.0,0.05,False
+shopping_list__expert__07,shopping_list,expert,context,"I already own salt, olive oil, and oregano,",1.0,1.0,0.05,True
+shopping_list__expert__07,shopping_list,expert,constraint,so don't put those on it.,0.0,0.0,0.05,False
+shopping_list__expert__07,shopping_list,expert,format,"Four lines, one item each,",0.0,0.0,0.05,False
+shopping_list__expert__07,shopping_list,expert,constraint,and please skip any cooking steps.,0.0,0.0,0.05,False
+shopping_list__expert__08,shopping_list,expert,context,For tonight I'm making lemon garlic chicken and potatoes.,0.0,0.0,0.05,False
+shopping_list__expert__08,shopping_list,expert,task,What do I need to buy?,0.0,0.0,0.05,False
+shopping_list__expert__08,shopping_list,expert,context,"Assume I have salt, olive oil and oregano.",0.0,0.0,0.05,False
+shopping_list__expert__08,shopping_list,expert,format,"Give a list with one item per line, four lines total, covering the chicken, lemons, garlic and potatoes, no preparation instructions.",0.25,0.25,0.05,True
+shopping_list__expert__09,shopping_list,expert,politeness_filler,Shopping list please:,0.0,0.0,0.05,False
+shopping_list__expert__09,shopping_list,expert,task,lemon garlic chicken with potatoes for dinner tonight.,0.0,0.0,0.05,False
+shopping_list__expert__09,shopping_list,expert,constraint,"Leave off salt, olive oil, and oregano because I have them.",0.0,0.0,0.05,False
+shopping_list__expert__09,shopping_list,expert,format,"Exactly four lines, one item per line, chicken, lemons, garlic, potatoes.",0.25,0.25,0.05,True
+shopping_list__expert__09,shopping_list,expert,constraint,Don't tell me how to cook it.,0.0,0.0,0.05,False
+shopping_list__expert__10,shopping_list,expert,context,I'm cooking lemon garlic chicken with potatoes tonight and only need to buy what I'm missing.,0.0,0.0,0.05,False
+shopping_list__expert__10,shopping_list,expert,context,"I have salt, olive oil and oregano.",0.0,0.0,0.05,False
+shopping_list__expert__10,shopping_list,expert,format,"Produce a four-line list, one item per line,",0.25,0.25,0.05,True
+shopping_list__expert__10,shopping_list,expert,task,"covering chicken, lemons, garlic and potatoes,",0.0,0.0,0.05,False
+shopping_list__expert__10,shopping_list,expert,constraint,and nothing about cooking.,0.0,0.0,0.05,False
+shopping_list__novice__01,shopping_list,novice,task,hey could you help me make a shopping list for tonight's dinner? thanks,0.39583333333333337,0.39583333333333337,0.07216878364870322,True
+shopping_list__novice__02,shopping_list,novice,task,"I want to cook the chicken thing from the recipe I sent,",-0.23958333333333331,0.23958333333333331,0.7216878364870322,False
+shopping_list__novice__02,shopping_list,novice,task,what do I need to buy?,0.16666666666666669,0.16666666666666669,0.7216878364870322,False
+shopping_list__novice__03,shopping_list,novice,task,Please make me a grocery list,0.6458333333333334,0.6458333333333334,0.07216878364870322,True
+shopping_list__novice__03,shopping_list,novice,context,for this recipe,0.02083333333333337,0.02083333333333337,0.07216878364870322,False
+shopping_list__novice__04,shopping_list,novice,task,what do i need to get at the store for this?,0.04166666666666663,0.04166666666666663,0.07216878364870322,False
+shopping_list__novice__04,shopping_list,novice,context,i already have some stuff at home,-0.02083333333333337,0.02083333333333337,0.07216878364870322,False
+shopping_list__novice__05,shopping_list,novice,politeness_filler,"can you help,",0.0,0.0,0.05,False
+shopping_list__novice__05,shopping_list,novice,task,i only need to buy whatever isn't in my pantry for this dinner. thanks!,0.5625,0.5625,0.05,True
+shopping_list__novice__06,shopping_list,novice,task,Could you list the ingredients I still need to buy for this recipe please,0.5625,0.5625,0.05,True
+shopping_list__novice__07,shopping_list,novice,task,shopping list pls,0.45833333333333337,0.45833333333333337,0.19094065395649334,True
+shopping_list__novice__07,shopping_list,novice,context,for the attached recipe,0.08333333333333337,0.08333333333333337,0.19094065395649334,False
+shopping_list__novice__08,shopping_list,novice,task,"I'm making this tonight, what should I pick up?",0.22916666666666663,0.22916666666666663,0.2602082499332666,True
+shopping_list__novice__08,shopping_list,novice,context,"I have oil, salt and oregano already",0.01041666666666663,0.01041666666666663,0.2602082499332666,False
+shopping_list__novice__09,shopping_list,novice,task,"hi, could you tell me what to buy for this meal?",0.6041666666666666,0.6041666666666666,0.07216878364870322,True
+shopping_list__novice__09,shopping_list,novice,politeness_filler,thank you,-0.02083333333333337,0.02083333333333337,0.07216878364870322,False
+shopping_list__novice__10,shopping_list,novice,task,Can you make a list of the stuff I need from the store for this recipe?,0.5625,0.5625,0.05,True
+shopping_list__novice__10,shopping_list,novice,constraint,Just the missing things please,-0.03125,0.03125,0.05,False
+subject_line__average__01,subject_line,average,task,Write a short subject line for this email to my client.,0.33333333333333337,0.33333333333333337,0.05,True
+subject_line__average__01,subject_line,average,context,It's about the invoice.,0.0,0.0,0.05,False
+subject_line__average__01,subject_line,average,constraint,Keep it clear and not salesy.,0.0,0.0,0.05,False
+subject_line__average__02,subject_line,average,task,Can you give me a subject line for this email?,0.0185185185185186,0.0185185185185186,0.05,False
+subject_line__average__02,subject_line,average,constraint,Make it under 9 words,0.33333333333333337,0.33333333333333337,0.05,True
+subject_line__average__02,subject_line,average,constraint,and include the invoice number.,0.0,0.0,0.05,False
+subject_line__average__03,subject_line,average,task,"I need a subject line for my client email,",0.0,0.0,0.05,False
+subject_line__average__03,subject_line,average,tone,nothing pushy or salesy please.,0.0,0.0,0.05,False
+subject_line__average__03,subject_line,average,constraint,It should mention the invoice number.,0.0,0.0,0.05,False
+subject_line__average__04,subject_line,average,task,Write me a good subject line for this.,0.33333333333333337,0.33333333333333337,0.05,True
+subject_line__average__04,subject_line,average,constraint,Keep it short and clear.,0.33333333333333337,0.33333333333333337,0.05,True
+subject_line__average__05,subject_line,average,task,Subject line for the email to the client about the invoice.,1.0,1.0,0.05,True
+subject_line__average__05,subject_line,average,constraint,"Short, no exclamation marks.",0.33333333333333337,0.33333333333333337,0.05,True
+subject_line__average__06,subject_line,average,task,Please write one subject line for this client email,0.5555555555555556,0.5555555555555556,0.05,False
+subject_line__average__06,subject_line,average,constraint,that includes the invoice number.,0.0,0.0,0.05,False
+subject_line__average__06,subject_line,average,constraint,Keep it simple.,0.03703703703703709,0.03703703703703709,0.05,False
+subject_line__average__07,subject_line,average,task,Give me a subject line for this email.,-0.07407407407407418,0.07407407407407418,0.3849001794597506,False
+subject_line__average__07,subject_line,average,context,"It's an invoice reminder so it should be clear, not salesy,",-0.11111111111111116,0.11111111111111116,0.3849001794597506,False
+subject_line__average__07,subject_line,average,constraint,and under 9 words.,0.2222222222222222,0.2222222222222222,0.3849001794597506,False
+subject_line__average__08,subject_line,average,task,"Make a subject line for this email to my client,",0.2222222222222222,0.2222222222222222,0.3849001794597506,False
+subject_line__average__08,subject_line,average,constraint,"include invoice #,",-0.11111111111111116,0.11111111111111116,0.3849001794597506,False
+subject_line__average__08,subject_line,average,constraint,don't make it sound like an ad.,-0.07407407407407407,0.07407407407407407,0.3849001794597506,False
+subject_line__average__09,subject_line,average,task,Help me name this email.,0.0,0.0,0.05,False
+subject_line__average__09,subject_line,average,context,"It's going to a client about their invoice,",0.0,0.0,0.05,False
+subject_line__average__09,subject_line,average,tone,so just make it clear and professional.,0.0,0.0,0.05,False
+subject_line__average__10,subject_line,average,task,Write a subject line for the invoice email.,0.33333333333333337,0.33333333333333337,0.05,True
+subject_line__average__10,subject_line,average,constraint,"Short and clear, no exclamation marks,",0.0185185185185186,0.0185185185185186,0.05,False
+subject_line__average__10,subject_line,average,constraint,and add the invoice number at the front.,0.0,0.0,0.05,False
+subject_line__expert__01,subject_line,expert,task,Write one subject line for the attached invoice email.,0.0,0.0,0.05,False
+subject_line__expert__01,subject_line,expert,constraint,"It must be about the invoice,",0.0,0.0,0.05,False
+subject_line__expert__01,subject_line,expert,constraint,"include the invoice number,",0.0,0.0,0.05,False
+subject_line__expert__01,subject_line,expert,constraint,"be 9 words or fewer,",0.0,0.0,0.05,False
+subject_line__expert__01,subject_line,expert,constraint,and avoid exclamation marks and pushy or salesy words.,0.0,0.0,0.05,False
+subject_line__expert__01,subject_line,expert,tone,"Keep it short, clear, and factual.",0.0,0.0,0.05,False
+subject_line__expert__02,subject_line,expert,task,Please give me a single email subject line for this invoice message to my client.,0.03703703703703698,0.03703703703703698,0.05,False
+subject_line__expert__02,subject_line,expert,constraint,"Mention the invoice number,",0.0,0.0,0.05,False
+subject_line__expert__02,subject_line,expert,constraint,"keep it under 10 words,",0.0,0.0,0.05,False
+subject_line__expert__02,subject_line,expert,tone,and make it plain and non-salesy.,0.0,0.0,0.05,False
+subject_line__expert__02,subject_line,expert,constraint,No exclamation points or urgent-sounding language.,0.0,0.0,0.05,False
+subject_line__expert__03,subject_line,expert,task,I need a subject line for the attached email about an invoice.,0.0,0.0,0.05,False
+subject_line__expert__03,subject_line,expert,constraint,"Include the invoice number,",0.0,0.0,0.05,False
+subject_line__expert__03,subject_line,expert,constraint,"stay at nine words or fewer,",0.0,0.0,0.05,False
+subject_line__expert__03,subject_line,expert,tone,and keep the tone neutral.,0.0,0.0,0.05,False
+subject_line__expert__03,subject_line,expert,constraint,Don't use exclamation marks or pushy words like 'act now' or 'don't miss out'.,0.0,0.0,0.05,False
+subject_line__expert__04,subject_line,expert,task,"Draft one short, clear subject line for this invoice email.",0.0,0.0,0.05,False
+subject_line__expert__04,subject_line,expert,constraint,"It has to reference the invoice and its number,",0.0,0.0,0.05,False
+subject_line__expert__04,subject_line,expert,constraint,"be no more than 9 words,",0.0,0.0,0.05,False
+subject_line__expert__04,subject_line,expert,tone,and read as informational rather than promotional.,0.0,0.0,0.05,False
+subject_line__expert__04,subject_line,expert,constraint,Avoid exclamation marks.,0.12962962962962954,0.12962962962962954,0.05,False
+subject_line__expert__05,subject_line,expert,task,Give me one subject line for this client invoice email. Requirements:,0.0,0.0,0.05,False
+subject_line__expert__05,subject_line,expert,constraint,"mention the invoice number,",0.0,0.0,0.05,False
+subject_line__expert__05,subject_line,expert,constraint,"9 words max,",0.0,0.0,0.05,False
+subject_line__expert__05,subject_line,expert,constraint,"nothing salesy,",0.0,0.0,0.05,False
+subject_line__expert__05,subject_line,expert,constraint,"no exclamation points,",0.0,0.0,0.05,False
+subject_line__expert__05,subject_line,expert,constraint,and it should clearly signal that it concerns an invoice.,0.0,0.0,0.05,False
+subject_line__expert__06,subject_line,expert,task,Can you suggest a subject line for my email about invoice details going to a client?,0.3148148148148149,0.3148148148148149,0.05,True
+subject_line__expert__06,subject_line,expert,constraint,"Make sure the invoice number appears,",0.0,0.0,0.05,False
+subject_line__expert__06,subject_line,expert,constraint,"keep it to nine words or fewer,",0.33333333333333337,0.33333333333333337,0.05,True
+subject_line__expert__06,subject_line,expert,tone,and keep it calm and professional with no pushy phrasing or exclamation marks.,0.0,0.0,0.05,False
+subject_line__expert__07,subject_line,expert,task,"Write a brief, non-salesy email subject for the attached invoice.",0.03703703703703709,0.03703703703703709,0.05,False
+subject_line__expert__07,subject_line,expert,constraint,"One line only, 9 words or less, including the invoice number.",0.0,0.0,0.05,False
+subject_line__expert__07,subject_line,expert,constraint,No exclamation marks and no pressure language.,0.0,0.0,0.05,False
+subject_line__expert__08,subject_line,expert,task,"For this invoice email, produce a single subject line that is clear and direct.",0.6666666666666667,0.6666666666666667,0.05,True
+subject_line__expert__08,subject_line,expert,constraint,"It needs the invoice number, a limit of 9 words, and a tone that is not salesy.",0.0185185185185186,0.0185185185185186,0.05,False
+subject_line__expert__08,subject_line,expert,constraint,Do not use exclamation marks.,0.0,0.0,0.05,False
+subject_line__expert__09,subject_line,expert,context,I'm sending this invoice to a client and need the subject line.,0.07407407407407407,0.07407407407407407,0.05,True
+subject_line__expert__09,subject_line,expert,constraint,"Keep it to one line, under 10 words, with the invoice number included,",0.16666666666666674,0.16666666666666674,0.05,False
+subject_line__expert__09,subject_line,expert,tone,and make it sound straightforward rather than sales-driven.,0.0,0.0,0.05,False
+subject_line__expert__09,subject_line,expert,constraint,Exclamation marks are out.,0.0,0.0,0.05,False
+subject_line__expert__10,subject_line,expert,task,Create one subject line for the attached invoice message.,0.09259259259259256,0.09259259259259256,0.05,True
+subject_line__expert__10,subject_line,expert,constraint,"Include the invoice number,",0.0,0.0,0.05,False
+subject_line__expert__10,subject_line,expert,constraint,"use 9 words or fewer,",0.0,0.0,0.05,False
+subject_line__expert__10,subject_line,expert,constraint,and avoid any exclamation marks or pushy wording.,0.0,0.0,0.05,False
+subject_line__expert__10,subject_line,expert,constraint,"It should be short, clear, and about the invoice.",0.0,0.0,0.05,False
+subject_line__novice__01,subject_line,novice,task,"Hi, could you please write a subject line for this email? Thanks!",0.0,0.0,0.05,False
+subject_line__novice__02,subject_line,novice,task,Can you give me a subject line for this email to my client?,0.6666666666666666,0.6666666666666666,0.05,True
+subject_line__novice__02,subject_line,novice,politeness_filler,Thank you,0.0,0.0,0.05,False
+subject_line__novice__03,subject_line,novice,task,please write a good subject for this,0.0,0.0,0.05,False
+subject_line__novice__04,subject_line,novice,task,Could you come up with a short title for this email?,0.486111111111111,0.486111111111111,0.3849001794597506,False
+subject_line__novice__04,subject_line,novice,politeness_filler,Thanks so much,-0.22222222222222232,0.22222222222222232,0.3849001794597506,True
+subject_line__novice__05,subject_line,novice,task,"I need a subject line for the email I'm sending to a client,",0.3333333333333333,0.3333333333333333,0.05,False
+subject_line__novice__05,subject_line,novice,task,can you help please?,0.0,0.0,0.05,False
+subject_line__novice__06,subject_line,novice,task,hey can u make a subject line for this,0.0,0.0,0.05,False
+subject_line__novice__07,subject_line,novice,politeness_filler,Would you mind,0.0,0.0,0.05,False
+subject_line__novice__07,subject_line,novice,task,suggesting a subject for this email?,0.08333333333333326,0.08333333333333326,0.05,True
+subject_line__novice__07,subject_line,novice,politeness_filler,Thank you kindly,0.0,0.0,0.05,False
+subject_line__novice__08,subject_line,novice,task,What should the subject be for this email?,0.375,0.375,0.05,True
+subject_line__novice__08,subject_line,novice,politeness_filler,"Please help, thanks",0.0,0.0,0.05,False
+subject_line__novice__09,subject_line,novice,task,Please make a catchy subject line for my client email. Thanks!,0.0,0.0,0.05,False
+subject_line__novice__10,subject_line,novice,task,Could you write something short,0.2222222222222222,0.2222222222222222,0.3849001794597506,False
+subject_line__novice__10,subject_line,novice,other,for the subject of this?,0.2222222222222222,0.2222222222222222,0.3849001794597506,False
+subject_line__novice__10,subject_line,novice,politeness_filler,Appreciate it,-0.11111111111111116,0.11111111111111116,0.3849001794597506,False

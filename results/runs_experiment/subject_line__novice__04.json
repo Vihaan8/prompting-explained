@@ -1,0 +1,570 @@
+{
+ "challenge_id": "subject_line",
+ "user_prompt": "Could you come up with a short title for this email? Thanks so much",
+ "final_prompt": "Could you come up with a short title for this email? Thanks so much\n\n<document>\nHi Sam,\n\nAttached is invoice #4471 for the October design work ($2,350). Payment is due by\nNovember 15. Let me know if you have any questions.\n\nThanks,\nAlex\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Could you come up with a short title for this email? ",
+   "role": "task",
+   "start": 0,
+   "end": 53
+  },
+  {
+   "id": 1,
+   "text": "Thanks so much",
+   "role": "politeness_filler",
+   "start": 53,
+   "end": 67
+  }
+ ],
+ "segmentation_method": "given",
+ "targets": [
+  "overall",
+  "on_task",
+  "one_short_line",
+  "has_number",
+  "not_salesy"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "**Invoice #4471: October Design Work**",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "\"Invoice #4471: October Design Work\"",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Invoice #4471 – October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few short title options:\n\n- **October Design Invoice #4471**\n- **Invoice #4471 – Payment Due Nov 15**\n- **Design Work Invoice (October)**",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Invoice #4471 – October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n- **Invoice #4471 – October Design Work**\n- **October Design Invoice Attached**\n- **Payment Due: Invoice #4471**",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Invoice #4471 – October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "**Invoice #4471 – October Design Work**",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n- **Invoice #4471: October Design Work**\n- **October Design Invoice Attached**\n- **Payment Due: Invoice #4471 ($2,350)**",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n- **Invoice #4471 – October Design Work**\n- **Payment Due: Invoice #4471**\n- **October Design Invoice ($2,350)**",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Here are a few options:\n\n1. **Invoice #4471 – October Design Work**\n2. **Payment Due: October Design Invoice**\n3. **Invoice for October Design Services**",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 0.6666666666666666
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "Invoice #4471 – October Design Work",
+   "scores": {
+    "on_task": 1.0,
+    "one_short_line": 1.0,
+    "has_number": 1.0,
+    "not_salesy": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 0.8611111111111112,
+  "on_task": 1.0,
+  "one_short_line": 0.5833333333333334,
+  "has_number": 1.0,
+  "not_salesy": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.17164288351481244,
+  "on_task": 0.0,
+  "one_short_line": 0.5149286505444373,
+  "has_number": 0.0,
+  "not_salesy": 0.0
+ },
+ "noise": {
+  "overall": 0.3432857670296249,
+  "on_task": 0.05,
+  "one_short_line": 1.0298573010888745,
+  "has_number": 0.05,
+  "not_salesy": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.15623947776018204,
+  "on_task": 0.0,
+  "one_short_line": 0.41132945334843113,
+  "has_number": 0.22473328748774735,
+  "not_salesy": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.12422599874998833,
+   "on_task": 0.05,
+   "one_short_line": 0.2972941950052816,
+   "has_number": 0.22473328748774735,
+   "not_salesy": 0.05
+  },
+  {
+   "overall": 0.1371098177828104,
+   "on_task": 0.05,
+   "one_short_line": 0.41132945334843113,
+   "has_number": 0.05,
+   "not_salesy": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "Thanks so much",
+   "runs": [
+    {
+     "answer": "You're welcome! I should mention that your message came through with a document that appears to be an email about invoice #4471 from Alex to Sam, but there was no question or request attached. Is there something you'd like help with regarding it, such as drafting a reply, confirming the payment details, or setting a reminder for the November 15 due date?",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! Just a heads-up: the message you shared doesn't include any text from you, so I'm not sure what you're thanking me for. It looks like an email from Alex to Sam about invoice #4471 for $2,350 in October design work, due November 15.\n\nIf you meant to ask something about it, such as drafting a reply, confirming the payment, or setting a reminder, just let me know.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! It looks like you shared an email from Alex about invoice #4471 for $2,350 in October design work, due November 15. Is there something you'd like help with, like drafting a reply, setting a payment reminder, or checking something in the invoice?",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! Just to be sure I understood, your message contains a note from Alex about invoice #4471 for October design work, totaling $2,350, due November 15. Is there something you'd like help with, such as drafting a reply, setting a reminder, or organizing the payment?",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! It looks like you shared an invoice email from Alex. Is there something you'd like me to help with? For example, I could:\n\n- Draft a reply to Alex\n- Summarize the key details (invoice #4471, $2,350, due November 15)\n- Set a reminder or note for the payment deadline\n- Help you review the invoice before paying\n\nJust let me know!",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! It looks like you shared an email from Alex about invoice #4471 for $2,350 in October design work, due November 15. Is there something you'd like help with regarding it, such as drafting a reply, setting a reminder, or checking the invoice details?",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! It looks like you shared an email from Alex about invoice #4471 for $2,350 in October design work, due November 15. Is there something you'd like help with, such as drafting a reply, confirming payment details, or setting a reminder?",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! Just so you know, I don't see a question in your message, only the thanks and the invoice text. The invoice from Alex covers October design work for $2,350, with payment due November 15.\n\nIs there something you'd like help with? For example, I could draft a reply to Alex, check whether the due date works with your schedule, or go over the invoice details.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 0.0,
+      "not_salesy": 0.75,
+      "overall": 0.25
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! Just to be sure I'm helping with the right thing: the message you shared is an invoice email from Alex to Sam for invoice #4471, covering $2,350 in October design work, due November 15.\n\nIs there something you'd like me to do with it? For example, I could:\n\n- Draft a reply to Alex (confirming receipt, asking a question, or noting a payment date)\n- Summarize the key details\n- Help you set a reminder or track the payment\n\nJust let me know!",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! Just to note, your message came through with a document attached: an invoice from Alex to Sam for October design work, $2,350, due November 15 (invoice #4471).\n\nIs there something you'd like help with regarding this? For example, I could draft a reply to Alex, summarize the payment details, or help set a reminder.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! Just to note, your message came through with only a thank-you and no clear request, and the document you attached is an invoice email from Alex to Sam. If you meant to ask something about it, such as drafting a reply, confirming the payment details, setting a reminder for the November 15 due date, or anything else, just let me know and I'll help.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 0.0,
+      "not_salesy": 0.75,
+      "overall": 0.25
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "You're welcome! Just to note, your message came through with a document attached: an invoice from Alex to Sam for October design work, $2,350, due November 15 (invoice #4471).\n\nIs there something you'd like help with regarding this? For example, I could help you draft a reply to Alex, summarize the payment details, or set a reminder for the due date.",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 0.75,
+      "overall": 0.5833333333333334
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.5277777777777778,
+    "on_task": 1.0,
+    "one_short_line": 0.0,
+    "has_number": 0.8333333333333334,
+    "not_salesy": 0.75
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Could you come up with a short title for this email?",
+   "runs": [
+    {
+     "answer": "Invoice #4471 – October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n- **Invoice #4471 – October Design Work**\n- **Invoice for October Design Services**\n- **Payment Due: Invoice #4471 (Due Nov 15)**",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 – October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Invoice #4471 – October Design Work**",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 – October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n- **Invoice #4471: October Design Work**\n- **Payment Due: Invoice #4471 ($2,350)**\n- **October Design Invoice (Due Nov 15)**",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 – October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n- **Invoice #4471 – October Design Work**\n- **Payment Due: Invoice #4471 ($2,350)**\n- **October Design Invoice – Due Nov 15**",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Here are a few options:\n\n- **Invoice #4471 – October Design Work**\n- **Payment Due: Invoice #4471 ($2,350)**\n- **October Design Invoice – Due Nov. 15**",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 0.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 0.6666666666666666
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 – October Design Work Payment Due Nov 15",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 – October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "Invoice #4471 – October Design Work",
+     "scores": {
+      "on_task": 1.0,
+      "one_short_line": 1.0,
+      "has_number": 1.0,
+      "not_salesy": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.8888888888888888,
+    "on_task": 1.0,
+    "one_short_line": 0.6666666666666666,
+    "has_number": 1.0,
+    "not_salesy": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.33333333333333337,
+   "on_task": 0.0,
+   "one_short_line": 0.5833333333333334,
+   "has_number": 0.16666666666666663,
+   "not_salesy": 0.25
+  },
+  {
+   "overall": -0.02777777777777768,
+   "on_task": 0.0,
+   "one_short_line": -0.08333333333333326,
+   "has_number": 0.0,
+   "not_salesy": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": true,
+   "one_short_line": false,
+   "has_number": true,
+   "not_salesy": false
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "one_short_line": true,
+   "has_number": true,
+   "not_salesy": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [],
+ "judge_ablation": [],
+ "follow_with": [],
+ "follow_without": [],
+ "call_counts": {
+  "baseline": 12,
+  "ablation": 24
+ },
+ "calls": 36,
+ "input_tokens": 3228,
+ "output_tokens": 2117,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": false,
+  "judge_max_tokens": 600,
+  "baseline_runs": 12,
+  "ablation_runs": 12,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 500,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:22:30.595677+00:00"
+}

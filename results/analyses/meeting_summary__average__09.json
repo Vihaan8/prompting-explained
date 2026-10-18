@@ -1,0 +1,377 @@
+{
+ "challenge_id": "meeting_summary",
+ "user_prompt": "Please condense these notes into a few sentences for my boss, covering the decision and the timeline.",
+ "final_prompt": "Please condense these notes into a few sentences for my boss, covering the decision and the timeline.\n\n<document>\nOps sync, notes (rough)\nattendees: priya, tom, wen, me\n\n- tom recapped the Q3 numbers again, nothing new\n- long tangent about the office coffee machine (broken again)\n- scheduling software: we compared Vendor A ($24,000/yr) and Vendor B ($18,500/yr).\n  wen is worried about B's support hours but B has the hospital integrations we need.\n  DECISION: go with Vendor B\n- budget approved at $18,500 for year one\n- priya owns the rollout. go-live deadline is Nov 22\n- tom will ask if A can match the price, probably won't matter\n- next sync moved to thursday\n- reminder: submit timesheets\n</document>",
+ "segments": [
+  {
+   "id": 0,
+   "text": "Please condense these notes into a few sentences ",
+   "role": "task",
+   "start": 0,
+   "end": 49
+  },
+  {
+   "id": 1,
+   "text": "for my boss, ",
+   "role": "audience",
+   "start": 49,
+   "end": 62
+  },
+  {
+   "id": 2,
+   "text": "covering the decision and the timeline.",
+   "role": "constraint",
+   "start": 62,
+   "end": 101
+  }
+ ],
+ "segmentation_method": "llm",
+ "targets": [
+  "overall",
+  "on_task",
+  "length",
+  "key_facts",
+  "no_noise"
+ ],
+ "baseline_runs": [
+  {
+   "answer": "We've chosen Vendor B for the new scheduling software, at $18,500 for year one, over Vendor A at $24,000 per year, mainly because B includes the hospital integrations we need, though support hours remain a concern. Priya will lead the rollout, with go-live set for November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "We decided to go with Vendor B for our scheduling software, at $18,500 for year one, since it offers the hospital integrations we need despite some concerns about its support hours. Priya will own the rollout, with a go-live deadline of November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  },
+  {
+   "answer": "The ops team has chosen Vendor B for the new scheduling software over Vendor A, primarily because B includes the hospital integrations we need, at $18,500 per year versus A's $24,000. The budget for year one is approved at $18,500. Priya will lead the rollout, with a go-live deadline of November 22.",
+   "scores": {
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0,
+    "overall": 1.0
+   },
+   "stop_reason": "end_turn"
+  }
+ ],
+ "baseline_mean": {
+  "overall": 1.0,
+  "on_task": 1.0,
+  "length": 1.0,
+  "key_facts": 1.0,
+  "no_noise": 1.0
+ },
+ "baseline_std": {
+  "overall": 0.0,
+  "on_task": 0.0,
+  "length": 0.0,
+  "key_facts": 0.0,
+  "no_noise": 0.0
+ },
+ "noise": {
+  "overall": 0.05,
+  "on_task": 0.05,
+  "length": 0.05,
+  "key_facts": 0.05,
+  "no_noise": 0.05
+ },
+ "pooled_std": {
+  "overall": 0.0173916398249984,
+  "on_task": 0.0,
+  "length": 0.052174919474995106,
+  "key_facts": 0.0,
+  "no_noise": 0.0
+ },
+ "part_noise": [
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.1166666666666667,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.05,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  },
+  {
+   "overall": 0.05,
+   "on_task": 0.05,
+   "length": 0.1166666666666667,
+   "key_facts": 0.05,
+   "no_noise": 0.05
+  }
+ ],
+ "ablations": [
+  {
+   "segment_id": 0,
+   "prompt": "for my boss, covering the decision and the timeline.",
+   "runs": [
+    {
+     "answer": "Here's a summary you can send your boss:\n\n**Ops Sync Summary: Scheduling Software Decision**\n\nThe team decided to go with Vendor B for our scheduling software. We compared Vendor B ($18,500/year) against Vendor A ($24,000/year). Wen raised concerns about Vendor B's support hours, but Vendor B has the hospital integrations we need, which was the deciding factor. The budget of $18,500 for year one has been approved.\n\n**Timeline and ownership:**\n- Priya owns the rollout.\n- Go-live deadline: November 22.\n\n**Open items:**\n- Tom will ask Vendor A whether they can match the price, though this is not expected to change the decision.\n- The next ops sync has been moved to Thursday.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.18333333333333335,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.7277777777777779
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "**Subject: Scheduling Software Decision and Timeline**\n\nHi [Boss's name],\n\nHere's a summary of our ops sync on the scheduling software decision.\n\n**Decision:** We're going with Vendor B. We compared it against Vendor A ($24,000/yr) and Vendor B ($18,500/yr). Wen raised concerns about Vendor B's support hours, but Vendor B has the hospital integrations we need, which made it the stronger fit.\n\n**Budget:** $18,500 approved for year one.\n\n**Timeline:** Priya owns the rollout, with a go-live deadline of November 22.\n\n**Open item:** Tom will ask whether Vendor A can match Vendor B's price, though this is unlikely to change the decision.\n\nLet me know if you'd like more detail on any part of this.\n\nBest,\n[Your name]",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.06666666666666665,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.6888888888888888
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.7083333333333333,
+    "on_task": 1.0,
+    "length": 0.125,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  },
+  {
+   "segment_id": 1,
+   "prompt": "Please condense these notes into a few sentences covering the decision and the timeline.",
+   "runs": [
+    {
+     "answer": "The team chose Vendor B for scheduling software at $18,500 for year one over Vendor A ($24,000/yr), mainly because B offers the hospital integrations they need, despite Wen's concerns about its support hours. Priya will lead the rollout, with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for scheduling software over Vendor A because B offers the hospital integrations they need, at $18,500 per year versus $24,000, with the budget approved for year one. Priya owns the rollout, with a go-live deadline of November 22.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 1.0,
+    "on_task": 1.0,
+    "length": 1.0,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  },
+  {
+   "segment_id": 2,
+   "prompt": "Please condense these notes into a few sentences for my boss,",
+   "runs": [
+    {
+     "answer": "The team chose Vendor B for the new scheduling software at $18,500 for year one, over Vendor A at $24,000, mainly because B includes the hospital integrations we need, though Wen has concerns about its support hours. Priya will lead the rollout, with go-live set for November 22, and the next sync is moved to Thursday.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 1.0,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 1.0
+     },
+     "stop_reason": "end_turn"
+    },
+    {
+     "answer": "The team chose Vendor B for the new scheduling software at $18,500 for year one, over Vendor A at $24,000, mainly because B includes the hospital integrations we need, though Wen has concerns about its support hours. Priya will lead the rollout, with a go-live deadline of November 22. Tom will ask whether Vendor A can match the price, though this is unlikely to change the decision.",
+     "scores": {
+      "on_task": 1.0,
+      "length": 0.8833333333333333,
+      "key_facts": 1.0,
+      "no_noise": 1.0,
+      "overall": 0.9611111111111111
+     },
+     "stop_reason": "end_turn"
+    }
+   ],
+   "mean": {
+    "overall": 0.9805555555555556,
+    "on_task": 1.0,
+    "length": 0.9416666666666667,
+    "key_facts": 1.0,
+    "no_noise": 1.0
+   }
+  }
+ ],
+ "attribution": [
+  {
+   "overall": 0.29166666666666674,
+   "on_task": 0.0,
+   "length": 0.875,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  },
+  {
+   "overall": 0.0,
+   "on_task": 0.0,
+   "length": 0.0,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  },
+  {
+   "overall": 0.019444444444444375,
+   "on_task": 0.0,
+   "length": 0.05833333333333335,
+   "key_facts": 0.0,
+   "no_noise": 0.0
+  }
+ ],
+ "within_noise": [
+  {
+   "overall": false,
+   "on_task": true,
+   "length": false,
+   "key_facts": true,
+   "no_noise": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "length": true,
+   "key_facts": true,
+   "no_noise": true
+  },
+  {
+   "overall": true,
+   "on_task": true,
+   "length": true,
+   "key_facts": true,
+   "no_noise": true
+  }
+ ],
+ "explanations": {},
+ "judge_baseline": [
+  [
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   0.5,
+   1.0
+  ],
+  [
+   1.0,
+   0.5,
+   1.0
+  ]
+ ],
+ "judge_ablation": [
+  [
+   [
+    1.0,
+    1.0,
+    1.0
+   ],
+   [
+    0.5,
+    1.0,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.5,
+    1.0
+   ],
+   [
+    1.0,
+    0.5,
+    1.0
+   ]
+  ],
+  [
+   [
+    1.0,
+    0.5,
+    1.0
+   ],
+   [
+    1.0,
+    0.5,
+    1.0
+   ]
+  ]
+ ],
+ "follow_with": [
+  1.0,
+  0.6666666666666666,
+  1.0
+ ],
+ "follow_without": [
+  0.75,
+  0.5,
+  1.0
+ ],
+ "call_counts": {
+  "segment": 1,
+  "baseline": 3,
+  "ablation": 6,
+  "judge": 9
+ },
+ "calls": 19,
+ "input_tokens": 11758,
+ "output_tokens": 1802,
+ "model": "claude-haiku-5-5",
+ "config": {
+  "provider": "anthropic",
+  "model": "claude-haiku-5-5",
+  "temperature": null,
+  "thinking": "disabled",
+  "effort": "low",
+  "max_tokens": 800,
+  "segment_max_tokens": 2000,
+  "explain_max_tokens": 120,
+  "judge_parts": true,
+  "judge_max_tokens": 600,
+  "baseline_runs": 3,
+  "ablation_runs": 2,
+  "max_segments": 10,
+  "noise_floor_k": 2.0,
+  "min_noise_floor": 0.05,
+  "ablation_mode": "delete",
+  "max_concurrency": 8,
+  "max_calls_per_analysis": 60,
+  "explain_top_n": 3,
+  "price_per_mtok": {
+   "input": 0.1,
+   "output": 0.5
+  }
+ },
+ "created_at": "2026-10-18T06:12:09.909822+00:00"
+}

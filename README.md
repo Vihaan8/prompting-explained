@@ -10,7 +10,7 @@ I built this for an explainable AI course. The question I wanted to answer:
 
 > Can perturbation-based attributions over prompt segments give everyday users faithful and stable explanations of how their wording shapes an LLM's output?
 
-Short version of the answer, for one model (Claude Haiku 5.5): mostly yes for the big effects, and no for small ones. The top-ranked parts really are the ones that matter (removing them hurts about 75% more than removing random parts). Rerunning the same analysis gives the same top part 83% of the time. Small effects get lost in the model's run-to-run randomness, so the app says so instead of guessing.
+Short version of the answer, for one model (Claude Haiku 5.5) on 240 test prompts: mostly yes for the big effects, and no for small ones. The top-ranked parts really are the ones that matter: removing them hurts about 65% more than removing random parts. Rerunning the same analysis gives the same top part 78% of the time, and 86% of the time when that part's effect was clearly above the noise. Small effects get lost in the model's run-to-run randomness, so the app says so instead of guessing. When an attached document already says everything, almost nothing in the prompt matters, and the tool correctly finds nothing to rank.
 
 ## How it works
 
@@ -54,25 +54,40 @@ Each task's reference prompt passes every check on 5 out of 5 runs. Tasks 4 to 8
 
 ## Results
 
-Everything below comes from `results/summary.md`, produced by `scripts/run_eval.py`. The model was `claude-haiku-5-5`, with thinking off and effort low. Each analysis used 3 baseline runs and 2 runs per removed part. The prompts are 90 synthetic ones: tasks 1 to 3 × novice, average, and expert users, 10 each, written by an LLM. (The 90-prompt eval predates tasks 4 to 8; the messy-prompt testing below covers all eight.) Expert prompts scored higher than novice ones on all three tasks (kid task 0.94 vs 0.36, landlord 1.00 vs 0.79, JSON 0.84 vs 0.06), so the synthetic users behave the way you'd hope.
+Everything below comes from `results/summary.md`, produced by `scripts/run_eval.py`. The model was `claude-haiku-5-5`, with thinking off and effort low. Each analysis used 3 baseline runs and 2 runs per removed part. The prompts are 240 synthetic ones: all 8 tasks × novice, average, and expert users, 10 each, written by an LLM. Expert prompts scored higher than novice ones on every task (0.97 vs 0.59 on average), so the synthetic users behave the way you'd hope. The gap is widest where nothing is attached to lean on: on the kid task it is 0.94 vs 0.36. Where the attached document does most of the work, it is small: the bug report is 1.00 vs 0.87.
 
-**Faithfulness.** For the 30 prompts with at least 4 parts, I removed the 2 top-ranked parts together and compared that with removing 2 random parts, using new model calls each time. The top-2 removal dropped the score by 0.48 on average, against 0.27 for random parts. Top-2 hurt more in 24 of 30 prompts (one-sided Wilcoxon p = 0.0002). With 3 parts removed there was no difference (0.49 vs 0.51). Half of these prompts only have 4 parts, so 3 random parts out of 4 always overlap heavily with the top 3. That is a weak test, not evidence against the method.
+**Faithfulness.** For the 79 prompts with at least 4 parts, I removed the 2 top-ranked parts together and compared that with removing 2 random parts, using new model calls each time. The top-2 removal dropped the score by 0.30 on average, against 0.18 for random parts (one-sided Wilcoxon p = 0.0002). The gap is large where wording matters (kid task 0.77 vs 0.45, JSON 0.60 vs 0.27, FAQ 0.42 vs 0.28) and absent on the landlord and meeting tasks. There, removing any 2 parts barely moves the score (under 0.07) because the attached email or notes carry the answer, so there is nothing for a ranking to find. With 3 parts removed there was no difference (0.36 vs 0.35). Most of these prompts have only 4 or 5 parts, so 3 random parts always overlap heavily with the top 3. That is a weak test, not evidence against the method.
 
 ![Drop in score after removing the top-k parts vs k random parts](results/faithfulness.png)
 
-**Stability.** I reanalyzed 30 prompts from scratch, keeping the same parts.
-- The ranking of parts correlated well between the two runs: median Spearman 1.00, mean 0.85, over the 17 prompts with enough parts to rank.
-- The top part was the same 83% of the time.
-- The full verdict (mattered / followed / did it anyway / ignored) matched for 70% of parts.
-- Splitting the same prompt 3 times gave identical parts 83% of the time.
+**Stability.** I reanalyzed 80 prompts from scratch, 10 per task, keeping the same parts.
+- The ranking of parts correlated well between the two runs: median Spearman 1.00, mean 0.77, over the 35 prompts with enough parts to rank.
+- The top part was the same 78% of the time, and 86% of the time when it had cleared the noise floor in the first run.
+- The helped / hurt / no effect verdict matched for 81% of parts. The fuller verdict (mattered / followed / did it anyway / ignored) matched for 72%.
+- Splitting the same prompt 3 times gave identical parts 89% of the time.
 
-**What kinds of parts matter.** Grouped by the role the splitter assigned:
-- Format instructions changed the score the most: mean effect 0.27, above the noise floor 88% of the time.
-- Task instructions came close behind, at 0.26.
-- Politeness (0.07) and tone (0.06) changed it the least.
-- On the landlord task, most parts (57 of 97) were things the AI did anyway, because the attached email and lease already say everything.
+**How many runs are enough?** The app runs the full prompt 3 times and each shortened prompt twice. To see what more runs would buy, I ran the same 80 prompts 12 times in full and 12 times per removed part. Then I compared pairs of analyses built from separate halves of those runs (`scripts/runs_experiment.py`, `results/runs_experiment.md`).
+
+| Full runs / runs per part | Task calls (mean) | Same verdict per part | Same top part |
+|---|---|---|---|
+| 3/2 (the app) | 9 | 83% | 83% |
+| 4/3 | 13 | 87% | 85% |
+| 5/4 | 17 | 89% | 86% |
+| 6/6 | 24 | 91% | 89% |
+
+The 3/2 row matches the real reruns above (81% and 78%), so the setup reflects what users see. Nearly tripling the calls buys about 8 points of agreement. It also barely shrinks the share of parts shown as "no difference" (61% to 57%), so most grey verdicts are real non-effects, not noise hiding small effects. The landlord and privacy tasks gain the most, because their scores move in small steps. I kept 3/2 for the app: it keeps an analysis under a minute, and the gains are modest.
+
+![Agreement between two analyses as runs per analysis grow](results/runs_experiment.png)
+
+**What kinds of parts matter.** Grouped by the role the splitter assigned, over all 741 parts:
+- Format instructions changed the score the most: mean effect 0.24, above the noise floor 70% of the time.
+- Task instructions came close behind, at 0.23.
+- Politeness (0.06) and tone (0.04) changed it the least.
+- 45% of all parts asked for something the AI did anyway. On the landlord task it was 54 of 97 parts, because the attached email and lease already say everything.
 
 ![Mean effect of each kind of prompt part](results/roles.png)
+
+**Can the per-part judge be trusted?** Some parts ask for exactly what a code check measures, like "under 60 words", "exactly 3 bullets", "only JSON", "don't apologize", or "keep the customer's details out". For those, the judge's yes/no on each answer can be checked against the code on the same answer (1,139 answers, section F of the summary). It agrees 88% of the time. It is reliable on format: bullets 96% and JSON only 93%, with kappa near 0.9. It is unreliable on length: 93 times it said an answer met a word limit that the answer broke, so it can't count words. On privacy it said "kept the details out" for 6 answers that leaked a name or email. Code checks drive the scores, and the judge only decides between "followed" and "did it anyway", so these misses affect the blue and grey labels, not the green and red ones.
 
 **Does it match human intuition?** Before running anything, I wrote down what I expected for 71 parts across 24 fairly clean prompts (`results/expectations.yaml`). Under the current rules the tool agrees with me on 54 of them (76%, Cohen's kappa 0.60). When we disagreed, I was usually the one who was wrong: the AI fills in more than I expected. It writes an email even without "write a reply", and keeps replies short without being told. The per-part judge also missed one code block, which was a real tool mistake. `results/expectations_report.md` lists every disagreement.
 
@@ -107,7 +122,7 @@ cp .env.example .env        # add your ANTHROPIC_API_KEY
 .venv/bin/streamlit run app/streamlit_app.py
 ```
 
-Without a key, pick a task from the menu, switch to Samples, and open one of six saved analyses. One live analysis is around 15 to 40 calls to Haiku, a fraction of a cent.
+Without a key, pick a task from the menu, switch to Samples, and open one of the saved analyses (two or three per task). You can also paste a key into "Add an Anthropic API key" in the app. It is used only for that browser session and never saved. One live analysis is around 15 to 50 calls to Haiku, a fraction of a cent.
 
 Tests use a fake model and make no API calls:
 
@@ -115,31 +130,42 @@ Tests use a fake model and make no API calls:
 .venv/bin/pytest
 ```
 
-To deploy on Streamlit Community Cloud, point it at `app/streamlit_app.py` and add `ANTHROPIC_API_KEY` to the app's secrets. Each browser session gets 10 analyses on the shared key.
+### Deploying
+
+On [Streamlit Community Cloud](https://share.streamlit.io):
+
+1. Create an app from this repo with `app/streamlit_app.py` as the main file. Under Advanced settings, pick Python 3.12.
+2. In the app's Secrets, add `ANTHROPIC_API_KEY` (see `.streamlit/secrets.toml.example`).
+3. Optionally set `DAILY_ANALYSIS_CAP` there too (default 300).
+4. To limit who can open it, set the app to private under Settings > Sharing and invite viewers by email.
+
+Limits on the shared key: each browser session gets 10 analyses, all visitors together get `DAILY_ANALYSIS_CAP` per day, and prompts are capped at 1,500 characters. Visitors who paste their own key skip the first two limits. Prompts are sent to Anthropic's API to be analyzed and are not stored by the app. The key is only read on the server: it never reaches the browser, and error messages show only the error's type.
 
 ## Reproducing the evaluation
 
 ```bash
 .venv/bin/python scripts/verify_references.py      # each task's reference prompt must pass 5/5
-.venv/bin/python scripts/generate_attempts.py      # 90 synthetic prompts
+.venv/bin/python scripts/generate_attempts.py      # 240 synthetic prompts (only generates tasks not in the file yet)
 .venv/bin/python scripts/run_eval.py               # analyses, deletion test, reruns, per-part check, report
 .venv/bin/python scripts/validate_expectations.py  # compare against hand-written expectations
 .venv/bin/python scripts/validate_expectations.py --spec results/expectations_messy.yaml  # the messy prompts
+.venv/bin/python scripts/runs_experiment.py        # how many runs per analysis are enough
 .venv/bin/python scripts/run_eval.py --stage report  # redraw plots from saved results, no API calls
+.venv/bin/python scripts/poster_chart.py           # redraw the poster's chart from results/roles.csv
 ```
 
-All settings live in `config.yaml`. The full evaluation cost about $0.50 in API calls. Every model output is saved under `results/`, so the numbers can be checked or rescored without rerunning anything.
+All settings live in `config.yaml`. The full evaluation, including the runs experiment, cost about $1.30 in API calls. Every model output is saved under `results/`, so the numbers can be checked or rescored without rerunning anything.
 
 ## Limitations
 
 - Results are for one model and version, on eight tasks. Other models will behave differently.
 - Removing one part at a time misses parts that only matter together, or parts that back each other up.
 - A prompt with a piece cut out can read strangely, and that alone can change the answer.
-- The splitting, the per-part check, and the "why" sentences all come from a model, and models make mistakes (see the code block miss above).
+- The splitting, the per-part check, and the "why" sentences all come from a model, and models make mistakes. The per-part check can't count words and misses some leaked personal details (see "Can the per-part judge be trusted?" above).
 - Each noise floor comes from only 3 runs with the part and 2 without, so it is itself noisy.
 - Removal is the only comparison. "Give me 5 subject line options" shows green because deleting it leaves no instruction at all; occlusion can't tell you a different instruction would have been better.
 - The headline verdict uses the overall score, so a part that fixed one check can look like it did nothing when the same answer failed another check. The How it works tab has the per-check numbers.
-- The 90 eval prompts were written by an LLM pretending to be users. Real users are messier.
+- The 240 eval prompts were written by an LLM pretending to be users. Real users are messier.
 - People may trust a coloured heatmap more than they should. The grey and "can't tell" verdicts help, but they don't remove that risk.
 
 ## Adding a task
