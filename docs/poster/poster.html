@@ -92,36 +92,38 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 <div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 15px 22px; display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: 37px; font-weight: 600; display: flex; gap: 14px; align-items: center"><span style="width: 46px; height: 46px; border-radius: 50%; background: #3F3577; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none">2</span>Remove one phrase and rerun</p>
 <p style="margin: 0; font-size: 32px">The full prompt runs 3 times, and each shorter prompt runs twice (occlusion*). Phrases that do nothing alone are also removed together once.</p>
-<p style="margin: 0; font-size: 29px; background: #FAF8F5; border: 1.5px solid #E8E4DE; border-radius: 10px; padding: 10px 14px; color: #4A4741">Hi there! Explain inflation to my 10-year-old cousin. Use exactly 3 bullet points. Mention a candy bar in one of them. <s style="color: #8A3A33">Use proper technical terms.</s></p>
+<p style="margin: 0; font-size: 29px; background: #FAF8F5; border: 1.5px solid #E8E4DE; border-radius: 10px; padding: 10px 14px; color: #4A4741">… Mention a candy bar in one of them. <s style="color: #8A3A33">Use proper technical terms.</s></p>
 </div>
 <div style="text-align: center; color: #7F77DD; font-size: 30px; line-height: 0.8">↓</div>
 
 <div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 15px 22px; display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: 37px; font-weight: 600; display: flex; gap: 14px; align-items: center"><span style="width: 46px; height: 46px; border-radius: 50%; background: #3F3577; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none">3</span>Score every answer</p>
-<p style="margin: 0; font-size: 32px">Each task has a short checklist I wrote, which code grades from 0 to 1. Below is the inflation task's checklist, scored with and without "Use proper technical terms." A second AI separately checks whether each instruction was followed*.</p>
-<table style="border-collapse: collapse; font-size: 29px; width: 100%; font-variant-numeric: tabular-nums">
-<tr style="color: #4A4741"><td style="padding: 3px 0">Inflation task checklist</td><td style="padding: 3px 0; text-align: right; width: 27%">With the phrase</td><td style="padding: 3px 0; text-align: right; width: 22%">Without it</td></tr>
-<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 3px 0">Explains why prices go up <span style="color: #4A4741">(must pass)</span></td><td style="text-align: right">1.00</td><td style="text-align: right">1.00</td></tr>
-<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 3px 0">Exactly 3 bullet points</td><td style="text-align: right">1.00</td><td style="text-align: right">1.00</td></tr>
-<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 3px 0">60 words or fewer</td><td style="text-align: right">0.00</td><td style="text-align: right">0.47</td></tr>
-<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 3px 0">Readable by a 10-year-old</td><td style="text-align: right">0.19</td><td style="text-align: right">0.86</td></tr>
-<tr style="border-top: 2px solid #2B2A28; font-weight: 600"><td style="padding: 3px 0">Score</td><td style="text-align: right">0.40</td><td style="text-align: right">0.78</td></tr>
-</table>
-<p style="margin: 0; font-size: 26px; color: #4A4741">Score = average of the last three checks, or 0 if the must-pass check fails. Near misses get partial credit: an 80-word answer scores 0.67 on length. Each number is an average over the runs.</p>
+<p style="margin: 0; font-size: 32px">Each task has a checklist I wrote of what a good answer looks like. For this one: it explains why prices go up, uses 3 bullet points, stays under 60 words, and reads at a 10-year-old's level. Code scores each answer from 0 to 1.</p>
+<p style="margin: 0; font-size: 28px; color: #4A4741">The limits are my choices for this task. They stay the same for every version of the prompt, so what matters is how the score changes, not the limit itself.</p>
 </div>
 <div style="text-align: center; color: #7F77DD; font-size: 30px; line-height: 0.8">↓</div>
 
 <div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 15px 22px; display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 37px; font-weight: 600; display: flex; gap: 14px; align-items: center"><span style="width: 46px; height: 46px; border-radius: 50%; background: #3F3577; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none">4</span>Keep it only if it beats the noise</p>
-<p style="margin: 0; font-size: 32px">Answers vary from run to run, so a change counts only if it is bigger than the noise floor*. Here the score rose by 0.38, well above this phrase's floor of 0.10, so the phrase is marked red.</p>
-<p style="margin: 0; font-size: 29px; color: #4A4741">Score drops without it: <b style="color: #2F6340">green</b> · rises: <b style="color: #8A3A33">red</b> · followed, no change: <b style="color: #2B4F6E">blue</b> · within the noise: <b style="color: #4A4741">grey</b></p>
+<p style="margin: 0; font-size: 37px; font-weight: 600; display: flex; gap: 14px; align-items: center"><span style="width: 46px; height: 46px; border-radius: 50%; background: #3F3577; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none">4</span>Measure each phrase's effect</p>
+<p style="margin: 0; font-size: 32px">With every phrase in, this prompt scores 0.40. Each phrase's effect is how far the score moves without it: down means the phrase helped, up means it hurt.</p>
+</div>
+<div style="text-align: center; color: #7F77DD; font-size: 30px; line-height: 0.8">↓</div>
+
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 15px 22px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 37px; font-weight: 600; display: flex; gap: 14px; align-items: center"><span style="width: 46px; height: 46px; border-radius: 50%; background: #3F3577; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none">5</span>Keep only real effects</p>
+<p style="margin: 0; font-size: 32px">Answers vary from run to run, so a change counts only if it is bigger than that phrase's noise floor*. A smaller change means the phrase did nothing, unless a second AI saw its instruction carried out only when the phrase was there.</p>
+<table style="border-collapse: collapse; font-size: 28px; width: 100%; font-variant-numeric: tabular-nums">
+<tr style="color: #4A4741"><td style="padding: 4px 0">Phrase</td><td style="text-align: right; width: 19%">Without it</td><td style="text-align: right; width: 17%">Noise floor</td><td style="padding-left: 22px; width: 23%">Result</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 4px 0">Hi there!</td><td style="text-align: right">0.43</td><td style="text-align: right">0.08</td><td style="padding-left: 22px"><span style="display: inline-block; width: 24px; height: 24px; border-radius: 6px; background: #EEECE8; border: 2px dashed #6B675F; vertical-align: -3px; margin-right: 8px"></span>No effect</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 4px 0">Explain inflation</td><td style="text-align: right">0.00</td><td style="text-align: right">0.05</td><td style="padding-left: 22px"><span style="display: inline-block; width: 24px; height: 24px; border-radius: 6px; background: #CFE8D5; border: 2px solid #2F6340; vertical-align: -3px; margin-right: 8px"></span>Helped</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 4px 0">to my 10-year-old cousin</td><td style="text-align: right">0.33</td><td style="text-align: right">0.05</td><td style="padding-left: 22px"><span style="display: inline-block; width: 24px; height: 24px; border-radius: 6px; background: #CFE8D5; border: 2px solid #2F6340; vertical-align: -3px; margin-right: 8px"></span>Helped</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 4px 0">Use exactly 3 bullet points</td><td style="text-align: right">0.37</td><td style="text-align: right">0.07</td><td style="padding-left: 22px"><span style="display: inline-block; width: 24px; height: 24px; border-radius: 6px; background: #D7E6F3; border: 2px solid #2B4F6E; vertical-align: -3px; margin-right: 8px"></span>Followed</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 4px 0">Mention a candy bar…</td><td style="text-align: right">0.44</td><td style="text-align: right">0.05</td><td style="padding-left: 22px"><span style="display: inline-block; width: 24px; height: 24px; border-radius: 6px; background: #D7E6F3; border: 2px solid #2B4F6E; vertical-align: -3px; margin-right: 8px"></span>Followed</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 4px 0">Use proper technical terms</td><td style="text-align: right">0.78</td><td style="text-align: right">0.10</td><td style="padding-left: 22px"><span style="display: inline-block; width: 24px; height: 24px; border-radius: 6px; background: #F5D3D0; border: 2px solid #8A3A33; vertical-align: -3px; margin-right: 8px"></span>Hurt</td></tr>
+</table>
 </div>
 
-<div style="display: flex; flex-direction: column; gap: 4px; font-size: 25px; line-height: 1.38; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 12px 18px; margin-top: 6px">
-<span><b>* Occlusion (leave-one-out):</b> hide one part of the input and measure the change, giving each phrase a counterfactual. LIME does this with single words.</span>
-<span><b>* AI as a judge:</b> one AI grading another's output. It can be wrong, so I measured its mistakes (07).</span>
-<span><b>* Noise floor:</b> two standard errors of the run-to-run variation. Smaller changes stay grey.</span>
-</div>
+
 </section>
 
 <!-- Column 3: worked example, then does the tool work -->
@@ -194,6 +196,10 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 </div>
 
 <p style="margin: 4px 0 0; padding-top: 16px; border-top: 3px solid #2B2A28; font-size: 35px; line-height: 1.38; font-weight: 500">In these tests, the tool reliably pointed at the words that drove an answer, and it beat my own guesses. Whether it makes people write better prompts is the next thing to test.</p>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 25px; line-height: 1.38; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 12px 18px; margin-top: 6px">
+<span><b>* Occlusion (leave-one-out):</b> hide one part of the input and measure the change, giving each phrase a counterfactual. LIME does this with single words.</span>
+<span><b>* Noise floor:</b> two standard errors of the run-to-run variation. Smaller changes stay grey.</span>
+</div>
 </section>
 
 </div>
