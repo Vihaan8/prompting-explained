@@ -49,7 +49,13 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 
 <div style="display: flex; flex-direction: column; gap: 18px">
 <h2 style="margin: 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">02</span>The problem</h2>
-<p style="margin: 0">AI tools show you an answer, but not which of your words produced it. So people keep habits that don't help, and some mistakes slip through. In my tests, asking the AI to turn a support ticket into a public bug report leaked the customer's name in 2 of 3 runs, with no warning.</p>
+<p style="margin: 0">People learn to prompt by trial and error. Chat tools return an answer but never show which words the model acted on, so nobody can tell which of their habits help. For a company rolling out AI, that costs three things:</p>
+<ul style="margin: 0; padding-left: 36px; display: flex; flex-direction: column; gap: 10px">
+<li><b>Worse answers.</b> Missing or counterproductive instructions go unnoticed.</li>
+<li><b>Wasted tokens.</b> In my 240 test prompts, 45% of phrases asked for something the AI would have done anyway.</li>
+<li><b>Hidden risk.</b> Asked to turn a support ticket into a public bug report, the AI leaked the customer's name in 2 of 3 runs, with no warning.</li>
+</ul>
+<p style="margin: 0">Prompting guides offer general tips. They don't show people what their own prompt did.</p>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 14px">
