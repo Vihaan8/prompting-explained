@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title>prompting-explained poster</title>
-<script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -15,42 +14,43 @@ body{margin:0;background:#FAF8F5}
 a{color:#3F3577}a:hover{color:#2B2A28}
 </style>
 </helmet>
-<div style="width: 4608px; height: 3456px; box-sizing: border-box; padding: 104px 128px 96px; background: #FAF8F5; color: #2B2A28; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 33px; line-height: 1.45; display: flex; flex-direction: column; gap: 56px; overflow: hidden">
+<!-- 36 x 24 inches, landscape: 4608 x 3072 px at 128 px per inch -->
+<div style="width: 4608px; height: 3072px; box-sizing: border-box; padding: 80px 112px 56px; background: #FAF8F5; color: #2B2A28; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 34px; line-height: 1.42; display: flex; flex-direction: column; gap: 40px; overflow: hidden">
 
-<header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 96px; padding-bottom: 44px; border-bottom: 3px solid #2B2A28">
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 3350px">
-<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 40px; font-weight: 500; color: #3F3577">prompting-explained</p>
-<h1 style="margin: 0; font-size: 118px; line-height: 1.02; font-weight: 600; letter-spacing: -0.02em">Which Words in Your Prompt Actually Matter?</h1>
-<p style="margin: 0; font-size: 44px; line-height: 1.35; color: #4A4741">A teaching tool that shows you the impact of each phrase in your prompt on the AI's answer.</p>
+<header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 96px; padding-bottom: 34px; border-bottom: 3px solid #2B2A28">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 3350px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 38px; font-weight: 500; color: #3F3577">prompting-explained</p>
+<h1 style="margin: 0; font-size: 110px; line-height: 1.02; font-weight: 600; letter-spacing: -0.02em">Which Words in Your Prompt Actually Matter?</h1>
+<p style="margin: 0; font-size: 42px; line-height: 1.35; color: #4A4741">A teaching tool that shows you the impact of each phrase in your prompt on the AI's answer.</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-end; text-align: right; flex: none">
-<p style="margin: 0; font-size: 44px; font-weight: 600">Vihaan Manchanda</p>
-<p style="margin: 0; font-size: 32px; color: #4A4741">Duke University · Explainable AI</p>
-<div style="margin-top: 8px; background: #DAD4F2; border-radius: 20px; padding: 20px 26px; display: flex; gap: 26px; align-items: center">
-<img src="qr_app.png" alt="QR code linking to the live app" style="width: 190px; height: 190px; image-rendering: pixelated; background: #FFFFFF; border-radius: 10px; padding: 8px; flex: none">
+<div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-end; text-align: right; flex: none">
+<p style="margin: 0; font-size: 42px; font-weight: 600">Vihaan Manchanda</p>
+<p style="margin: 0; font-size: 30px; color: #4A4741">Duke University · Explainable AI</p>
+<div style="margin-top: 6px; background: #DAD4F2; border-radius: 20px; padding: 18px 24px; display: flex; gap: 24px; align-items: center">
+<img src="qr_app.png" alt="QR code linking to the live app" style="width: 170px; height: 170px; image-rendering: pixelated; background: #FFFFFF; border-radius: 10px; padding: 8px; flex: none">
 <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-end">
-<span style="font-size: 26px; font-weight: 700; color: #3F3577; letter-spacing: 0.05em">SCAN TO TRY THE APP</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 34px; font-weight: 500; color: #3F3577">github.com/Vihaan8/prompting-explained</span>
+<span style="font-size: 25px; font-weight: 700; color: #3F3577; letter-spacing: 0.05em">SCAN TO TRY THE APP</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 32px; font-weight: 500; color: #3F3577">github.com/Vihaan8/prompting-explained</span>
 </div>
 </div>
 </div>
 </header>
 
-<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 84px; flex: 1; min-height: 0">
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 76px; flex: 1; min-height: 0">
 
-<!-- Column 1 -->
-<section style="display: flex; flex-direction: column; gap: 38px; min-width: 0">
-<div style="display: flex; flex-direction: column; gap: 18px">
-<h2 style="margin: 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">01</span>Executive summary</h2>
+<!-- Column 1: why it matters and who it is for -->
+<section style="display: flex; flex-direction: column; gap: 32px; min-width: 0">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 55px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">01</span>Executive summary</h2>
 <p style="margin: 0">People in almost every field now use AI tools, but there is no tool that teaches prompt-writing literacy. AI developers learn what works through practice. Most users never do. In one study, non-experts wrote prompts the way they would instruct a person, and struggled to fix them when the answer went wrong (Zamfirescu-Pereira et al., 2023). Small wording changes matter too. Changing only a prompt's formatting moved one model's accuracy by up to 76 points (Sclar et al., 2024). A badly worded prompt wastes tokens and context, and gets a worse answer.</p>
 <p style="margin: 0">I built <b>prompting-explained</b> to teach how each word in a prompt contributed to the AI's answer. It removes one phrase at a time, reruns the prompt, and highlights the phrases that changed the result. On 240 test prompts across 8 everyday tasks, the phrases it ranked highest mattered clearly more than random ones, and its top pick repeated 78% of the time.</p>
 <p style="margin: 0">The goal is a training tool companies load with their own tasks, so staff learn what works on their real work.</p>
 </div>
 
-<div style="display: flex; flex-direction: column; gap: 18px">
-<h2 style="margin: 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">02</span>The problem</h2>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 55px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">02</span>The problem</h2>
 <p style="margin: 0">People learn to prompt by trial and error. Chat tools return an answer but never show which words the model acted on, so nobody can tell which of their habits help. For a company rolling out AI, that costs three things:</p>
-<ul style="margin: 0; padding-left: 36px; display: flex; flex-direction: column; gap: 10px">
+<ul style="margin: 0; padding-left: 34px; display: flex; flex-direction: column; gap: 8px">
 <li><b>Worse answers.</b> Missing or counterproductive instructions go unnoticed.</li>
 <li><b>Wasted tokens.</b> In my 240 test prompts, 45% of phrases asked for something the AI would have done anyway.</li>
 <li><b>Hidden risk.</b> An answer can look fine while quietly breaking an instruction, such as keeping private details out, and nothing warns the user.</li>
@@ -58,60 +58,76 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 <p style="margin: 0">Prompting guides offer general tips. They don't show people what their own prompt did.</p>
 </div>
 
-<div style="display: flex; flex-direction: column; gap: 14px">
-<h2 style="margin: 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">03</span>Who it's for</h2>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 55px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">03</span>Who it's for</h2>
 <p style="margin: 0"><b>Everyday users.</b> People who just want the right answer. They see which of their words helped and which didn't, without needing to know how AI works.</p>
 <p style="margin: 0"><b>Employees at companies adopting AI.</b> Staff who are still learning to use AI practice on their own company's tasks, documents and rules.</p>
 <p style="margin: 0"><b>Governance and compliance teams.</b> Test whether a safety instruction, such as "leave out customer details", actually changes the answer before rolling it out.</p>
-
 </div>
 </section>
 
-<!-- Column 2 -->
-<section style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
-<div style="display: flex; flex-direction: column; gap: 10px; padding-bottom: 6px">
+<!-- Column 2: the question and how the tool works, shown on the worked example's prompt -->
+<section style="display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<div style="display: flex; flex-direction: column; gap: 8px; padding-bottom: 6px">
 <span style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577">THE QUESTION</span>
-<p style="margin: 0; font-size: 38px; line-height: 1.35">Can removing one phrase at a time and rerunning the prompt show which words changed the AI's answer, in a way that is <b>faithful</b> and <b>stable</b>?</p>
+<p style="margin: 0; font-size: 38px; line-height: 1.33">Can removing one phrase at a time and rerunning the prompt show which words changed the AI's answer, in a way that is <b>faithful</b> and <b>stable</b>?</p>
 </div>
-<h2 style="margin: 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">04</span>Methods</h2>
+<h2 style="margin: 0; font-size: 55px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">04</span>How it works</h2>
+<p style="margin: 0; font-size: 31px; color: #4A4741">Following the prompt from the worked example (05) through each step.</p>
 
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">1</span> Split the prompt into phrases</p>
-<p style="margin: 0">An AI splits the prompt into up to 10 phrases and tags each one (task, audience, format, politeness…). These phrases are the pieces the tool will perturb*. Code keeps each phrase exactly as typed, typos included.</p>
-<span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* Perturbation:</b> changing part of an input to see how the output responds. LIME does this with single words.</span>
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 18px 24px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 37px; font-weight: 600; display: flex; gap: 14px; align-items: center"><span style="width: 46px; height: 46px; border-radius: 50%; background: #3F3577; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none">1</span>Split the prompt into phrases</p>
+<p style="margin: 0; font-size: 32px">An AI splits the prompt and tags each phrase. Code keeps every phrase exactly as typed.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 29px">
+<span style="background: #F3F1EC; border: 1.5px solid #D9D5CE; border-radius: 8px; padding: 2px 10px">Hi there!</span>
+<span style="background: #F3F1EC; border: 1.5px solid #D9D5CE; border-radius: 8px; padding: 2px 10px">Explain inflation</span>
+<span style="background: #F3F1EC; border: 1.5px solid #D9D5CE; border-radius: 8px; padding: 2px 10px">to my 10-year-old cousin.</span>
+<span style="background: #F3F1EC; border: 1.5px solid #D9D5CE; border-radius: 8px; padding: 2px 10px">Use exactly 3 bullet points.</span>
+<span style="background: #F3F1EC; border: 1.5px solid #D9D5CE; border-radius: 8px; padding: 2px 10px">Mention a candy bar in one of them.</span>
+<span style="background: #F3F1EC; border: 1.5px solid #D9D5CE; border-radius: 8px; padding: 2px 10px">Use proper technical terms.</span>
+</div>
+</div>
+<div style="text-align: center; color: #7F77DD; font-size: 36px; line-height: 1">↓</div>
+
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 18px 24px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 37px; font-weight: 600; display: flex; gap: 14px; align-items: center"><span style="width: 46px; height: 46px; border-radius: 50%; background: #3F3577; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none">2</span>Remove one phrase and rerun</p>
+<p style="margin: 0; font-size: 32px">The full prompt runs 3 times, and each shorter prompt runs twice (occlusion*). Phrases that do nothing alone are also removed together once.</p>
+<p style="margin: 0; font-size: 29px; background: #FAF8F5; border: 1.5px solid #E8E4DE; border-radius: 10px; padding: 10px 14px; color: #4A4741">Hi there! Explain inflation to my 10-year-old cousin. Use exactly 3 bullet points. Mention a candy bar in one of them. <s style="color: #8A3A33">Use proper technical terms.</s></p>
+</div>
+<div style="text-align: center; color: #7F77DD; font-size: 36px; line-height: 1">↓</div>
+
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 18px 24px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 37px; font-weight: 600; display: flex; gap: 14px; align-items: center"><span style="width: 46px; height: 46px; border-radius: 50%; background: #3F3577; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none">3</span>Score every answer</p>
+<p style="margin: 0; font-size: 32px">Code grades each answer against the task's checklist, from 0 to 1. A second AI separately checks whether each instruction was followed*.</p>
+<table style="border-collapse: collapse; font-size: 29px; width: 100%; font-variant-numeric: tabular-nums">
+<tr style="color: #4A4741"><td style="padding: 3px 0"></td><td style="padding: 3px 0; text-align: right; width: 22%">With it</td><td style="padding: 3px 0; text-align: right; width: 24%">Without it</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 3px 0">Explains why prices go up</td><td style="text-align: right">1.00</td><td style="text-align: right">1.00</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 3px 0">Exactly 3 bullet points</td><td style="text-align: right">1.00</td><td style="text-align: right">1.00</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 3px 0">60 words or fewer</td><td style="text-align: right">0.00</td><td style="text-align: right">0.47</td></tr>
+<tr style="border-top: 1.5px solid #E8E4DE"><td style="padding: 3px 0">Readable by a 10-year-old</td><td style="text-align: right">0.19</td><td style="text-align: right">0.86</td></tr>
+<tr style="border-top: 2px solid #2B2A28; font-weight: 600"><td style="padding: 3px 0">Score</td><td style="text-align: right">0.40</td><td style="text-align: right">0.78</td></tr>
+</table>
+</div>
+<div style="text-align: center; color: #7F77DD; font-size: 36px; line-height: 1">↓</div>
+
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 18px 24px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 37px; font-weight: 600; display: flex; gap: 14px; align-items: center"><span style="width: 46px; height: 46px; border-radius: 50%; background: #3F3577; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none">4</span>Keep it only if it beats the noise</p>
+<p style="margin: 0; font-size: 32px">Answers vary from run to run, so a change counts only if it is bigger than the noise floor*. Here the score rose by 0.38, well above this phrase's floor of 0.10, so the phrase is marked red.</p>
+<p style="margin: 0; font-size: 29px; color: #4A4741">Score drops without it: <b style="color: #2F6340">green</b> · rises: <b style="color: #8A3A33">red</b> · followed, no change: <b style="color: #2B4F6E">blue</b> · within the noise: <b style="color: #4A4741">grey</b></p>
 </div>
 
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">2</span> Remove one phrase and rerun</p>
-<p style="margin: 0">The full prompt runs 3 times. Then each phrase is deleted in turn and the shorter prompt runs twice. This is occlusion*. A phrase's effect is how much the score drops without it, which gives every phrase its own counterfactual**. Phrases that change nothing alone are also removed together once, in case they cover for each other.</p>
-<span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* Occlusion (leave-one-out):</b> hide one part of the input, rerun, and measure the change.<br><b>** Counterfactual:</b> the same case with one thing changed, to see what that one thing did.</span>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 25px; line-height: 1.38; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 12px 18px; margin-top: 6px">
+<span><b>* Occlusion (leave-one-out):</b> hide one part of the input and measure the change, so each phrase gets its own counterfactual. LIME perturbs inputs the same way, with single words.</span>
+<span><b>* AI as a judge:</b> one AI grading another's output. It can be wrong, so I measured its mistakes (07).</span>
+<span><b>* Noise floor:</b> two standard errors of the run-to-run variation. Smaller changes stay grey.</span>
 </div>
-
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">3</span> Score every answer two ways</p>
-<p style="margin: 0"><b>Against the task.</b> Each task comes with a short checklist that code grades automatically, like a teacher's rubric, from 0 (misses everything) to 1 (passes everything). An answer that doesn't do the task at all, such as asking "what should I explain?", scores 0.</p>
-<p style="margin: 0"><b>Against your instructions.</b> A second AI reads each answer and marks which of your instructions it followed*, such as "use a candy example", which code can't check. That separates "the AI followed this" from "this made the answer better".</p>
-<span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* AI as a judge:</b> using one AI to grade another's output. It can be wrong, so its mistakes are reported.</span>
-</div>
-
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">4</span> Filter out noise</p>
-<p style="margin: 0">The AI's answers vary from run to run, so every version runs more than once. A change only counts if it's bigger than the noise floor*. Anything smaller stays grey, and the tool says "not clear" rather than guessing.</p>
-<span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* Noise floor:</b> the smallest change the tool can tell apart from the AI's natural randomness (two standard errors).</span>
-</div>
-
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
-<p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">5</span> Explain it in plain words</p>
-<p style="margin: 0">Each phrase that mattered gets one sentence, written by an AI, describing how the answer changed without it. Every number and every color comes from code.</p>
-</div>
-
 </section>
 
-<!-- Column 3 -->
-<section style="display: flex; flex-direction: column; gap: 26px; min-width: 0">
-<h2 style="margin: 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">05</span>Worked example</h2>
+<!-- Column 3: worked example, then does the tool work -->
+<section style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+<h2 style="margin: 0; font-size: 55px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">05</span>Worked example</h2>
 <p style="margin: 0; color: #4A4741">Task: write a prompt that gets the AI to explain inflation to your 10-year-old cousin. One user wrote this:</p>
-<p style="margin: 0; font-size: 38px; line-height: 2.05; background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 24px 30px">
+<p style="margin: 0; font-size: 38px; line-height: 2.0; background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 20px 26px">
 <mark style="background: #EEECE8; color: #2B2A28; padding: 4px 10px; border-radius: 8px; text-decoration: underline dotted #6B675F; text-underline-offset: 7px">Hi there!</mark>
 <mark style="background: #CFE8D5; color: #2B2A28; padding: 4px 10px; border-radius: 8px">Explain inflation</mark>
 <mark style="background: #CFE8D5; color: #2B2A28; padding: 4px 10px; border-radius: 8px">to my 10-year-old cousin.</mark>
@@ -119,82 +135,73 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 <mark style="background: #D7E6F3; color: #2B2A28; padding: 4px 10px; border-radius: 8px">Mention a candy bar in one of them.</mark>
 <mark style="background: #F5D3D0; color: #2B2A28; padding: 4px 10px; border-radius: 8px">Use proper technical terms.</mark>
 </p>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 22px; font-size: 29px">
-<span style="display: flex; gap: 12px; align-items: center"><span style="width: 32px; height: 32px; border-radius: 8px; background: #CFE8D5; border: 2px solid #2F6340; flex: none"></span>Made the answer better</span>
-<span style="display: flex; gap: 12px; align-items: center"><span style="width: 32px; height: 32px; border-radius: 8px; background: #D7E6F3; border: 2px solid #2B4F6E; flex: none"></span>Followed, no change in score</span>
-<span style="display: flex; gap: 12px; align-items: center"><span style="width: 32px; height: 32px; border-radius: 8px; background: #F5D3D0; border: 2px solid #8A3A33; flex: none"></span>Worked against the task</span>
-<span style="display: flex; gap: 12px; align-items: center"><span style="width: 32px; height: 32px; border-radius: 8px; background: #EEECE8; border: 2px dashed #6B675F; flex: none"></span>No real difference</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 12px; font-size: 31px">
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 32px">
 <p style="margin: 0"><b style="color: #2F6340">Green · "Explain inflation"</b>: without it, the AI explained how the body uses food for energy.</p>
 <p style="margin: 0"><b style="color: #2B4F6E">Blue · "Mention a candy bar"</b>: the AI did it, but the score was the same either way.</p>
 <p style="margin: 0"><b style="color: #8A3A33">Red · "Use proper technical terms"</b>: the AI used words like "Consumer Price Index", too hard for a 10-year-old. Without it, the score rose from 0.40 to 0.78.</p>
 <p style="margin: 0"><b style="color: #4A4741">Grey · "Hi there!"</b>: a greeting gives the AI nothing to act on.</p>
 </div>
-<p style="margin: 0; font-size: 28px; color: #4A4741">Scores run 0 to 1. On a fresh rerun, 5 of 6 verdicts repeated. The "without it" sentences are written by an AI and labelled as descriptions; every number is computed by code.</p>
+<p style="margin: 0; font-size: 28px; color: #4A4741">On a fresh rerun, 5 of 6 verdicts repeated. The "without it" sentences are written by an AI and labelled as descriptions; every number is computed by code.</p>
 
-<h2 style="margin: 12px 0 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">06</span>How it helps</h2>
-<p style="margin: 0">How the tool addresses each problem from section 02, with what it showed on my 240 test prompts.</p>
-<p style="margin: 0; font-size: 36px; font-weight: 600">Worse answers</p>
-<p style="margin: 0">It shows which phrases drive the answer and which work against it. In the worked example, removing "Use proper technical terms" raised the score from 0.40 to 0.78. Across all the test prompts, format instructions and the task itself moved the score most (chart, right).</p>
-<p style="margin: 0; font-size: 36px; font-weight: 600">Wasted tokens</p>
-<p style="margin: 0">Phrases that change nothing show up grey, so people can see what to drop. Politeness and tone moved the score by only 0.06 and 0.04 on average.</p>
-<p style="margin: 0; font-size: 36px; font-weight: 600">Hidden risk</p>
-<p style="margin: 0">A second check reports whether each instruction was actually followed, and phrases that backfire show up red. In one prompt, "dont guess" made the AI speculate <i>more</i>, in all 5 runs.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 16px 22px">
+<span style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577">HOW THE COLORS ANSWER THE THREE PROBLEMS</span>
+<div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 10px 16px; align-items: center; font-size: 31px">
+<span style="display: flex; gap: 8px"><span style="width: 36px; height: 36px; border-radius: 8px; background: #CFE8D5; border: 2px solid #2F6340"></span><span style="width: 36px; height: 36px; border-radius: 8px; background: #F5D3D0; border: 2px solid #8A3A33"></span></span>
+<span>Helped or hurt the answer → <b>Worse answers</b></span>
+<span style="display: flex; gap: 8px"><span style="width: 36px; height: 36px; border-radius: 8px; background: #EEECE8; border: 2px dashed #6B675F"></span></span>
+<span>No real difference → <b>Wasted tokens</b></span>
+<span style="display: flex; gap: 8px"><span style="width: 36px; height: 36px; border-radius: 8px; background: #D7E6F3; border: 2px solid #2B4F6E"></span></span>
+<span>Instruction check: was it actually followed? → <b>Hidden risk</b></span>
+</div>
+</div>
+
+<h2 style="margin: 8px 0 0; font-size: 55px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">06</span>What I found</h2>
+<span style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577">DOES THE TOOL WORK?</span>
+<p style="margin: 0; font-size: 32px"><b>It points at the right phrases.</b> Removing the two phrases it ranked highest dropped the score by 0.30, against 0.18 for two random phrases (79 prompts, p = 0.0002). Its explanations are faithful.</p>
+<p style="margin: 0; font-size: 32px"><b>It gives the same answer twice.</b> A full rerun picked the same top phrase 78% of the time. Nearly tripling the reruns only raised agreement from 83% to 91%, so its explanations are stable.</p>
+<p style="margin: 0; font-size: 32px"><b>It beat my own guesses.</b> Before running anything, I wrote down what I expected each phrase to do. I matched the tool on 76% of phrases in clean prompts but only 52% in messy ones. Reading the answers, about 35 of the 41 disagreements were my mistakes.</p>
+<span style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577; margin-top: 8px">WHAT IT SHOWED ABOUT PROMPTS</span>
+<p style="margin: 0; font-size: 30px; color: #4A4741">One model and my 240 test prompts, so these are observations, not rules.</p>
+<p style="margin: 0; font-size: 32px"><b>Format and the task moved the score most.</b> Politeness and tone barely moved it (chart, right).</p>
+<p style="margin: 0; font-size: 32px"><b>Length limits matter for cost.</b> In 60 prompts with a word limit, removing it made answers longer in 49, by 45% at the median.</p>
+<p style="margin: 0; font-size: 32px"><b>Some instructions backfire.</b> "dont guess" made the AI speculate <i>more</i>, in all 5 runs.</p>
 </section>
 
-<!-- Column 4 -->
-<section style="display: flex; flex-direction: column; gap: 26px; min-width: 0">
-<p style="margin: 0; font-size: 36px; font-weight: 600">How much each kind of phrase moved the score</p>
-<p style="margin: 0; font-size: 29px; color: #4A4741">Average change in score when that kind of phrase was removed, across 741 phrases.</p>
-<img src="q3_phrase_kinds.png" alt="Bar chart of score lost when each kind of phrase is removed: format 0.24, task 0.23, audience 0.16, context 0.12, constraint 0.08, politeness 0.06, tone 0.04" style="width: 80%; align-self: center; display: block; border-radius: 14px; background: #FFFFFF">
+<!-- Column 4: what it showed about prompts, what I can't claim, what's next -->
+<section style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+<img src="q3_phrase_kinds.png" alt="Bar chart of score lost when each kind of phrase is removed: format 0.24, task 0.23, audience 0.16, context 0.12, constraint 0.08, politeness 0.06, tone 0.04" style="width: 100%; align-self: center; display: block; border-radius: 12px; background: #FFFFFF">
+<p style="margin: 0; font-size: 28px; color: #4A4741">Average change in score when each kind of phrase was removed, across 741 phrases in 240 test prompts.</p>
 
-<div style="display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-size: 46px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 34px; color: #3F3577">07</span>Can the tool be trusted?</h2>
-<p style="margin: 0; font-size: 31px">A tool that points at the wrong phrases would teach the wrong habits, so I tested it. Removing the two phrases it ranked highest dropped the score by <b>0.30</b>, against <b>0.18</b> for two random phrases (79 prompts, p = 0.0002), so it is faithful. Rerunning the whole analysis picked the same top phrase <b>78%</b> of the time, so it is stable. It falls short in three places:</p>
-<ul style="margin: 0; padding-left: 36px; display: flex; flex-direction: column; gap: 10px; font-size: 31px">
-<li>When an attached document already holds the answer, removing two phrases moved the score by less than 0.07, so there is little to rank.</li>
-<li>The AI that checks instructions can't count words. It passed 93 answers that broke a word limit.</li>
-<li>More reruns barely help. Nearly tripling the calls raised agreement from 83% to 91%.</li>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px">
+<h2 style="margin: 0; font-size: 49px; font-weight: 600; display: flex; gap: 16px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 35px; color: #3F3577">07</span>What I can't claim yet</h2>
+<ul style="margin: 0; padding-left: 34px; display: flex; flex-direction: column; gap: 7px; font-size: 31px">
+<li><b>That people prompt better after using it.</b> There is no study with real users yet.</li>
+<li><b>That the results hold beyond my setup.</b> One model (Claude Haiku 5.5), and test prompts written by an AI imitating users, plus 32 messy ones I wrote.</li>
+<li><b>Much about tasks where a document does the work.</b> There, removing two phrases moved the score by less than 0.07.</li>
+<li><b>That every check is right.</b> The AI that checks instructions passed 93 answers that broke a word limit.</li>
+<li><b>That deletion tells the whole story.</b> Phrases are tested alone and once as a group, not with better wording or in every combination, as Shapley values would.</li>
 </ul>
 </div>
 
-<div style="display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-size: 46px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 34px; color: #3F3577">08</span>Business implications</h2>
-<ul style="margin: 0; padding-left: 36px; display: flex; flex-direction: column; gap: 10px; font-size: 31px">
-<li><b>Faster adoption.</b> Employees learn what works on their own company's tasks, documents and rules, instead of from general tips.</li>
-<li><b>Safer rollout.</b> Compliance teams can check that a safety instruction actually changes the answer before it goes into shared prompts.</li>
-<li><b>Lower cost (stretch goal).</b> Once enough phrases are measured, results can be cached and a small local model trained. An app or browser extension could then flag wasted words before a prompt is sent, without an extra AI call.</li>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 49px; font-weight: 600; display: flex; gap: 16px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 35px; color: #3F3577">08</span>What's next</h2>
+<ul style="margin: 0; padding-left: 34px; display: flex; flex-direction: column; gap: 7px; font-size: 31px">
+<li><b>For companies.</b> Employees learn what works on their own tasks and documents, and compliance teams check a safety instruction before it goes into shared prompts.</li>
+<li><b>Lower cost (stretch goal).</b> Cache measured phrases and train a small local model, so an app can flag a missing length limit or wasted words before a prompt is sent, with no extra AI call.</li>
+<li><b>First, a study with real users.</b> Do people write better prompts after using it?</li>
 </ul>
 </div>
 
-<div style="display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-size: 46px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 34px; color: #3F3577">09</span>Limitations and next steps</h2>
-<ul style="margin: 0; padding-left: 36px; display: flex; flex-direction: column; gap: 8px; font-size: 30px">
-<li>One model (Claude Haiku 5.5), on 8 tasks with checks written in code.</li>
-<li>The 240 test prompts were written by an AI imitating users; I wrote 32 more messy ones. There is no study with real users yet.</li>
-<li>Each phrase is compared only with deleting it, not with a better phrase.</li>
-<li>Phrases that do nothing alone are retested as one group, but not in every combination. Shapley values* would, at a much higher cost.</li>
-<li><b>Next:</b> a study with real users, more models, and Shapley-style scoring.</li>
-</ul>
-<span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* Shapley values:</b> give each part a fair share of the credit by testing it in every combination of parts.</span>
-</div>
+<p style="margin: 4px 0 0; padding-top: 16px; border-top: 3px solid #2B2A28; font-size: 35px; line-height: 1.38; font-weight: 500">In these tests, the tool reliably pointed at the words that drove an answer, and it beat my own guesses. Whether it makes people write better prompts is the next thing to test.</p>
 </section>
 
 </div>
 
-<footer style="border-top: 2px solid #E8E4DE; padding-top: 20px; display: flex; gap: 24px; align-items: baseline; font-size: 25px; color: #4A4741">
-<span style="font-size: 24px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577; flex: none">REFERENCES</span>
+<footer style="border-top: 2px solid #E8E4DE; padding-top: 16px; display: flex; gap: 22px; align-items: baseline; font-size: 23px; color: #4A4741">
+<span style="font-size: 22px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577; flex: none">REFERENCES</span>
 <span>Zamfirescu-Pereira et al. (2023), Why Johnny Can't Prompt, CHI · Sclar et al. (2024), prompt formatting sensitivity, ICLR · Zeiler &amp; Fergus (2014), occlusion · Ribeiro et al. (2016), LIME · Lundberg &amp; Lee (2017), SHAP · Petsiuk et al. (2018), deletion test · DeYoung et al. (2020), faithfulness · Alvarez-Melis &amp; Jaakkola (2018), stability · Turpin et al. (2023), unfaithful model explanations</span>
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":4608,"height":3456}}'>
-class Component extends DCLogic {
-renderVals() {
-return {};
-}
-}
-</script>
 </body>
 </html>
