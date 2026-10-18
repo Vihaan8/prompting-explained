@@ -127,7 +127,7 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 </section>
 
 <!-- Column 3: worked example, then does the tool work -->
-<section style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+<section style="display: flex; flex-direction: column; gap: 15px; min-width: 0">
 <h2 style="margin: 0; font-size: 55px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">05</span>Worked example</h2>
 <p style="margin: 0; color: #4A4741">Task: write a prompt that gets the AI to explain inflation to your 10-year-old cousin. One user wrote this:</p>
 <p style="margin: 0; font-size: 38px; line-height: 2.0; background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 20px 26px">
@@ -148,13 +148,15 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 
 <div style="display: flex; flex-direction: column; gap: 10px; background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 20px; padding: 16px 22px">
 <span style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577">HOW THE COLORS ANSWER THE THREE PROBLEMS</span>
-<div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 10px 16px; align-items: center; font-size: 31px">
-<span style="display: flex; gap: 8px"><span style="width: 36px; height: 36px; border-radius: 8px; background: #CFE8D5; border: 2px solid #2F6340"></span><span style="width: 36px; height: 36px; border-radius: 8px; background: #F5D3D0; border: 2px solid #8A3A33"></span></span>
-<span>Helped or hurt the answer → <b>Worse answers</b></span>
-<span style="display: flex; gap: 8px"><span style="width: 36px; height: 36px; border-radius: 8px; background: #EEECE8; border: 2px dashed #6B675F"></span></span>
+<div style="display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 8px 16px; align-items: center; font-size: 31px">
+<span style="width: 36px; height: 36px; border-radius: 8px; background: #CFE8D5; border: 2px solid #2F6340"></span>
+<span>Helped the answer → <b>Worse answers</b></span>
+<span style="width: 36px; height: 36px; border-radius: 8px; background: #F5D3D0; border: 2px solid #8A3A33"></span>
+<span>Hurt the answer → <b>Worse answers</b></span>
+<span style="width: 36px; height: 36px; border-radius: 8px; background: #EEECE8; border: 2px dashed #6B675F"></span>
 <span>No real difference → <b>Wasted tokens</b></span>
-<span style="display: flex; gap: 8px"><span style="width: 36px; height: 36px; border-radius: 8px; background: #D7E6F3; border: 2px solid #2B4F6E"></span></span>
-<span>Instruction check: was it actually followed? → <b>Hidden risk</b></span>
+<span style="width: 36px; height: 36px; border-radius: 8px; background: #D7E6F3; border: 2px solid #2B4F6E"></span>
+<span>Followed, score unchanged → <b>Hidden risk</b></span>
 </div>
 </div>
 
