@@ -131,48 +131,49 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 </div>
 <p style="margin: 0; font-size: 28px; color: #4A4741">Scores run 0 to 1. On a fresh rerun, 5 of 6 verdicts repeated. The "without it" sentences are written by an AI and labelled as descriptions; every number is computed by code.</p>
 
-<h2 style="margin: 12px 0 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">06</span>Can the tool be trusted?</h2>
-<p style="margin: 0">A teaching tool that points at the wrong phrases would teach the wrong habits. So I ran it on 240 practice prompts, written at beginner, average and expert level for all 8 tasks, plus 32 deliberately messy ones.</p>
-<p style="margin: 0; font-size: 36px; font-weight: 600">What held up</p>
-<p style="margin: 0">Removing the two phrases it ranked highest dropped the score by <b>0.30</b>, against <b>0.18</b> for two random phrases (79 prompts, p = 0.0002). So it points at phrases that really matter, which makes its explanations faithful*.</p>
-<p style="margin: 0">Running the whole analysis again picked the same top phrase <b>78%</b> of the time, and 86% when the effect was clear, so the explanations are stable**.</p>
-<span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* Faithfulness:</b> the parts an explanation points to really drive the output.<br><b>** Stability:</b> the same input gets the same explanation when run again.</span>
-<p style="margin: 0">Some results surprised me. "dont guess" made the AI speculate <i>more</i>, in all 5 runs. Asked to "make up a salary", it refused. "for github issues" made it leave a customer's name out of a bug report without being asked.</p>
+<h2 style="margin: 12px 0 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">06</span>How it helps</h2>
+<p style="margin: 0">How the tool addresses each problem from section 02, with what it showed on my 240 test prompts.</p>
+<p style="margin: 0; font-size: 36px; font-weight: 600">Worse answers</p>
+<p style="margin: 0">It shows which phrases drive the answer and which work against it. In the worked example, removing "Use proper technical terms" raised the score from 0.40 to 0.78. Across all the test prompts, format instructions and the task itself moved the score most (chart, right).</p>
+<p style="margin: 0; font-size: 36px; font-weight: 600">Wasted tokens</p>
+<p style="margin: 0">Phrases that change nothing show up grey, so people can see what to drop. Politeness and tone moved the score by only 0.06 and 0.04 on average.</p>
+<p style="margin: 0; font-size: 36px; font-weight: 600">Hidden risk</p>
+<p style="margin: 0">A second check reports whether each instruction was actually followed, and phrases that backfire show up red. In one prompt, "dont guess" made the AI speculate <i>more</i>, in all 5 runs.</p>
 </section>
 
 <!-- Column 4 -->
 <section style="display: flex; flex-direction: column; gap: 26px; min-width: 0">
-<p style="margin: 0; font-size: 36px; font-weight: 600">Which kinds of phrases mattered in these tests</p>
-<p style="margin: 0">Format instructions and the task itself moved the score most. Politeness and tone barely moved it.</p>
+<p style="margin: 0; font-size: 36px; font-weight: 600">How much each kind of phrase moved the score</p>
+<p style="margin: 0; font-size: 29px; color: #4A4741">Average change in score when that kind of phrase was removed, across 741 phrases.</p>
 <img src="q3_phrase_kinds.png" alt="Bar chart of score lost when each kind of phrase is removed: format 0.24, task 0.23, audience 0.16, context 0.12, constraint 0.08, politeness 0.06, tone 0.04" style="width: 80%; align-self: center; display: block; border-radius: 14px; background: #FFFFFF">
+
 <div style="display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-size: 46px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 34px; color: #3F3577">07</span>Where it falls short</h2>
+<h2 style="margin: 0; font-size: 46px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 34px; color: #3F3577">07</span>Can the tool be trusted?</h2>
+<p style="margin: 0; font-size: 31px">A tool that points at the wrong phrases would teach the wrong habits, so I tested it. Removing the two phrases it ranked highest dropped the score by <b>0.30</b>, against <b>0.18</b> for two random phrases (79 prompts, p = 0.0002), so it is faithful. Rerunning the whole analysis picked the same top phrase <b>78%</b> of the time, so it is stable. It falls short in three places:</p>
 <ul style="margin: 0; padding-left: 36px; display: flex; flex-direction: column; gap: 10px; font-size: 31px">
-<li>When an attached document already held the answer, as in the landlord and meeting tasks, removing two phrases moved the score by less than 0.07. There was little to rank.</li>
-<li>The AI that checks instructions can't count words. It agreed with code 88% of the time, but passed 93 answers that broke a word limit.</li>
-<li>Running each prompt more times barely helped. Nearly tripling the calls raised agreement from 83% to 91%.</li>
-<li>My hallucination test never triggered. The model didn't invent a salary, even with a bonus in the posting as bait.</li>
+<li>When an attached document already holds the answer, removing two phrases moved the score by less than 0.07, so there is little to rank.</li>
+<li>The AI that checks instructions can't count words. It passed 93 answers that broke a word limit.</li>
+<li>More reruns barely help. Nearly tripling the calls raised agreement from 83% to 91%.</li>
 </ul>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 12px">
 <h2 style="margin: 0; font-size: 46px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 34px; color: #3F3577">08</span>Business implications</h2>
 <ul style="margin: 0; padding-left: 36px; display: flex; flex-direction: column; gap: 10px; font-size: 31px">
-<li>Companies can load their own tasks, documents and rules, so employees practice on real work and see which habits change results.</li>
-<li>People outside AI teams can see how the model read their words, with no technical background.</li>
-<li>As a stretch goal, once enough phrases are measured, results can be cached and a small local model trained. An app or browser extension could then check a prompt before it is sent, without an extra AI call, and cut token costs.</li>
+<li><b>Faster adoption.</b> Employees learn what works on their own company's tasks, documents and rules, instead of from general tips.</li>
+<li><b>Safer rollout.</b> Compliance teams can check that a safety instruction actually changes the answer before it goes into shared prompts.</li>
+<li><b>Lower cost (stretch goal).</b> Once enough phrases are measured, results can be cached and a small local model trained. An app or browser extension could then flag wasted words before a prompt is sent, without an extra AI call.</li>
 </ul>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 12px">
 <h2 style="margin: 0; font-size: 46px; font-weight: 600; display: flex; gap: 18px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 34px; color: #3F3577">09</span>Limitations and next steps</h2>
 <ul style="margin: 0; padding-left: 36px; display: flex; flex-direction: column; gap: 8px; font-size: 30px">
-<li>One model (Claude Haiku 5.5), on tasks with checks written in code.</li>
-<li>The 240 test prompts were written by an AI imitating users; I wrote the 32 messy ones. There is no study with real users yet.</li>
+<li>One model (Claude Haiku 5.5), on 8 tasks with checks written in code.</li>
+<li>The 240 test prompts were written by an AI imitating users; I wrote 32 more messy ones. There is no study with real users yet.</li>
 <li>Each phrase is compared only with deleting it, not with a better phrase.</li>
 <li>Phrases that do nothing alone are retested as one group, but not in every combination. Shapley values* would, at a much higher cost.</li>
-<li>The splitter and instruction checker are AIs and can be wrong. Checked against code, the checker agreed 88% of the time but can't count words.</li>
-<li><b>Next:</b> Shapley-style scoring, a study with real learners, more models.</li>
+<li><b>Next:</b> a study with real users, more models, and Shapley-style scoring.</li>
 </ul>
 <span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* Shapley values:</b> give each part a fair share of the credit by testing it in every combination of parts.</span>
 </div>
