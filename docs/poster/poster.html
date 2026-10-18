@@ -63,42 +63,44 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 <p style="margin: 0"><b>Everyday users.</b> People who just want the right answer. They see which of their words helped and which didn't, without needing to know how AI works.</p>
 <p style="margin: 0"><b>Employees at companies adopting AI.</b> Staff who are still learning to use AI practice on their own company's tasks, documents and rules.</p>
 <p style="margin: 0"><b>Governance and compliance teams.</b> Test whether a safety instruction, such as "leave out customer details", actually changes the answer before rolling it out.</p>
-<span style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577; margin-top: 12px">RESEARCH QUESTION</span>
-<p style="margin: 0; font-size: 36px; line-height: 1.38">Which parts of an everyday prompt actually change an AI's answer, and can removing parts and rerunning explain that <b>faithfully</b> and <b>stably</b>?</p>
+
 </div>
 </section>
 
 <!-- Column 2 -->
-<section style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+<section style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+<div style="display: flex; flex-direction: column; gap: 10px; padding-bottom: 6px">
+<span style="font-size: 26px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577">THE QUESTION</span>
+<p style="margin: 0; font-size: 38px; line-height: 1.35">Can removing one phrase at a time and rerunning the prompt show which words changed the AI's answer, in a way that is <b>faithful</b> and <b>stable</b>?</p>
+</div>
 <h2 style="margin: 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">04</span>Methods</h2>
-<p style="margin: 0; color: #4A4741">How the tool works out what each phrase did, in five steps. Starred terms are explained in the purple notes.</p>
 
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 22px 30px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">1</span> Split the prompt into phrases</p>
 <p style="margin: 0">An AI splits the prompt into up to 10 phrases and tags each one (task, audience, format, politeness…). These phrases are the pieces the tool will perturb*. Code keeps each phrase exactly as typed, typos included.</p>
 <span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* Perturbation:</b> changing part of an input to see how the output responds. LIME does this with single words.</span>
 </div>
 
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 22px 30px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">2</span> Remove one phrase and rerun</p>
 <p style="margin: 0">The full prompt runs 3 times. Then each phrase is deleted in turn and the shorter prompt runs twice. This is occlusion*. A phrase's effect is how much the score drops without it, which gives every phrase its own counterfactual**. Phrases that change nothing alone are also removed together once, in case they cover for each other.</p>
 <span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* Occlusion (leave-one-out):</b> hide one part of the input, rerun, and measure the change.<br><b>** Counterfactual:</b> the same case with one thing changed, to see what that one thing did.</span>
 </div>
 
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 22px 30px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">3</span> Score every answer two ways</p>
 <p style="margin: 0"><b>Against the task.</b> Each task comes with a short checklist that code grades automatically, like a teacher's rubric, from 0 (misses everything) to 1 (passes everything). An answer that doesn't do the task at all, such as asking "what should I explain?", scores 0.</p>
-<p style="margin: 0"><b>Against your instructions.</b> Code can't check everything you might ask for, such as "use a candy example". So a second AI reads each answer and ticks off which of your instructions it followed*. That separates "the AI followed this" from "this made the answer better".</p>
+<p style="margin: 0"><b>Against your instructions.</b> A second AI reads each answer and marks which of your instructions it followed*, such as "use a candy example", which code can't check. That separates "the AI followed this" from "this made the answer better".</p>
 <span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* AI as a judge:</b> using one AI to grade another's output. It can be wrong, so its mistakes are reported.</span>
 </div>
 
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 22px 30px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">4</span> Filter out noise</p>
-<p style="margin: 0">The same prompt gives a slightly different answer each time, so every version runs more than once. A change only counts if it's bigger than the noise floor*. Anything smaller stays grey, and the tool says "not clear" rather than guessing.</p>
+<p style="margin: 0">The AI's answers vary from run to run, so every version runs more than once. A change only counts if it's bigger than the noise floor*. Anything smaller stays grey, and the tool says "not clear" rather than guessing.</p>
 <span style="align-self: flex-start; font-size: 25px; color: #3F3577; background: #EEEAF9; border-radius: 16px; padding: 8px 18px; line-height: 1.4"><b>* Noise floor:</b> the smallest change the tool can tell apart from the AI's natural randomness (two standard errors).</span>
 </div>
 
-<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 22px 30px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: #FFFFFF; border: 2px solid #E8E4DE; border-radius: 22px; padding: 20px 28px; display: flex; flex-direction: column; gap: 8px">
 <p style="margin: 0; font-size: 38px; font-weight: 600"><span style="font-family: 'IBM Plex Mono', monospace; color: #3F3577">5</span> Explain it in plain words</p>
 <p style="margin: 0">Each phrase that mattered gets one sentence, written by an AI, describing how the answer changed without it. Every number and every color comes from code.</p>
 </div>
