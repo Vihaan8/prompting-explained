@@ -42,8 +42,8 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 <section style="display: flex; flex-direction: column; gap: 38px; min-width: 0">
 <div style="display: flex; flex-direction: column; gap: 18px">
 <h2 style="margin: 0; font-size: 56px; font-weight: 600; display: flex; gap: 20px; align-items: baseline"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 38px; color: #3F3577">01</span>Executive summary</h2>
-<p style="margin: 0">When a company rolls out AI tools, employees get an answer back but no feedback on how the model read their prompt. Good habits and bad ones look the same.</p>
-<p style="margin: 0">I built <b>prompting-explained</b> to give that feedback. It removes one phrase at a time, reruns the prompt, and highlights the phrases that changed the answer. On 240 test prompts across 8 everyday tasks, the phrases it ranked highest mattered clearly more than random ones, and its top pick repeated 78% of the time.</p>
+<p style="margin: 0">People in almost every field now use AI tools, but there is no tool that teaches prompt-writing literacy. AI developers learn what works through practice. Most users never do. In one study, non-experts wrote prompts the way they would instruct a person, and struggled to fix them when the answer went wrong (Zamfirescu-Pereira et al., 2023). Small wording changes matter too. Changing only a prompt's formatting moved one model's accuracy by up to 76 points (Sclar et al., 2024). A badly worded prompt wastes tokens and context, and gets a worse answer.</p>
+<p style="margin: 0">I built <b>prompting-explained</b> to teach how each word in a prompt contributed to the AI's answer. It removes one phrase at a time, reruns the prompt, and highlights the phrases that changed the result. On 240 test prompts across 8 everyday tasks, the phrases it ranked highest mattered clearly more than random ones, and its top pick repeated 78% of the time.</p>
 <p style="margin: 0">The goal is a training tool companies load with their own tasks, so staff learn what works on their real work.</p>
 </div>
 
@@ -176,7 +176,7 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 
 <footer style="border-top: 2px solid #E8E4DE; padding-top: 20px; display: flex; gap: 24px; align-items: baseline; font-size: 25px; color: #4A4741">
 <span style="font-size: 24px; font-weight: 700; letter-spacing: 0.06em; color: #3F3577; flex: none">REFERENCES</span>
-<span>Zeiler &amp; Fergus (2014), occlusion · Ribeiro et al. (2016), LIME · Lundberg &amp; Lee (2017), SHAP · Petsiuk et al. (2018), deletion test · DeYoung et al. (2020), faithfulness · Alvarez-Melis &amp; Jaakkola (2018), stability · Turpin et al. (2023), unfaithful model explanations</span>
+<span>Zamfirescu-Pereira et al. (2023), Why Johnny Can't Prompt, CHI · Sclar et al. (2024), prompt formatting sensitivity, ICLR · Zeiler &amp; Fergus (2014), occlusion · Ribeiro et al. (2016), LIME · Lundberg &amp; Lee (2017), SHAP · Petsiuk et al. (2018), deletion test · DeYoung et al. (2020), faithfulness · Alvarez-Melis &amp; Jaakkola (2018), stability · Turpin et al. (2023), unfaithful model explanations</span>
 </footer>
 </div>
 </x-dc>
