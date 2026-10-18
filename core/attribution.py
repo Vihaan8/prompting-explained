@@ -63,6 +63,16 @@ def ablate(prompt: str, segments: list[Segment], seg_id: int, mode: str = "delet
     return ablate_many(prompt, segments, [seg_id], mode)
 
 
+def joint_ids(within: list[dict[str, bool]]) -> list[int]:
+    """Parts to remove together: every part whose effect alone was within noise.
+
+    Only when there are at least two of them and at least one other part stays in the prompt,
+    so the test is never just "remove everything".
+    """
+    ids = [i for i, w in enumerate(within) if w[OVERALL]]
+    return ids if 2 <= len(ids) < len(within) else []
+
+
 def score_answer(challenge: Challenge, answer: str, stop_reason: str | None = None) -> RunResult:
     """Score one answer on every requirement.
 
@@ -165,7 +175,7 @@ async def analyze(
         method = "given"
     n_explain = min(config.explain_top_n, len(segments)) if explainer else 0
     n_runs = config.baseline_runs + len(segments) * config.ablation_runs
-    budget.reserve(n_runs + (n_runs if config.judge_parts else 0) + n_explain)
+    budget.reserve(n_runs + (n_runs if config.judge_parts else 0) + n_explain + config.ablation_runs)
 
     total = {"baseline": config.baseline_runs, "ablation": len(segments) * config.ablation_runs}
     done = {"baseline": 0, "ablation": 0}
@@ -193,6 +203,13 @@ async def analyze(
     base_mean, attribution, within = sc["baseline_mean"], sc["attribution"], sc["within_noise"]
     ablations = [Ablation(segment_id=s.id, prompt=p, runs=g, mean=m) for s, p, g, m in zip(segments, ablated_prompts, groups, sc["means"])]
 
+    together = joint_ids(within)
+    joint_prompt, joint_runs = "", []
+    if together:
+        joint_prompt = ablate_many(user_prompt, segments, together, config.ablation_mode)
+        joint_runs = list(await asyncio.gather(*(run_prompt(challenge, joint_prompt, budget, "joint") for _ in range(config.ablation_runs))))
+    joint = score_joint(challenge, baseline, joint_runs, config)
+
     result = AnalysisResult(
         challenge_id=challenge.id,
         user_prompt=user_prompt,
@@ -209,6 +226,10 @@ async def analyze(
         ablations=ablations,
         attribution=attribution,
         within_noise=within,
+        joint_ids=together,
+        joint_prompt=joint_prompt,
+        joint_runs=joint_runs,
+        **joint,
         model=getattr(llm, "model", ""),
         config=config.model_dump(),
     )
@@ -258,6 +279,18 @@ def score_runs(
             "part_noise": part_noise, "means": means, "attribution": attribution, "within_noise": within}
 
 
+def score_joint(challenge: Challenge, baseline: list[RunResult], joint_runs: list[RunResult], config: Config) -> dict:
+    """Attribution and noise floor for the joint test (empty if it didn't run)."""
+    if not joint_runs:
+        return {"joint_attribution": {}, "joint_noise": {}}
+    targets = challenge.targets
+    base, without = _mean(baseline, targets), _mean(joint_runs, targets)
+    return {
+        "joint_attribution": {t: base[t] - without[t] for t in targets},
+        "joint_noise": diff_noise(baseline, joint_runs, targets, config.noise_floor_k, config.min_noise_floor),
+    }
+
+
 def rescore(result: AnalysisResult, challenge: Challenge, config: Config) -> AnalysisResult:
     """Recompute every score and attribution from the saved answers, with no model calls.
 
@@ -267,7 +300,9 @@ def rescore(result: AnalysisResult, challenge: Challenge, config: Config) -> Ana
     ablated = [[score_answer(challenge, r.answer, r.stop_reason) for r in a.runs] for a in result.ablations]
     s = score_runs(challenge, baseline, ablated, config)
     ablations = [a.model_copy(update={"runs": runs, "mean": m}) for a, runs, m in zip(result.ablations, ablated, s["means"])]
+    joint_runs = [score_answer(challenge, r.answer, r.stop_reason) for r in result.joint_runs]
     return result.model_copy(update={
+        "joint_runs": joint_runs, **score_joint(challenge, baseline, joint_runs, config),
         "targets": challenge.targets, "baseline_runs": baseline, "baseline_mean": s["baseline_mean"],
         "baseline_std": s["baseline_std"], "pooled_std": s["pooled_std"], "noise": s["noise"],
         "part_noise": s["part_noise"], "ablations": ablations,

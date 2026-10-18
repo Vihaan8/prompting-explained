@@ -230,3 +230,51 @@ def test_part_noise_is_per_part():
     erratic = diff_noise(runs(1.0, 1.0, 1.0), runs(0.0, 1.0), [OVERALL], 2.0, 0.05)[OVERALL]
     assert steady == 0.05  # both sides agree: only the minimum
     assert erratic == pytest.approx(2 * (0.5 / 2) ** 0.5)  # 2 * sqrt(var 0.5 / n 2)
+
+
+def test_joint_ids_only_for_two_or_more_quiet_parts_never_all():
+    from core.attribution import joint_ids
+
+    q, loud = {OVERALL: True}, {OVERALL: False}
+    assert joint_ids([loud, q, q]) == [1, 2]
+    assert joint_ids([loud, q]) == []  # one quiet part: the single test already covers it
+    assert joint_ids([q, q, q]) == []  # removing everything says nothing about the parts
+
+
+def test_joint_test_finds_parts_that_cover_for_each_other():
+    from core.findings import joint_item, joint_verdict
+
+    prompt = "Use 3 bullet points. Keep it under 60 words. Stay under 60 words."
+    parts = ["Use 3 bullet points.", "Keep it under 60 words.", "Stay under 60 words."]
+    fake = FakeLLM(lambda p, s: kid_answer(p))
+    res = run(analyze(KID, prompt, fake, cfg(), segments=segs(prompt, parts, ["format", "constraint", "constraint"])))
+    assert res.within_noise[1][OVERALL] and res.within_noise[2][OVERALL]  # each alone: no effect
+    assert res.joint_ids == [1, 2]
+    assert res.joint_attribution[OVERALL] > 0
+    assert joint_verdict(res) == "helped"
+    kind, head, why = joint_item(res)
+    assert kind == "mattered" and head.startswith("Together,") and "covered for it" in why
+
+
+def test_joint_test_finds_parts_that_only_hurt_together():
+    from core.findings import joint_item, simple_items
+
+    def answer(p):
+        # Any off-topic request makes the answer long; the bullet/length instruction does the rest.
+        a = kid_answer(p)
+        return kid_answer(p.replace("60 words", "")) if ("pizza" in p or "kittens" in p) else a
+
+    prompt = "Explain prices in 3 bullet points, under 60 words. Tell me about pizza. Tell me about kittens."
+    parts = ["Explain prices in 3 bullet points, under 60 words.", "Tell me about pizza.", "Tell me about kittens."]
+    res = run(analyze(KID, prompt, FakeLLM(lambda p, s: answer(p)), cfg(), segments=segs(prompt, parts, ["task", "task", "task"])))
+    assert res.joint_ids == [1, 2]
+    kind, head, why = joint_item(res)
+    assert kind == "hurt" and "worked against you" in head and "raised the score" in why
+    assert ("hurt", head, why) in simple_items(res)
+
+
+def test_no_joint_test_when_parts_matter_alone():
+    fake = FakeLLM(lambda p, s: kid_answer(p))
+    res = run(analyze(KID, PROMPT, fake, cfg(), segments=segs()))
+    assert res.joint_ids == [] and res.joint_runs == []
+    assert res.call_counts.get("joint", 0) == 0

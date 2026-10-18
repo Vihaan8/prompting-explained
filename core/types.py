@@ -144,6 +144,14 @@ class AnalysisResult(BaseModel):
 
     explanations: dict[int, str] = Field(default_factory=dict)
 
+    # Joint test: the parts with no clear effect one at a time, removed together, to catch
+    # parts that cover for each other or only hurt together (see attribution.joint_ids).
+    joint_ids: list[int] = Field(default_factory=list)
+    joint_prompt: str = ""
+    joint_runs: list[RunResult] = Field(default_factory=list)
+    joint_attribution: dict[str, float] = Field(default_factory=dict)
+    joint_noise: dict[str, float] = Field(default_factory=dict)
+
     # Per-part check (core/judge.py). Ratings are 1 / 0.5 / 0, or None for n/a.
     judge_baseline: list[list[float | None] | None] = Field(default_factory=list)
     judge_ablation: list[list[list[float | None] | None]] = Field(default_factory=list)

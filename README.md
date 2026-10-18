@@ -17,8 +17,9 @@ Short version of the answer, for one model (Claude Haiku 5.5) on 240 test prompt
 1. **Split the prompt into parts.** One model call splits the prompt into short phrases and labels each one (task, audience, format, constraint, politeness, and so on). The code then maps every part back onto the exact characters of the prompt, so removing a part removes exactly that text.
 2. **Run the full prompt 3 times.** Each answer is scored by code against the task's checks. For the kid task those are: actually explains prices, 3 bullet points, 60 words or fewer, reading grade 5 or below. If an answer doesn't do the task at all, for example it asks "what should I explain?", it scores 0 whatever the other checks say.
 3. **Remove one part at a time and run each version twice.** The drop in score is that part's effect. This is occlusion, or leave-one-out. Each effect is compared with its own noise floor: two standard errors of the difference between the runs with the part and the runs without it, and never less than 0.05. Smaller effects aren't reported as real.
-4. **Check each part directly.** A second model call reads every answer and rates whether it does what each part of the prompt asked: yes, partly, no, or nothing to act on. If answers do it with the part and stop without it, but the score doesn't move, the AI "followed it". If they do it either way, the AI did it anyway. If they don't do it even with the part, it was ignored.
-5. **Explain it in plain words.** Parts that mattered get one sentence written by the model comparing the two answers. Everything else is fixed text picked by the numbers, so the app never invents a number.
+4. **Remove the quiet parts together.** If two or more parts made no clear difference on their own, they are removed all at once and that version runs twice too. This catches parts that cover for each other ("under 60 words" and "keep it short") and parts that only pull the answer off course together. If the joint change clears its own noise floor, the app says so in a "Together, …" card.
+5. **Check each part directly.** A second model call reads every answer and rates whether it does what each part of the prompt asked: yes, partly, no, or nothing to act on. If answers do it with the part and stop without it, but the score doesn't move, the AI "followed it". If they do it either way, the AI did it anyway. If they don't do it even with the part, it was ignored.
+6. **Explain it in plain words.** Parts that mattered get one sentence written by the model comparing the two answers. Everything else is fixed text picked by the numbers, so the app never invents a number.
 
 The colours are simple. Green means the part made the answer better at the task. Blue means the AI followed it but the task score didn't change. Red means the answer did better without it. Grey means no real difference. The "How it works" tab shows the actual numbers for anyone who wants to check.
 
@@ -159,7 +160,7 @@ All settings live in `config.yaml`. The full evaluation, including the runs expe
 ## Limitations
 
 - Results are for one model and version, on eight tasks. Other models will behave differently.
-- Removing one part at a time misses parts that only matter together, or parts that back each other up.
+- Parts that do nothing alone are tested once as a single group, not in every combination. A pair hidden inside a larger group, or a pair where one part mattered alone, can still be missed. Shapley values would catch these, at many more calls. The 240-prompt eval predates the group test.
 - A prompt with a piece cut out can read strangely, and that alone can change the answer.
 - The splitting, the per-part check, and the "why" sentences all come from a model, and models make mistakes. The per-part check can't count words and misses some leaked personal details (see "Can the per-part judge be trusted?" above).
 - Each noise floor comes from only 3 runs with the part and 2 without, so it is itself noisy.

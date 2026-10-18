@@ -284,6 +284,31 @@ def _join(names: list[str]) -> str:
 ROW_ORDER = ("mattered", "hurt", "followed", "ignored", "unclear")
 
 
+def joint_verdict(result: AnalysisResult) -> str | None:
+    """'helped', 'hurt' or 'no effect' for the parts removed together, or None if not tested."""
+    if not result.joint_ids or not result.joint_attribution:
+        return None
+    a, floor = result.joint_attribution[OVERALL], result.joint_noise[OVERALL]
+    return "helped" if a >= floor else "hurt" if a <= -floor else "no effect"
+
+
+def joint_item(result: AnalysisResult) -> tuple[str, str, str] | None:
+    """A (kind, headline, why) row when the parts that did nothing alone did something together."""
+    v = joint_verdict(result)
+    if v not in ("helped", "hurt"):
+        return None
+    names = _join([f'"{short_segment(result.segments[i].text)}"' for i in result.joint_ids])
+    n = len(result.joint_ids)
+    base = result.baseline_mean[OVERALL]
+    without = base - result.joint_attribution[OVERALL]
+    moved = f"Removing all {n} at once {'dropped' if v == 'helped' else 'raised'} the score from {f2(base)} to {f2(without)}."
+    if v == "helped":
+        return ("mattered", f"Together, {names} mattered",
+                f"{moved} One at a time each looked unimportant, because the others covered for it.")
+    return ("hurt", f"Together, {names} worked against you",
+            f"{moved} One at a time each looked harmless, because the others still pulled the answer off course.")
+
+
 def simple_items(result: AnalysisResult) -> list[tuple[str, str, str]]:
     """The 'What mattered' list as (kind, headline, why) rows.
 
@@ -298,6 +323,8 @@ def simple_items(result: AnalysisResult) -> list[tuple[str, str, str]]:
         for n, i in enumerate(by_kind.get(k, [])):
             head = headline(result, i) + (" most" if k == "mattered" and n == 0 and len(by_kind[k]) > 1 else "")
             rows.append((k, head, why(result, i)))
+        if k == "hurt" and (joint := joint_item(result)):
+            rows.append(joint)
     anyway = sorted(by_kind.get("anyway", []))
     if len(anyway) == 1:
         rows.append(("anyway", headline(result, anyway[0]), why(result, anyway[0])))

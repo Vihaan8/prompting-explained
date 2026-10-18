@@ -161,7 +161,7 @@ a{color:#3F3577}a:hover{color:#2B2A28}
 <ul style="margin: 0; padding-left: 36px; display: flex; flex-direction: column; gap: 8px; font-size: 30px">
 <li>One model (Claude Haiku 5.5), on tasks with checks written in code.</li>
 <li>Each phrase is compared only with deleting it, not with a better phrase.</li>
-<li>Two phrases that say the same thing can both look grey. Shapley values* fix that, at a much higher cost.</li>
+<li>Phrases that do nothing alone are retested as one group, but not in every combination. Shapley values* would, at a much higher cost.</li>
 <li>The splitter and instruction checker are AIs and can be wrong. Checked against code, the checker agreed 88% of the time but can't count words.</li>
 <li><b>Next:</b> Shapley-style scoring, a study with real learners, more models.</li>
 </ul>

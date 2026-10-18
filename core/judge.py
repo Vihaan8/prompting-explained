@@ -48,7 +48,7 @@ For each part, rate whether the answer does what that part asks for or says:
 - yes: the answer clearly does it or includes it
 - partly: only some of it
 - no: the answer doesn't do it
-- n/a: the part gives nothing the answer could act on: courtesy ("please", "thanks"), a greeting, or a side remark that doesn't bear on the answer
+- n/a: the part gives nothing the answer could act on: courtesy ("please", "thanks"), a greeting, a side remark that doesn't bear on the answer, or gibberish with no clear meaning (like "asdkjh")
 
 Rate every part on its own, even if the answer seems to come from a version of the prompt that didn't include it. Return one rating per part."""
 

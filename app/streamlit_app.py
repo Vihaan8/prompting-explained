@@ -320,6 +320,8 @@ def how_it_works(res: AnalysisResult) -> None:
         ("Split into parts", f"One AI call split your prompt into {len(res.segments)} parts and tagged each one (task, audience, format, and so on)."),
         ("Measure the full prompt", f"Your prompt ran {len(res.baseline_runs)} times. Code scored each answer from 0 to 1 on these checks: {checks}. Scores: {runs}."),
         ("Remove one part at a time", f"Each shortened prompt ran {per_part} more times. A part's effect is the score with it minus the score without it."),
+        ("Remove the quiet parts together", "Parts that made no clear difference alone were then removed all at once. "
+         "That catches parts that cover for each other, or that only pull the answer off course together."),
         ("Check each part directly", "An AI read every answer and rated whether it did what each part asked. That catches things the code checks can't see."),
         ("Leave out the noise", "Answers vary from run to run. Each part's effect is compared with how much its own runs and your prompt's runs varied (two standard errors, at least 0.05). Smaller effects stay grey instead of being claimed."),
     ]
@@ -339,6 +341,13 @@ def how_it_works(res: AnalysisResult) -> None:
                  F.f2(F.part_floor(res, s.id, OVERALL))]
         if judged:
             cells.append(f"{pct(res.follow_with[s.id])} / {pct(res.follow_without[s.id])}")
+        rows.append("<tr>" + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
+    if res.joint_ids and res.joint_attribution:
+        names = " + ".join(esc(F.short_segment(res.segments[i].text, 4)) for i in res.joint_ids)
+        cells = [f"<b>Together:</b> {names}", F.f2(res.baseline_mean[OVERALL]),
+                 F.f2(res.baseline_mean[OVERALL] - res.joint_attribution[OVERALL]), F.f2(res.joint_noise[OVERALL])]
+        if judged:
+            cells.append("")
         rows.append("<tr>" + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
     head = "<th>Part</th><th>Score with it</th><th>Without it</th><th>Noise floor</th>" + ("<th>Did it, with / without</th>" if judged else "")
     md(f'<div class="pe-table"><table><thead><tr>{head}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>')
