@@ -63,9 +63,10 @@ body{margin:0;background:#FAF8F5}
 <section class="col">
 <div class="sec">
 <h2><span class="n">01</span>Summary</h2>
-<p><b>prompting-explained</b> takes a prompt apart, removes one phrase at a time, reruns it, and scores each answer with code. It reports a phrase's effect only when the effect is larger than the AI's normal run-to-run variation.</p>
-<p>We tested it on 240 synthetic prompts across 8 tasks with one model. Its rankings held up where wording drove the score. Where an attached document already carried the answer, it found nothing to rank. It also showed where our own design fell short.</p>
-<p class="muted">These are results for one model on eight tasks, not rules about prompting.</p>
+<p><b>Why.</b> Staff using AI tools at work get no feedback on which parts of their prompts the model acted on, so they can't tell good habits from bad ones.</p>
+<p><b>What we built.</b> A tool that removes one phrase at a time, reruns the prompt, and shows which phrases changed the result.</p>
+<p><b>What we found.</b> On 240 test prompts across 8 everyday tasks with one model, the phrases it ranked highest mattered more than random ones (score drop 0.30 vs 0.18), and a rerun picked the same top phrase 78% of the time.</p>
+<p><b>Goal.</b> A training tool companies load with their own tasks, so employees learn which prompting habits change results on their real work.</p>
 </div>
 
 <div class="sec">
