@@ -2,6 +2,8 @@
 
 A teaching tool that shows which parts of your prompt changed an AI's answer.
 
+**[Try it out](https://prompting-explained-ff9p8cir8awbkcwsgf3t34.streamlit.app/)**
+
 ## Why this exists
 
 Many people who use AI tools have never been taught how to write a prompt, so they learn by trial and error. They type a request, get an answer, and see nothing about which of their words the model acted on. In one study, non-experts wrote prompts the way they would instruct a person, and struggled to fix them when the answer went wrong (Zamfirescu-Pereira et al., 2023). Small wording changes can also matter a lot: changing only a prompt's formatting moved one model's accuracy by up to 76 points (Sclar et al., 2024).
