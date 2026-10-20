@@ -7,3 +7,6 @@ __pycache__/
 .streamlit/secrets.toml
 .claude/
 results/*.log
+
+# Poster files are kept locally, not in the repo
+docs/poster/
